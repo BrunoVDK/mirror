@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1060" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ProjectOptionsBuildPanelController">
+            <connections>
+                <outlet property="view" destination="c22-O7-iKe" id="jaM-zV-tzY"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe" userLabel="Build Panel">
+            <rect key="frame" x="0.0" y="5" width="480" height="97"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <popUpButton toolTip="The way the mirror is structured on disk." verticalHuggingPriority="750" id="wyf-ZY-jDD">
+                    <rect key="frame" x="52" y="54" width="375" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingMiddle" borderStyle="borderAndBezel" imageScaling="axesIndependently" inset="2" id="MBb-21-rbt">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" id="271-du-ELV">
+                            <items>
+                                <menuItem title="Site-structure" id="MSi-DQ-y9b">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(2) HTML in web/, images/other files in web/images/" id="7mX-Ol-K8l">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(3) HTML in web/HTML, images/other in web/images" id="jZy-4H-kFR">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(4) HTML in web/, images/other in web/" id="tUb-5R-snC">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(5) HTML in web/, images/other in web/xxx, where xxx is the file extension" id="cTH-xQ-7kW">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(6) Images/other in web/xxx and HTML in web/HTML" id="lQo-W6-Vxg">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(7) All files in web/, with random names" id="yZc-Wo-ByT">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(8) Site-structure, without www.domain.xxx/" id="DVI-Jo-lFT">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(9) Identical to (2) except that &quot;web&quot; is replaced by the site's name" id="9aH-Tg-TzD">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(10) Identical to (3) except that &quot;web&quot; is replaced by the site's name" id="YEc-Qr-sy5">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(11) Identical to (4) except that &quot;web&quot; is replaced by the site's name" id="tj5-cM-eEf">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(12) Identical to (5) except that &quot;web&quot; is replaced by the site's name" id="T5s-te-pKO">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(13) Identical to (6) except that &quot;web&quot; is replaced by the site's name" id="agr-EW-8fY">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(14) Identical to (7) except that &quot;web&quot; is replaced by the site's name" id="oLC-wO-epb">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(15) Identical to (2) except that there is no &quot;web&quot; directory" id="pqr-Ao-Mge">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(16) Identical to (3) except that there is no &quot;web&quot; directory" id="o2t-at-dwB">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(17) Identical to (4) except that there is no &quot;web&quot; directory" id="D1w-So-cL0">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(18) Identical to (5) except that there is no &quot;web&quot; directory" id="Zm1-cU-bg2">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(19) Identical to (6) except that there is no &quot;web&quot; directory" id="L7D-hb-5VC">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="(20) Identical to (7) except that there is no &quot;web&quot; directory" id="8D1-8v-plE">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="l4L-3V-Ptm" customClass="ProjectOptionsLabel">
+                    <rect key="frame" x="175" y="75" width="110" height="11"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Local file structure" id="lsw-VP-Srw">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton toolTip="The format of file names in the mirror." verticalHuggingPriority="750" id="4Rc-hi-950">
+                    <rect key="frame" x="52" y="17" width="180" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="LWB-1f-GQt">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" id="O2W-3g-YA9">
+                            <items>
+                                <menuItem title="Long names" id="obo-1d-usI"/>
+                                <menuItem title="DOS-83 conversion" id="dlf-RB-wNo"/>
+                                <menuItem title="ISO9660-compatible names" id="Ro4-s2-4ni"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="2Vs-1V-kfo" customClass="ProjectOptionsLabel">
+                    <rect key="frame" x="87" y="38" width="110" height="11"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="File names" id="box-P0-dVA">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton toolTip="How links are rendered." verticalHuggingPriority="750" id="FQt-HK-ndM">
+                    <rect key="frame" x="247" y="17" width="180" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="gyn-ei-t7a">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" id="lC9-Tv-uIt">
+                            <items>
+                                <menuItem title="Relative links" id="KYE-Lk-gHs"/>
+                                <menuItem title="Absolute links" id="kvf-nK-Np3"/>
+                                <menuItem title="Original links" id="bYd-Gx-xcf"/>
+                                <menuItem title="Absolute URI links" id="fFS-Pg-HVq"/>
+                                <menuItem title="Transparent proxy links" id="Kof-0D-57H"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="17s-Dd-brQ" customClass="ProjectOptionsLabel">
+                    <rect key="frame" x="280" y="38" width="110" height="11"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Links" id="GaV-HH-pS8">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <point key="canvasLocation" x="514" y="234.5"/>
+        </customView>
+    </objects>
+</document>

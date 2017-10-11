@@ -1,0 +1,302 @@
+#ifndef HTS_DEF_FWSTRUCT_httrackp
+#define HTS_DEF_FWSTRUCT_httrackp
+    typedef struct httrackp httrackp;
+#endif
+    struct httrackp {
+        size_t size_httrackp;         // size of this structure
+        /* */
+        int wizard;                   // wizard aucun/grand/petit
+        int flush;                    // fflush sur les fichiers log
+        int travel;                   // type de déplacements (same domain etc)
+        int seeker;                   // up & down
+        int depth;                    // nombre de niveaux de récursion
+        int extdepth;                 // nombre de niveaux de récursion à l'éxtérieur
+        int urlmode;                  // liens relatifs etc
+        int no_type_change;           // do not change file type according to MIME
+        int debug;                    // mode débug log
+        int getmode;                  // sauver html, images..
+        FILE *log;                    // fichier log
+        FILE *errlog;                 // et erreur
+        LLint maxsite;                // taille max site
+        LLint maxfile_nonhtml;        // taille max non html
+        LLint maxfile_html;           // taille max html
+        int maxsoc;                   // nbre sockets
+        LLint fragment;               // fragmentation d'un site
+        int nearlink;                 // prendre les images/data proche d'une page mais à l'extérieur
+        int makeindex;                // faire un index
+        int kindex;                   // et un index 'keyword'
+        int delete_old;               // effacer anciens fichiers
+        int timeout;                  // nombre de secondes de timeout
+        int rateout;                  // nombre d'octets minium pour le transfert
+        int maxtime;                  // temps max en secondes
+        int maxrate;                  // taux de transfert max
+        float maxconn;                // nombre max de connexions/s
+        int waittime;                 // démarrage programmé
+        int cache;                    // génération d'un cache
+        //int aff_progress;     // barre de progression
+        int shell;                    // gestion d'un shell par pipe stdin/stdout
+        t_proxy proxy;                // configuration du proxy
+        int savename_83;              // conversion 8-3 pour les noms de fichiers
+        int savename_type;            // type de noms: structure originale/html-images en un seul niveau
+        String savename_userdef;      // structure userdef (ex: %h%p/%n%q.%t)
+        int savename_delayed;         // delayed type check
+        int delayed_cached;           // delayed type check can be cached to speedup updates
+        int mimehtml;                 // MIME-html
+        int user_agent_send;          // user agent (ex: httrack/1.0 [sun])
+        String user_agent;            //
+        String referer;               // referer
+        String from;                  // from
+        String path_log;              // chemin pour cache et log
+        String path_html;             // chemin pour miroir
+        String path_html_utf8;        // chemin pour miroir, UTF-8
+        String path_bin;              // chemin pour templates
+        int retry;                    // nombre d'essais supplémentaires en cas d'échec
+        int makestat;                 // mettre à jour un fichier log de statistiques de transfert
+        int maketrack;                // mettre à jour un fichier log de statistiques d'opérations
+        int parsejava;                // parsing des classes java pour récupérer les class, gif & cie ; see htsparsejava_flags
+        int hostcontrol;              // abandon d'un host trop lent etc.
+        int errpage;                  // générer une page d'erreur en cas de 404 etc.
+        int check_type;               // si type inconnu (cgi,asp,/) alors tester lien (et gérer moved éventuellement)
+        int all_in_cache;             // tout mettre en cache!
+        int robots;                   // traitement des robots
+        int external;                 // pages externes->pages d'erreur
+        int passprivacy;              // pas de mot de pass dans les liens externes?
+        int includequery;             // include la query-string
+        int mirror_first_page;        // miroir des liens
+        String sys_com;               // commande système
+        int sys_com_exec;             // executer commande
+        int accept_cookie;            // gestion des cookies
+        t_cookie *cookie;
+        int http10;                   // forcer http 1.0
+        int nokeepalive;              // pas de keep-alive
+        int nocompression;            // pas de compression
+        int sizehack;                 // forcer réponse "mis à jour" si taille identique
+        int urlhack;                  // force "url normalization" to avoid loops
+        int tolerant;                 // accepter content-length incorrect
+        int parseall;                 // essayer de tout parser (tags inconnus contenant des liens, par exemple)
+        int parsedebug;               // débugger parser (debug!)
+        int norecatch;                // ne pas reprendre les fichiers effacés localement par l'utilisateur
+        int verbosedisplay;           // animation textuelle
+        String footer;                // ligne d'infos
+        int maxcache;                 // maximum en mémoire au niveau du cache (backing)
+        //int maxcache_anticipate; // maximum de liens à anticiper (majorant)
+        int ftp_proxy;                // proxy http pour ftp
+        String filelist;              // fichier liste URL à inclure
+        String urllist;               // fichier liste de filtres à inclure
+        htsfilters filters;           // contient les pointeurs pour les filtres
+        hash_struct *hash;            // hash structure
+        lien_url **liens;             // links
+        int lien_tot;                 // top index of "links" heap (always out-of-range)
+        lien_buffers *liensbuf;       // links buffers
+        robots_wizard *robotsptr;     // robots ptr
+        String lang_iso;              // en, fr ..
+        String accept;                // Accept:
+        String headers;               // Additional headers
+        String mimedefs;              // ext1=mimetype1\next2=mimetype2..
+        String mod_blacklist;         // (3.41)
+        int convert_utf8;             // filenames UTF-8 conversion (3.46)
+        //
+        int maxlink;                  // nombre max de liens
+        int maxfilter;                // nombre max de filtres
+        //
+        const char *exec;             // adresse du nom de l'éxecutable
+        //
+        int quiet;                    // poser des questions autres que wizard?
+        int keyboard;                 // vérifier stdin
+        int bypass_limits;            // bypass built-in limits
+        int background_on_suspend;    // background process on suspend signal
+        //
+        int is_update;                // c'est une update (afficher "File updated...")
+        int dir_topindex;             // reconstruire top index par la suite
+        //
+        // callbacks
+        t_hts_htmlcheck_callbacks *callbacks_fun;
+        // store library handles
+        htslibhandles libHandles;
+        //
+        htsoptstate state;            // state
+        hts_stat_struct stats;        // stats (used to be global)
+        int debug_head;               // debug head (used to be global)
+        FILE *ioinfo;                 // io info (used to be global)
+    };
+
+#ifndef HTS_DEF_FWSTRUCT_htsfilters
+#define HTS_DEF_FWSTRUCT_htsfilters
+    typedef struct htsfilters htsfilters;
+#endif
+    struct htsfilters {
+        char ***filters;
+        int *filptr;
+        //int*    filter_max;
+    };
+
+
+
+
+
+
+
+//
+//
+//
+//		DEFAULT OPTIONS (created in htslib.c)
+//
+//
+//
+
+
+
+
+HTSEXT_API httrackp *hts_create_opt(void) {
+#if ( defined(_WIN32) || defined(__ANDROID__) )
+  static const char *defaultModules[] = {
+    "htsswf", "htsjava", "httrack-plugin", NULL
+  };
+#else
+  static const char *defaultModules[] = {
+    "libhtsswf.so.1", "libhtsjava.so.2", "httrack-plugin", NULL
+  };
+#endif
+  httrackp *opt = malloc(sizeof(httrackp));
+
+  /* default options */
+  memset(opt, 0, sizeof(httrackp));
+  opt->size_httrackp = sizeof(httrackp);
+
+  /* mutexes */
+  hts_mutexinit(&opt->state.lock);
+
+  /* custom wrappers */
+  opt->libHandles.count = 0;
+
+  /* default settings */
+
+  opt->wizard = 2;              // wizard automatique
+  opt->quiet = 0;               // questions
+  //  
+  opt->travel = 0;              // même adresse
+  opt->depth = 9999;            // mirror total par défaut
+  opt->extdepth = 0;            // mais pas à l'extérieur
+  opt->seeker = 1;              // down 
+  opt->urlmode = 2;             // relatif par défaut
+  opt->no_type_change = 0;      // change file types
+  opt->debug = LOG_NOTICE;      // small log
+  opt->getmode = 3;             // linear scan
+  opt->maxsite = -1;            // taille max site (aucune)
+  opt->maxfile_nonhtml = -1;    // taille max fichier non html
+  opt->maxfile_html = -1;       // idem pour html
+  opt->maxsoc = 4;              // nbre socket max
+  opt->fragment = -1;           // pas de fragmentation
+  opt->nearlink = 0;            // ne pas prendre les liens non-html "adjacents"
+  opt->makeindex = 1;           // faire un index
+  opt->kindex = 0;              // index 'keyword'
+  opt->delete_old = 1;          // effacer anciens fichiers
+  opt->background_on_suspend = 1;       // Background the process if Control Z calls signal suspend.
+  opt->makestat = 0;            // pas de fichier de stats
+  opt->maketrack = 0;           // ni de tracking
+  opt->timeout = 120;           // timeout par défaut (2 minutes)
+  opt->cache = 1;               // cache prioritaire
+  opt->shell = 0;               // pas de shell par defaut
+  opt->proxy.active = 0;        // pas de proxy
+  opt->user_agent_send = 1;     // envoyer un user-agent
+  StringCopy(opt->user_agent,
+             "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)");
+  StringCopy(opt->referer, "");
+  StringCopy(opt->from, "");
+  opt->savename_83 = 0;         // noms longs par défaut
+  opt->savename_type = 0;       // avec structure originale
+  opt->savename_delayed = 2;    // hard delayed type (default)
+  opt->delayed_cached = 1;      // cached delayed type (default)
+  opt->mimehtml = 0;            // pas MIME-html
+  opt->parsejava = HTSPARSE_DEFAULT;    // parser classes
+  opt->hostcontrol = 0;         // PAS de control host pour timeout et traffic jammer
+  opt->retry = 2;               // 2 retry par défaut
+  opt->errpage = 1;             // copier ou générer une page d'erreur en cas d'erreur (404 etc.)
+  opt->check_type = 1;          // vérifier type si inconnu (cgi,asp..) SAUF / considéré comme html
+  opt->all_in_cache = 0;        // ne pas tout stocker en cache
+  opt->robots = 2;              // traiter les robots.txt
+  opt->external = 0;            // liens externes normaux
+  opt->passprivacy = 0;         // mots de passe dans les fichiers
+  opt->includequery = 1;        // include query-string par défaut
+  opt->mirror_first_page = 0;   // pas mode mirror links
+  opt->accept_cookie = 1;       // gérer les cookies
+  opt->cookie = NULL;
+  opt->http10 = 0;              // laisser http/1.1
+  opt->nokeepalive = 0;         // pas keep-alive
+  opt->nocompression = 0;       // pas de compression
+  opt->tolerant = 0;            // ne pas accepter content-length incorrect
+  opt->parseall = 1;            // tout parser (tags inconnus, par exemple)
+  opt->parsedebug = 0;          // pas de mode débuggage
+  opt->norecatch = 0;           // ne pas reprendre les fichiers effacés par l'utilisateur
+  opt->verbosedisplay = 0;      // pas d'animation texte
+  opt->sizehack = 0;            // size hack
+  opt->urlhack = 1;             // url hack (normalizer)
+  StringCopy(opt->footer, HTS_DEFAULT_FOOTER);
+  opt->ftp_proxy = 1;           // proxy http pour ftp
+  opt->convert_utf8 = 1;        // convert html to UTF-8
+  StringCopy(opt->filelist, "");
+  StringCopy(opt->lang_iso, "en, *");
+  StringCopy(opt->accept,
+    "text/html,image/png,image/jpeg,image/pjpeg,image/x-xbitmap,image/svg+xml,image/gif;q=0.9,*/*;q=0.1");
+  StringCopy(opt->headers, "");
+  StringCopy(opt->mimedefs, "\n");      // aucun filtre mime (\n IMPORTANT)
+  StringClear(opt->mod_blacklist);
+  //
+  opt->log = stdout;
+  opt->errlog = stderr;
+  opt->flush = 1;               // flush sur les fichiers log
+  //opt->aff_progress=0;
+  opt->keyboard = 0;
+  //
+  StringCopy(opt->path_html, "");
+  StringCopy(opt->path_html_utf8, "");
+  StringCopy(opt->path_log, "");
+  StringCopy(opt->path_bin, "");
+  //
+  opt->maxlink = 100000;        // 100,000 liens max par défaut
+  opt->maxfilter = 200;         // 200 filtres max par défaut
+  opt->maxcache = 1048576 * 32; // a peu près 32Mo en cache max -- OPTION NON PARAMETRABLE POUR L'INSTANT --
+  //opt->maxcache_anticipate=256;  // maximum de liens à anticiper
+  opt->maxtime = -1;            // temps max en secondes
+  opt->maxrate = 25000;         // taux maxi
+  opt->maxconn = 5.0;           // nombre connexions/s
+  opt->waittime = -1;           // wait until.. hh*3600+mm*60+ss
+  //
+  opt->exec = "";
+  opt->is_update = 0;           // not an update (yet)
+  opt->dir_topindex = 0;        // do not built top index (yet)
+  //
+  opt->bypass_limits = 0;       // enforce limits by default
+  opt->state.stop = 0;          // stopper
+  opt->state.exit_xh = 0;       // abort
+  //
+  opt->state.is_ended = 0;
+
+  /* Alocated buffers */
+
+  opt->callbacks_fun =
+    (t_hts_htmlcheck_callbacks *) malloct(sizeof(t_hts_htmlcheck_callbacks));
+  memset(opt->callbacks_fun, 0, sizeof(t_hts_htmlcheck_callbacks));
+
+  /* Preload callbacks : java and flash parser, and the automatic user-defined callback */
+
+  {
+    int i;
+
+    for(i = 0; defaultModules[i] != NULL; i++) {
+      int ret = plug_wrapper(opt, defaultModules[i], defaultModules[i]);
+
+      if (ret == 0) {           /* Module aborted initialization */
+        /* Ignored. */
+      }
+    }
+  }
+
+  return opt;
+}
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+Ik zou :
+
+ProjectWindowController volledige controle geven over interface (inclusief ProjectStatsWindowController etc., de tabellen zelf)
+Project volledige controle over model
+
+Project doet enkel update van base urls en loops en files om de zo veel tijd (voor elk deel van de data source dus een ‘tic’ variabele houden voor ‘elapsed time’ te berekenen, en indien dit groter is dan bijvoorbeeld 400ms, dan aanpassen van de data sources en ProjectWindowController op de hoogte brengen door specifiek te zeggen welke base urls veranderd zijn en te zeggen welke files nieuw zijn en sockets volledig herladen.
+
+		(‘tic’ variabele in project options zetten, zal het snelste zijn)
+
+
+Interface doet een volledige re-layout behalve bij file list waar hij enkel de nieuwe files toevoegt in één keer (dit is véél sneller dan alles apart toevoegen) en bij base urls waar hij enkel de nodige urls verandert.
+
+TableView is snel indien er niet immediate layout gedaan wordt.
+Zelfs reloadData is dan zeer snel.
+Het trage is eg. ‘displayIfNeeded’.
+
+Nog te zien ; hoe omgaan met filtering?
+Filtering dus enkel bij base urls en bij files
+Bij base urls geen probleem, meteen data source veranderen bij toevoegen van url
+Bij files moeten alle nieuwe files in een queue van Project gezet worden (een nsmutablearray met capacity van zeg maar 100) => bij updaten van deze files moet er rekening gehouden worden met het feit dat oude files verwijderd worden indien max. files bereikt is. Dus dan aan array controller alle updates meegeven, wat licht complexe berekeningen vraagt.
+Hetzelfde voor notificaties.
+
+Eventueel gewoon nsarraycontroller binden aan file list en notification list
+en dan hen de interne array doen veranderen (bij het inrekenen van de array van nieuwe files van Project)
+op die manier zou alles automatisch gaan en moet ProjectWindowController gewoon bindings zetten, wat niet moeilijk is
+
+
+BENCHMARK
+Zal moeilijk zijn om snelheid te meten, maar normaal gezien is het totaal zo’n 2,5x40ms (max), dus totaal van zo’n 100ms per seconde aan interface.
+
+
+========
+
+OK dus het gemakkelijkste ; 
+maak nsarraycontrollers aan, enkel updaten van deze data source om de zo veel tijd.
+
+Bij switch displayMode ; dit is dan binding aan ProjectFileList? Of misschien iets gemakkelijker ; maak ProjectSocketList aan, apart, en doe net hetzelfde als met de andere nsarraycontrollers (voor files en notifications) ; dan, als de displaymode verandert (gewoon binden aan ProjectWindowController property ‘displayMode’, dan wordt de switch zelf juist geinterfaced-gedoe, en verandert die bijvoorbeeld de bindings van de table view ; de ProjectStatsWindowController kan net hetzelfde doen ; technisch gezien zijn er hier niet eens bindngs voor nodig, gewoon target-selector mechanism is genoeg en eigenlijk iets sneller maar dat maakt niet uit want de gebruiker zal niet gepassioneerd staan klikken gedurende minuten).
+
+Buttons kunnen gelinkt worden via target-selector, en dan ‘clickedRow’ gebruiken op doorgegeven nstableview om het respectieve object te kunnen halen uit de nsarraycontroller; dit is allemaal op de main thread dus zie dan gewoon dat je de data sources (nsarraycontrollers) ook op de main thread aanpast.
+
+
+Herinner, nu is er geen timer meer nodig, want de Project zelf update enkel om de zo veel tijd (2 maal per seconden, max).
+De interface (ProjectWindowController) gaat enkel aanpassen als Project dat zegt of als de gebruiker de interface verandert (menukeuze veranderen etc.).

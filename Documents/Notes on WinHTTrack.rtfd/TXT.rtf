@@ -1,0 +1,223 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 Menlo-Italic;
+}
+{\colortbl;\red255\green255\blue255;\red230\green230\blue230;\red170\green13\blue145;\red0\green116\blue0;
+\red28\green0\blue207;\red196\green26\blue22;\red230\green230\blue230;\red100\green56\blue32;\red63\green110\blue116;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25040\viewh18460\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 \ul \ulc0 WinHTTrack :\ulnone \
+\
+
+\fs22 \cb2 Shell.cpp\cb1  holds the main code.\
+\cb2 inprogress.cpp\cb1  also has some interesting code when aborting the mirror which should probably be considered.\
+\
+The \cb2 RunBackRobot\cb1  function is launched on a separate thread (normally) and starts up HTTrack.\
+There, callback functions are chained, the arguments (normally those of the CLI, this time these set up by the application) are loaded, etc.\
+\
+These functions are chained : 
+\f1\fs24 \
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f0\fs22 \cf0 \cb2 \CocoaLigature0       CHAIN_FUNCTION(global_opt, init, httrackengine_init, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, uninit, httrackengine_uninit, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, start, httrackengine_start, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, end, httrackengine_end, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, chopt, httrackengine_chopt, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, preprocess, httrackengine_htmlpreprocess, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, postprocess, httrackengine_htmlpostprocess, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, check_html, httrackengine_htmlcheck, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, query, httrackengine_query, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, query2, httrackengine_query2, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, query3, httrackengine_query3, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, loop, httrackengine_loop, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, check_link, httrackengine_check, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, check_mime, httrackengine_check_mime, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, pause, httrackengine_pause, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, filesave, httrackengine_filesave, \cf3 NULL\cf0 );\
+      CHAIN_FUNCTION(global_opt, filesave2, httrackengine_filesave2, \cf3 NULL\cf0 );\
+\cb1 \
+The callback functions themselves are, of course, also in \cb2 Shell.cpp\cb1 .\
+Going through them :\
+\
+\pard\tx220\tx720\pardeftab529\li720\fi-720\pardirnatural
+\ls1\ilvl0\cf0 \CocoaLigature1 {\listtext	\'95	}\cb2 httrackengine_init\cb1  & \cb2 httrackengine_uninit\cb1  plays sounds, even shuts down PC (depending on user preferences).\
+{\listtext	\'95	}\cb2 httrackengine_start\cb1  & \cb2 httrackengine_end\cb1  changes locks, are not very important.\
+{\listtext	\'95	}\cb2 httrackengine_htmlpreprocess\cb1  & \cb2 httrackengine_htmlpostprocess\cb1  do nothing.\
+{\listtext	\'95	}\cb2 httrackengine_filesave\cb1  & \cb2 httrackengine_filesave2\cb1  do nothing.\
+{\listtext	\'95	}\cb2 httrackengine_check\cb1  & \cb2 httrackengine_check_mime\cb1  do nothing.\
+{\listtext	\'95	}\cb2 httrackengine_htmlcheck\cb1  does nothing.\
+{\listtext	\'95	}\cb2 httrackengine_chopt\cb1  does nothing.\
+{\listtext	\'95	}\cb2 httrackengine_pause\cb1  removes a lock file and displays a message box.\
+{\listtext	\'95	}\cb2 httrackengine_query\cb1 , \cb2 httrackengine_query2\cb1  & \cb2 httrackengine_query3\cb1  interact with the wizard (are not important).\
+\pard\tx566\pardeftab529\pardirnatural
+\cf0 \CocoaLigature0 \
+So these callbacks are basically irrelevant with the exception of the main loop callback, \cb2 httrackengine_loop\cb1 , which :\
+\
+\pard\tx220\tx720\pardeftab529\li720\fi-720\pardirnatural
+\ls2\ilvl0\cf0 \CocoaLigature1 {\listtext	\'95	}Updates statistics.\
+{\listtext	\'95	}Goes through the active links, connections, \'85 This part can be used to determine which files are being downloaded and enables cancelling files.\
+{\listtext	\'95	}Deals with a refresh.\
+\pard\tx566\pardeftab529\pardirnatural
+\cf0 \CocoaLigature0 \
+A few interesting snippets in \cb2 Shell.cpp\cb1  :\
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf0       \cf4 // back: tableau de back_max \'e9l\'e9ments de cache\cf0 \
+      \cf4 // back_max: nombre d\'92\'e9l\'e9ments ^^^^\cf0 \
+      \cf4 // lien_tot: nombre total de liens trait\'e9s pour le moment\cf0 \
+      \cf4 // stat_bytes: octets sauvegard\'e9s\cf0 \
+      \cf4 // stat_bytes_recv: octets t\'e9l\'e9charg\'e9s\cf0 \
+      \cf4 // stat_time: temps en seconde depuis le d\'e9but du miroir\cf0 \
+      \cf4 // stat_nsocket: nombre de sockets connect\'e9es actuellement\cf0 \
+      \cf4 // on peut en d\'c8duire rate=stat_bytes_recv/stat_time\cf0 \
+      \
+      \cf4 // printf("loop.. %d liens, %d octets, %d secondes, %d sockets, TAUX=%d\\n",lien_tot,stat_bytes,stat_time,stat_nsocket,rate);\
+\cf0 \
+\pard\tx566\pardeftab529\pardirnatural
+\cf0 \'85 (here sets up the \cb2 StatsBuffer\cb1  for details on connections/links, then \'85)\
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 	strcpybuff(StatsBuffer[index].url_sav,back[i].url_sav);   \cf4 // pour cancel\cf0 \
+\pard\tx566\pardeftab529\pardirnatural
+\cf0 \
+\'85\
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf3 	if\cf0  (back[i].r.totalsize>\cf5 0\cf0 ) \{  \cf4 // taille pr\'e9d\'e9fini\'e9\cf0 \
+    	StatsBuffer[index].sizetot=back[i].r.totalsize;\
+    	StatsBuffer[index].size=back[i].r.size;\
+    \} \cf3 else\cf0  \{  \cf4 // pas de taille pr\'e9d\'e9fini\'e9\cf0 \
+    	\cf3 if\cf0  (back[i].status==\cf5 0\cf0 ) \{  \cf4 // pr\'cdt\cf0 \
+    		StatsBuffer[index].sizetot=back[i].r.size;\
+    		StatsBuffer[index].size=back[i].r.size;\
+    	\} \cf3 else\cf0  \{\
+   	 		StatsBuffer[index].sizetot=\cf5 8192\cf0 ;\
+    		StatsBuffer[index].size=(back[i].r.size % \cf5 8192\cf0 );\
+    	\}\
+    \}\
+\
+These last parts, starting at line 1364 (\'91
+\f2\i \cf3 if\cf0  (ok)
+\f0\i0 \'92) are where stats on the backing store are generated.\
+Cancelling links is done in \cb2 inprogress.cpp\cb1  :\
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf4 	// canceller un lien manuellement\cf0 \
+\pard\tx529\pardeftab529\pardirnatural
+\cf3 	void\cf0  Cinprogress::StatsBuffer_cancel(\cf3 int\cf0  id) \{\
+\
+		hts_cancel_file_push(global_opt, StatsBuffer[id].url_sav);\
+\
+	\}\
+\
+The function \cb2 StatsBuffer_cancel\cb1  is called by \cb2 onsk0()\cb1  -> \cb2 onsk13()\cb1 , 14 functions that appear to cancel parsing or particular links and are bound to buttons.\
+Here is a function giving the hover tips for the buttons linked to \cb2 onsk0()\cb1  to \cb2 onsk9()\cb1  :\
+\
+\cf3 	char\cf0 * Cinprogress::GetTip(\cf3 int\cf0  ID) \{\
+\
+  		\cf3 switch\cf0 (ID) \{\
+    		\cf4 //case IDC_STOPALL: return LANG(LANG_H4); break; // "Stop the mirror","Stopper le miroir"); break;\cf0 \
+   		 	\cf4 //case IDC_hide:    return LANG(LANG_H5); break; // "Hide this window behind the system tray","Cacher la fen\'cdtre dans la barre syst\'cbme"); break;\cf0 \
+			\cf3 case\cf0  IDC_sk0:     \cf3 return\cf0  LANG(LANG_H6); \cf3 break\cf0 ; \cf4 // "Click to skip a link or interrupt parsing","Clic pour sauter un lien ou interrompre"); break;\cf0 \
+			\cf3 case\cf0  IDC_sk1: \cf3 case\cf0  IDC_sk2: \cf3 case\cf0  IDC_sk3: \cf3 case\cf0  IDC_sk4:\
+			\cf3 case\cf0  IDC_sk5: \cf3 case\cf0  IDC_sk6: \cf3 case\cf0  IDC_sk7: \cf3 case\cf0  IDC_sk8: \cf3 case\cf0  IDC_sk9:\
+    			\cf3 return\cf0  LANG(LANG_H7); \cf3 break\cf0 ; \cf4 // "Click to skip a link","Clic pour sauter un lien"); break;\cf0 \
+		\}\
+\
+		\cf3 return\cf0  \cf6 ""\cf0 ;\
+\
+	\}\
+\
+The Windows Resource File (.rc) defines the buttons along the lines of : \
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 \cb2 	15,117,40,8\
+    	RTEXT           "",IDC_nm0,60,117,95,8,SS_NOTIFY\
+    	CONTROL         "Progress1",IDC_sl0,"msctls_progress32",PBS_SMOOTH | WS_BORDER,240,117,50,8\
+    	PUSHBUTTON      "SKIP",IDC_sk0,295,117,45,8\
+    	CONTROL         "",IDC_st1,"Static",SS_LEFTNOWORDWRAP | SS_NOTIFY | WS_GROUP,\
+\'85\
+	15,187,40,8\
+   	 	RTEXT           "",IDC_nm7,60,187,95,8,SS_NOTIFY\
+    	CONTROL         "Progress1",IDC_sl7,"msctls_progress32",PBS_SMOOTH | WS_BORDER,240,187,50,8\
+    	PUSHBUTTON      "SKIP",IDC_sk7,295,187,45,8\
+    	CONTROL         "",IDC_st8,"Static",SS_LEFTNOWORDWRAP | SS_NOTIFY | WS_GROUP,\cb1 \
+\
+\
+Note that there are 10 pixels difference in height offset per button, while the x offset, width and height remains the same.\
+Visually, the 14 buttons look like this :\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f1\fs24 \cf0 \CocoaLigature1 {{\NeXTGraphic Screen Shot 2017-09-06 at 14.16.29.png \width9340 \height8140
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+\cf0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs22 \cf0 \
+Status codes are those of the RFC1945 standard :\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f1\fs24 \cf0 {{\NeXTGraphic Screen Shot 2017-09-06 at 17.32.51.png \width7880 \height5020
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs22 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+\
+The first button + label refers to a file being parsed. This can also be skipped. Updating the 14 labels and associated progress bar is done by the function \cb7 inprogress_refresh()\cb1  in \cb7 Shell.cpp\cb1 . Progress is updated as follows : \
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 \CocoaLigature0 	inprogress->m_sl2.SetPos(StatsBuffer[\cf5 2\cf0 ].offset);\
+\
+Labels are updated as follows :\
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf3 	int\cf0  i=\cf5 0\cf0 ;\
+\cf3 	if\cf0  (parsing)\
+	    i++;\
+\cf3 	for\cf0 ( ; i<\cf8 NStatsBuffer\cf0 ;i++) \{\
+\
+	    \cf9 CString\cf0  st;\
+	    st = StatsBuffer[i].etat;\
+  	  	st.Replace(\cf6 "&"\cf0 , \cf6 "&&"\cf0 );\
+  	  	SetWindowTextCP(inprogress->element[\cf5 0\cf0 ][i], st);\
+  	  	st = StatsBuffer[i].nom;\
+  	  	st.Replace(\cf6 "&"\cf0 , \cf6 "&&"\cf0 );\
+  	  	SetWindowTextUTF8(inprogress->element[\cf5 1\cf0 ][i], st);\
+   	 	st = StatsBuffer[i].fichier;\
+   		st.Replace(\cf6 "&"\cf0 , \cf6 "&&"\cf0 );\
+    	SetWindowTextUTF8(inprogress->element[\cf5 4\cf0 ][i], st);\
+    \
+    	\cf3 if\cf0  ((strlen(StatsBuffer[i].etat)==\cf5 0\cf0 ) != StatsBuffer[i].actived) \{\
+        	StatsBuffer[i].actived=!StatsBuffer[i].actived;\
+        	\cf3 if\cf0  (!StatsBuffer[i].actived)\
+            	inprogress->element[\cf5 3\cf0 ][i]->ModifyStyle(WS_DISABLED,\cf5 0\cf0 );\
+        	\cf3 else\cf0 \
+            	inprogress->element[\cf5 3\cf0 ][i]->ModifyStyle(\cf5 0\cf0 ,WS_DISABLED);\
+        	inprogress->element[\cf5 3\cf0 ][i]->RedrawWindow();\
+    	\}\
+\
+	\}\CocoaLigature1 \
+\
+Note that progress bars are at index 2 in \cb7 inprogress->element\cb1 . The \cb7 offset\cb1  field for the \cb7 StatsBuffer\cb1  items is calculated based on the calculated size and total size (both calculated in the callback for the main loop, see above) :\
+\
+\cf3 \CocoaLigature0 	int\cf0  i;\
+    \cf3 for\cf0 (i=\cf5 0\cf0 ;i<NStatsBuffer;i++) \{\
+        \cf3 if\cf0  (StatsBuffer[i].sizetot>\cf5 0\cf0 ) \{\
+            TStamp d = ((TStamp) StatsBuffer[i].size * \cf5 1000\cf0 );\
+            d = d / ((TStamp) StatsBuffer[i].sizetot);\
+            StatsBuffer[i].offset = (\cf3 int\cf0 ) d;\
+        \} \cf3 else\cf0 \
+            StatsBuffer[i].offset = \cf5 0\cf0 ;\
+    \}\
+\
+}

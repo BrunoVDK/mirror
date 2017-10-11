@@ -1,0 +1,9 @@
+//
+// Prefix header for all source files of the 'CocoaTouchStaticLibrary' target in the 'CocoaTouchStaticLibrary' project.
+//
+
+#import <Availability.h>
+#import <cdebug/debug.h>
+#import <Foundation/Foundation.h>
+
+#define SQLITE3_DEBUG FALSE

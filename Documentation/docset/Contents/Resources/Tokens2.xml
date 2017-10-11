@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AnimatedPanelsWindowController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AnimatedPanelsWindowController</TokenIdentifier>
+			<Abstract type="html">The AnimatedPanelsWindowController class controls a window with panels that can be navigated through.
+Switching from one panel to an other is animated.</Abstract>
+			<DeclaredIn>AnimatedPanelsWindowController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnimatedPanelsWindowController/panelControllers</TokenIdentifier>
+			<Abstract type="html">Returns this instance&apos;s panel controllers.</Abstract>
+			<DeclaredIn>AnimatedPanelsWindowController.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)panelControllers</Declaration>
+			
+			
+			<Anchor>//api/name/panelControllers</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnimatedPanelsWindowController/setPanelControllers:</TokenIdentifier>
+			<Abstract type="html">Set up this instance&apos;s panel controllers.</Abstract>
+			<DeclaredIn>AnimatedPanelsWindowController.h</DeclaredIn>
+			
+			<Declaration>- (void)setPanelControllers:(NSArray *)panelControllers</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>panelControllers</Name>
+					<Abstract type="html">An array of panelControllers. Each viewController must implement the AnimatedPanelControllerProtocol.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setPanelControllers:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnimatedPanelsWindowController/activatePanelController:animate:</TokenIdentifier>
+			<Abstract type="html">Manually activate the given panel controller, with or without animation.</Abstract>
+			<DeclaredIn>AnimatedPanelsWindowController.h</DeclaredIn>
+			
+			<Declaration>- (void)activatePanelController:(id&lt;AnimatedPanelControllerProtocol&gt;)panelController animate:(BOOL)animate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>panelController</Name>
+					<Abstract type="html">The panel to activate.</Abstract>
+				</Parameter><Parameter>
+					<Name>animate</Name>
+					<Abstract type="html">Set to true if animation is desired.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/activatePanelController:animate:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

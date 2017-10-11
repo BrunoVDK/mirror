@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BadgeView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BadgeView</TokenIdentifier>
+			<Abstract type="html">A BadgeView can be used to display a message in the dock.</Abstract>
+			<DeclaredIn>BadgeView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BadgeView/setVisible:</TokenIdentifier>
+			<Abstract type="html">A flag denoting whether or not this badge view is visible.</Abstract>
+			<DeclaredIn>BadgeView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite, getter=isVisible) BOOL visible</Declaration>
+			
+			
+			<Anchor>//api/name/visible</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BadgeView/isVisible</TokenIdentifier>
+			<Abstract type="html">A flag denoting whether or not this badge view is visible.</Abstract>
+			<DeclaredIn>BadgeView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite, getter=isVisible) BOOL visible</Declaration>
+			
+			
+			<Anchor>//api/name/visible</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BadgeView/visible</TokenIdentifier>
+			<Abstract type="html">A flag denoting whether or not this badge view is visible.</Abstract>
+			<DeclaredIn>BadgeView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite, getter=isVisible) BOOL visible</Declaration>
+			
+			
+			<Anchor>//api/name/visible</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BadgeView/setMessage:</TokenIdentifier>
+			<Abstract type="html">The message displayed by this badge view.</Abstract>
+			<DeclaredIn>BadgeView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BadgeView/message</TokenIdentifier>
+			<Abstract type="html">The message displayed by this badge view.</Abstract>
+			<DeclaredIn>BadgeView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BadgeView/message</TokenIdentifier>
+			<Abstract type="html">The message displayed by this badge view.</Abstract>
+			<DeclaredIn>BadgeView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BadgeView/sharedView</TokenIdentifier>
+			<Abstract type="html">A shared singleton to be used by the application.</Abstract>
+			<DeclaredIn>BadgeView.h</DeclaredIn>
+			
+			<Declaration>+ (id)sharedView</Declaration>
+			
+			
+			<Anchor>//api/name/sharedView</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

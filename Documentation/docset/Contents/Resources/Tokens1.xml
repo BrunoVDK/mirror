@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AboutWindowController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AboutWindowController</TokenIdentifier>
+			<Abstract type="html">The AboutWindowController class controls the about window of this application.</Abstract>
+			<DeclaredIn>AboutWindowController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/AboutWindowController/sharedController</TokenIdentifier>
+			<Abstract type="html">Get the shared about window controller.</Abstract>
+			<DeclaredIn>AboutWindowController.h</DeclaredIn>
+			
+			<Declaration>+ (id)sharedController</Declaration>
+			
+			<ReturnValue><Abstract type="html">A singleton, this application&apos;s about window controller.</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedController</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AboutWindowController/sourceCode:</TokenIdentifier>
+			<Abstract type="html">Open an URL having an overview of the source code of this application.</Abstract>
+			<DeclaredIn>AboutWindowController.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)sourceCode:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The sender of this action.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/sourceCode:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AboutWindowController/sendEmail:</TokenIdentifier>
+			<Abstract type="html">Open an URL for emailing the developer of this application.</Abstract>
+			<DeclaredIn>AboutWindowController.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)sendEmail:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The sender of this action.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/sendEmail:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

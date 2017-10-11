@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AppDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AppDelegate</TokenIdentifier>
+			<Abstract type="html">The AppDelegate class represents a delegate for this mirroring application.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/showAboutWindow:</TokenIdentifier>
+			<Abstract type="html">Show the application about window.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)showAboutWindow:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The object calling this method.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showAboutWindow:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/showPreferences:</TokenIdentifier>
+			<Abstract type="html">Show the application preferences panel.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)showPreferences:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The object calling this method.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showPreferences:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/handleQuit:</TokenIdentifier>
+			<Abstract type="html">Try and quit the application.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)handleQuit:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The object calling this method.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/handleQuit:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

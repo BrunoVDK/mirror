@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/CircularBuffer.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/CircularBuffer</TokenIdentifier>
+			<Abstract type="html">The CircularBuffer class represents a circular buffer.
+It has a fixed capacity but the buffer can be resized manually if so desired.</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+            
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CircularBuffer/setCapacity:</TokenIdentifier>
+			<Abstract type="html">The capacity of this buffer (the maximum number of items it can contain).
+This number cannot be zero.</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) unsigned int capacity</Declaration>
+			
+			
+			<Anchor>//api/name/capacity</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CircularBuffer/capacity</TokenIdentifier>
+			<Abstract type="html">The capacity of this buffer (the maximum number of items it can contain).
+This number cannot be zero.</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) unsigned int capacity</Declaration>
+			
+			
+			<Anchor>//api/name/capacity</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CircularBuffer/capacity</TokenIdentifier>
+			<Abstract type="html">The capacity of this buffer (the maximum number of items it can contain).
+This number cannot be zero.</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) unsigned int capacity</Declaration>
+			
+			
+			<Anchor>//api/name/capacity</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CircularBuffer/setSize:</TokenIdentifier>
+			<Abstract type="html">The size of this buffer, that is, the number of items it contains.</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) unsigned int size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CircularBuffer/size</TokenIdentifier>
+			<Abstract type="html">The size of this buffer, that is, the number of items it contains.</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) unsigned int size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CircularBuffer/size</TokenIdentifier>
+			<Abstract type="html">The size of this buffer, that is, the number of items it contains.</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) unsigned int size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CircularBuffer/setRetainsItems:</TokenIdentifier>
+			<Abstract type="html">Whether or not the items in this buffer are retained when they are added (and released upon removal).</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) BOOL retainsItems</Declaration>
+			
+			
+			<Anchor>//api/name/retainsItems</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CircularBuffer/retainsItems</TokenIdentifier>
+			<Abstract type="html">Whether or not the items in this buffer are retained when they are added (and released upon removal).</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) BOOL retainsItems</Declaration>
+			
+			
+			<Anchor>//api/name/retainsItems</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CircularBuffer/retainsItems</TokenIdentifier>
+			<Abstract type="html">Whether or not the items in this buffer are retained when they are added (and released upon removal).</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) BOOL retainsItems</Declaration>
+			
+			
+			<Anchor>//api/name/retainsItems</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CircularBuffer/initWithCapacity:</TokenIdentifier>
+			<Abstract type="html">Initialize a new circular buffer with given maximum capacity.</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithCapacity:(unsigned int)capacity</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>capacity</Name>
+					<Abstract type="html">The capacity for the newly formed buffer.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A circular buffer with given capacity.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithCapacity:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CircularBuffer/isEmpty</TokenIdentifier>
+			<Abstract type="html">Check whether or not this buffer is empty.</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isEmpty</Declaration>
+			
+			<ReturnValue><Abstract type="html">True if and only if the size of this buffer equals zero.</Abstract></ReturnValue>
+			<Anchor>//api/name/isEmpty</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CircularBuffer/addObject:</TokenIdentifier>
+			<Abstract type="html">Add the given item to this buffer;</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+			
+			<Declaration>- (void)addObject:(id)item</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>item</Name>
+					<Abstract type="html">The item to add.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addObject:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CircularBuffer/removeFirst</TokenIdentifier>
+			<Abstract type="html">Remove the first item in this buffer;</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+			
+			<Declaration>- (id)removeFirst</Declaration>
+			
+			<ReturnValue><Abstract type="html">The item in this buffer that was formerly the first.</Abstract></ReturnValue>
+			<Anchor>//api/name/removeFirst</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CircularBuffer/removeLast</TokenIdentifier>
+			<Abstract type="html">Remove the last item in this buffer;</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+			
+			<Declaration>- (id)removeLast</Declaration>
+			
+			<ReturnValue><Abstract type="html">The item in this buffer that was formerly the last.</Abstract></ReturnValue>
+			<Anchor>//api/name/removeLast</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CircularBuffer/stringRepresentation</TokenIdentifier>
+			<Abstract type="html">Represents a text representation of this queue, listing all its elements in reverse order (from last to first).</Abstract>
+			<DeclaredIn>CircularBuffer.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)stringRepresentation</Declaration>
+			
+			<ReturnValue><Abstract type="html">A string representing this queue.</Abstract></ReturnValue>
+			<Anchor>//api/name/stringRepresentation</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

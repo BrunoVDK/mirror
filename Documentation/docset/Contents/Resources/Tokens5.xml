@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/CapsuleSegmentedControl.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/CapsuleSegmentedControl</TokenIdentifier>
+			<Abstract type="html">The CapsuleSegmentedControl class represents a capsule segmented control.
+Unlike the usual capsule control it is compatible with Snow Leopard.</Abstract>
+			<DeclaredIn>CapsuleSegmentedControl.h</DeclaredIn>
+            
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CapsuleSegmentedControl/setOverrideDrawing:</TokenIdentifier>
+			<Abstract type="html">A flag denoting whether or not this segmented control overrides its superclass&apos;s drawing.
+If not, then this subclass basically does nothing at all.</Abstract>
+			<DeclaredIn>CapsuleSegmentedControl.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL overrideDrawing</Declaration>
+			
+			
+			<Anchor>//api/name/overrideDrawing</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CapsuleSegmentedControl/overrideDrawing</TokenIdentifier>
+			<Abstract type="html">A flag denoting whether or not this segmented control overrides its superclass&apos;s drawing.
+If not, then this subclass basically does nothing at all.</Abstract>
+			<DeclaredIn>CapsuleSegmentedControl.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL overrideDrawing</Declaration>
+			
+			
+			<Anchor>//api/name/overrideDrawing</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CapsuleSegmentedControl/overrideDrawing</TokenIdentifier>
+			<Abstract type="html">A flag denoting whether or not this segmented control overrides its superclass&apos;s drawing.
+If not, then this subclass basically does nothing at all.</Abstract>
+			<DeclaredIn>CapsuleSegmentedControl.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL overrideDrawing</Declaration>
+			
+			
+			<Anchor>//api/name/overrideDrawing</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

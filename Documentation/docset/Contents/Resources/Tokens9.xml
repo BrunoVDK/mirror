@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/DashedLine.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/DashedLine</TokenIdentifier>
+			<Abstract type="html">The DashedLine class represents a dashed line.
+It subclasses NSView and draws a dashed line, 2 pixels high, at the top of the view.</Abstract>
+			<DeclaredIn>DashedLine.h</DeclaredIn>
+            
+			
+			<NodeRef refid="9"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

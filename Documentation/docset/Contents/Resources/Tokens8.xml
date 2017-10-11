@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/CustomEnablingSegmentedControlCell.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/CustomEnablingSegmentedControlCell</TokenIdentifier>
+			<Abstract type="html">A CustomEnablingSegmentedControlCell is a subclass of NSSegmentedCell that does not change the design of its segmented cells when they&apos;re enabled or disabled.</Abstract>
+			<DeclaredIn>CustomEnablingSegmentedControlCell.h</DeclaredIn>
+            
+			
+			<NodeRef refid="8"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

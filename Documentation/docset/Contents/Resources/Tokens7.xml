@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ColoredView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ColoredView</TokenIdentifier>
+			<Abstract type="html">The ColoredView class represents a view with an alterable background color.</Abstract>
+			<DeclaredIn>ColoredView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ColoredView/setColor:</TokenIdentifier>
+			<Abstract type="html">This instance&apos;s background color.</Abstract>
+			<DeclaredIn>ColoredView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *color</Declaration>
+			
+			
+			<Anchor>//api/name/color</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ColoredView/color</TokenIdentifier>
+			<Abstract type="html">This instance&apos;s background color.</Abstract>
+			<DeclaredIn>ColoredView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *color</Declaration>
+			
+			
+			<Anchor>//api/name/color</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ColoredView/color</TokenIdentifier>
+			<Abstract type="html">This instance&apos;s background color.</Abstract>
+			<DeclaredIn>ColoredView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *color</Declaration>
+			
+			
+			<Anchor>//api/name/color</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

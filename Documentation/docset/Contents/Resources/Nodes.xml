@@ -1,0 +1,2043 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocSetNodes version="1.0">
+    <TOC>
+        <Node type="folder">
+            <Name>Mirror</Name>
+            <Path>index.html</Path>
+			<Subnodes>
+                
+				
+				<Node type="folder">
+					<Name>Classes</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="1"/>
+						<NodeRef refid="2"/>
+						<NodeRef refid="3"/>
+						<NodeRef refid="4"/>
+						<NodeRef refid="5"/>
+						<NodeRef refid="6"/>
+						<NodeRef refid="7"/>
+						<NodeRef refid="8"/>
+						<NodeRef refid="9"/>
+						<NodeRef refid="10"/>
+						<NodeRef refid="11"/>
+						<NodeRef refid="12"/>
+						<NodeRef refid="13"/>
+						<NodeRef refid="14"/>
+						<NodeRef refid="15"/>
+						<NodeRef refid="16"/>
+						<NodeRef refid="17"/>
+						<NodeRef refid="18"/>
+						<NodeRef refid="19"/>
+						<NodeRef refid="20"/>
+						<NodeRef refid="21"/>
+						<NodeRef refid="22"/>
+						<NodeRef refid="23"/>
+						<NodeRef refid="24"/>
+						<NodeRef refid="25"/>
+						<NodeRef refid="26"/>
+						<NodeRef refid="27"/>
+						<NodeRef refid="28"/>
+						<NodeRef refid="29"/>
+						<NodeRef refid="30"/>
+						<NodeRef refid="31"/>
+						<NodeRef refid="32"/>
+						<NodeRef refid="33"/>
+						<NodeRef refid="34"/>
+						<NodeRef refid="35"/>
+						<NodeRef refid="36"/>
+						<NodeRef refid="37"/>
+						<NodeRef refid="38"/>
+						<NodeRef refid="39"/>
+						<NodeRef refid="40"/>
+						<NodeRef refid="41"/>
+						<NodeRef refid="42"/>
+						<NodeRef refid="43"/>
+						<NodeRef refid="44"/>
+						<NodeRef refid="45"/>
+						<NodeRef refid="46"/>
+						<NodeRef refid="47"/>
+						<NodeRef refid="48"/>
+						<NodeRef refid="49"/>
+						<NodeRef refid="50"/>
+						<NodeRef refid="51"/>
+						<NodeRef refid="52"/>
+						<NodeRef refid="53"/>
+						<NodeRef refid="54"/>
+						<NodeRef refid="55"/>
+						<NodeRef refid="56"/>
+						<NodeRef refid="57"/>
+						<NodeRef refid="58"/>
+						<NodeRef refid="59"/>
+						<NodeRef refid="60"/>
+						<NodeRef refid="61"/>
+						<NodeRef refid="62"/>
+						<NodeRef refid="63"/>
+						<NodeRef refid="64"/>
+						<NodeRef refid="65"/>
+						<NodeRef refid="66"/>
+						<NodeRef refid="67"/>
+						<NodeRef refid="68"/>
+						<NodeRef refid="69"/>
+						<NodeRef refid="70"/>
+						<NodeRef refid="71"/>
+						<NodeRef refid="72"/>
+						<NodeRef refid="73"/>
+						<NodeRef refid="74"/>
+						<NodeRef refid="75"/>
+						<NodeRef refid="76"/>
+						<NodeRef refid="77"/>
+						<NodeRef refid="78"/>
+						<NodeRef refid="79"/>
+						<NodeRef refid="80"/>
+						<NodeRef refid="81"/>
+						<NodeRef refid="82"/>
+						<NodeRef refid="83"/>
+						<NodeRef refid="84"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+				<Node>
+					<Name>Categories</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="85"/>
+						<NodeRef refid="86"/>
+						<NodeRef refid="87"/>
+						<NodeRef refid="88"/>
+						<NodeRef refid="89"/>
+						<NodeRef refid="90"/>
+						
+					</Subnodes>
+				</Node>
+				
+                
+				<Node>
+					<Name>Protocols</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="91"/>
+						<NodeRef refid="92"/>
+						<NodeRef refid="93"/>
+						
+					</Subnodes>
+				</Node>
+				
+                
+			</Subnodes>
+        </Node>
+    </TOC>
+	<Library>
+		
+		<Node id="1" type="file" documentType="reference">
+            <Name>AboutWindowController</Name>
+            <Path>Classes/AboutWindowController.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/AboutWindowController.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/AboutWindowController.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/AboutWindowController.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/AboutWindowController.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="2" type="file" documentType="reference">
+            <Name>AnimatedPanelsWindowController</Name>
+            <Path>Classes/AnimatedPanelsWindowController.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/AnimatedPanelsWindowController.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/AnimatedPanelsWindowController.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/AnimatedPanelsWindowController.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="3" type="file" documentType="reference">
+            <Name>AppDelegate</Name>
+            <Path>Classes/AppDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/AppDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/AppDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/AppDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="4" type="file" documentType="reference">
+            <Name>BadgeView</Name>
+            <Path>Classes/BadgeView.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/BadgeView.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/BadgeView.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/BadgeView.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/BadgeView.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="5" type="file" documentType="reference">
+            <Name>CapsuleSegmentedControl</Name>
+            <Path>Classes/CapsuleSegmentedControl.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/CapsuleSegmentedControl.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/CapsuleSegmentedControl.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/CapsuleSegmentedControl.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="6" type="file" documentType="reference">
+            <Name>CircularBuffer</Name>
+            <Path>Classes/CircularBuffer.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/CircularBuffer.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/CircularBuffer.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/CircularBuffer.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/CircularBuffer.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="7" type="file" documentType="reference">
+            <Name>ColoredView</Name>
+            <Path>Classes/ColoredView.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ColoredView.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ColoredView.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ColoredView.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="8" type="file" documentType="reference">
+            <Name>CustomEnablingSegmentedControlCell</Name>
+            <Path>Classes/CustomEnablingSegmentedControlCell.html</Path>
+            
+        </Node>
+		<Node id="9" type="file" documentType="reference">
+            <Name>DashedLine</Name>
+            <Path>Classes/DashedLine.html</Path>
+            
+        </Node>
+		<Node id="10" type="file" documentType="reference">
+            <Name>FilterFieldCell</Name>
+            <Path>Classes/FilterFieldCell.html</Path>
+            
+        </Node>
+		<Node id="11" type="file" documentType="reference">
+            <Name>GradientView</Name>
+            <Path>Classes/GradientView.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/GradientView.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/GradientView.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/GradientView.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/GradientView.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="12" type="file" documentType="reference">
+            <Name>HTMLDocument</Name>
+            <Path>Classes/HTMLDocument.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/HTMLDocument.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/HTMLDocument.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/HTMLDocument.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="13" type="file" documentType="reference">
+            <Name>HTMLNode</Name>
+            <Path>Classes/HTMLNode.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/HTMLNode.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/HTMLNode.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/HTMLNode.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="14" type="file" documentType="reference">
+            <Name>HeaderView</Name>
+            <Path>Classes/HeaderView.html</Path>
+            
+        </Node>
+		<Node id="15" type="file" documentType="reference">
+            <Name>IntegerFormatter</Name>
+            <Path>Classes/IntegerFormatter.html</Path>
+            
+        </Node>
+		<Node id="16" type="file" documentType="reference">
+            <Name>LabeledProgressCell</Name>
+            <Path>Classes/LabeledProgressCell.html</Path>
+            
+        </Node>
+		<Node id="17" type="file" documentType="reference">
+            <Name>ListView</Name>
+            <Path>Classes/ListView.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ListView.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ListView.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ListView.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ListView.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="18" type="file" documentType="reference">
+            <Name>NumberedCaptionCell</Name>
+            <Path>Classes/NumberedCaptionCell.html</Path>
+            
+        </Node>
+		<Node id="19" type="file" documentType="reference">
+            <Name>PieGraphSliceLayer</Name>
+            <Path>Classes/PieGraphSliceLayer.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PieGraphSliceLayer.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PieGraphSliceLayer.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PieGraphSliceLayer.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="20" type="file" documentType="reference">
+            <Name>PieGraphView</Name>
+            <Path>Classes/PieGraphView.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PieGraphView.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PieGraphView.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PieGraphView.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/PieGraphView.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/PieGraphView.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="21" type="file" documentType="reference">
+            <Name>PointerButton</Name>
+            <Path>Classes/PointerButton.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PointerButton.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PointerButton.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PointerButton.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="22" type="file" documentType="reference">
+            <Name>PreferencesDownloadsPanelController</Name>
+            <Path>Classes/PreferencesDownloadsPanelController.html</Path>
+            
+        </Node>
+		<Node id="23" type="file" documentType="reference">
+            <Name>PreferencesGeneralPanelController</Name>
+            <Path>Classes/PreferencesGeneralPanelController.html</Path>
+            
+        </Node>
+		<Node id="24" type="file" documentType="reference">
+            <Name>PreferencesInterfacePanelController</Name>
+            <Path>Classes/PreferencesInterfacePanelController.html</Path>
+            
+        </Node>
+		<Node id="25" type="file" documentType="reference">
+            <Name>PreferencesNotificationsPanelController</Name>
+            <Path>Classes/PreferencesNotificationsPanelController.html</Path>
+            
+        </Node>
+		<Node id="26" type="file" documentType="reference">
+            <Name>PreferencesPanelController</Name>
+            <Path>Classes/PreferencesPanelController.html</Path>
+            
+        </Node>
+		<Node id="27" type="file" documentType="reference">
+            <Name>PreferencesPresetsPanelController</Name>
+            <Path>Classes/PreferencesPresetsPanelController.html</Path>
+            
+        </Node>
+		<Node id="28" type="file" documentType="reference">
+            <Name>PreferencesWindowController</Name>
+            <Path>Classes/PreferencesWindowController.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PreferencesWindowController.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PreferencesWindowController.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/PreferencesWindowController.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/PreferencesWindowController.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="29" type="file" documentType="reference">
+            <Name>Project</Name>
+            <Path>Classes/Project.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/Project.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/Project.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/Project.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/Project.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="30" type="file" documentType="reference">
+            <Name>ProjectAdditionField</Name>
+            <Path>Classes/ProjectAdditionField.html</Path>
+            
+        </Node>
+		<Node id="31" type="file" documentType="reference">
+            <Name>ProjectDatabase</Name>
+            <Path>Classes/ProjectDatabase.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectDatabase.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectDatabase.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectDatabase.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectDatabase.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectDatabase.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="32" type="file" documentType="reference">
+            <Name>ProjectDatabaseError</Name>
+            <Path>Classes/ProjectDatabaseError.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectDatabaseError.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectDatabaseError.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectDatabaseError.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectDatabaseError.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="33" type="file" documentType="reference">
+            <Name>ProjectDatabaseStatement</Name>
+            <Path>Classes/ProjectDatabaseStatement.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectDatabaseStatement.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectDatabaseStatement.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectDatabaseStatement.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectDatabaseStatement.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectDatabaseStatement.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="34" type="file" documentType="reference">
+            <Name>ProjectFile</Name>
+            <Path>Classes/ProjectFile.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectFile.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectFile.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectFile.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectFile.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="35" type="file" documentType="reference">
+            <Name>ProjectFileList</Name>
+            <Path>Classes/ProjectFileList.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectFileList.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectFileList.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectFileList.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectFileList.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="36" type="file" documentType="reference">
+            <Name>ProjectListView</Name>
+            <Path>Classes/ProjectListView.html</Path>
+            
+        </Node>
+		<Node id="37" type="file" documentType="reference">
+            <Name>ProjectMenuHoverCell</Name>
+            <Path>Classes/ProjectMenuHoverCell.html</Path>
+            
+        </Node>
+		<Node id="38" type="file" documentType="reference">
+            <Name>ProjectMenuView</Name>
+            <Path>Classes/ProjectMenuView.html</Path>
+            
+        </Node>
+		<Node id="39" type="file" documentType="reference">
+            <Name>ProjectNotification</Name>
+            <Path>Classes/ProjectNotification.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectNotification.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectNotification.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectNotification.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectNotification.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectNotification.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="40" type="file" documentType="reference">
+            <Name>ProjectNotificationList</Name>
+            <Path>Classes/ProjectNotificationList.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectNotificationList.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectNotificationList.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectNotificationList.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectNotificationList.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="41" type="file" documentType="reference">
+            <Name>ProjectNotificationsWindowController</Name>
+            <Path>Classes/ProjectNotificationsWindowController.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectNotificationsWindowController.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectNotificationsWindowController.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectNotificationsWindowController.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectNotificationsWindowController.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectNotificationsWindowController.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="42" type="file" documentType="reference">
+            <Name>ProjectOptionsAppearancePanelController</Name>
+            <Path>Classes/ProjectOptionsAppearancePanelController.html</Path>
+            
+        </Node>
+		<Node id="43" type="file" documentType="reference">
+            <Name>ProjectOptionsBuildPanelController</Name>
+            <Path>Classes/ProjectOptionsBuildPanelController.html</Path>
+            
+        </Node>
+		<Node id="44" type="file" documentType="reference">
+            <Name>ProjectOptionsCrawlerPanelController</Name>
+            <Path>Classes/ProjectOptionsCrawlerPanelController.html</Path>
+            
+        </Node>
+		<Node id="45" type="file" documentType="reference">
+            <Name>ProjectOptionsDictionary</Name>
+            <Path>Classes/ProjectOptionsDictionary.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsDictionary.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsDictionary.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsDictionary.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsDictionary.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="46" type="file" documentType="reference">
+            <Name>ProjectOptionsEnginePanelController</Name>
+            <Path>Classes/ProjectOptionsEnginePanelController.html</Path>
+            
+        </Node>
+		<Node id="47" type="file" documentType="reference">
+            <Name>ProjectOptionsFiltersPanelController</Name>
+            <Path>Classes/ProjectOptionsFiltersPanelController.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsFiltersPanelController.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsFiltersPanelController.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsFiltersPanelController.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="48" type="file" documentType="reference">
+            <Name>ProjectOptionsIdentityPanelController</Name>
+            <Path>Classes/ProjectOptionsIdentityPanelController.html</Path>
+            
+        </Node>
+		<Node id="49" type="file" documentType="reference">
+            <Name>ProjectOptionsLabel</Name>
+            <Path>Classes/ProjectOptionsLabel.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsLabel.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsLabel.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsLabel.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="50" type="file" documentType="reference">
+            <Name>ProjectOptionsNetworkPanelController</Name>
+            <Path>Classes/ProjectOptionsNetworkPanelController.html</Path>
+            
+        </Node>
+		<Node id="51" type="file" documentType="reference">
+            <Name>ProjectOptionsPanelController</Name>
+            <Path>Classes/ProjectOptionsPanelController.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsPanelController.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsPanelController.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsPanelController.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsPanelController.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="52" type="file" documentType="reference">
+            <Name>ProjectOptionsSavePresetSheetController</Name>
+            <Path>Classes/ProjectOptionsSavePresetSheetController.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsSavePresetSheetController.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsSavePresetSheetController.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsSavePresetSheetController.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsSavePresetSheetController.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="53" type="file" documentType="reference">
+            <Name>ProjectOptionsWindowController</Name>
+            <Path>Classes/ProjectOptionsWindowController.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsWindowController.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsWindowController.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsWindowController.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsWindowController.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectOptionsWindowController.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="54" type="file" documentType="reference">
+            <Name>ProjectSocket</Name>
+            <Path>Classes/ProjectSocket.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectSocket.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectSocket.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectSocket.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectSocket.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectSocket.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="55" type="file" documentType="reference">
+            <Name>ProjectStatsCell</Name>
+            <Path>Classes/ProjectStatsCell.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectStatsCell.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectStatsCell.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectStatsCell.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="56" type="file" documentType="reference">
+            <Name>ProjectStatsDictionary</Name>
+            <Path>Classes/ProjectStatsDictionary.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectStatsDictionary.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectStatsDictionary.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectStatsDictionary.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectStatsDictionary.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="57" type="file" documentType="reference">
+            <Name>ProjectStatsFileTypeCell</Name>
+            <Path>Classes/ProjectStatsFileTypeCell.html</Path>
+            
+        </Node>
+		<Node id="58" type="file" documentType="reference">
+            <Name>ProjectStatsFilesPanelController</Name>
+            <Path>Classes/ProjectStatsFilesPanelController.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectStatsFilesPanelController.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectStatsFilesPanelController.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectStatsFilesPanelController.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="59" type="file" documentType="reference">
+            <Name>ProjectStatsOverviewPanelController</Name>
+            <Path>Classes/ProjectStatsOverviewPanelController.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectStatsOverviewPanelController.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectStatsOverviewPanelController.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectStatsOverviewPanelController.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="60" type="file" documentType="reference">
+            <Name>ProjectStatsPanelController</Name>
+            <Path>Classes/ProjectStatsPanelController.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectStatsPanelController.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectStatsPanelController.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectStatsPanelController.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectStatsPanelController.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="61" type="file" documentType="reference">
+            <Name>ProjectStatsWindowController</Name>
+            <Path>Classes/ProjectStatsWindowController.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectStatsWindowController.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectStatsWindowController.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectStatsWindowController.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectStatsWindowController.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectStatsWindowController.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="62" type="file" documentType="reference">
+            <Name>ProjectURL</Name>
+            <Path>Classes/ProjectURL.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectURL.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectURL.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectURL.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectURL.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="63" type="file" documentType="reference">
+            <Name>ProjectWindow</Name>
+            <Path>Classes/ProjectWindow.html</Path>
+            
+        </Node>
+		<Node id="64" type="file" documentType="reference">
+            <Name>ProjectWindowController</Name>
+            <Path>Classes/ProjectWindowController.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectWindowController.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectWindowController.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectWindowController.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectWindowController.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="65" type="file" documentType="reference">
+            <Name>ProjectWindowControllerLion</Name>
+            <Path>Classes/ProjectWindowControllerLion.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectWindowControllerLion.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectWindowControllerLion.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectWindowControllerLion.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="66" type="file" documentType="reference">
+            <Name>ProjectWindowControllerYosemite</Name>
+            <Path>Classes/ProjectWindowControllerYosemite.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectWindowControllerYosemite.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectWindowControllerYosemite.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ProjectWindowControllerYosemite.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="67" type="file" documentType="reference">
+            <Name>RealtimeGraphLayer</Name>
+            <Path>Classes/RealtimeGraphLayer.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/RealtimeGraphLayer.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/RealtimeGraphLayer.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/RealtimeGraphLayer.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="68" type="file" documentType="reference">
+            <Name>RealtimeGraphView</Name>
+            <Path>Classes/RealtimeGraphView.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/RealtimeGraphView.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/RealtimeGraphView.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/RealtimeGraphView.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/RealtimeGraphView.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="69" type="file" documentType="reference">
+            <Name>RoundedCornerTextField</Name>
+            <Path>Classes/RoundedCornerTextField.html</Path>
+            
+        </Node>
+		<Node id="70" type="file" documentType="reference">
+            <Name>RoundedImageCell</Name>
+            <Path>Classes/RoundedImageCell.html</Path>
+            
+        </Node>
+		<Node id="71" type="file" documentType="reference">
+            <Name>Scroller</Name>
+            <Path>Classes/Scroller.html</Path>
+            
+        </Node>
+		<Node id="72" type="file" documentType="reference">
+            <Name>ScrollingTextView</Name>
+            <Path>Classes/ScrollingTextView.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ScrollingTextView.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ScrollingTextView.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ScrollingTextView.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="73" type="file" documentType="reference">
+            <Name>SplitView</Name>
+            <Path>Classes/SplitView.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/SplitView.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/SplitView.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/SplitView.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/SplitView.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="74" type="file" documentType="reference">
+            <Name>TextView</Name>
+            <Path>Classes/TextView.html</Path>
+            
+        </Node>
+		<Node id="75" type="file" documentType="reference">
+            <Name>UnhighlightedTableView</Name>
+            <Path>Classes/UnhighlightedTableView.html</Path>
+            
+        </Node>
+		<Node id="76" type="file" documentType="reference">
+            <Name>VerticallyCenteredTextFieldCell</Name>
+            <Path>Classes/VerticallyCenteredTextFieldCell.html</Path>
+            
+        </Node>
+		<Node id="77" type="file" documentType="reference">
+            <Name>WhiteView</Name>
+            <Path>Classes/WhiteView.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/WhiteView.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/WhiteView.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/WhiteView.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="78" type="file" documentType="reference">
+            <Name>WindowAdaptedButtonCell</Name>
+            <Path>Classes/WindowAdaptedButtonCell.html</Path>
+            
+        </Node>
+		<Node id="79" type="file" documentType="reference">
+            <Name>WindowAdaptedCell</Name>
+            <Path>Classes/WindowAdaptedCell.html</Path>
+            
+        </Node>
+		<Node id="80" type="file" documentType="reference">
+            <Name>WindowAdaptedImageCell</Name>
+            <Path>Classes/WindowAdaptedImageCell.html</Path>
+            
+        </Node>
+		<Node id="81" type="file" documentType="reference">
+            <Name>WindowAdaptedOutlineView</Name>
+            <Path>Classes/WindowAdaptedOutlineView.html</Path>
+            
+        </Node>
+		<Node id="82" type="file" documentType="reference">
+            <Name>WindowAdaptedTableHeaderCell</Name>
+            <Path>Classes/WindowAdaptedTableHeaderCell.html</Path>
+            
+        </Node>
+		<Node id="83" type="file" documentType="reference">
+            <Name>WindowAdaptedTableView</Name>
+            <Path>Classes/WindowAdaptedTableView.html</Path>
+            
+        </Node>
+		<Node id="84" type="file" documentType="reference">
+            <Name>WindowAdaptedTextFieldCell</Name>
+            <Path>Classes/WindowAdaptedTextFieldCell.html</Path>
+            
+        </Node>
+		
+		<Node id="85" type="file" documentType="reference">
+            <Name>NSApplication(Additions)</Name>
+            <Path>Categories/NSApplication+Additions.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Categories/NSApplication+Additions.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Categories/NSApplication+Additions.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Categories/NSApplication+Additions.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="86" type="file" documentType="reference">
+            <Name>NSBezierPath(Additions)</Name>
+            <Path>Categories/NSBezierPath+Additions.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Categories/NSBezierPath+Additions.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Categories/NSBezierPath+Additions.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Categories/NSBezierPath+Additions.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Categories/NSBezierPath+Additions.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="87" type="file" documentType="reference">
+            <Name>NSColor(Additions)</Name>
+            <Path>Categories/NSColor+Additions.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Categories/NSColor+Additions.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Categories/NSColor+Additions.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Categories/NSColor+Additions.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="88" type="file" documentType="reference">
+            <Name>NSImage(Additions)</Name>
+            <Path>Categories/NSImage+Additions.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Categories/NSImage+Additions.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Categories/NSImage+Additions.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Categories/NSImage+Additions.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="89" type="file" documentType="reference">
+            <Name>NSShadow(Additions)</Name>
+            <Path>Categories/NSShadow+Additions.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Categories/NSShadow+Additions.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Categories/NSShadow+Additions.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Categories/NSShadow+Additions.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="90" type="file" documentType="reference">
+            <Name>NSString(NSStringAdditions)</Name>
+            <Path>Categories/NSString+NSStringAdditions.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Categories/NSString+NSStringAdditions.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Categories/NSString+NSStringAdditions.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Categories/NSString+NSStringAdditions.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Categories/NSString+NSStringAdditions.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		
+        <Node id="91" type="file" documentType="reference">
+            <Name>ProjectDelegate</Name>
+            <Path>Protocols/ProjectDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/ProjectDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/ProjectDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/ProjectDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="92" type="file" documentType="reference">
+            <Name>ProjectOptionsSavePresetSheetDelegate</Name>
+            <Path>Protocols/ProjectOptionsSavePresetSheetDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/ProjectOptionsSavePresetSheetDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/ProjectOptionsSavePresetSheetDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/ProjectOptionsSavePresetSheetDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="93" type="file" documentType="reference">
+            <Name>SplitViewDelegate</Name>
+            <Path>Protocols/SplitViewDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/SplitViewDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/SplitViewDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/SplitViewDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		
+        
+	</Library>
+</DocSetNodes>

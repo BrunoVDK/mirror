@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GradientView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GradientView</TokenIdentifier>
+			<Abstract type="html">The GradientView class represents a view with an alterable background gradient.</Abstract>
+			<DeclaredIn>GradientView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="11"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GradientView/setGradient:</TokenIdentifier>
+			<Abstract type="html">This instance&apos;s background gradient.</Abstract>
+			<DeclaredIn>GradientView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSGradient *gradient</Declaration>
+			
+			
+			<Anchor>//api/name/gradient</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GradientView/gradient</TokenIdentifier>
+			<Abstract type="html">This instance&apos;s background gradient.</Abstract>
+			<DeclaredIn>GradientView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSGradient *gradient</Declaration>
+			
+			
+			<Anchor>//api/name/gradient</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GradientView/gradient</TokenIdentifier>
+			<Abstract type="html">This instance&apos;s background gradient.</Abstract>
+			<DeclaredIn>GradientView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSGradient *gradient</Declaration>
+			
+			
+			<Anchor>//api/name/gradient</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GradientView/defaultGradient</TokenIdentifier>
+			<Abstract type="html">Returns the default gradient of gradient views.</Abstract>
+			<DeclaredIn>GradientView.h</DeclaredIn>
+			
+			<Declaration>+ (NSGradient *)defaultGradient</Declaration>
+			
+			<ReturnValue><Abstract type="html">The default gradient used by gradient views before any custom gradient is set.</Abstract></ReturnValue>
+			<Anchor>//api/name/defaultGradient</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GradientView/secondaryGradient</TokenIdentifier>
+			<Abstract type="html">Returns the secondary gradient of gradient views.</Abstract>
+			<DeclaredIn>GradientView.h</DeclaredIn>
+			
+			<Declaration>+ (NSGradient *)secondaryGradient</Declaration>
+			
+			<ReturnValue><Abstract type="html">The secondary gradient used by gradient views, used when the parent window is not key.</Abstract></ReturnValue>
+			<Anchor>//api/name/secondaryGradient</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

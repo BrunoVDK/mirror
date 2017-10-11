@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14F2411" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PreferencesInterfacePanelController">
+            <connections>
+                <outlet property="view" destination="c22-O7-iKe" id="jaM-zV-tzY"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe" userLabel="Interface Preferences Panel">
+            <rect key="frame" x="0.0" y="7" width="440" height="162"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <button toolTip="Display the icons of websites with a circular mask." id="R3Q-KL-jBZ">
+                    <rect key="frame" x="120" y="125" width="199" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="check" title="Render website icons in circles" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="oW4-tW-1WH">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="64h-lX-fkr" name="value" keyPath="values.RenderIconsInCircles" id="Do1-iY-XgV"/>
+                    </connections>
+                </button>
+                <button hidden="YES" id="uEB-tO-x0i">
+                    <rect key="frame" x="181" y="140" width="323" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Keep the spiders at bay" bezelStyle="regularSquare" imagePosition="left" alignment="center" controlSize="small" state="on" inset="2" id="VnQ-hS-w0j">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="64h-lX-fkr" name="value" keyPath="values.PleaseNoSpider" id="WyG-b5-uR6"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="G5h-NU-Non">
+                    <rect key="frame" x="79" y="103" width="129" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Project window theme :" id="Blu-pi-kmt">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="AXF-vQ-bSH">
+                    <rect key="frame" x="79" y="78" width="145" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Auxiliary windows theme :" id="y2L-x1-Mzc">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton toolTip="The design of the main window." verticalHuggingPriority="750" id="HWe-sx-pkX">
+                    <rect key="frame" x="228" y="98" width="133" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="Ewj-ZW-Gry">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" title="OtherViews" id="dju-d2-kdQ">
+                            <items>
+                                <menuItem title="Yosemite" id="Ugy-dl-ANd"/>
+                                <menuItem title="Classic" id="023-bE-6XF"/>
+                                <menuItem title="White" id="7G2-Tt-55y"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="64h-lX-fkr" name="selectedIndex" keyPath="values.MainWindowTheme" id="84Y-td-gLt">
+                            <dictionary key="options">
+                                <bool key="NSValidatesImmediately" value="YES"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </popUpButton>
+                <popUpButton toolTip="The design of any auxiliary window." verticalHuggingPriority="750" id="nN6-kK-vLN">
+                    <rect key="frame" x="228" y="73" width="133" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="R6C-i5-OOc">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" title="OtherViews" id="Wj4-1G-upe">
+                            <items>
+                                <menuItem title="Classic" id="Smc-tc-KfV"/>
+                                <menuItem title="White" id="McM-3t-HDH"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="64h-lX-fkr" name="selectedIndex" keyPath="values.PanelWindowTheme" id="gUc-cj-QFb">
+                            <dictionary key="options">
+                                <bool key="NSValidatesImmediately" value="YES"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </popUpButton>
+                <button toolTip="Resize the project's window automatically when links are being added." id="8wf-PB-Qou">
+                    <rect key="frame" x="108" y="45" width="223" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="check" title="Resize project window automatically" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="eox-9T-584">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="64h-lX-fkr" name="value" keyPath="values.ResizeAutomatically" id="pZX-fk-6nv"/>
+                    </connections>
+                </button>
+                <button toolTip="Make auxiliary windows float on top of the project's main window." id="5Be-VZ-vvk">
+                    <rect key="frame" x="140" y="17" width="159" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="check" title="Float auxiliary windows" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="H0Z-z4-ZsV">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="64h-lX-fkr" name="value" keyPath="values.KeepPanelsOnTop" id="PdX-UC-EYr"/>
+                    </connections>
+                </button>
+            </subviews>
+            <point key="canvasLocation" x="598" y="491"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="64h-lX-fkr"/>
+    </objects>
+</document>

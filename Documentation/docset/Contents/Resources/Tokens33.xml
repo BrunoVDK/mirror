@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectDatabaseStatement.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectDatabaseStatement</TokenIdentifier>
+			<Abstract type="html">The ProjectDatabaseStatement class is a wrapper clase for an SQLite database statement object.</Abstract>
+			<DeclaredIn>ProjectDatabase.h</DeclaredIn>
+            
+			
+			<NodeRef refid="33"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectDatabaseStatement/setResultCode:</TokenIdentifier>
+			<Abstract type="html">The result code for this statement.</Abstract>
+			<DeclaredIn>ProjectDatabase.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int resultCode</Declaration>
+			
+			
+			<Anchor>//api/name/resultCode</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectDatabaseStatement/resultCode</TokenIdentifier>
+			<Abstract type="html">The result code for this statement.</Abstract>
+			<DeclaredIn>ProjectDatabase.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int resultCode</Declaration>
+			
+			
+			<Anchor>//api/name/resultCode</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectDatabaseStatement/resultCode</TokenIdentifier>
+			<Abstract type="html">The result code for this statement.</Abstract>
+			<DeclaredIn>ProjectDatabase.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int resultCode</Declaration>
+			
+			
+			<Anchor>//api/name/resultCode</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectDatabaseStatement/statementWithSQLite:statement:freeWhenDone:</TokenIdentifier>
+			<Abstract type="html">Instantiate a new database statement with given SQLite statement.</Abstract>
+			<DeclaredIn>ProjectDatabase.h</DeclaredIn>
+			
+			<Declaration>+ (id)statementWithSQLite:(sqlite3 *)sqlite3 statement:(sqlite3_stmt *)statement freeWhenDone:(BOOL)flag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sqlite3</Name>
+					<Abstract type="html">The connection this statement applies to.</Abstract>
+				</Parameter><Parameter>
+					<Name>statement</Name>
+					<Abstract type="html">The SQLite statement to instantiate the new statement with.</Abstract>
+				</Parameter><Parameter>
+					<Name>flag</Name>
+					<Abstract type="html">A flag denoting whether or not.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A newly instantiated statement with given parameters, or nil if an error occured.</Abstract></ReturnValue>
+			<Anchor>//api/name/statementWithSQLite:statement:freeWhenDone:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectDatabaseStatement/initWithDatabase:query:error:</TokenIdentifier>
+			<Abstract type="html">Instantiate a new database statement with given database.</Abstract>
+			<DeclaredIn>ProjectDatabase.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithDatabase:(ProjectDatabase *)database query:(NSString *)query error:(NSError **)errorPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>database</Name>
+					<Abstract type="html">The database this statement applies to.</Abstract>
+				</Parameter><Parameter>
+					<Name>query</Name>
+					<Abstract type="html">The SQL query to instantiate the new statement with.</Abstract>
+				</Parameter><Parameter>
+					<Name>errorPtr</Name>
+					<Abstract type="html">A pointer to an error, which will point to an error if one occurred.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A newly instantiated statement with given parameters, or nil if an error occured.
+In case of an error the given error pointer will point to that error.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDatabase:query:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectDatabaseStatement/allRows</TokenIdentifier>
+			<Abstract type="html">Fetch all rows in the response to this query.</Abstract>
+			<DeclaredIn>ProjectDatabase.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)allRows</Declaration>
+			
+			<ReturnValue><Abstract type="html">An array of database records returned by this query.</Abstract></ReturnValue>
+			<Anchor>//api/name/allRows</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

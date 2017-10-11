@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectWindowControllerYosemite.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectWindowControllerYosemite</TokenIdentifier>
+			<Abstract type="html">The ProjectWindowControllerYosemite class is a subclass of ProjectWindowControllerLion, adding functionalities for OS X Yosemite in particular.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="66"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowControllerYosemite/showContextualMenu:</TokenIdentifier>
+			<Abstract type="html">Show the controller&apos;s contextual menu.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)showContextualMenu:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The object sending this message.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showContextualMenu:</Anchor>
+            <NodeRef refid="66"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

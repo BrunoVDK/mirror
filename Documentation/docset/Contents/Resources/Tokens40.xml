@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectNotificationList.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectNotificationList</TokenIdentifier>
+			<Abstract type="html">A ProjectNotificationList keeps track of the notifications noted down by a Project.</Abstract>
+			<DeclaredIn>ProjectNotificationList.h</DeclaredIn>
+            
+			
+			<NodeRef refid="40"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotificationList/setStatus:</TokenIdentifier>
+			<Abstract type="html">Gives the status of the notification list.</Abstract>
+			<DeclaredIn>ProjectNotificationList.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="40"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotificationList/status</TokenIdentifier>
+			<Abstract type="html">Gives the status of the notification list.</Abstract>
+			<DeclaredIn>ProjectNotificationList.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="40"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectNotificationList/status</TokenIdentifier>
+			<Abstract type="html">Gives the status of the notification list.</Abstract>
+			<DeclaredIn>ProjectNotificationList.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="40"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotificationList/size</TokenIdentifier>
+			<Abstract type="html">Returns the size of this notification list.</Abstract>
+			<DeclaredIn>ProjectNotificationList.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)size</Declaration>
+			
+			<ReturnValue><Abstract type="html">The number of notifications this list keeps track of.</Abstract></ReturnValue>
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="40"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

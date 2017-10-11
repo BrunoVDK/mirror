@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectWindowController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectWindowController</TokenIdentifier>
+			<Abstract type="html">The ProjectWindowController class represents a project window controller.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="64"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/setRenderInCircles:</TokenIdentifier>
+			<Abstract type="html">Determines whether or not URL icons are clipped in a circle.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL renderInCircles</Declaration>
+			
+			
+			<Anchor>//api/name/renderInCircles</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/renderInCircles</TokenIdentifier>
+			<Abstract type="html">Determines whether or not URL icons are clipped in a circle.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL renderInCircles</Declaration>
+			
+			
+			<Anchor>//api/name/renderInCircles</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectWindowController/renderInCircles</TokenIdentifier>
+			<Abstract type="html">Determines whether or not URL icons are clipped in a circle.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL renderInCircles</Declaration>
+			
+			
+			<Anchor>//api/name/renderInCircles</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/updateURLAtIndex:</TokenIdentifier>
+			<Abstract type="html">Update the project URL at the given index listed in the window.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (void)updateURLAtIndex:(NSInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index of the project link to update.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateURLAtIndex:</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/updateAllURLs</TokenIdentifier>
+			<Abstract type="html">Update all project URLs.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (void)updateAllURLs</Declaration>
+			
+			
+			<Anchor>//api/name/updateAllURLs</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/updateInterface</TokenIdentifier>
+			<Abstract type="html">Update the window&apos;s interface (eg. when a project ends mirroring).</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (void)updateInterface</Declaration>
+			
+			
+			<Anchor>//api/name/updateInterface</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/updateStatus</TokenIdentifier>
+			<Abstract type="html">Update the status.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (void)updateStatus</Declaration>
+			
+			
+			<Anchor>//api/name/updateStatus</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/showOptions:</TokenIdentifier>
+			<Abstract type="html">Show the options panel.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)showOptions:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The action&apos;s sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showOptions:</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/hideOptions:</TokenIdentifier>
+			<Abstract type="html">Hide the options panel.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)hideOptions:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The action&apos;s sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/hideOptions:</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/showStatistics:</TokenIdentifier>
+			<Abstract type="html">Show the statistics panel.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)showStatistics:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The action&apos;s sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showStatistics:</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/hideStatistics:</TokenIdentifier>
+			<Abstract type="html">Hide the statistics panel.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)hideStatistics:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The action&apos;s sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/hideStatistics:</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/showNotifications:</TokenIdentifier>
+			<Abstract type="html">Show the notifications panel.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)showNotifications:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The action&apos;s sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showNotifications:</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/hideNotifications:</TokenIdentifier>
+			<Abstract type="html">Hide the notifications panel.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)hideNotifications:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The action&apos;s sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/hideNotifications:</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/toggleSearch:</TokenIdentifier>
+			<Abstract type="html">Toggle the filtering field on/off.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)toggleSearch:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The action&apos;s sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/toggleSearch:</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/addURL:</TokenIdentifier>
+			<Abstract type="html">Show a view where a user can add project URLs.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)addURL:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The action&apos;s sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addURL:</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/showSearch:</TokenIdentifier>
+			<Abstract type="html">Show the filtering field.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)showSearch:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The action&apos;s sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showSearch:</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/hideSearch:</TokenIdentifier>
+			<Abstract type="html">Hide the filtering field.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)hideSearch:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The action&apos;s sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/hideSearch:</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/requestExportDirectory:</TokenIdentifier>
+			<Abstract type="html">Request an export directory to the user.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (void)requestExportDirectory:(void ( ^ ) ( BOOL success ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">A block to run after completing the request.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/requestExportDirectory:</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowController/restoreInterface:</TokenIdentifier>
+			<Abstract type="html">Restore the interface of the given controller.</Abstract>
+			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			
+			<Declaration>- (void)restoreInterface:(ProjectWindowController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The controller whose interface is to be adopted by the current one.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/restoreInterface:</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

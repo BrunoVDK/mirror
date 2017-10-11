@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PreferencesWindowController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PreferencesWindowController</TokenIdentifier>
+			<Abstract type="html">The PreferencesWindowController class controls a window with application preferences.</Abstract>
+			<DeclaredIn>PreferencesWindowController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="28"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PreferencesWindowController/sharedPreferences</TokenIdentifier>
+			<Abstract type="html">Get the shared preferences window controller.</Abstract>
+			<DeclaredIn>PreferencesWindowController.h</DeclaredIn>
+			
+			<Declaration>+ (id)sharedPreferences</Declaration>
+			
+			<ReturnValue><Abstract type="html">A singleton, this application&apos;s preferences window controller.</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedPreferences</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PreferencesWindowController/initPreferences</TokenIdentifier>
+			<Abstract type="html">Initialize the application preferences.</Abstract>
+			<DeclaredIn>PreferencesWindowController.h</DeclaredIn>
+			
+			<Declaration>- (void)initPreferences</Declaration>
+			
+			
+			<Anchor>//api/name/initPreferences</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PreferencesWindowController/savePreferences</TokenIdentifier>
+			<Abstract type="html">Save the application preferences. Call this method when the app is about to close.</Abstract>
+			<DeclaredIn>PreferencesWindowController.h</DeclaredIn>
+			
+			<Declaration>- (void)savePreferences</Declaration>
+			
+			
+			<Anchor>//api/name/savePreferences</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PreferencesWindowController/windowIsKey</TokenIdentifier>
+			<Abstract type="html">Checks whether this preferences window controller&apos;s window is key.</Abstract>
+			<DeclaredIn>PreferencesWindowController.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)windowIsKey</Declaration>
+			
+			<ReturnValue><Abstract type="html">True if the preferences window is key.</Abstract></ReturnValue>
+			<Anchor>//api/name/windowIsKey</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

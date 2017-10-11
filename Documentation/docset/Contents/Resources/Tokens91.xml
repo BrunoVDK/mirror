@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/ProjectDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/ProjectDelegate</TokenIdentifier>
+			<Abstract type="html">The ProjectDelegate protocol allows a project delegate to be notified of various occurences.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+            
+			
+			<NodeRef refid="91"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ProjectDelegate/projectDidStart:</TokenIdentifier>
+			<Abstract type="html">Called when a project started.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)projectDidStart:(Project *)project</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>project</Name>
+					<Abstract type="html">The very project.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/projectDidStart:</Anchor>
+            <NodeRef refid="91"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ProjectDelegate/projectDidEnd:error:</TokenIdentifier>
+			<Abstract type="html">Called when a project ended.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)projectDidEnd:(Project *)project error:(NSString *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>project</Name>
+					<Abstract type="html">The very project.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">A string of characters representing an error description. This is nil if no error occured before the project ended.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/projectDidEnd:error:</Anchor>
+            <NodeRef refid="91"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ProjectDelegate/projectDidResume:</TokenIdentifier>
+			<Abstract type="html">Called when a project resumed.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)projectDidResume:(Project *)project</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>project</Name>
+					<Abstract type="html">The very project that resumed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/projectDidResume:</Anchor>
+            <NodeRef refid="91"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ProjectDelegate/projectDidPause:</TokenIdentifier>
+			<Abstract type="html">Called when a project was successfully paused.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)projectDidPause:(Project *)project</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>project</Name>
+					<Abstract type="html">The very project that paused.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/projectDidPause:</Anchor>
+            <NodeRef refid="91"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

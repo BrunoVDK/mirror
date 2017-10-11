@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/HTMLNode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/HTMLNode</TokenIdentifier>
+			<Abstract type="html">The HTMLNode class represents a node in an HTML document.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+            
+			
+			<NodeRef refid="13"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/initWithXMLNode:</TokenIdentifier>
+			<Abstract type="html">Initializes a new HTML node with the given XML node.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithXMLNode:(xmlNode *)xmlNode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>xmlNode</Name>
+					<Abstract type="html">An XML node.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new HTML node or nil if an error occurred.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithXMLNode:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/nodetype</TokenIdentifier>
+			<Abstract type="html">Returns the type of this node, if it is known.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (HTMLNodeType)nodetype</Declaration>
+			
+			
+			<Anchor>//api/name/nodetype</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/contents</TokenIdentifier>
+			<Abstract type="html">Returns the plain text contents of this node.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)contents</Declaration>
+			
+			
+			<Anchor>//api/name/contents</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/allContents</TokenIdentifier>
+			<Abstract type="html">Returns the plain text contents of this node, including the contents of all of its children.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)allContents</Declaration>
+			
+			
+			<Anchor>//api/name/allContents</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/rawContents</TokenIdentifier>
+			<Abstract type="html">Returns the HTML contents of this node.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)rawContents</Declaration>
+			
+			
+			<Anchor>//api/name/rawContents</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/className</TokenIdentifier>
+			<Abstract type="html">Returns the class name of this node.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)className</Declaration>
+			
+			
+			<Anchor>//api/name/className</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/tagName</TokenIdentifier>
+			<Abstract type="html">Returns the tag name of this node.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)tagName</Declaration>
+			
+			
+			<Anchor>//api/name/tagName</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/firstChild</TokenIdentifier>
+			<Abstract type="html">Returns the first child node of this node.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (HTMLNode *)firstChild</Declaration>
+			
+			
+			<Anchor>//api/name/firstChild</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/children</TokenIdentifier>
+			<Abstract type="html">Returns the first level of children of this node.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)children</Declaration>
+			
+			
+			<Anchor>//api/name/children</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/parent</TokenIdentifier>
+			<Abstract type="html">Returns the parent of this node.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (HTMLNode *)parent</Declaration>
+			
+			
+			<Anchor>//api/name/parent</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/nextSibling</TokenIdentifier>
+			<Abstract type="html">Returns the next sibling in the tree.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (HTMLNode *)nextSibling</Declaration>
+			
+			
+			<Anchor>//api/name/nextSibling</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/previousSibling</TokenIdentifier>
+			<Abstract type="html">Returns the previous sibling in the tree.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (HTMLNode *)previousSibling</Declaration>
+			
+			
+			<Anchor>//api/name/previousSibling</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/findChildOfClass:</TokenIdentifier>
+			<Abstract type="html">Finds and returns a child of this node of given class.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (HTMLNode *)findChildOfClass:(NSString *)className</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>className</Name>
+					<Abstract type="html">The class name of the child to search for.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A HTML node, child of the given class, or nil if none was found.</Abstract></ReturnValue>
+			<Anchor>//api/name/findChildOfClass:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/findChildrenOfClass:</TokenIdentifier>
+			<Abstract type="html">Finds and returns all children of this node of given class.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)findChildrenOfClass:(NSString *)className</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>className</Name>
+					<Abstract type="html">The class name of the child to search for.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array of HTML nodes, children of the given class, or nil if none were found.</Abstract></ReturnValue>
+			<Anchor>//api/name/findChildrenOfClass:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/findChildWithAttribute:matchingName:allowPartial:</TokenIdentifier>
+			<Abstract type="html">Finds and returns a single child of this node, having a matching attribute.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (HTMLNode *)findChildWithAttribute:(NSString *)attribute matchingName:(NSString *)className allowPartial:(BOOL)partial</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attribute</Name>
+					<Abstract type="html">The attribute that has to be matched.</Abstract>
+				</Parameter><Parameter>
+					<Name>className</Name>
+					<Abstract type="html">The class name of the child to look for.</Abstract>
+				</Parameter><Parameter>
+					<Name>partial</Name>
+					<Abstract type="html">Set to true if partial matches of the attribute are to be considered.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An HTML node, child of the given class, with an attribute (partially) matching the given one.</Abstract></ReturnValue>
+			<Anchor>//api/name/findChildWithAttribute:matchingName:allowPartial:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/findChildrenWithAttribute:matchingName:allowPartial:</TokenIdentifier>
+			<Abstract type="html">Finds and returns all children of this node, having a matching attribute.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)findChildrenWithAttribute:(NSString *)attribute matchingName:(NSString *)className allowPartial:(BOOL)partial</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attribute</Name>
+					<Abstract type="html">The attribute that has to be matched.</Abstract>
+				</Parameter><Parameter>
+					<Name>className</Name>
+					<Abstract type="html">The class name of the children to search for.</Abstract>
+				</Parameter><Parameter>
+					<Name>partial</Name>
+					<Abstract type="html">Set to true if partial matches of the attribute are to be considered.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array of HTML nodes, children of the given class, each with an attribute (partially) matching the given one.</Abstract></ReturnValue>
+			<Anchor>//api/name/findChildrenWithAttribute:matchingName:allowPartial:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/getAttributeNamed:</TokenIdentifier>
+			<Abstract type="html">Get the value of this node for the attribute matching the given name.</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)getAttributeNamed:(NSString *)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name of the attribute.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The value of this node for the attribute matching the given name.</Abstract></ReturnValue>
+			<Anchor>//api/name/getAttributeNamed:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/findChildOfType:</TokenIdentifier>
+			<Abstract type="html">Searches and returns a child of this node having the given tag name (eg. &quot;pre&quot; or &quot;h1&quot;).</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (HTMLNode *)findChildOfType:(NSString *)tagName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tagName</Name>
+					<Abstract type="html">The name of the tag to look for.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An HTML node, child of the given class, with a tag name matching the given one.</Abstract></ReturnValue>
+			<Anchor>//api/name/findChildOfType:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLNode/findChildrenOfType:</TokenIdentifier>
+			<Abstract type="html">Searches and returns the children of this node having the given tag name (eg. &quot;pre&quot; or &quot;h1&quot;).</Abstract>
+			<DeclaredIn>HTMLNode.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)findChildrenOfType:(NSString *)tagName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tagName</Name>
+					<Abstract type="html">The name of the tag to look for.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array of HTML nodes, children of the given class, with a tag name matching the given one.</Abstract></ReturnValue>
+			<Anchor>//api/name/findChildrenOfType:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

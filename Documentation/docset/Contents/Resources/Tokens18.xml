@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NumberedCaptionCell.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NumberedCaptionCell</TokenIdentifier>
+			<Abstract type="html">The NumberedCaptionCell class represents a cell with a numbered caption.</Abstract>
+			<DeclaredIn>NumberedCaptionCell.h</DeclaredIn>
+            
+			
+			<NodeRef refid="18"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

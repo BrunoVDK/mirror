@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PieGraphSliceLayer.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PieGraphSliceLayer</TokenIdentifier>
+			<Abstract type="html">The PieGraphLayer class represents a slice layer for a PieGraphView. It has a starting angle and an end angle.
+Its radius equals the minimum side length divided by two.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="19"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphSliceLayer/setWeight:</TokenIdentifier>
+			<Abstract type="html">This slice&apos;s weight.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) NSUInteger weight</Declaration>
+			
+			
+			<Anchor>//api/name/weight</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphSliceLayer/weight</TokenIdentifier>
+			<Abstract type="html">This slice&apos;s weight.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) NSUInteger weight</Declaration>
+			
+			
+			<Anchor>//api/name/weight</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PieGraphSliceLayer/weight</TokenIdentifier>
+			<Abstract type="html">This slice&apos;s weight.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) NSUInteger weight</Declaration>
+			
+			
+			<Anchor>//api/name/weight</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphSliceLayer/setColor:</TokenIdentifier>
+			<Abstract type="html">This slice&apos;s color.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *color</Declaration>
+			
+			
+			<Anchor>//api/name/color</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphSliceLayer/color</TokenIdentifier>
+			<Abstract type="html">This slice&apos;s color.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *color</Declaration>
+			
+			
+			<Anchor>//api/name/color</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PieGraphSliceLayer/color</TokenIdentifier>
+			<Abstract type="html">This slice&apos;s color.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *color</Declaration>
+			
+			
+			<Anchor>//api/name/color</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphSliceLayer/setStartAngle:</TokenIdentifier>
+			<Abstract type="html">This slice&apos;s starting angle. Animatable.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>@property CGFloat startAngle</Declaration>
+			
+			
+			<Anchor>//api/name/startAngle</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphSliceLayer/startAngle</TokenIdentifier>
+			<Abstract type="html">This slice&apos;s starting angle. Animatable.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>@property CGFloat startAngle</Declaration>
+			
+			
+			<Anchor>//api/name/startAngle</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PieGraphSliceLayer/startAngle</TokenIdentifier>
+			<Abstract type="html">This slice&apos;s starting angle. Animatable.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>@property CGFloat startAngle</Declaration>
+			
+			
+			<Anchor>//api/name/startAngle</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphSliceLayer/setEndAngle:</TokenIdentifier>
+			<Abstract type="html">This slice&apos;s ending angle. Animatable.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>@property CGFloat endAngle</Declaration>
+			
+			
+			<Anchor>//api/name/endAngle</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphSliceLayer/endAngle</TokenIdentifier>
+			<Abstract type="html">This slice&apos;s ending angle. Animatable.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>@property CGFloat endAngle</Declaration>
+			
+			
+			<Anchor>//api/name/endAngle</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PieGraphSliceLayer/endAngle</TokenIdentifier>
+			<Abstract type="html">This slice&apos;s ending angle. Animatable.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>@property CGFloat endAngle</Declaration>
+			
+			
+			<Anchor>//api/name/endAngle</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

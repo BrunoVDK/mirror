@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectOptionsLabel.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectOptionsLabel</TokenIdentifier>
+			<Abstract type="html">The ProjectOptionsLabel class represents a text field in a project options panel. It can be en/disabled.</Abstract>
+			<DeclaredIn>ProjectOptionsPanelController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="49"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsLabel/setEnabled:</TokenIdentifier>
+			<Abstract type="html">Enable or disable this label. This method changes the text color of the label.</Abstract>
+			<DeclaredIn>ProjectOptionsPanelController.h</DeclaredIn>
+			
+			<Declaration>- (void)setEnabled:(BOOL)flag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>flag</Name>
+					<Abstract type="html">True if this label should be enabled. False if it should be disabled.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setEnabled:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

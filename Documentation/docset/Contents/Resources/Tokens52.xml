@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectOptionsSavePresetSheetController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectOptionsSavePresetSheetController</TokenIdentifier>
+			<Abstract type="html">The ProjectSavePresetSheetController class controls a sheet with which a user can easily save the options
+of a Project as a custom &apos;preset&apos;.</Abstract>
+			<DeclaredIn>ProjectOptionsSavePresetSheetController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="52"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsSavePresetSheetController/setDelegate:</TokenIdentifier>
+			<Abstract type="html">This controller&apos;s delegate.</Abstract>
+			<DeclaredIn>ProjectOptionsSavePresetSheetController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) id&lt;ProjectOptionsSavePresetSheetDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="52"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsSavePresetSheetController/delegate</TokenIdentifier>
+			<Abstract type="html">This controller&apos;s delegate.</Abstract>
+			<DeclaredIn>ProjectOptionsSavePresetSheetController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) id&lt;ProjectOptionsSavePresetSheetDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="52"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectOptionsSavePresetSheetController/delegate</TokenIdentifier>
+			<Abstract type="html">This controller&apos;s delegate.</Abstract>
+			<DeclaredIn>ProjectOptionsSavePresetSheetController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) id&lt;ProjectOptionsSavePresetSheetDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="52"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsSavePresetSheetController/presetName</TokenIdentifier>
+			<Abstract type="html">The current preset name entered in the sheet&apos;s text field.</Abstract>
+			<DeclaredIn>ProjectOptionsSavePresetSheetController.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)presetName</Declaration>
+			
+			
+			<Anchor>//api/name/presetName</Anchor>
+            <NodeRef refid="52"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsSavePresetSheetController/presentOnWindow:completionHandler:</TokenIdentifier>
+			<Abstract type="html">Present the preset saving sheet as a sheet.</Abstract>
+			<DeclaredIn>ProjectOptionsSavePresetSheetController.h</DeclaredIn>
+			
+			<Declaration>- (void)presentOnWindow:(NSWindow *)window completionHandler:(void ( ^ ) ( NSModalResponse code ))completionBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>window</Name>
+					<Abstract type="html">The window to attach the sheet to.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionBlock</Name>
+					<Abstract type="html">The block of code to run when the sheet has been dismissed for whatever reason.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/presentOnWindow:completionHandler:</Anchor>
+            <NodeRef refid="52"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

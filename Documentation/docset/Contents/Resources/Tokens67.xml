@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/RealtimeGraphLayer.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/RealtimeGraphLayer</TokenIdentifier>
+			<Abstract type="html">A RealtimeGraphLayer represents a layer for a RealtimeGraphView.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="67"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RealtimeGraphLayer/setOffset:</TokenIdentifier>
+			<Abstract type="html">The offset of this instance.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) CGFloat offset</Declaration>
+			
+			
+			<Anchor>//api/name/offset</Anchor>
+            <NodeRef refid="67"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RealtimeGraphLayer/offset</TokenIdentifier>
+			<Abstract type="html">The offset of this instance.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) CGFloat offset</Declaration>
+			
+			
+			<Anchor>//api/name/offset</Anchor>
+            <NodeRef refid="67"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RealtimeGraphLayer/offset</TokenIdentifier>
+			<Abstract type="html">The offset of this instance.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) CGFloat offset</Declaration>
+			
+			
+			<Anchor>//api/name/offset</Anchor>
+            <NodeRef refid="67"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RealtimeGraphLayer/setMaximum:</TokenIdentifier>
+			<Abstract type="html">The maximum value for this instance. Animatable.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) CGFloat maximum</Declaration>
+			
+			
+			<Anchor>//api/name/maximum</Anchor>
+            <NodeRef refid="67"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RealtimeGraphLayer/maximum</TokenIdentifier>
+			<Abstract type="html">The maximum value for this instance. Animatable.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) CGFloat maximum</Declaration>
+			
+			
+			<Anchor>//api/name/maximum</Anchor>
+            <NodeRef refid="67"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RealtimeGraphLayer/maximum</TokenIdentifier>
+			<Abstract type="html">The maximum value for this instance. Animatable.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) CGFloat maximum</Declaration>
+			
+			
+			<Anchor>//api/name/maximum</Anchor>
+            <NodeRef refid="67"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

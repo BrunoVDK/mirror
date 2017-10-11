@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/Project.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/Project</TokenIdentifier>
+			<Abstract type="html">The Project class represents a mirroring project. It is a subclass of NSDocument and thus behaves much like any other document.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+            
+			
+			<NodeRef refid="29"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/setDelegate:</TokenIdentifier>
+			<Abstract type="html">This project&apos;s delegate.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) id&lt;ProjectDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/delegate</TokenIdentifier>
+			<Abstract type="html">This project&apos;s delegate.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) id&lt;ProjectDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Project/delegate</TokenIdentifier>
+			<Abstract type="html">This project&apos;s delegate.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) id&lt;ProjectDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/setOptions:</TokenIdentifier>
+			<Abstract type="html">The options dictionary of this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectOptionsDictionary *options</Declaration>
+			
+			
+			<Anchor>//api/name/options</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/options</TokenIdentifier>
+			<Abstract type="html">The options dictionary of this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectOptionsDictionary *options</Declaration>
+			
+			
+			<Anchor>//api/name/options</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Project/options</TokenIdentifier>
+			<Abstract type="html">The options dictionary of this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectOptionsDictionary *options</Declaration>
+			
+			
+			<Anchor>//api/name/options</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/setStatistics:</TokenIdentifier>
+			<Abstract type="html">The statistics dictionary of this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectStatsDictionary *statistics</Declaration>
+			
+			
+			<Anchor>//api/name/statistics</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/statistics</TokenIdentifier>
+			<Abstract type="html">The statistics dictionary of this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectStatsDictionary *statistics</Declaration>
+			
+			
+			<Anchor>//api/name/statistics</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Project/statistics</TokenIdentifier>
+			<Abstract type="html">The statistics dictionary of this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectStatsDictionary *statistics</Declaration>
+			
+			
+			<Anchor>//api/name/statistics</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/setFileList:</TokenIdentifier>
+			<Abstract type="html">The recent file list of this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectFileList *fileList</Declaration>
+			
+			
+			<Anchor>//api/name/fileList</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/fileList</TokenIdentifier>
+			<Abstract type="html">The recent file list of this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectFileList *fileList</Declaration>
+			
+			
+			<Anchor>//api/name/fileList</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Project/fileList</TokenIdentifier>
+			<Abstract type="html">The recent file list of this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectFileList *fileList</Declaration>
+			
+			
+			<Anchor>//api/name/fileList</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/setNotifications:</TokenIdentifier>
+			<Abstract type="html">The recent notification list of this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectNotificationList *notifications</Declaration>
+			
+			
+			<Anchor>//api/name/notifications</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/notifications</TokenIdentifier>
+			<Abstract type="html">The recent notification list of this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectNotificationList *notifications</Declaration>
+			
+			
+			<Anchor>//api/name/notifications</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Project/notifications</TokenIdentifier>
+			<Abstract type="html">The recent notification list of this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectNotificationList *notifications</Declaration>
+			
+			
+			<Anchor>//api/name/notifications</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/setURLs:</TokenIdentifier>
+			<Abstract type="html">The URLs this project mirrors.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSMutableArray *URLs</Declaration>
+			
+			
+			<Anchor>//api/name/URLs</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/URLs</TokenIdentifier>
+			<Abstract type="html">The URLs this project mirrors.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSMutableArray *URLs</Declaration>
+			
+			
+			<Anchor>//api/name/URLs</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Project/URLs</TokenIdentifier>
+			<Abstract type="html">The URLs this project mirrors.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSMutableArray *URLs</Declaration>
+			
+			
+			<Anchor>//api/name/URLs</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/setExportDirectory:</TokenIdentifier>
+			<Abstract type="html">This project&apos;s current export directory.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSURL *exportDirectory</Declaration>
+			
+			
+			<Anchor>//api/name/exportDirectory</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/exportDirectory</TokenIdentifier>
+			<Abstract type="html">This project&apos;s current export directory.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSURL *exportDirectory</Declaration>
+			
+			
+			<Anchor>//api/name/exportDirectory</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Project/exportDirectory</TokenIdentifier>
+			<Abstract type="html">This project&apos;s current export directory.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSURL *exportDirectory</Declaration>
+			
+			
+			<Anchor>//api/name/exportDirectory</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/setStarted:</TokenIdentifier>
+			<Abstract type="html">Indicates whether the project has already been launched.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=hasStarted) BOOL started</Declaration>
+			
+			
+			<Anchor>//api/name/started</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/hasStarted</TokenIdentifier>
+			<Abstract type="html">Indicates whether the project has already been launched.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=hasStarted) BOOL started</Declaration>
+			
+			
+			<Anchor>//api/name/started</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Project/started</TokenIdentifier>
+			<Abstract type="html">Indicates whether the project has already been launched.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=hasStarted) BOOL started</Declaration>
+			
+			
+			<Anchor>//api/name/started</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/setCompleted:</TokenIdentifier>
+			<Abstract type="html">Indicates whether the project has been completed.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isCompleted) BOOL completed</Declaration>
+			
+			
+			<Anchor>//api/name/completed</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/isCompleted</TokenIdentifier>
+			<Abstract type="html">Indicates whether the project has been completed.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isCompleted) BOOL completed</Declaration>
+			
+			
+			<Anchor>//api/name/completed</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Project/completed</TokenIdentifier>
+			<Abstract type="html">Indicates whether the project has been completed.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isCompleted) BOOL completed</Declaration>
+			
+			
+			<Anchor>//api/name/completed</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/setWritingPermission:</TokenIdentifier>
+			<Abstract type="html">Indicates whether the project has permission to write to its export directory.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=hasWritingPermission) BOOL writingPermission</Declaration>
+			
+			
+			<Anchor>//api/name/writingPermission</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/hasWritingPermission</TokenIdentifier>
+			<Abstract type="html">Indicates whether the project has permission to write to its export directory.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=hasWritingPermission) BOOL writingPermission</Declaration>
+			
+			
+			<Anchor>//api/name/writingPermission</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Project/writingPermission</TokenIdentifier>
+			<Abstract type="html">Indicates whether the project has permission to write to its export directory.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=hasWritingPermission) BOOL writingPermission</Declaration>
+			
+			
+			<Anchor>//api/name/writingPermission</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/setWindowController:</TokenIdentifier>
+			<Abstract type="html">This project&apos;s window controller.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) ProjectWindowController *windowController</Declaration>
+			
+			
+			<Anchor>//api/name/windowController</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/windowController</TokenIdentifier>
+			<Abstract type="html">This project&apos;s window controller.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) ProjectWindowController *windowController</Declaration>
+			
+			
+			<Anchor>//api/name/windowController</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Project/windowController</TokenIdentifier>
+			<Abstract type="html">This project&apos;s window controller.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) ProjectWindowController *windowController</Declaration>
+			
+			
+			<Anchor>//api/name/windowController</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/rootURL</TokenIdentifier>
+			<Abstract type="html">Returns the project&apos;s root URL.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (ProjectURL *)rootURL</Declaration>
+			
+			<ReturnValue><Abstract type="html">The project&apos;s root URL.</Abstract></ReturnValue>
+			<Anchor>//api/name/rootURL</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/addURL:</TokenIdentifier>
+			<Abstract type="html">Adds the given address to this project&apos;s list of links.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (ProjectURL *)addURL:(NSURL *)url</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">The URL to be added.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addURL:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/cancelURL:</TokenIdentifier>
+			<Abstract type="html">Cancel the given project url.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)cancelURL:(ProjectURL *)url</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">The url to cancel.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">True if and only if the operation was succesful.</Abstract></ReturnValue>
+			<Anchor>//api/name/cancelURL:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/engineOptions</TokenIdentifier>
+			<Abstract type="html">Returns the project&apos;s engine options structure.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (httrackp *)engineOptions</Declaration>
+			
+			<ReturnValue><Abstract type="html">The project&apos;s engine options structure.</Abstract></ReturnValue>
+			<Anchor>//api/name/engineOptions</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/mirror</TokenIdentifier>
+			<Abstract type="html">Start this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)mirror</Declaration>
+			
+			
+			<Anchor>//api/name/mirror</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/pause</TokenIdentifier>
+			<Abstract type="html">Pause this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)pause</Declaration>
+			
+			
+			<Anchor>//api/name/pause</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/resume</TokenIdentifier>
+			<Abstract type="html">Resume this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)resume</Declaration>
+			
+			
+			<Anchor>//api/name/resume</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/cancel</TokenIdentifier>
+			<Abstract type="html">Cancel this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)cancel</Declaration>
+			
+			
+			<Anchor>//api/name/cancel</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/isMirroring</TokenIdentifier>
+			<Abstract type="html">Check whether or not this project is mirroring.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isMirroring</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if this project is mirroring.</Abstract></ReturnValue>
+			<Anchor>//api/name/isMirroring</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/isPaused</TokenIdentifier>
+			<Abstract type="html">Check whether or not this project is paused.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isPaused</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if this project is attempting a pause.</Abstract></ReturnValue>
+			<Anchor>//api/name/isPaused</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/nbOfSockets</TokenIdentifier>
+			<Abstract type="html">Returns the number of sockets kept by this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)nbOfSockets</Declaration>
+			
+			<ReturnValue><Abstract type="html">The number of active connection of this project.</Abstract></ReturnValue>
+			<Anchor>//api/name/nbOfSockets</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/socketAtIndex:</TokenIdentifier>
+			<Abstract type="html">Get the project socket at the given index.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (ProjectSocket *)socketAtIndex:(NSUInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index of the project socket that is being requested.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A project socket at the given index.</Abstract></ReturnValue>
+			<Anchor>//api/name/socketAtIndex:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/nbOfFilters</TokenIdentifier>
+			<Abstract type="html">Returns the number of filters that this project has.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)nbOfFilters</Declaration>
+			
+			<ReturnValue><Abstract type="html">The number of filters this project currently keeps track of.</Abstract></ReturnValue>
+			<Anchor>//api/name/nbOfFilters</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/filterAtIndex:</TokenIdentifier>
+			<Abstract type="html">Returns a filter of this project at the given index.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)filterAtIndex:(NSUInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index of the filter to return.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The filter at the given index.</Abstract></ReturnValue>
+			<Anchor>//api/name/filterAtIndex:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/hasFilter:</TokenIdentifier>
+			<Abstract type="html">Checks whether or not this project has the given filter.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)hasFilter:(NSString *)filter</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filter</Name>
+					<Abstract type="html">The filter to search for.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">True if and only if this project uses the given filter.</Abstract></ReturnValue>
+			<Anchor>//api/name/hasFilter:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/addFilter:</TokenIdentifier>
+			<Abstract type="html">Add the given filter to this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)addFilter:(NSString *)filter</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filter</Name>
+					<Abstract type="html">The filter to be added.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addFilter:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/addFilters:</TokenIdentifier>
+			<Abstract type="html">Add the given filters to this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)addFilters:(NSArray *)newFilters</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>newFilters</Name>
+					<Abstract type="html">An array of filters that are to be added.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addFilters:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/removeFilter:</TokenIdentifier>
+			<Abstract type="html">Remove the given filter from this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)removeFilter:(NSString *)filter</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filter</Name>
+					<Abstract type="html">The filter to be removed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeFilter:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/removeFilters:</TokenIdentifier>
+			<Abstract type="html">Remove the given filters from this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)removeFilters:(NSArray *)oldFilters</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>oldFilters</Name>
+					<Abstract type="html">An array of filters that are to be removed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeFilters:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/removeAllFilters</TokenIdentifier>
+			<Abstract type="html">Remove all filters from this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)removeAllFilters</Declaration>
+			
+			
+			<Anchor>//api/name/removeAllFilters</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/removeFiltersAtIndexes:</TokenIdentifier>
+			<Abstract type="html">Remove the filters at given indices from this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)removeFiltersAtIndexes:(NSIndexSet *)indices</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>indices</Name>
+					<Abstract type="html">An array of indices of the filters that are to be removed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeFiltersAtIndexes:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

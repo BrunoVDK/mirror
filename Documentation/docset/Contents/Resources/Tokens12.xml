@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/HTMLDocument.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/HTMLDocument</TokenIdentifier>
+			<Abstract type="html">The HTMLDocument class represents an HTML document. It is parsed on initialization.</Abstract>
+			<DeclaredIn>HTMLDocument.h</DeclaredIn>
+            
+			
+			<NodeRef refid="12"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLDocument/initWithContentsOfURL:error:</TokenIdentifier>
+			<Abstract type="html">Initializes a new HTML document with the contents of the given URL.</Abstract>
+			<DeclaredIn>HTMLDocument.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithContentsOfURL:(NSURL *)url error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">The URL pointing to the contents for the new HTML document.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">A pointer to an error object, used for reporting any error occurring along the way.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new HTML document or nil if an error occurred.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithContentsOfURL:error:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLDocument/initWithData:error:</TokenIdentifier>
+			<Abstract type="html">Initializes a new HTML document using the given data.</Abstract>
+			<DeclaredIn>HTMLDocument.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithData:(NSData *)data error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>data</Name>
+					<Abstract type="html">The data to initialize the HTML document with.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">A pointer to an error object, used for reporting any error occurring along the way.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new HTML document or nil if an error occurred.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithData:error:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLDocument/initWithString:error:</TokenIdentifier>
+			<Abstract type="html">Initializes a new HTML document with the contents of the given string.</Abstract>
+			<DeclaredIn>HTMLDocument.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithString:(NSString *)string error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>string</Name>
+					<Abstract type="html">A string having HTML code.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">A pointer to an error object, used for reporting any error occurring along the way.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new HTML document or nil if an error occurred.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithString:error:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLDocument/doc</TokenIdentifier>
+			<Abstract type="html">Returns the contents of this HTML document.</Abstract>
+			<DeclaredIn>HTMLDocument.h</DeclaredIn>
+			
+			<Declaration>- (HTMLNode *)doc</Declaration>
+			
+			
+			<Anchor>//api/name/doc</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLDocument/html</TokenIdentifier>
+			<Abstract type="html">Returns that part of this HTML document that is enclosed in &lt;html&gt;...&lt;/html&gt; tags.</Abstract>
+			<DeclaredIn>HTMLDocument.h</DeclaredIn>
+			
+			<Declaration>- (HTMLNode *)html</Declaration>
+			
+			
+			<Anchor>//api/name/html</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLDocument/body</TokenIdentifier>
+			<Abstract type="html">Returns that part of this HTML document that is enclosed in &lt;body&gt;...&lt;/body&gt; tags.</Abstract>
+			<DeclaredIn>HTMLDocument.h</DeclaredIn>
+			
+			<Declaration>- (HTMLNode *)body</Declaration>
+			
+			
+			<Anchor>//api/name/body</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HTMLDocument/head</TokenIdentifier>
+			<Abstract type="html">Returns that part of this HTML document that is enclosed in &lt;head&gt;...&lt;/head&gt; tags.</Abstract>
+			<DeclaredIn>HTMLDocument.h</DeclaredIn>
+			
+			<Declaration>- (HTMLNode *)head</Declaration>
+			
+			
+			<Anchor>//api/name/head</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

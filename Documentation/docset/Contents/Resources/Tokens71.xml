@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/Scroller.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/Scroller</TokenIdentifier>
+			<Abstract type="html">The Scroller class customizes the interface of the NSScroller class.
+It currently removes the background.</Abstract>
+			<DeclaredIn>Scroller.h</DeclaredIn>
+            
+			
+			<NodeRef refid="71"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

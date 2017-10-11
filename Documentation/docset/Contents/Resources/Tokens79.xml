@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/WindowAdaptedCell.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/WindowAdaptedCell</TokenIdentifier>
+			<Abstract type="html">A WindowAdaptedCell adapts its design to the state of the parent window.</Abstract>
+			<DeclaredIn>WindowAdaptedCell.h</DeclaredIn>
+            
+			
+			<NodeRef refid="79"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

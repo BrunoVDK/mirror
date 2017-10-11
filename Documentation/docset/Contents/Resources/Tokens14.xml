@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/HeaderView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/HeaderView</TokenIdentifier>
+			<Abstract type="html">A HeaderView is a custom subclass of the NSTableHeaderView with some minor adaptations, such as the ability to disable clicks.</Abstract>
+			<DeclaredIn>HeaderView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="14"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

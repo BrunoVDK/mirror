@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectNotificationsWindowController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectNotificationsWindowController</TokenIdentifier>
+			<Abstract type="html">A ProjectNotificationsWindowController controls a panel for displaying a project&apos;s notifications.</Abstract>
+			<DeclaredIn>ProjectNotificationsWindowController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="41"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotificationsWindowController/setProject:</TokenIdentifier>
+			<Abstract type="html">The project associated with this notifications window controller.</Abstract>
+			<DeclaredIn>ProjectNotificationsWindowController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Project *project</Declaration>
+			
+			
+			<Anchor>//api/name/project</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotificationsWindowController/project</TokenIdentifier>
+			<Abstract type="html">The project associated with this notifications window controller.</Abstract>
+			<DeclaredIn>ProjectNotificationsWindowController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Project *project</Declaration>
+			
+			
+			<Anchor>//api/name/project</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectNotificationsWindowController/project</TokenIdentifier>
+			<Abstract type="html">The project associated with this notifications window controller.</Abstract>
+			<DeclaredIn>ProjectNotificationsWindowController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Project *project</Declaration>
+			
+			
+			<Anchor>//api/name/project</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectNotificationsWindowController/sharedNotifations</TokenIdentifier>
+			<Abstract type="html">Get the shared project notifications window controller.</Abstract>
+			<DeclaredIn>ProjectNotificationsWindowController.h</DeclaredIn>
+			
+			<Declaration>+ (id)sharedNotifations</Declaration>
+			
+			<ReturnValue><Abstract type="html">A singleton, this application&apos;s project notifications window controller.</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedNotifations</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotificationsWindowController/copy:</TokenIdentifier>
+			<Abstract type="html">Copy the description of the notification in the selected row.</Abstract>
+			<DeclaredIn>ProjectNotificationsWindowController.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)copy:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The object sending this message.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/copy:</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

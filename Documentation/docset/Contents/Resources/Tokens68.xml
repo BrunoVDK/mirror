@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/RealtimeGraphView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/RealtimeGraphView</TokenIdentifier>
+			<Abstract type="html">The RealtimeGraphView class represents a view with a bar graph that represents a series of positive values that have been recorded in real-time.
+Values are added without any timestamp associated to them, so as to keep things simple. The end result is a simple, animated plot with bars of equal width.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="68"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RealtimeGraphView/setNbValues:</TokenIdentifier>
+			<Abstract type="html">The amount of values recorded in this graph view.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) uint8_t nbValues</Declaration>
+			
+			
+			<Anchor>//api/name/nbValues</Anchor>
+            <NodeRef refid="68"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RealtimeGraphView/nbValues</TokenIdentifier>
+			<Abstract type="html">The amount of values recorded in this graph view.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) uint8_t nbValues</Declaration>
+			
+			
+			<Anchor>//api/name/nbValues</Anchor>
+            <NodeRef refid="68"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RealtimeGraphView/nbValues</TokenIdentifier>
+			<Abstract type="html">The amount of values recorded in this graph view.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) uint8_t nbValues</Declaration>
+			
+			
+			<Anchor>//api/name/nbValues</Anchor>
+            <NodeRef refid="68"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RealtimeGraphView/setBarColor:</TokenIdentifier>
+			<Abstract type="html">This instance&apos;s bar color.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *barColor</Declaration>
+			
+			
+			<Anchor>//api/name/barColor</Anchor>
+            <NodeRef refid="68"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RealtimeGraphView/barColor</TokenIdentifier>
+			<Abstract type="html">This instance&apos;s bar color.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *barColor</Declaration>
+			
+			
+			<Anchor>//api/name/barColor</Anchor>
+            <NodeRef refid="68"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RealtimeGraphView/barColor</TokenIdentifier>
+			<Abstract type="html">This instance&apos;s bar color.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *barColor</Declaration>
+			
+			
+			<Anchor>//api/name/barColor</Anchor>
+            <NodeRef refid="68"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RealtimeGraphView/addValue:</TokenIdentifier>
+			<Abstract type="html">Add the given value to this bar graph. The value represents a realtime value that was recently recorded.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+			
+			<Declaration>- (void)addValue:(unsigned int)value</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The value to be added.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addValue:</Anchor>
+            <NodeRef refid="68"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RealtimeGraphView/removeAllValues</TokenIdentifier>
+			<Abstract type="html">Remove all the values from this bar graph.</Abstract>
+			<DeclaredIn>RealtimeGraphView.h</DeclaredIn>
+			
+			<Declaration>- (void)removeAllValues</Declaration>
+			
+			
+			<Anchor>//api/name/removeAllValues</Anchor>
+            <NodeRef refid="68"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectFile.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectFile</TokenIdentifier>
+			<Abstract type="html">The ProjectFile class represents a file a Project is creating/created.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+            
+			
+			<NodeRef refid="34"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectFile/setIcon:</TokenIdentifier>
+			<Abstract type="html">This project file&apos;s icon.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *icon</Declaration>
+			
+			
+			<Anchor>//api/name/icon</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectFile/icon</TokenIdentifier>
+			<Abstract type="html">This project file&apos;s icon.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *icon</Declaration>
+			
+			
+			<Anchor>//api/name/icon</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectFile/icon</TokenIdentifier>
+			<Abstract type="html">This project file&apos;s icon.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *icon</Declaration>
+			
+			
+			<Anchor>//api/name/icon</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectFile/setAddress:</TokenIdentifier>
+			<Abstract type="html">This project file&apos;s address.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectFile/address</TokenIdentifier>
+			<Abstract type="html">This project file&apos;s address.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectFile/address</TokenIdentifier>
+			<Abstract type="html">This project file&apos;s address.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectFile/setPath:</TokenIdentifier>
+			<Abstract type="html">This project file&apos;s relative file path.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *path</Declaration>
+			
+			
+			<Anchor>//api/name/path</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectFile/path</TokenIdentifier>
+			<Abstract type="html">This project file&apos;s relative file path.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *path</Declaration>
+			
+			
+			<Anchor>//api/name/path</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectFile/path</TokenIdentifier>
+			<Abstract type="html">This project file&apos;s relative file path.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *path</Declaration>
+			
+			
+			<Anchor>//api/name/path</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectFile/setSize:</TokenIdentifier>
+			<Abstract type="html">This project file&apos;s size.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSNumber *size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectFile/size</TokenIdentifier>
+			<Abstract type="html">This project file&apos;s size.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSNumber *size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectFile/size</TokenIdentifier>
+			<Abstract type="html">This project file&apos;s size.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSNumber *size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectFile/initWithAddress:file:size:</TokenIdentifier>
+			<Abstract type="html">Initialize a new project file with given source address, file path and size.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithAddress:(NSString *)address file:(NSString *)path size:(unsigned long long)size</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>address</Name>
+					<Abstract type="html">The source address of the new project file.</Abstract>
+				</Parameter><Parameter>
+					<Name>path</Name>
+					<Abstract type="html">The relative location of the new project file on disk.</Abstract>
+				</Parameter><Parameter>
+					<Name>size</Name>
+					<Abstract type="html">The size of the new project file.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A newly allocated project file with the given attributes.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithAddress:file:size:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectFile/revealInFinder:</TokenIdentifier>
+			<Abstract type="html">Reveal this file in the Finder.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+			
+			<Declaration>- (void)revealInFinder:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The sender of this method.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/revealInFinder:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectFile/fileName</TokenIdentifier>
+			<Abstract type="html">Returns the file name of this project file.</Abstract>
+			<DeclaredIn>ProjectFile.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)fileName</Declaration>
+			
+			<ReturnValue><Abstract type="html">The filename of this project file.</Abstract></ReturnValue>
+			<Anchor>//api/name/fileName</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

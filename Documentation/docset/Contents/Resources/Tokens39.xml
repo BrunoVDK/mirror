@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectNotification.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectNotification</TokenIdentifier>
+			<Abstract type="html">A ProjectNotification represents a project notification having the content of the notifcation as well as the date of occurence.</Abstract>
+			<DeclaredIn>ProjectNotification.h</DeclaredIn>
+            
+			
+			<NodeRef refid="39"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotification/setType:</TokenIdentifier>
+			<Abstract type="html">The type of this notification.</Abstract>
+			<DeclaredIn>ProjectNotification.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectNotificationType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotification/type</TokenIdentifier>
+			<Abstract type="html">The type of this notification.</Abstract>
+			<DeclaredIn>ProjectNotification.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectNotificationType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectNotification/type</TokenIdentifier>
+			<Abstract type="html">The type of this notification.</Abstract>
+			<DeclaredIn>ProjectNotification.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectNotificationType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotification/setIcon:</TokenIdentifier>
+			<Abstract type="html">An icon representing this notification.</Abstract>
+			<DeclaredIn>ProjectNotification.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSImage *icon</Declaration>
+			
+			
+			<Anchor>//api/name/icon</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotification/icon</TokenIdentifier>
+			<Abstract type="html">An icon representing this notification.</Abstract>
+			<DeclaredIn>ProjectNotification.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSImage *icon</Declaration>
+			
+			
+			<Anchor>//api/name/icon</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectNotification/icon</TokenIdentifier>
+			<Abstract type="html">An icon representing this notification.</Abstract>
+			<DeclaredIn>ProjectNotification.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSImage *icon</Declaration>
+			
+			
+			<Anchor>//api/name/icon</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotification/setContent:</TokenIdentifier>
+			<Abstract type="html">The content of this notification.</Abstract>
+			<DeclaredIn>ProjectNotification.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *content</Declaration>
+			
+			
+			<Anchor>//api/name/content</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotification/content</TokenIdentifier>
+			<Abstract type="html">The content of this notification.</Abstract>
+			<DeclaredIn>ProjectNotification.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *content</Declaration>
+			
+			
+			<Anchor>//api/name/content</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectNotification/content</TokenIdentifier>
+			<Abstract type="html">The content of this notification.</Abstract>
+			<DeclaredIn>ProjectNotification.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *content</Declaration>
+			
+			
+			<Anchor>//api/name/content</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotification/setDate:</TokenIdentifier>
+			<Abstract type="html">The date of occurence for this notification.</Abstract>
+			<DeclaredIn>ProjectNotification.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDate *date</Declaration>
+			
+			
+			<Anchor>//api/name/date</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotification/date</TokenIdentifier>
+			<Abstract type="html">The date of occurence for this notification.</Abstract>
+			<DeclaredIn>ProjectNotification.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDate *date</Declaration>
+			
+			
+			<Anchor>//api/name/date</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectNotification/date</TokenIdentifier>
+			<Abstract type="html">The date of occurence for this notification.</Abstract>
+			<DeclaredIn>ProjectNotification.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDate *date</Declaration>
+			
+			
+			<Anchor>//api/name/date</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectNotification/notificationOfType:content:andDate:</TokenIdentifier>
+			<Abstract type="html">Create a notification of given type, with given content and given date of occurence.</Abstract>
+			<DeclaredIn>ProjectNotification.h</DeclaredIn>
+			
+			<Declaration>+ (id)notificationOfType:(ProjectNotificationType)type content:(NSString *)content andDate:(NSDate *)date</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The type of notification the new notification should be.</Abstract>
+				</Parameter><Parameter>
+					<Name>content</Name>
+					<Abstract type="html">The textual content for the new notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>date</Name>
+					<Abstract type="html">The date of occurence for the new notification.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new project notification of given type, with given content and given date of occurence,
+or nil if an error occured.</Abstract></ReturnValue>
+			<Anchor>//api/name/notificationOfType:content:andDate:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotification/initWithType:content:andDate:</TokenIdentifier>
+			<Abstract type="html">Create a notification of given type, with given content and given date of occurence.</Abstract>
+			<DeclaredIn>ProjectNotification.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithType:(ProjectNotificationType)type content:(NSString *)content andDate:(NSDate *)date</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The type of notification the new notification should be.</Abstract>
+				</Parameter><Parameter>
+					<Name>content</Name>
+					<Abstract type="html">The textual content for the new notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>date</Name>
+					<Abstract type="html">The date of occurence for the new notification.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new project notification of given type, with given content and given date of occurence,
+or nil if an error occured.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithType:content:andDate:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

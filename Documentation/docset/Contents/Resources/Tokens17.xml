@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ListView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ListView</TokenIdentifier>
+			<Abstract type="html">The ListView class customizes the default interface of the NSTableView class.</Abstract>
+			<DeclaredIn>ListView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="17"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ListView/setAlternateColor:</TokenIdentifier>
+			<Abstract type="html">A flag denoting what color this table view uses as alternate row background color.</Abstract>
+			<DeclaredIn>ListView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *alternateColor</Declaration>
+			
+			
+			<Anchor>//api/name/alternateColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ListView/alternateColor</TokenIdentifier>
+			<Abstract type="html">A flag denoting what color this table view uses as alternate row background color.</Abstract>
+			<DeclaredIn>ListView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *alternateColor</Declaration>
+			
+			
+			<Anchor>//api/name/alternateColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ListView/alternateColor</TokenIdentifier>
+			<Abstract type="html">A flag denoting what color this table view uses as alternate row background color.</Abstract>
+			<DeclaredIn>ListView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *alternateColor</Declaration>
+			
+			
+			<Anchor>//api/name/alternateColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ListView/setOdd:</TokenIdentifier>
+			<Abstract type="html">A flag denoting whether or not this table view uses the alternate color for odd rows.</Abstract>
+			<DeclaredIn>ListView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL odd</Declaration>
+			
+			
+			<Anchor>//api/name/odd</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ListView/odd</TokenIdentifier>
+			<Abstract type="html">A flag denoting whether or not this table view uses the alternate color for odd rows.</Abstract>
+			<DeclaredIn>ListView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL odd</Declaration>
+			
+			
+			<Anchor>//api/name/odd</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ListView/odd</TokenIdentifier>
+			<Abstract type="html">A flag denoting whether or not this table view uses the alternate color for odd rows.</Abstract>
+			<DeclaredIn>ListView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL odd</Declaration>
+			
+			
+			<Anchor>//api/name/odd</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ListView/reloadVisibleRect</TokenIdentifier>
+			<Abstract type="html">Reload the visible portion of this table view.</Abstract>
+			<DeclaredIn>ListView.h</DeclaredIn>
+			
+			<Declaration>- (void)reloadVisibleRect</Declaration>
+			
+			
+			<Anchor>//api/name/reloadVisibleRect</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

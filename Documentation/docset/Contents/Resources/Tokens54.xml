@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectSocket.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectSocket</TokenIdentifier>
+			<Abstract type="html">A ProjectSocket represents a socket of a Project, with a type, an address, a file, a size and a total size.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+            
+			
+			<NodeRef refid="54"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/setIcon:</TokenIdentifier>
+			<Abstract type="html">This project socket&apos;s icon.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *icon</Declaration>
+			
+			
+			<Anchor>//api/name/icon</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/icon</TokenIdentifier>
+			<Abstract type="html">This project socket&apos;s icon.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *icon</Declaration>
+			
+			
+			<Anchor>//api/name/icon</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectSocket/icon</TokenIdentifier>
+			<Abstract type="html">This project socket&apos;s icon.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *icon</Declaration>
+			
+			
+			<Anchor>//api/name/icon</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/setType:</TokenIdentifier>
+			<Abstract type="html">The type of this socket.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) ProjectSocketType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/type</TokenIdentifier>
+			<Abstract type="html">The type of this socket.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) ProjectSocketType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectSocket/type</TokenIdentifier>
+			<Abstract type="html">The type of this socket.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) ProjectSocketType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/setAddress:</TokenIdentifier>
+			<Abstract type="html">The address this socket refers to.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/address</TokenIdentifier>
+			<Abstract type="html">The address this socket refers to.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectSocket/address</TokenIdentifier>
+			<Abstract type="html">The address this socket refers to.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/setFile:</TokenIdentifier>
+			<Abstract type="html">The file this socket refers to.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *file</Declaration>
+			
+			
+			<Anchor>//api/name/file</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/file</TokenIdentifier>
+			<Abstract type="html">The file this socket refers to.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *file</Declaration>
+			
+			
+			<Anchor>//api/name/file</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectSocket/file</TokenIdentifier>
+			<Abstract type="html">The file this socket refers to.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *file</Declaration>
+			
+			
+			<Anchor>//api/name/file</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/setSize:</TokenIdentifier>
+			<Abstract type="html">The size of this socket&apos;s associated file.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) unsigned long long size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/size</TokenIdentifier>
+			<Abstract type="html">The size of this socket&apos;s associated file.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) unsigned long long size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectSocket/size</TokenIdentifier>
+			<Abstract type="html">The size of this socket&apos;s associated file.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) unsigned long long size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/setTotalSize:</TokenIdentifier>
+			<Abstract type="html">The size of this socket&apos;s associated total size.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) unsigned long long totalSize</Declaration>
+			
+			
+			<Anchor>//api/name/totalSize</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/totalSize</TokenIdentifier>
+			<Abstract type="html">The size of this socket&apos;s associated total size.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) unsigned long long totalSize</Declaration>
+			
+			
+			<Anchor>//api/name/totalSize</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectSocket/totalSize</TokenIdentifier>
+			<Abstract type="html">The size of this socket&apos;s associated total size.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) unsigned long long totalSize</Declaration>
+			
+			
+			<Anchor>//api/name/totalSize</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/setProgress:</TokenIdentifier>
+			<Abstract type="html">The progress of this socket.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) float progress</Declaration>
+			
+			
+			<Anchor>//api/name/progress</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/progress</TokenIdentifier>
+			<Abstract type="html">The progress of this socket.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) float progress</Declaration>
+			
+			
+			<Anchor>//api/name/progress</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectSocket/progress</TokenIdentifier>
+			<Abstract type="html">The progress of this socket.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) float progress</Declaration>
+			
+			
+			<Anchor>//api/name/progress</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectSocket/socketWithAddress:file:size:totalSize:</TokenIdentifier>
+			<Abstract type="html">Create a new socket with given address, file path, size and total size.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>+ (id)socketWithAddress:(NSString *)address file:(NSString *)file size:(unsigned long long)size totalSize:(unsigned long long)totalSize</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>address</Name>
+					<Abstract type="html">The source address of the new socket.</Abstract>
+				</Parameter><Parameter>
+					<Name>file</Name>
+					<Abstract type="html">The file associated with the new socket.</Abstract>
+				</Parameter><Parameter>
+					<Name>size</Name>
+					<Abstract type="html">The size for the socket&apos;s associated file.</Abstract>
+				</Parameter><Parameter>
+					<Name>totalSize</Name>
+					<Abstract type="html">The total size for the socket&apos;s associated file.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A nproject file with the given attributes.</Abstract></ReturnValue>
+			<Anchor>//api/name/socketWithAddress:file:size:totalSize:</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/initWithAddress:file:size:totalSize:</TokenIdentifier>
+			<Abstract type="html">Initialize a new socket with given address, file path, size and total size.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithAddress:(NSString *)address file:(NSString *)file size:(unsigned long long)size totalSize:(unsigned long long)totalSize</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>address</Name>
+					<Abstract type="html">The source address of the new socket.</Abstract>
+				</Parameter><Parameter>
+					<Name>file</Name>
+					<Abstract type="html">The file associated with the new socket.</Abstract>
+				</Parameter><Parameter>
+					<Name>size</Name>
+					<Abstract type="html">The size for the socket&apos;s associated file.</Abstract>
+				</Parameter><Parameter>
+					<Name>totalSize</Name>
+					<Abstract type="html">The total size for the socket&apos;s associated file.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A newly allocated project file with the given attributes.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithAddress:file:size:totalSize:</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/socketDescription</TokenIdentifier>
+			<Abstract type="html">A description of this socket, that is, its type followed by the associated file&apos;s name.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)socketDescription</Declaration>
+			
+			
+			<Anchor>//api/name/socketDescription</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

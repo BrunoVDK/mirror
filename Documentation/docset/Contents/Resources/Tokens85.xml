@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSApplication+Additions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSApplication(Additions)</TokenIdentifier>
+			<Abstract type="html">A category for adding functionality to the NSApp class.</Abstract>
+			<DeclaredIn>NSApp+Additions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="85"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSApplication/beginSheet:modalForWindow:didEndBlock:</TokenIdentifier>
+			<Abstract type="html">Attach a given sheet to a given window.</Abstract>
+			<DeclaredIn>NSApp+Additions.h</DeclaredIn>
+			
+			<Declaration>- (void)beginSheet:(NSWindow *)sheet modalForWindow:(NSWindow *)docWindow didEndBlock:(void ( ^ ) ( NSInteger returnCode ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sheet</Name>
+					<Abstract type="html">The sheet to show.</Abstract>
+				</Parameter><Parameter>
+					<Name>docWindow</Name>
+					<Abstract type="html">The window to attach the sheet to.</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">The block of code to run on completion.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/beginSheet:modalForWindow:didEndBlock:</Anchor>
+            <NodeRef refid="85"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

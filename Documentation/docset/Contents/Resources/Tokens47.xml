@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectOptionsFiltersPanelController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectOptionsFiltersPanelController</TokenIdentifier>
+			<Abstract type="html">The ProjectOptionsFiltersPanelController class controls a project options panel with filtering options.</Abstract>
+			<DeclaredIn>ProjectOptionsPanelController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="47"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsFiltersPanelController/updatePanel</TokenIdentifier>
+			<Abstract type="html">Update the panel&apos;s controls, disabling them if this panel&apos;s project is nil or if this panel&apos;s project
+has started and the control&apos;s associated option can be altered when the engine is running.</Abstract>
+			<DeclaredIn>ProjectOptionsPanelController.m</DeclaredIn>
+			
+			<Declaration>- (void)updatePanel</Declaration>
+			
+			
+			<Anchor>//api/name/updatePanel</Anchor>
+            <NodeRef refid="47"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

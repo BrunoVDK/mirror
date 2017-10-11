@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectOptionsPanelController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectOptionsPanelController</TokenIdentifier>
+			<Abstract type="html">The ProjectOptionsPanelController class represents a panel of a project options window. It is an abstract class.</Abstract>
+			<DeclaredIn>ProjectOptionsPanelController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="51"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsPanelController/setProject:</TokenIdentifier>
+			<Abstract type="html">This panel controller&apos;s window controller.</Abstract>
+			<DeclaredIn>ProjectOptionsPanelController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Project *project</Declaration>
+			
+			
+			<Anchor>//api/name/project</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsPanelController/project</TokenIdentifier>
+			<Abstract type="html">This panel controller&apos;s window controller.</Abstract>
+			<DeclaredIn>ProjectOptionsPanelController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Project *project</Declaration>
+			
+			
+			<Anchor>//api/name/project</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectOptionsPanelController/project</TokenIdentifier>
+			<Abstract type="html">This panel controller&apos;s window controller.</Abstract>
+			<DeclaredIn>ProjectOptionsPanelController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Project *project</Declaration>
+			
+			
+			<Anchor>//api/name/project</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsPanelController/updatePanel</TokenIdentifier>
+			<Abstract type="html">Update the panel&apos;s controls, disabling them if this panel&apos;s project is nil or if this panel&apos;s project
+has started and the control&apos;s associated option can be altered when the engine is running.</Abstract>
+			<DeclaredIn>ProjectOptionsPanelController.h</DeclaredIn>
+			
+			<Declaration>- (void)updatePanel</Declaration>
+			
+			
+			<Anchor>//api/name/updatePanel</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

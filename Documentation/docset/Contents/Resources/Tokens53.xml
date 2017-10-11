@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectOptionsWindowController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectOptionsWindowController</TokenIdentifier>
+			<Abstract type="html">The ProjectOptionsWindowController class controls a window with project options.
+The window has panels through which the user can navigate, altering options of this instance&apos;s associated project
+(the interface elements are bound to this project&apos;s options dictionary).</Abstract>
+			<DeclaredIn>ProjectOptionsWindowController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="53"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsWindowController/setProject:</TokenIdentifier>
+			<Abstract type="html">The project associated with this options window controller.</Abstract>
+			<DeclaredIn>ProjectOptionsWindowController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Project *project</Declaration>
+			
+			
+			<Anchor>//api/name/project</Anchor>
+            <NodeRef refid="53"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsWindowController/project</TokenIdentifier>
+			<Abstract type="html">The project associated with this options window controller.</Abstract>
+			<DeclaredIn>ProjectOptionsWindowController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Project *project</Declaration>
+			
+			
+			<Anchor>//api/name/project</Anchor>
+            <NodeRef refid="53"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectOptionsWindowController/project</TokenIdentifier>
+			<Abstract type="html">The project associated with this options window controller.</Abstract>
+			<DeclaredIn>ProjectOptionsWindowController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Project *project</Declaration>
+			
+			
+			<Anchor>//api/name/project</Anchor>
+            <NodeRef refid="53"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectOptionsWindowController/presetMenu</TokenIdentifier>
+			<Abstract type="html">Get the global preset menu.</Abstract>
+			<DeclaredIn>ProjectOptionsWindowController.h</DeclaredIn>
+			
+			<Declaration>+ (NSMenu *)presetMenu</Declaration>
+			
+			<ReturnValue><Abstract type="html">An NSMenu instance representing the options menu of the application, or nil if there isn&apos;t any.</Abstract></ReturnValue>
+			<Anchor>//api/name/presetMenu</Anchor>
+            <NodeRef refid="53"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectOptionsWindowController/sharedOptions</TokenIdentifier>
+			<Abstract type="html">Get the shared project options window controller.</Abstract>
+			<DeclaredIn>ProjectOptionsWindowController.h</DeclaredIn>
+			
+			<Declaration>+ (id)sharedOptions</Declaration>
+			
+			<ReturnValue><Abstract type="html">A singleton, this application&apos;s project options window controller.</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedOptions</Anchor>
+            <NodeRef refid="53"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsWindowController/updatePanels</TokenIdentifier>
+			<Abstract type="html">Update the status of all panels.</Abstract>
+			<DeclaredIn>ProjectOptionsWindowController.h</DeclaredIn>
+			
+			<Declaration>- (void)updatePanels</Declaration>
+			
+			
+			<Anchor>//api/name/updatePanels</Anchor>
+            <NodeRef refid="53"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsWindowController/savePreset:</TokenIdentifier>
+			<Abstract type="html">Save the current options dictionary as a new preset.</Abstract>
+			<DeclaredIn>ProjectOptionsWindowController.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)savePreset:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The object sending this message.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/savePreset:</Anchor>
+            <NodeRef refid="53"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsWindowController/revertToDefaults:</TokenIdentifier>
+			<Abstract type="html">Revert to defaults options.</Abstract>
+			<DeclaredIn>ProjectOptionsWindowController.h</DeclaredIn>
+			
+			<Declaration>- (void)revertToDefaults:(NSMenuItem *)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The menu item sending this action.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/revertToDefaults:</Anchor>
+            <NodeRef refid="53"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsWindowController/projectOptionsSavePresetSheetController:errorForPresetName:</TokenIdentifier>
+			<Abstract type="html">Called when a project options save preset sheet controller wants to create a new preset, to make sure that the new preset&apos;s name is permissible.</Abstract>
+			<DeclaredIn>ProjectOptionsWindowController.m</DeclaredIn>
+			
+			<Declaration>- (NSString *)projectOptionsSavePresetSheetController:(ProjectOptionsSavePresetSheetController *)controller errorForPresetName:(NSString *)presetName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The sheet controller.</Abstract>
+				</Parameter><Parameter>
+					<Name>presetName</Name>
+					<Abstract type="html">The name for the new preset.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An error description if the given preset name is not permissible, or nil or an empty string if it is.</Abstract></ReturnValue>
+			<Anchor>//api/name/projectOptionsSavePresetSheetController:errorForPresetName:</Anchor>
+            <NodeRef refid="53"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

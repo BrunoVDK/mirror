@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSImage+Additions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSImage(Additions)</TokenIdentifier>
+			<Abstract type="html">A category for adding functionality to the NSImage class.</Abstract>
+			<DeclaredIn>NSImage+Additions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="88"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSImage/copyWithTint:</TokenIdentifier>
+			<Abstract type="html">Returns a copy of this image, tinted with the given color.</Abstract>
+			<DeclaredIn>NSImage+Additions.h</DeclaredIn>
+			
+			<Declaration>- (NSImage *)copyWithTint:(NSColor *)tint</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tint</Name>
+					<Abstract type="html">The color to tint with.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An appropriately tinted version of this image.</Abstract></ReturnValue>
+			<Anchor>//api/name/copyWithTint:</Anchor>
+            <NodeRef refid="88"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/TextView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/TextView</TokenIdentifier>
+			<Abstract type="html">The TextView class represents a custom text view dealing with drawing problems.</Abstract>
+			<DeclaredIn>TextView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="74"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

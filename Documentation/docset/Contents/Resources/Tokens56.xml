@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectStatsDictionary.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectStatsDictionary</TokenIdentifier>
+			<Abstract type="html">The ProjectStatsDictionary class keeps track of a project&apos;s statistics.</Abstract>
+			<DeclaredIn>ProjectStatsDictionary.h</DeclaredIn>
+            
+			
+			<NodeRef refid="56"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsDictionary/setProject:</TokenIdentifier>
+			<Abstract type="html">The project associated with this statistics dictionary.</Abstract>
+			<DeclaredIn>ProjectStatsDictionary.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, assign) Project *project</Declaration>
+			
+			
+			<Anchor>//api/name/project</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsDictionary/project</TokenIdentifier>
+			<Abstract type="html">The project associated with this statistics dictionary.</Abstract>
+			<DeclaredIn>ProjectStatsDictionary.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, assign) Project *project</Declaration>
+			
+			
+			<Anchor>//api/name/project</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectStatsDictionary/project</TokenIdentifier>
+			<Abstract type="html">The project associated with this statistics dictionary.</Abstract>
+			<DeclaredIn>ProjectStatsDictionary.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, assign) Project *project</Declaration>
+			
+			
+			<Anchor>//api/name/project</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsDictionary/setOutlineView:</TokenIdentifier>
+			<Abstract type="html">An outline view this statistics dictionary associates with.</Abstract>
+			<DeclaredIn>ProjectStatsDictionary.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSOutlineView *outlineView</Declaration>
+			
+			
+			<Anchor>//api/name/outlineView</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsDictionary/outlineView</TokenIdentifier>
+			<Abstract type="html">An outline view this statistics dictionary associates with.</Abstract>
+			<DeclaredIn>ProjectStatsDictionary.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSOutlineView *outlineView</Declaration>
+			
+			
+			<Anchor>//api/name/outlineView</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectStatsDictionary/outlineView</TokenIdentifier>
+			<Abstract type="html">An outline view this statistics dictionary associates with.</Abstract>
+			<DeclaredIn>ProjectStatsDictionary.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSOutlineView *outlineView</Declaration>
+			
+			
+			<Anchor>//api/name/outlineView</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsDictionary/initWithProject:</TokenIdentifier>
+			<Abstract type="html">Create a new stats dictionary and associate it with the given project.</Abstract>
+			<DeclaredIn>ProjectStatsDictionary.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithProject:(Project *)project</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>project</Name>
+					<Abstract type="html">The project to associate the new project stats dictionary with.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new project stats dictionary associated with the given project.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithProject:</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsDictionary/initWithProject:usingDictionary:</TokenIdentifier>
+			<Abstract type="html">Create a new stats dictionary based on the given dictionary, and associate it with the given project.</Abstract>
+			<DeclaredIn>ProjectStatsDictionary.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithProject:(Project *)project usingDictionary:(ProjectStatsDictionary *)dictionary</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>project</Name>
+					<Abstract type="html">The project to associate the new project stats dictionary to.</Abstract>
+				</Parameter><Parameter>
+					<Name>dictionary</Name>
+					<Abstract type="html">The dictionary to base the new one on.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new project stats dictionary associated to the given project, with the same stat values as the given
+dictionary.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithProject:usingDictionary:</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsDictionary/valueForStatisticOfType:</TokenIdentifier>
+			<Abstract type="html">Return the value for the statistic of the given type.</Abstract>
+			<DeclaredIn>ProjectStatsDictionary.h</DeclaredIn>
+			
+			<Declaration>- (id)valueForStatisticOfType:(ProjectStatisticType)type</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The type of the statistic whose value is to be mutated.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The value of the statistic of the given type.</Abstract></ReturnValue>
+			<Anchor>//api/name/valueForStatisticOfType:</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsDictionary/setValue:forStatisticOfType:</TokenIdentifier>
+			<Abstract type="html">Set the value of the statistic of the given type to the given one.</Abstract>
+			<DeclaredIn>ProjectStatsDictionary.h</DeclaredIn>
+			
+			<Declaration>- (void)setValue:(id)value forStatisticOfType:(ProjectStatisticType)type</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The new value to set.</Abstract>
+				</Parameter><Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The type of the statistic that is to be set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setValue:forStatisticOfType:</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsDictionary/registerFile:</TokenIdentifier>
+			<Abstract type="html">Register the given project file, that is, update the stats dictionary to reflect the addition of this file.</Abstract>
+			<DeclaredIn>ProjectStatsDictionary.h</DeclaredIn>
+			
+			<Declaration>- (void)registerFile:(ProjectFile *)file</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>file</Name>
+					<Abstract type="html">The project file to take into account.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/registerFile:</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

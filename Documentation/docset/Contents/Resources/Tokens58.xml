@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectStatsFilesPanelController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectStatsFilesPanelController</TokenIdentifier>
+			<Abstract type="html">The ProjectStatsFilesPanelController class controls a project statistics panel presenting files that are downloading/downloaded.</Abstract>
+			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="58"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsFilesPanelController/setTableView:</TokenIdentifier>
+			<Abstract type="html">This panel&apos;s table view.</Abstract>
+			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSTableView *tableView</Declaration>
+			
+			
+			<Anchor>//api/name/tableView</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsFilesPanelController/tableView</TokenIdentifier>
+			<Abstract type="html">This panel&apos;s table view.</Abstract>
+			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSTableView *tableView</Declaration>
+			
+			
+			<Anchor>//api/name/tableView</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectStatsFilesPanelController/tableView</TokenIdentifier>
+			<Abstract type="html">This panel&apos;s table view.</Abstract>
+			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSTableView *tableView</Declaration>
+			
+			
+			<Anchor>//api/name/tableView</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsFilesPanelController/setStatus:</TokenIdentifier>
+			<Abstract type="html">This panel&apos;s status.</Abstract>
+			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSTextField *status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsFilesPanelController/status</TokenIdentifier>
+			<Abstract type="html">This panel&apos;s status.</Abstract>
+			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSTextField *status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectStatsFilesPanelController/status</TokenIdentifier>
+			<Abstract type="html">This panel&apos;s status.</Abstract>
+			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSTextField *status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

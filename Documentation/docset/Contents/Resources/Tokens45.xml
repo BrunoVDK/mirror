@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectOptionsDictionary.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectOptionsDictionary</TokenIdentifier>
+			<Abstract type="html">The ProjectOptionsDictionary class functions as a proxy for a dictionary of project options.
+When initialised it holds a reference to an empty dictionary and provides default values when asked.
+Option values can then be altered, and these modifications are stored in the private dictionary.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+            
+			
+			<NodeRef refid="45"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectOptionsDictionary/allOptionKeys</TokenIdentifier>
+			<Abstract type="html">Returns an array having the keys of all project options.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)allOptionKeys</Declaration>
+			
+			
+			<Anchor>//api/name/allOptionKeys</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectOptionsDictionary/generalOptionKeys</TokenIdentifier>
+			<Abstract type="html">Returns a dictionary with one key for every project option category. Each key&apos;s corresponding value
+is an NSArray with option keys that are part of the very category. The corresponding options have a boolean value.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>+ (NSDictionary *)generalOptionKeys</Declaration>
+			
+			
+			<Anchor>//api/name/generalOptionKeys</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectOptionsDictionary/savedPresetNames</TokenIdentifier>
+			<Abstract type="html">Returns an array of preset names that have been saved in the user defaults.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)savedPresetNames</Declaration>
+			
+			
+			<Anchor>//api/name/savedPresetNames</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectOptionsDictionary/defaultPresetName</TokenIdentifier>
+			<Abstract type="html">Returns the name of the preset used by default.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)defaultPresetName</Declaration>
+			
+			
+			<Anchor>//api/name/defaultPresetName</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectOptionsDictionary/removePresetWithName:</TokenIdentifier>
+			<Abstract type="html">Remove the preset with given name from the user defaults.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>+ (void)removePresetWithName:(NSString *)presetName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>presetName</Name>
+					<Abstract type="html">The name (identifier) of the preset that is to be removed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removePresetWithName:</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectOptionsDictionary/removePresetsWithNames:</TokenIdentifier>
+			<Abstract type="html">Remove the presets with given names from the user defaults.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>+ (void)removePresetsWithNames:(NSArray *)presetNames</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>presetNames</Name>
+					<Abstract type="html">A list of identifiers of presets that are to be removed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removePresetsWithNames:</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectOptionsDictionary/defaultValueForOptionKey:</TokenIdentifier>
+			<Abstract type="html">Returns the default value for the option with given key.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>+ (id)defaultValueForOptionKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The key of the option whose default value is desired.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/defaultValueForOptionKey:</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectOptionsDictionary/optionCanBeAltered:</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the option with given key can be altered when the project&apos;s engine is running.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)optionCanBeAltered:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The key of the option to inspect.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">True if and only if the option with given key can indeed be altered when the project&apos;s engine is running.</Abstract></ReturnValue>
+			<Anchor>//api/name/optionCanBeAltered:</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsDictionary/initWithProject:</TokenIdentifier>
+			<Abstract type="html">Initialise a new options dictionary and associate it to the given project.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithProject:(Project *)project</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>project</Name>
+					<Abstract type="html">The project the new options dictionary is associated with.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new options dictionary attached to the given project, with default option values.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithProject:</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsDictionary/initWithProject:usingPresetWithName:</TokenIdentifier>
+			<Abstract type="html">Initialise a new options dictionary with the preset with the given name and associate it to the given project.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithProject:(Project *)project usingPresetWithName:(NSString *)presetName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>project</Name>
+					<Abstract type="html">The project the new options dictionary is associated with.</Abstract>
+				</Parameter><Parameter>
+					<Name>presetName</Name>
+					<Abstract type="html">The name of the preset that is to be used.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new options dictionary attached to the given project, with option values matching that of the preset with given name.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithProject:usingPresetWithName:</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsDictionary/initWithProject:usingDictionary:</TokenIdentifier>
+			<Abstract type="html">Initialise a new options dictionary based on the given dictionary, and associate it to the given project.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithProject:(Project *)project usingDictionary:(ProjectOptionsDictionary *)dictionary</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>project</Name>
+					<Abstract type="html">The project the new options dictionary is associated with.</Abstract>
+				</Parameter><Parameter>
+					<Name>dictionary</Name>
+					<Abstract type="html">An options dictionary which this dictionary is to be based on.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new options dictionary attached to the given project, with the same values as the given dictionary.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithProject:usingDictionary:</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsDictionary/isValidPresetName:error:</TokenIdentifier>
+			<Abstract type="html">Checks whether or not the given preset name is a valid name for saving this options dictionary as a preset.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isValidPresetName:(NSString *)presetName error:(NSString **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>presetName</Name>
+					<Abstract type="html">The name whose validity needs to be checked.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">A pointer to a string. If the preset name is invalid, then this error will point to a
+description of the problem with the preset name.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">True if and only if the given preset name can be used when saving this options dictionary.</Abstract></ReturnValue>
+			<Anchor>//api/name/isValidPresetName:error:</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsDictionary/saveAsPresetWithName:error:</TokenIdentifier>
+			<Abstract type="html">Save this options dictionary&apos;s values as a preset.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)saveAsPresetWithName:(NSString *)presetName error:(NSString **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>presetName</Name>
+					<Abstract type="html">The name of the new preset</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">A pointer to a string that will hold the error if any occured.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">True if and only if this options dictionary has been savned as a preset. If not, then
+the error description will be saved in the given string pointer.</Abstract></ReturnValue>
+			<Anchor>//api/name/saveAsPresetWithName:error:</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsDictionary/presetName</TokenIdentifier>
+			<Abstract type="html">Returns the name of the preset that this options dictionary adheres to.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)presetName</Declaration>
+			
+			<ReturnValue><Abstract type="html">The name of the preset (which is also its identifier).</Abstract></ReturnValue>
+			<Anchor>//api/name/presetName</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsDictionary/isCustom</TokenIdentifier>
+			<Abstract type="html">Checks whether or not this options dictionary has customised values.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isCustom</Declaration>
+			
+			<ReturnValue><Abstract type="html">True if and only if this options dictionary has been customised.</Abstract></ReturnValue>
+			<Anchor>//api/name/isCustom</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectOptionsDictionary/customisedOptionKeys</TokenIdentifier>
+			<Abstract type="html">Get a list of option keys for which this dictionary has non-default values.</Abstract>
+			<DeclaredIn>ProjectOptionsDictionary.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)customisedOptionKeys</Declaration>
+			
+			<ReturnValue><Abstract type="html">An array of option keys for which this dictionary has custom values.</Abstract></ReturnValue>
+			<Anchor>//api/name/customisedOptionKeys</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

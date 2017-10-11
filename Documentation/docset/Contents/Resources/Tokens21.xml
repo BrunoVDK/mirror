@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PointerButton.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PointerButton</TokenIdentifier>
+			<Abstract type="html">The PointerButton class represents a button that makes the cursor a pointer upon hovering.
+The (hover) text color of the button can be altered.</Abstract>
+			<DeclaredIn>PointerButton.h</DeclaredIn>
+            
+			
+			<NodeRef refid="21"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PointerButton/setTextColor:</TokenIdentifier>
+			<Abstract type="html">The button&apos;s text color.</Abstract>
+			<DeclaredIn>PointerButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *textColor</Declaration>
+			
+			
+			<Anchor>//api/name/textColor</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PointerButton/textColor</TokenIdentifier>
+			<Abstract type="html">The button&apos;s text color.</Abstract>
+			<DeclaredIn>PointerButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *textColor</Declaration>
+			
+			
+			<Anchor>//api/name/textColor</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PointerButton/textColor</TokenIdentifier>
+			<Abstract type="html">The button&apos;s text color.</Abstract>
+			<DeclaredIn>PointerButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *textColor</Declaration>
+			
+			
+			<Anchor>//api/name/textColor</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PointerButton/setHoverColor:</TokenIdentifier>
+			<Abstract type="html">The button&apos;s text color when it is hovered.</Abstract>
+			<DeclaredIn>PointerButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *hoverColor</Declaration>
+			
+			
+			<Anchor>//api/name/hoverColor</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PointerButton/hoverColor</TokenIdentifier>
+			<Abstract type="html">The button&apos;s text color when it is hovered.</Abstract>
+			<DeclaredIn>PointerButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *hoverColor</Declaration>
+			
+			
+			<Anchor>//api/name/hoverColor</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PointerButton/hoverColor</TokenIdentifier>
+			<Abstract type="html">The button&apos;s text color when it is hovered.</Abstract>
+			<DeclaredIn>PointerButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *hoverColor</Declaration>
+			
+			
+			<Anchor>//api/name/hoverColor</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

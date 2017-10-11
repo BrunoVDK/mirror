@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectOptionsNetworkPanelController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectOptionsNetworkPanelController</TokenIdentifier>
+			<Abstract type="html">The ProjectOptionsNetworkPanelController class controls a project options panel with download options.</Abstract>
+			<DeclaredIn>ProjectOptionsPanelController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="50"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

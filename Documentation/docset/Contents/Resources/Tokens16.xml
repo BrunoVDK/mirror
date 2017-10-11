@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/LabeledProgressCell.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/LabeledProgressCell</TokenIdentifier>
+			<Abstract type="html">A ProjectLabeledProgressCell represents a cell for displaying a progress bar and a label covering that bar.</Abstract>
+			<DeclaredIn>LabeledProgressCell.h</DeclaredIn>
+            
+			
+			<NodeRef refid="16"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

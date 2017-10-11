@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectDatabaseError.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectDatabaseError</TokenIdentifier>
+			<Abstract type="html">The ProjectDatabaseError class represents an error that occured while handling a ProjectDatabase.</Abstract>
+			<DeclaredIn>ProjectDatabase.h</DeclaredIn>
+            
+			
+			<NodeRef refid="32"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectDatabaseError/errorWithDatabase:</TokenIdentifier>
+			<Abstract type="html">Instantiate a new database error.</Abstract>
+			<DeclaredIn>ProjectDatabase.h</DeclaredIn>
+			
+			<Declaration>+ (id)errorWithDatabase:(sqlite3 *)db</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>db</Name>
+					<Abstract type="html">The connection this error applies to.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A newly instantiated database error with given parameters, or nil if an error occured.</Abstract></ReturnValue>
+			<Anchor>//api/name/errorWithDatabase:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectDatabaseError/initWithDatabase:</TokenIdentifier>
+			<Abstract type="html">Instantiate a new database error.</Abstract>
+			<DeclaredIn>ProjectDatabase.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithDatabase:(sqlite3 *)db</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>db</Name>
+					<Abstract type="html">The connection this error applies to.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A newly instantiated database error with given parameters, or nil if an error occured.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDatabase:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

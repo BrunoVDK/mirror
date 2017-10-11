@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ProjectStatsCell.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectStatsCell</TokenIdentifier>
+			<Abstract type="html">The ProjectStatsCell class represents a cell that can display the icon, title and statistics of a ProjectURL
+that a Project is supposed to mirror.</Abstract>
+			<DeclaredIn>ProjectStatsCell.h</DeclaredIn>
+            
+			
+			<NodeRef refid="55"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsCell/setURL:</TokenIdentifier>
+			<Abstract type="html">The ProjectURL associated with ProjectStatsCell.</Abstract>
+			<DeclaredIn>ProjectStatsCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ProjectURL *URL</Declaration>
+			
+			
+			<Anchor>//api/name/URL</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsCell/URL</TokenIdentifier>
+			<Abstract type="html">The ProjectURL associated with ProjectStatsCell.</Abstract>
+			<DeclaredIn>ProjectStatsCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ProjectURL *URL</Declaration>
+			
+			
+			<Anchor>//api/name/URL</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectStatsCell/URL</TokenIdentifier>
+			<Abstract type="html">The ProjectURL associated with ProjectStatsCell.</Abstract>
+			<DeclaredIn>ProjectStatsCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ProjectURL *URL</Declaration>
+			
+			
+			<Anchor>//api/name/URL</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsCell/setColor:</TokenIdentifier>
+			<Abstract type="html">A flag denoting what color this cell uses for drawing a background while editing.</Abstract>
+			<DeclaredIn>ProjectStatsCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *color</Declaration>
+			
+			
+			<Anchor>//api/name/color</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsCell/color</TokenIdentifier>
+			<Abstract type="html">A flag denoting what color this cell uses for drawing a background while editing.</Abstract>
+			<DeclaredIn>ProjectStatsCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *color</Declaration>
+			
+			
+			<Anchor>//api/name/color</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectStatsCell/color</TokenIdentifier>
+			<Abstract type="html">A flag denoting what color this cell uses for drawing a background while editing.</Abstract>
+			<DeclaredIn>ProjectStatsCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSColor *color</Declaration>
+			
+			
+			<Anchor>//api/name/color</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsCell/setRenderInCircles:</TokenIdentifier>
+			<Abstract type="html">A flag denoting whether or not this cell displays the icon of a ProjectURL with a circular clip.</Abstract>
+			<DeclaredIn>ProjectStatsCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL renderInCircles</Declaration>
+			
+			
+			<Anchor>//api/name/renderInCircles</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsCell/renderInCircles</TokenIdentifier>
+			<Abstract type="html">A flag denoting whether or not this cell displays the icon of a ProjectURL with a circular clip.</Abstract>
+			<DeclaredIn>ProjectStatsCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL renderInCircles</Declaration>
+			
+			
+			<Anchor>//api/name/renderInCircles</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectStatsCell/renderInCircles</TokenIdentifier>
+			<Abstract type="html">A flag denoting whether or not this cell displays the icon of a ProjectURL with a circular clip.</Abstract>
+			<DeclaredIn>ProjectStatsCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL renderInCircles</Declaration>
+			
+			
+			<Anchor>//api/name/renderInCircles</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsCell/setStats:</TokenIdentifier>
+			<Abstract type="html">A custom string describing the associated URL status. This should be set by the cell&apos;s owner.</Abstract>
+			<DeclaredIn>ProjectStatsCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *stats</Declaration>
+			
+			
+			<Anchor>//api/name/stats</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsCell/stats</TokenIdentifier>
+			<Abstract type="html">A custom string describing the associated URL status. This should be set by the cell&apos;s owner.</Abstract>
+			<DeclaredIn>ProjectStatsCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *stats</Declaration>
+			
+			
+			<Anchor>//api/name/stats</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectStatsCell/stats</TokenIdentifier>
+			<Abstract type="html">A custom string describing the associated URL status. This should be set by the cell&apos;s owner.</Abstract>
+			<DeclaredIn>ProjectStatsCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *stats</Declaration>
+			
+			
+			<Anchor>//api/name/stats</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

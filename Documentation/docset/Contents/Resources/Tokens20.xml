@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PieGraphView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PieGraphView</TokenIdentifier>
+			<Abstract type="html">The PieGraphView class represents a view displaying a pie graph. The pie&apos;s amount of slices can be set (minimum 0, maximum 15), the size of
+each slice is based on percentual weight, that is, each slice has an associated unsigned integer weight, while its percentual weight is its
+weight relative to the sum of all slice weights.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="20"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphView/setEnabled:</TokenIdentifier>
+			<Abstract type="html">Denotes whether or not this view is enabled.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) BOOL enabled</Declaration>
+			
+			
+			<Anchor>//api/name/enabled</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphView/enabled</TokenIdentifier>
+			<Abstract type="html">Denotes whether or not this view is enabled.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) BOOL enabled</Declaration>
+			
+			
+			<Anchor>//api/name/enabled</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PieGraphView/enabled</TokenIdentifier>
+			<Abstract type="html">Denotes whether or not this view is enabled.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) BOOL enabled</Declaration>
+			
+			
+			<Anchor>//api/name/enabled</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PieGraphView/nameOfTheme:</TokenIdentifier>
+			<Abstract type="html">Get the name of the given pie graph theme.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>+ (const NSString *)nameOfTheme:(PieGraphTheme)theme</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theme</Name>
+					<Abstract type="html">The theme of which the name is desired.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/nameOfTheme:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PieGraphView/colorsForTheme:</TokenIdentifier>
+			<Abstract type="html">Get the colors used for the given pie graph theme.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>+ (const NSArray *)colorsForTheme:(PieGraphTheme)theme</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theme</Name>
+					<Abstract type="html">The theme of which the associated colors are requested.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/colorsForTheme:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PieGraphView/maximumNbOfSlices</TokenIdentifier>
+			<Abstract type="html">Returns the maximum number of slices a pie graph view can have.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>+ (NSInteger)maximumNbOfSlices</Declaration>
+			
+			<ReturnValue><Abstract type="html">The maximum number of slices a pie graph can have.</Abstract></ReturnValue>
+			<Anchor>//api/name/maximumNbOfSlices</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphView/numberOfSlices</TokenIdentifier>
+			<Abstract type="html">Get the number of slices this pie chart has.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)numberOfSlices</Declaration>
+			
+			<ReturnValue><Abstract type="html">The number of slices of this pie chart.</Abstract></ReturnValue>
+			<Anchor>//api/name/numberOfSlices</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphView/addSliceWithWeight:</TokenIdentifier>
+			<Abstract type="html">Add a slice to this pie chart, having the given weight.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>- (void)addSliceWithWeight:(NSUInteger)weight</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>weight</Name>
+					<Abstract type="html">The weight of the new slice.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addSliceWithWeight:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphView/addSlicesWithWeights:</TokenIdentifier>
+			<Abstract type="html">Add slices with given weights to this pie chart.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>- (void)addSlicesWithWeights:(NSUInteger)nbOfSlices, ...</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>nbOfSlices</Name>
+					<Abstract type="html">The number of new slices</Abstract>
+				</Parameter><Parameter>
+					<Name>...</Name>
+					<Abstract type="html">The actual weights of the new slices.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addSlicesWithWeights:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphView/removeSliceAtIndex:</TokenIdentifier>
+			<Abstract type="html">Remove the slice at given index from this pie chart.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>- (void)removeSliceAtIndex:(NSUInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index of the slice that is to be removed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeSliceAtIndex:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphView/removeAllSlices</TokenIdentifier>
+			<Abstract type="html">Remove all slices from this pie chart.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>- (void)removeAllSlices</Declaration>
+			
+			
+			<Anchor>//api/name/removeAllSlices</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphView/weightForSliceAtIndex:</TokenIdentifier>
+			<Abstract type="html">Get the weight of the slice at the given index.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)weightForSliceAtIndex:(NSUInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index of the slice whose weight is requestted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The weight of the slice at the given index (zero if the index was invalid).</Abstract></ReturnValue>
+			<Anchor>//api/name/weightForSliceAtIndex:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphView/setWeight:forSliceAtIndex:</TokenIdentifier>
+			<Abstract type="html">Set the weight of the slice at the given index to the given weight.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>- (void)setWeight:(NSUInteger)weight forSliceAtIndex:(NSUInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>weight</Name>
+					<Abstract type="html">The new weight for the slice at given index.</Abstract>
+				</Parameter><Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index of the slice whose weight is to be mutated.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setWeight:forSliceAtIndex:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphView/addWeight:toSliceAtIndex:</TokenIdentifier>
+			<Abstract type="html">Add the given weight to that of the slice at the given index.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>- (void)addWeight:(NSUInteger)weight toSliceAtIndex:(NSUInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>weight</Name>
+					<Abstract type="html">The weight that is to be added to the slice&apos;s current weight.</Abstract>
+				</Parameter><Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index of the slice whose weight is to be altered.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addWeight:toSliceAtIndex:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphView/colorOfSliceAtIndex:</TokenIdentifier>
+			<Abstract type="html">Get the color of the slice at given index.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>- (NSColor *)colorOfSliceAtIndex:(NSUInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index of the slice.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/colorOfSliceAtIndex:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphView/setColor:forSliceAtIndex:</TokenIdentifier>
+			<Abstract type="html">Set the color of the slice at the given index to the given one.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>- (void)setColor:(NSColor *)color forSliceAtIndex:(NSUInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>color</Name>
+					<Abstract type="html">The new color for the slice at given index.</Abstract>
+				</Parameter><Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index of the slice whose color is to be altered.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setColor:forSliceAtIndex:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PieGraphView/adoptTheme:</TokenIdentifier>
+			<Abstract type="html">Adopt the given theme, using its associated colors for coloring the slices of this view.</Abstract>
+			<DeclaredIn>PieGraphView.h</DeclaredIn>
+			
+			<Declaration>- (void)adoptTheme:(PieGraphTheme)theme</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theme</Name>
+					<Abstract type="html">The theme that is to be used for this pie graph view.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/adoptTheme:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

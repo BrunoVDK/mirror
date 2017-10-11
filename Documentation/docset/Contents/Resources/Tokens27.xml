@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PreferencesPresetsPanelController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PreferencesPresetsPanelController</TokenIdentifier>
+			<Abstract type="html">The PreferencesPresetsPanelController class controls the preset preferences panel of this application.</Abstract>
+			<DeclaredIn>PreferencesPanelController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="27"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/WhiteView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/WhiteView</TokenIdentifier>
+			<Abstract type="html">The ColoredView class represents a view with a white background color.</Abstract>
+			<DeclaredIn>WhiteView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="77"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WhiteView/setColor:</TokenIdentifier>
+			<Abstract type="html">This instance&apos;s background color.</Abstract>
+			<DeclaredIn>WhiteView.m</DeclaredIn>
+			
+			<Declaration>- (void)setColor:(NSColor *)color</Declaration>
+			
+			
+			<Anchor>//api/name/setColor:</Anchor>
+            <NodeRef refid="77"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSColor+Additions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSColor(Additions)</TokenIdentifier>
+			<Abstract type="html">The ColoredView category alters the behaviour of the NSColor class.</Abstract>
+			<DeclaredIn>NSColor+Additions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="87"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSColor/darkerGrayColor</TokenIdentifier>
+			<Abstract type="html">Returns a color that has a darkish gray tint.</Abstract>
+			<DeclaredIn>NSColor+Additions.h</DeclaredIn>
+			
+			<Declaration>+ (NSColor *)darkerGrayColor</Declaration>
+			
+			
+			<Anchor>//api/name/darkerGrayColor</Anchor>
+            <NodeRef refid="87"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -23,7 +23,7 @@
 /**
  * This project file's icon.
  */
-@property (nonatomic, readonly) NSString *icon;
+@property (nonatomic, readonly) NSImage *icon;
 
 /**
  * This project file's address.

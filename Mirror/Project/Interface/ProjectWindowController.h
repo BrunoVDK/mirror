@@ -33,6 +33,11 @@
 @property (nonatomic) BOOL renderInCircles;
 
 /**
+ * The property associated with this project window controller.
+ */
+@property (nonatomic, readonly) Project *project;
+
+/**
  * Update the project URL at the given index listed in the window.
  *
  * @param index The index of the project link to update.
@@ -190,7 +195,7 @@
     WindowTheme theme;
     
     HeaderView *headerView;
-    IBOutlet NSMenu *contextualMenu;
+    IBOutlet NSMenu *contextualMenu, *filesMenu;
     IBOutlet ProjectMenuView *menuView;
     IBOutlet NSOutlineView *statsOutlineView;
     IBOutlet NSTableView *fileListView;

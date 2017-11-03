@@ -32,6 +32,7 @@
 
 @implementation ProjectWindowController
 
+@dynamic project;
 @synthesize renderInCircles = _renderInCircles;
 
 - (Project *)project {
@@ -178,10 +179,11 @@
             if ([[exportDirectory absoluteString] length] > 0) {
                 
                 int i = 2;
+                NSError *error = nil;
                 
                 do {
                     
-                    if ([fileManager createDirectoryAtURL:exportDirectory withIntermediateDirectories:false attributes:nil error:nil]) {
+                    if ([fileManager createDirectoryAtURL:exportDirectory withIntermediateDirectories:false attributes:nil error:&error]) {
                         [[self project] setExportDirectory:exportDirectory];
                         break;
                     }
@@ -201,7 +203,7 @@
         
     }
     else { // User-selected folder
-        
+                
         NSSavePanel *panel = [NSSavePanel savePanel];
         [panel beginSheetModalForWindow:[self window] completionHandler:^(NSInteger returnCode) {
             
@@ -526,6 +528,7 @@
     [self updateRelevantURLs];
     [self updateStatus];
     
+    [toolbarAddPauseButton setSelected:showDummy forSegment:0];
     [toolbarAddPauseButton setSelected:[[self project] isMirroring] && [[self project] isPaused] forSegment:1];
     
 }
@@ -704,7 +707,6 @@
         errorMessage = error;
     [self updateStatus];
     [self updateMenus];
-    [listView reloadData];
     
 }
 
@@ -1395,7 +1397,6 @@
 @interface ProjectWindowControllerYosemite()
 
 - (void)loadPanel;
-- (IBAction)socketSwitch:(NSSegmentedControl *)sender;
 
 @end
 
@@ -1423,6 +1424,12 @@
     
     [toolbarAddPauseButton setOverrideDrawing:false]; // Disable custom segmented control drawing
     [self updateGradient];
+    
+    statsOutlineView.dataSource = self.project.statistics;
+    statsOutlineView.delegate = self.project.statistics;
+    self.project.statistics.outlineView = statsOutlineView;
+    
+    [self updateFileListView:false];
     
     [super windowDidLoad]; // At the end, as the superclass is responsible for showing the window
     
@@ -1476,8 +1483,6 @@
             
             if (selectedRow == 1)
                 [statsOutlineView reloadData];
-            else
-                [fileListView reloadData];
             
             return;
             
@@ -1551,7 +1556,7 @@
 
 - (IBAction)clearList:(id)sender {
     
-    [self.project.fileList clearFileList];
+    [self.project.files clearFileList];
     
 }
 
@@ -1599,14 +1604,54 @@
     
 }
 
-- (IBAction)socketSwitch:(NSSegmentedControl *)sender {
+- (IBAction)switchFileView:(id)sender {
     
-    [sender setEnabled:false forSegment:sender.selectedSegment];
-    [sender setEnabled:true forSegment:1-sender.selectedSegment]; // Assuming only two display modes
+    BOOL socketsShown = [[fileListView infoForBinding:NSContentBinding] objectForKey:NSObservedObjectKey] == self.project.sockets;
+    
+    [self updateFileListView:!socketsShown];
     
 }
 
 #pragma mark Table Views
+
+- (void)updateFileListView:(BOOL)showSockets {
+    
+    id contentController = self.project.files;
+    if (showSockets) contentController = self.project.sockets;
+    
+    // Update interface elements
+    [[filesMenu itemAtIndex:1] setTitle:(showSockets ? @"Show Active Sockets" : @"Show Recent Files")];
+    [[[fileListView tableColumns] objectAtIndex:1] setIdentifier:(showSockets ? @"socketDescription" : @"fileName")];
+    [[[fileListView tableColumns] objectAtIndex:2] setIdentifier:(showSockets ? @"progress" : @"size")];
+    ((NSTableHeaderCell *)[[[fileListView tableColumns] objectAtIndex:1] headerCell]).stringValue
+        = (showSockets ? @"Description" : @"File");
+    ((NSTableHeaderCell *)[[[fileListView tableColumns] objectAtIndex:2] headerCell]).stringValue
+        = (showSockets ? @"Progress" : @"Size");
+    fileListView.headerView.needsDisplay = true;
+    [filesStatusField bind:NSValueBinding toObject:contentController withKeyPath:@"status" options:nil];
+    
+    // Update bindings
+    [fileListView bind:NSContentBinding toObject:contentController withKeyPath:@"arrangedObjects" options:nil];
+    [fileListView bind:NSSortDescriptorsBinding toObject:contentController withKeyPath:@"sortDescriptors" options:nil];
+    NSString *identifier = nil;
+    for (NSTableColumn *column in fileListView.tableColumns) {
+        identifier = column.identifier;
+        if ([identifier isEqualToString:@"Action"]) {
+            if (showSockets) // Set up 'cancel' action (argument is the socket itself)
+                [column bind:NSArgumentBinding toObject:contentController withKeyPath:@"arrangedObjects" options:nil];
+            [column bind:NSTargetBinding
+                toObject:(showSockets ? self : contentController)
+             withKeyPath:(showSockets ? @"project" : @"arrangedObjects")
+                 options:[NSDictionary dictionaryWithObjectsAndKeys:(showSockets ? @"cancel:" : @"revealInFinder:"), NSSelectorNameBindingOption, nil]];
+        }
+        else
+            [column bind:NSValueBinding
+                toObject:contentController
+             withKeyPath:[@"arrangedObjects." stringByAppendingString:column.identifier]
+                 options:nil];
+    }
+    
+}
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     
@@ -1638,7 +1683,7 @@
             if (row == 0)
                 return [NSString stringWithFormat:@"%lu", (unsigned long)[self project].URLs.count];
             else if (row == 2)
-                return [NSString stringWithFormat:@"%lu", (unsigned long)[self project].fileList.size];
+                return [NSString stringWithFormat:@"%lu", (unsigned long)[self project].files.count];
             
         }
         
@@ -1666,7 +1711,12 @@
         NSInteger selectedRow = [tableView selectedRow];
         NSString *identifier = [tableColumn identifier];
         
-        [cell setMenu:(row == 0 ? contextualMenu : nil)];
+        if (row == 0 && selectedRow == 0)
+            [cell setMenu:contextualMenu];
+        else if (row == 2 && selectedRow == 2)
+            [cell setMenu:filesMenu];
+        else
+            [cell setMenu:nil];
         
         if ([identifier isEqualToString:@"Button"]) {
             
@@ -1677,7 +1727,7 @@
                 else if (row == 1)
                     cell.image = nil, cell.action = NULL; // cell.image = [NSImage imageNamed:@"PauseBubble"], cell.action = @selector(pause:);
                 else
-                    cell.image = [NSImage imageNamed:@"RevealBubble"], cell.action = @selector(revealInFinder:);
+                    cell.image = [NSImage imageNamed:@"SwitchBubble"], cell.action = @selector(switchFileView:);
                 
             }
             else
@@ -1744,7 +1794,7 @@
                 else if (row == 1)
                     return @"Pause the project.";
                 else
-                    return @"Reveal in Finder.";
+                    return @"Switch between files/sockets.";
                 
             }
             

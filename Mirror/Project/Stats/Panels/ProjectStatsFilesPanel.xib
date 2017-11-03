@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14F2411" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
@@ -27,7 +27,7 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </searchFieldCell>
                     <connections>
-                        <binding destination="-2" name="predicate" keyPath="self.controller.project.fileList.filterPredicate" id="XSe-Fl-C3I">
+                        <binding destination="-2" name="predicate" keyPath="self.controller.project.files.filterPredicate" id="LGJ-CF-OZ2">
                             <dictionary key="options">
                                 <string key="NSDisplayName">predicate</string>
                                 <string key="NSPredicateFormat">fileName contains $value</string>
@@ -44,7 +44,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.controller.project.fileList.status" id="nP0-9E-kNQ"/>
+                        <binding destination="-2" name="value" keyPath="self.controller.project.files.status" id="ncH-9G-ip7"/>
                     </connections>
                 </textField>
                 <scrollView focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="20" horizontalPageScroll="10" verticalLineScroll="20" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="2sY-Qz-2Ib">
@@ -111,7 +111,7 @@
                                     </tableColumn>
                                 </tableColumns>
                                 <connections>
-                                    <binding destination="-2" name="sortDescriptors" keyPath="self.controller.project.fileList.sortDescriptors" id="FIW-pg-n3o"/>
+                                    <binding destination="-2" name="sortDescriptors" keyPath="self.controller.project.files.sortDescriptors" id="GqH-dV-9hM"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -142,7 +142,6 @@
                     </segmentedCell>
                     <connections>
                         <action selector="socketSwitch:" target="-2" id="zep-lf-yYa"/>
-                        <binding destination="-2" name="selectedIndex" keyPath="self.project" id="jc8-9q-yTx"/>
                     </connections>
                 </segmentedControl>
             </subviews>

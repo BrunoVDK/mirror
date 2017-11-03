@@ -39,8 +39,8 @@
 		159514181F5FE3FD00FA3686 /* CircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 159514171F5FE3FD00FA3686 /* CircularBuffer.m */; };
 		159726551F614A3500DE1CC0 /* ProjectFileList.m in Sources */ = {isa = PBXBuildFile; fileRef = 159726541F614A3500DE1CC0 /* ProjectFileList.m */; };
 		159726581F614A4300DE1CC0 /* ProjectFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 159726571F614A4300DE1CC0 /* ProjectFile.m */; };
-		1597265D1F61B7F200DE1CC0 /* NetworkTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 1597265C1F61B7F200DE1CC0 /* NetworkTemplate.png */; };
 		159726601F61BA8500DE1CC0 /* CustomEnablingSegmentedControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1597265F1F61BA8500DE1CC0 /* CustomEnablingSegmentedControlCell.m */; };
+		15D89DC51FACD20E00CCD956 /* SwitchBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D89DC41FACD20E00CCD956 /* SwitchBubble.png */; };
 		15F58EEE1F65E589004D4A0C /* ProjectSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F58EED1F65E589004D4A0C /* ProjectSocket.m */; };
 		15F58EF11F65E615004D4A0C /* LabeledProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F58EF01F65E615004D4A0C /* LabeledProgressCell.m */; };
 		BF0204251E4764E300FFE15E /* WindowAdaptedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0204241E4764E300FFE15E /* WindowAdaptedCell.m */; };
@@ -213,9 +213,9 @@
 		159726541F614A3500DE1CC0 /* ProjectFileList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectFileList.m; path = Mirror/Project/Files/ProjectFileList.m; sourceTree = "<group>"; };
 		159726561F614A4300DE1CC0 /* ProjectFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectFile.h; path = Mirror/Project/Files/ProjectFile.h; sourceTree = "<group>"; };
 		159726571F614A4300DE1CC0 /* ProjectFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectFile.m; path = Mirror/Project/Files/ProjectFile.m; sourceTree = "<group>"; };
-		1597265C1F61B7F200DE1CC0 /* NetworkTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NetworkTemplate.png; path = Mirror/Images/Toolbar/NetworkTemplate.png; sourceTree = "<group>"; };
 		1597265E1F61BA8500DE1CC0 /* CustomEnablingSegmentedControlCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomEnablingSegmentedControlCell.h; path = Mirror/Interface/CustomEnablingSegmentedControlCell.h; sourceTree = "<group>"; };
 		1597265F1F61BA8500DE1CC0 /* CustomEnablingSegmentedControlCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomEnablingSegmentedControlCell.m; path = Mirror/Interface/CustomEnablingSegmentedControlCell.m; sourceTree = "<group>"; };
+		15D89DC41FACD20E00CCD956 /* SwitchBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SwitchBubble.png; path = Mirror/Images/Toolbar/SwitchBubble.png; sourceTree = "<group>"; };
 		15F58EEC1F65E589004D4A0C /* ProjectSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectSocket.h; path = Mirror/Project/Files/ProjectSocket.h; sourceTree = "<group>"; };
 		15F58EED1F65E589004D4A0C /* ProjectSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectSocket.m; path = Mirror/Project/Files/ProjectSocket.m; sourceTree = "<group>"; };
 		15F58EEF1F65E615004D4A0C /* LabeledProgressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabeledProgressCell.h; path = Mirror/Interface/LabeledProgressCell.h; sourceTree = "<group>"; };
@@ -912,7 +912,6 @@
 				BFE0B8A41DDCD0FA00871495 /* Java.png */,
 				BF050F5A1DC559C4001D8F68 /* Limits.png */,
 				BF050F641DC55DC4001D8F68 /* Network.png */,
-				1597265C1F61B7F200DE1CC0 /* NetworkTemplate.png */,
 				BFB81FBF1D783B1400CD5035 /* Notifications.png */,
 				BFB81FC01D783B1400CD5035 /* Notifications@2x.png */,
 				BFFEAD121DAC0A1B000651AF /* PauseBubble.png */,
@@ -921,6 +920,7 @@
 				BFE0B8AE1DDDD26900871495 /* Presets.png */,
 				BF0A5D341DB01BEF00836D4B /* RevealBubble.png */,
 				BFB81FC81D783B1400CD5035 /* SearchTemplate.png */,
+				15D89DC41FACD20E00CCD956 /* SwitchBubble.png */,
 			);
 			name = Toolbar;
 			sourceTree = "<group>";
@@ -1140,6 +1140,7 @@
 				BFB81FF91D783B4800CD5035 /* Mirror.help in Resources */,
 				BFFEAD0E1DABE9AE000651AF /* AddBubble.png in Resources */,
 				BF0A5D351DB01BEF00836D4B /* RevealBubble.png in Resources */,
+				15D89DC51FACD20E00CCD956 /* SwitchBubble.png in Resources */,
 				BFB81FB31D783AEF00CD5035 /* Badge.png in Resources */,
 				BFB81FA41D783AD400CD5035 /* PreferencesDownloadsPanel.xib in Resources */,
 				151E4A051F7D48D800C1DE8D /* ProjectWindowYosemite.xib in Resources */,
@@ -1148,7 +1149,6 @@
 				BFE0B8A11DDA2BB400871495 /* Crawler.png in Resources */,
 				BFB81FDE1D783B1400CD5035 /* SearchTemplate.png in Resources */,
 				BFB81FCC1D783B1400CD5035 /* Build.png in Resources */,
-				1597265D1F61B7F200DE1CC0 /* NetworkTemplate.png in Resources */,
 				BFB81FD71D783B1400CD5035 /* PauseTemplate.png in Resources */,
 				BF050F601DC559EB001D8F68 /* Cache.png in Resources */,
 				BF050F651DC55DC4001D8F68 /* Network.png in Resources */,

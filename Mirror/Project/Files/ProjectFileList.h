@@ -17,15 +17,9 @@
  */
 @interface ProjectFileList : NSArrayController <NSCoding> {
     
-    Project *_project;
     NSUInteger maximumCapacity; // Maximum capacity of backing array
     
 }
-
-/**
- * The project associated with this file list.
- */
-@property (nonatomic, readwrite, assign) Project *project;
 
 /**
  * Gives the status of the file list.
@@ -37,7 +31,7 @@
  *
  * @return The number of files this list keeps track of.
  */
-- (NSUInteger)size;
+- (NSUInteger)count;
 
 /**
  * Remove all files in this list.

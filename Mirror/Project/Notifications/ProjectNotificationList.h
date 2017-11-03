@@ -29,6 +29,6 @@
  *
  * @return The number of notifications this list keeps track of.
  */
-- (NSUInteger)size;
+- (NSUInteger)count;
 
 @end

@@ -22,6 +22,8 @@
     
     if (self = [super init]) {
         
+        self.automaticallyRearrangesObjects = true;
+        self.usesLazyFetching = false;
         self.clearsFilterPredicateOnInsertion = false;
         [self setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:false]]];
 
@@ -75,7 +77,7 @@
 
 #pragma mark Properties
 
-- (NSUInteger)size {
+- (NSUInteger)count {
     
     return ((NSMutableArray *)self.content).count;
     
@@ -92,7 +94,9 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     
+#if DEBUG
     NSLog(@"MAX NOTIFICATIONS %li", (long)[PREFERENCES integerForKey:MaxUpdates]);
+#endif
     
     [self cleanArray]; // Remove possible excess
     
@@ -104,10 +108,13 @@
     
     if ([object isMemberOfClass:[ProjectNotification class]]) {
         
-        [self addObject:object];
-        
-        if (![self cleanArray]) {
+        if ([self count] > maximumCapacity) {
+            [self removeObject:[(NSMutableArray *)self.content firstObject]];
+            [super addObject:object];
+        }
+        else {
             [self willChangeValueForKey:@"status"];
+            [super addObject:object];
             [self didChangeValueForKey:@"status"];
         }
         

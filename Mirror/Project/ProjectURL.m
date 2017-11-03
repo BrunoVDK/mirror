@@ -29,7 +29,7 @@
         _identifier = identifier;
         
         _URL = [url retain];
-        _title = [[[self URL] absoluteString] copy];
+        _title = [[url absoluteString] copy];
         _icon = [[NSImage imageNamed:NSImageNameNetwork] retain];
         
         bytesScanned = bytesWritten = linksDetected = 0;

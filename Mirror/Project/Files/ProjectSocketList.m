@@ -6,7 +6,6 @@
 //  Copyright (c) 2017 BV. All rights reserved.
 //
 
-#import "Project.h"
 #import "ProjectSocket.h"
 #import "ProjectSocketList.h"
 
@@ -15,7 +14,6 @@
 @implementation ProjectSocketList
 
 @dynamic status;
-@synthesize project = _project;
 
 #pragma mark Constructors
 
@@ -23,6 +21,8 @@
     
     if (self = [super init]) {
         
+        self.automaticallyRearrangesObjects = true;
+        self.usesLazyFetching = false;
         self.clearsFilterPredicateOnInsertion = false;
         self.content = [NSMutableArray array];
         
@@ -36,13 +36,13 @@
 
 - (NSUInteger)size {
     
-    return backingArray.count;
+    return ((NSMutableArray *)self.content).count;
     
 }
 
 - (NSString *)status {
     
-    NSInteger nbOfSockets = self.sockets.count;
+    NSInteger nbOfSockets = [self.arrangedObjects count];
     return (nbOfSockets == 0 ? @"No connections." : [NSString stringWithFormat:(nbOfSockets == 1 ? @"%li connection." : @"%li connections."), (long)nbOfSockets]);
 
 }
@@ -51,7 +51,7 @@
 
 - (void)addObject:(id)object {
     
-    if ([object isMemberOfClass:[ProjectFile class]]) {
+    if ([object isMemberOfClass:[ProjectSocket class]]) {
         
         [self willChangeValueForKey:@"status"];
         

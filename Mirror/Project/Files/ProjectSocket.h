@@ -36,7 +36,7 @@ enum {
 /**
  * This project socket's icon.
  */
-@property (nonatomic, readonly) NSString *icon;
+@property (nonatomic, readonly) NSImage *icon;
 
 /**
  * The type of this socket.

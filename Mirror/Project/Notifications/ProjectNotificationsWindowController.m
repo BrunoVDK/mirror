@@ -58,6 +58,12 @@
     
 }
 
+- (void)windowDidLoad {
+    
+    [self readTheme];
+    
+}
+
 #pragma mark Theme
 
 - (void)readTheme {
@@ -96,7 +102,7 @@
         
         ProjectNotificationList *notificationList = self.project.notifications;
         
-        if (selectedRow < notificationList.size) {
+        if (selectedRow < notificationList.count) {
             
             NSString *description = [(ProjectNotification *)[notificationList.arrangedObjects objectAtIndex:selectedRow] content];
             

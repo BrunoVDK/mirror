@@ -18,6 +18,7 @@
 #import "ProjectNotificationList.h"
 #import "ProjectOptionsDictionary.h"
 #import "ProjectSocket.h"
+#import "ProjectSocketList.h"
 #import "ProjectStatsDictionary.h"
 #import "ProjectStatsWindowController.h"
 #import "ProjectURL.h"
@@ -59,7 +60,7 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
 
 @implementation Project
 
-@synthesize windowController = _windowController, options = _options, statistics = _statistics, shouldCancel = _shouldCancel, addURLBuffer = _addURLBuffer, started = _started, delegate = _delegate, exportDirectory = _exportDirectory, URLs = _URLs, addRetries = _addRetries, completed = _completed, writingPermission = _writingPermission, fileList = _fileList, notifications = _notifications;
+@synthesize windowController = _windowController, options = _options, statistics = _statistics, shouldCancel = _shouldCancel, addURLBuffer = _addURLBuffer, started = _started, delegate = _delegate, exportDirectory = _exportDirectory, URLs = _URLs, addRetries = _addRetries, completed = _completed, writingPermission = _writingPermission, files = _files, sockets = _sockets, notifications = _notifications;
 
 #pragma mark Class Methods
 
@@ -86,10 +87,8 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     
     _statistics = [ProjectStatsDictionary new];
     
-    _fileList = [ProjectFileList new];
-    _fileList.displayMode = ProjectFileListDisplayFiles;
-    _fileList.project = self;
-    
+    _files = [ProjectFileList new];
+    _sockets = [ProjectSocketList new];
     _notifications = [ProjectNotificationList new];
     
     _started = _completed = false;
@@ -117,18 +116,20 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     
     ProjectURL *newURL = [[ProjectURL alloc] initWithURL:url identifier:self.URLs.count];
     if (newURL) {
+        
+        // Register URL
         [[self URLs] insertObject:newURL atIndex:0];
         if ([self hasStarted])
             [self.addURLBuffer addObject:newURL]; // If the project is already running, add the URL to a waiting queue
+        [newURL release];
+        
+        [self mirror];
+        
+        return [self.URLs firstObject];
+        
     }
     
-    [newURL release];
-    
-    [self mirror];
-    
-    [[self windowController] updateInterface];
-    
-    return [self.URLs firstObject];
+    return nil;
     
 }
 
@@ -177,7 +178,7 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
             }
             
         }
-        
+                
         [[self windowController] requestExportDirectory:^(BOOL success) {
             NSError *error = nil;
             if (success) // Add security-scoped bookmark
@@ -203,9 +204,9 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     for (ProjectURL *url in [properties objectForKey:@"URLs"])
         [[self URLs] addObject:url];
     
-    if (_fileList)
-        [_fileList release];
-    _fileList = [[properties objectForKey:@"FileList"] retain];
+    if (_files)
+        [_files release];
+    _files = [[properties objectForKey:@"Files"] retain];
     if (_notifications)
         [_notifications release];
     _notifications = [[properties objectForKey:@"Notifications"] retain];
@@ -228,7 +229,7 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     NSDictionary *properties = [NSDictionary dictionaryWithObjectsAndKeys:
                                 // self.options, @"Options", // Keeps track of preset identifier
                                 // self.statistics, @"Statistics", // Keeps track of all stats except number of files for each type
-                                _fileList, @"FileList",
+                                _files, @"Files",
                                 _notifications, @"Notifications",
                                 [NSNumber numberWithBool:_completed], @"Completed", // Avoid continuing a finished project
                                 bookmarkData, @"BookmarkData",
@@ -333,21 +334,25 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
                 // if (error)
                 //     [self.delegate projectDidEnd:self error:@"Couldn't create cache directory"];
                 
-                [[self.window standardWindowButton:NSWindowDocumentIconButton] setImage:[NSImage imageNamed:@"documenticon"]]; // Bit crude, icon doesn't show otherwise (not sure why)
-                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[self.window standardWindowButton:NSWindowDocumentIconButton] setImage:[NSImage imageNamed:@"documenticon"]]; // Bit crude, icon doesn't show otherwise (not sure why)
+                    
 #if CHECK_INTERNET_CONNECTION
-                if (hasInternetConnection())
+                    if (hasInternetConnection())
 #endif
-                    [self performSelectorInBackground:@selector(mirrorInBackground) withObject:nil];
+                        [self performSelectorInBackground:@selector(mirrorInBackground) withObject:nil];
 #if CHECK_INTERNET_CONNECTION
-                else
-                    [self.delegate projectDidEnd:self error:@"No internet connection."];
+                    else
+                        [self.delegate projectDidEnd:self error:@"No internet connection."];
 #endif
+                });
                 
             }
             else {
                 _writingPermission = false;
-                [self.delegate projectDidEnd:self error:@"No writing permission."];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.delegate projectDidEnd:self error:@"No writing permission."];
+                });
             }
             
         }];
@@ -836,7 +841,7 @@ int __cdecl httrack_loop(t_hts_callbackarg *carg, httrackp *opt, lien_back *back
         }
         
         dispatch_sync(dispatch_get_main_queue(), ^{ // On main queue
-            [project.fileList readSockets:socketArray]; // Should be about 0.05ms, table reloading is done separately by window controller
+            
         });
         
     }
@@ -918,7 +923,7 @@ void __cdecl httrack_filesave(t_hts_callbackarg * carg, httrackp * opt, const ch
     // Add project file to list
     ProjectFile *projectFile = [[[ProjectFile alloc] initWithAddress:address file:path size:size] autorelease];
     dispatch_async(dispatch_get_main_queue(), ^{
-        [project.fileList addObject:projectFile];
+        [project.files addObject:projectFile];
         [project.statistics registerFile:projectFile];
         // [project.delegate project:project savedFile:projectFile];
     });
@@ -995,10 +1000,14 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     [_cancelURLBuffer release];
     
     [_options release];
-    [_statistics release];
     [_URLs release];
-    [_fileList release];
     [filters release];
+    
+    [_files release];
+    [_sockets release];
+    [_notifications release];
+    
+    [_statistics release];
     
     [bookmarkData release];
     

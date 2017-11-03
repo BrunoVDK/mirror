@@ -17,17 +17,7 @@
  */
 @interface ProjectSocketList : NSArrayController {
     
-    Project *_project;
-    
-    // Interface
-    LabeledProgressCell *progressCell;
-    
 }
-
-/**
- * The project associated with this socket list.
- */
-@property (nonatomic, readwrite, assign) Project *project;
 
 /**
  * The status of this socket list.

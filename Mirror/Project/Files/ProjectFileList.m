@@ -9,7 +9,6 @@
 #import "NSString+Additions.h"
 
 #import "PreferencesConstants.h"
-#import "Project.h"
 #import "ProjectFile.h"
 #import "ProjectFileList.h"
 
@@ -18,7 +17,6 @@
 @implementation ProjectFileList
 
 @dynamic status;
-@synthesize project = _project;
 
 #pragma mark Constructors
 
@@ -26,6 +24,8 @@
     
     if (self = [super init]) {
         
+        self.automaticallyRearrangesObjects = true;
+        self.usesLazyFetching = false;
         self.clearsFilterPredicateOnInsertion = false;
         
         // Set up backing array
@@ -65,7 +65,7 @@
 
 #pragma mark Properties
 
-- (NSUInteger)size {
+- (NSUInteger)count {
     
     return ((NSMutableArray *)self.content).count;
     
@@ -92,10 +92,13 @@
     
     if ([object isMemberOfClass:[ProjectFile class]]) {
         
-        [self addObject:object];
-        
-        if (![self cleanArray]) {
+        if ([self count] > maximumCapacity) {
+            [self removeObject:[(NSMutableArray *)self.content firstObject]];
+            [super addObject:object];
+        }
+        else {
             [self willChangeValueForKey:@"status"];
+            [super addObject:object];
             [self didChangeValueForKey:@"status"];
         }
         

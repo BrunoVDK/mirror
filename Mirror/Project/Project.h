@@ -15,7 +15,7 @@
 #define MAX_PROJECT_URLS 32
 #define MAX_FILTERS 100
 
-@class CircularBuffer, ProjectOptionsDictionary, ProjectFile, ProjectFileList, ProjectNotificationList, ProjectUpdate, ProjectURL, ProjectSocket, ProjectStatsDictionary, ProjectWindowController;
+@class CircularBuffer, ProjectOptionsDictionary, ProjectFile, ProjectFileList, ProjectNotificationList, ProjectUpdate, ProjectURL, ProjectSocket, ProjectSocketList, ProjectStatsDictionary, ProjectWindowController;
 
 @protocol ProjectDelegate;
 
@@ -44,7 +44,8 @@
     ProjectStatsDictionary *_statistics;
     
     // Files & Writing
-    ProjectFileList *_fileList;
+    ProjectFileList *_files;
+    ProjectSocketList *_sockets;
     NSURL *_exportDirectory;
     NSData *bookmarkData;
     
@@ -74,7 +75,12 @@
 /**
  * The recent file list of this project.
  */
-@property (nonatomic, readonly) ProjectFileList *fileList;
+@property (nonatomic, readonly) ProjectFileList *files;
+
+/**
+ * The recent socket list of this project.
+ */
+@property (nonatomic, readonly) ProjectSocketList *sockets;
 
 /**
  * The recent notification list of this project.

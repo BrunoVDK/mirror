@@ -1624,9 +1624,11 @@
     [[[fileListView tableColumns] objectAtIndex:1] setIdentifier:(showSockets ? @"socketDescription" : @"fileName")];
     [[[fileListView tableColumns] objectAtIndex:2] setIdentifier:(showSockets ? @"progress" : @"size")];
     ((NSTableHeaderCell *)[[[fileListView tableColumns] objectAtIndex:1] headerCell]).stringValue
-        = (showSockets ? @"Description" : @"File");
+    = (showSockets ? @"Description" : @"File");
     ((NSTableHeaderCell *)[[[fileListView tableColumns] objectAtIndex:2] headerCell]).stringValue
-        = (showSockets ? @"Progress" : @"Size");
+    = (showSockets ? @"Progress" : @"Size");
+    ((NSButtonCell *)[[[fileListView tableColumns] objectAtIndex:3] dataCell]).image
+    = [NSImage imageNamed:(showSockets ? NSImageNameStopProgressFreestandingTemplate : NSImageNameRevealFreestandingTemplate)];
     fileListView.headerView.needsDisplay = true;
     [filesStatusField bind:NSValueBinding toObject:contentController withKeyPath:@"status" options:nil];
     
@@ -1648,7 +1650,7 @@
             [column bind:NSValueBinding
                 toObject:contentController
              withKeyPath:[@"arrangedObjects." stringByAppendingString:column.identifier]
-                 options:nil];
+                 options:[NSDictionary dictionaryWithObjectsAndKeys:!showSockets, NSCreatesSortDescriptorBindingOption, nil]];
     }
     
 }

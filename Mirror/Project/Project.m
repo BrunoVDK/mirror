@@ -841,7 +841,8 @@ int __cdecl httrack_loop(t_hts_callbackarg *carg, httrackp *opt, lien_back *back
         }
         
         dispatch_sync(dispatch_get_main_queue(), ^{ // On main queue
-            
+            [project.sockets remove:nil];
+            [project.sockets setContent:socketArray];
         });
         
     }

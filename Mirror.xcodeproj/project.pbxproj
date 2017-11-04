@@ -145,8 +145,7 @@
 		BFB81FCC1D783B1400CD5035 /* Build.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB81FB61D783B1400CD5035 /* Build.png */; };
 		BFB81FD51D783B1400CD5035 /* Notifications.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB81FBF1D783B1400CD5035 /* Notifications.png */; };
 		BFB81FD61D783B1400CD5035 /* Notifications@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB81FC01D783B1400CD5035 /* Notifications@2x.png */; };
-		BFB81FD71D783B1400CD5035 /* PauseTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB81FC11D783B1400CD5035 /* PauseTemplate.png */; };
-		BFB81FD81D783B1400CD5035 /* PauseTemplate2.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB81FC21D783B1400CD5035 /* PauseTemplate2.png */; };
+		BFB81FD81D783B1400CD5035 /* PauseTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB81FC21D783B1400CD5035 /* PauseTemplate.png */; };
 		BFB81FDE1D783B1400CD5035 /* SearchTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB81FC81D783B1400CD5035 /* SearchTemplate.png */; };
 		BFB81FEE1D783B3600CD5035 /* documenticon.icns in Resources */ = {isa = PBXBuildFile; fileRef = BFB81FE01D783B3600CD5035 /* documenticon.icns */; };
 		BFB81FEF1D783B3600CD5035 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = BFB81FE11D783B3600CD5035 /* icon.icns */; };
@@ -418,8 +417,7 @@
 		BFB81FB61D783B1400CD5035 /* Build.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Build.png; path = Mirror/Images/Toolbar/Build.png; sourceTree = "<group>"; };
 		BFB81FBF1D783B1400CD5035 /* Notifications.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Notifications.png; path = Mirror/Images/Toolbar/Notifications.png; sourceTree = "<group>"; };
 		BFB81FC01D783B1400CD5035 /* Notifications@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Notifications@2x.png"; path = "Mirror/Images/Toolbar/Notifications@2x.png"; sourceTree = "<group>"; };
-		BFB81FC11D783B1400CD5035 /* PauseTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PauseTemplate.png; path = Mirror/Images/Toolbar/PauseTemplate.png; sourceTree = "<group>"; };
-		BFB81FC21D783B1400CD5035 /* PauseTemplate2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PauseTemplate2.png; path = Mirror/Images/Toolbar/PauseTemplate2.png; sourceTree = "<group>"; };
+		BFB81FC21D783B1400CD5035 /* PauseTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PauseTemplate.png; path = Mirror/Images/Toolbar/PauseTemplate.png; sourceTree = "<group>"; };
 		BFB81FC81D783B1400CD5035 /* SearchTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SearchTemplate.png; path = Mirror/Images/Toolbar/SearchTemplate.png; sourceTree = "<group>"; };
 		BFB81FE01D783B3600CD5035 /* documenticon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = documenticon.icns; path = Mirror/documenticon.icns; sourceTree = SOURCE_ROOT; };
 		BFB81FE11D783B3600CD5035 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = Mirror/icon.icns; sourceTree = SOURCE_ROOT; };
@@ -915,8 +913,7 @@
 				BFB81FBF1D783B1400CD5035 /* Notifications.png */,
 				BFB81FC01D783B1400CD5035 /* Notifications@2x.png */,
 				BFFEAD121DAC0A1B000651AF /* PauseBubble.png */,
-				BFB81FC11D783B1400CD5035 /* PauseTemplate.png */,
-				BFB81FC21D783B1400CD5035 /* PauseTemplate2.png */,
+				BFB81FC21D783B1400CD5035 /* PauseTemplate.png */,
 				BFE0B8AE1DDDD26900871495 /* Presets.png */,
 				BF0A5D341DB01BEF00836D4B /* RevealBubble.png */,
 				BFB81FC81D783B1400CD5035 /* SearchTemplate.png */,
@@ -1149,7 +1146,6 @@
 				BFE0B8A11DDA2BB400871495 /* Crawler.png in Resources */,
 				BFB81FDE1D783B1400CD5035 /* SearchTemplate.png in Resources */,
 				BFB81FCC1D783B1400CD5035 /* Build.png in Resources */,
-				BFB81FD71D783B1400CD5035 /* PauseTemplate.png in Resources */,
 				BF050F601DC559EB001D8F68 /* Cache.png in Resources */,
 				BF050F651DC55DC4001D8F68 /* Network.png in Resources */,
 				BFB81F001D7839FD00CD5035 /* Mirror.entitlements in Resources */,
@@ -1158,7 +1154,7 @@
 				BFE0B8B11DDDE63900871495 /* Design.png in Resources */,
 				BFB81FA61D783AD400CD5035 /* PreferencesGeneralPanel.xib in Resources */,
 				BFB81FFF1D783B5900CD5035 /* InfoPlist.strings in Resources */,
-				BFB81FD81D783B1400CD5035 /* PauseTemplate2.png in Resources */,
+				BFB81FD81D783B1400CD5035 /* PauseTemplate.png in Resources */,
 				BFB81FF01D783B3600CD5035 /* lionicon.icns in Resources */,
 				BFE0B8A51DDCD0FA00871495 /* Java.png in Resources */,
 				BFE0B8A91DDCE6F200871495 /* Download.png in Resources */,

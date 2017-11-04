@@ -338,12 +338,10 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
                     [[self.window standardWindowButton:NSWindowDocumentIconButton] setImage:[NSImage imageNamed:@"documenticon"]]; // Bit crude, icon doesn't show otherwise (not sure why)
                     
 #if CHECK_INTERNET_CONNECTION
-                    if (hasInternetConnection()) {
+                    if (hasInternetConnection())
 #endif
-                        [self.delegate projectDidStart:self];
                         [self performSelectorInBackground:@selector(mirrorInBackground) withObject:nil];
 #if CHECK_INTERNET_CONNECTION
-                    }
                     else
                         [self.delegate projectDidEnd:self error:@"No internet connection."];
 #endif
@@ -368,6 +366,10 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     NSString *error = @"";
     
     if (!self.completed) {
+        
+        // Indicate that project started mirroring
+        engineOptions->state._hts_in_mirror = 1;
+        dispatch_async(dispatch_get_main_queue(), ^{[self.delegate projectDidStart:self];});
         
         // Make string with list of URLs in the project
         NSString *urlString = @"";
@@ -399,7 +401,6 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
         CHAIN_FUNCTION(engineOptions, baseupdated, httrack_baseupdated, (__bridge void *)self); // Custom callback function for intercepting an update of a base URL
         
         // Start mirror
-        engineOptions->state._hts_in_mirror = 1;
         if (httpmirror((char *)[urlString UTF8String], engineOptions) == 0) // Typecast to make function work, url string isn't modified by function
             error = @"Error during operation (see log file), site has not been successfully mirrored";
         engineOptions->state._hts_in_mirror = 0;
@@ -702,7 +703,7 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
 int __cdecl httrack_start(t_hts_callbackarg *carg, httrackp *opt) { // Called when the engine starts
     
     Project *project = (__bridge Project *)carg->userdef;
-    // Nothing is done here so far, notifying delegate is done earlier
+    dispatch_async(dispatch_get_main_queue(), ^{[project.delegate projectDidStartEngine:project];});
     
     return 1;
     
@@ -909,7 +910,7 @@ int __cdecl httrack_loop(t_hts_callbackarg *carg, httrackp *opt, lien_back *back
             paused = false;
     }
     
-    return !project.shouldCancel; //!project.shouldCancel;
+    return !project.shouldCancel;
     
 }
 

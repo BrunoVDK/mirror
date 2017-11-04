@@ -228,27 +228,33 @@ enum {
 
 - (void)setOutlineView:(NSOutlineView *)outlineView {
     
-    if (outlineView && outlineView != _outlineView) {
+    if (outlineView) {
         
-        outlineView.dataSource = self;
-        outlineView.delegate = self;
-        
-        NSRect pieFrame = NSIntersectionRect([outlineView rectOfColumn:2], NSUnionRect([outlineView rectOfRow:1], [outlineView rectOfRow:3]));
-        pieFrame = NSInsetRect(pieFrame, 0, 8);
-        pieFrame.origin.y += 3;
-    
-        pieGraphView.enabled = true;
-        [pieGraphView setHidden:false];
-        [outlineView addSubview:pieGraphView];
-        pieGraphView.frame = pieFrame;
-        pieGraphView.autoresizingMask = NSViewMinXMargin;
-        
-        outlineView.autoresizesSubviews = true;
-        outlineView.outlineTableColumn.resizingMask = NSTableColumnAutoresizingMask;
-        
-        [outlineView expandItem:[statistics objectAtIndex:ProjectStatisticWritten]];
+        if (outlineView != _outlineView) {
+            
+            outlineView.dataSource = self;
+            outlineView.delegate = self;
+            
+            NSRect pieFrame = NSIntersectionRect([outlineView rectOfColumn:2], NSUnionRect([outlineView rectOfRow:1], [outlineView rectOfRow:3]));
+            pieFrame = NSInsetRect(pieFrame, 0, 8);
+            pieFrame.origin.y += 3;
+            
+            pieGraphView.enabled = true;
+            [pieGraphView setHidden:false];
+            [outlineView addSubview:pieGraphView];
+            pieGraphView.frame = pieFrame;
+            pieGraphView.autoresizingMask = NSViewMinXMargin;
+            
+            outlineView.autoresizesSubviews = true;
+            outlineView.outlineTableColumn.resizingMask = NSTableColumnAutoresizingMask;
+            
+            [outlineView expandItem:[statistics objectAtIndex:ProjectStatisticWritten]];
+            
+        }
         
     }
+    else
+        [pieGraphView removeFromSuperview];
     
     _outlineView = outlineView;
     

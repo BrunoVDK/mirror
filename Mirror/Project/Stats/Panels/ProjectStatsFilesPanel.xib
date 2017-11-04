@@ -27,7 +27,7 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </searchFieldCell>
                     <connections>
-                        <binding destination="-2" name="predicate" keyPath="self.controller.project.files.filterPredicate" id="LGJ-CF-OZ2">
+                        <binding destination="-2" name="predicate" keyPath="self.project.files.filterPredicate" id="Ifd-0G-g9l">
                             <dictionary key="options">
                                 <string key="NSDisplayName">predicate</string>
                                 <string key="NSPredicateFormat">fileName contains $value</string>
@@ -44,7 +44,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.controller.project.files.status" id="ncH-9G-ip7"/>
+                        <binding destination="-2" name="value" keyPath="self.project.files.status" id="ktL-e6-ibn"/>
                     </connections>
                 </textField>
                 <scrollView focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="20" horizontalPageScroll="10" verticalLineScroll="20" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="2sY-Qz-2Ib">

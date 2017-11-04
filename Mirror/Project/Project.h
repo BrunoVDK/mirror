@@ -273,6 +273,13 @@
 - (void)projectDidStart:(Project *)project;
 
 /**
+ * Called when a project's httrack engine started.
+ *
+ * @param project The very project.
+ */
+- (void)projectDidStartEngine:(Project *)project;
+
+/**
  * Called when a project ended.
  *
  * @param project The very project.

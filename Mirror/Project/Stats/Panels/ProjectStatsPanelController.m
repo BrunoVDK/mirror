@@ -66,10 +66,9 @@
 
 - (void)setProject:(Project *)project {
     
+    [project.statistics setOutlineView:nil];
     [super setProject:project];
-    
-    outlineView.delegate = project.statistics;
-    outlineView.dataSource = project.statistics;
+    [project.statistics setOutlineView:outlineView];
     
 }
 

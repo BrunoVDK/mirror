@@ -20,6 +20,8 @@
 #import "ProjectStatsWindowController.h"
 #import "ProjectWindowController.h"
 
+#define TIMER_INTERVAL 1.0/4.0
+
 #pragma mark Project Window Controller
 
 @interface ProjectWindowController() <NSTableViewDataSource, NSTableViewDelegate, NSToolbarDelegate>
@@ -277,6 +279,7 @@
         
         [OPTIONS setProject:self.project];
         [NOTIFICATIONS setProject:self.project];
+        [STATISTICS setProject:self.project];
         
         [self updateMenus];
         
@@ -333,6 +336,7 @@
         
         [OPTIONS setProject:self.project];
         [NOTIFICATIONS setProject:self.project];
+        [STATISTICS setProject:self.project];
         
     }
     
@@ -457,133 +461,6 @@
 
 #pragma mark Interface
 
-- (void)windowDidLoad {
-        
-    alternateRowColor = [[NSColor colorWithCalibratedWhite:0.95 alpha:1.0] retain];
-    listView.alternateColor = alternateRowColor;
-    
-    [self.window registerForDraggedTypes:[NSArray arrayWithObject:NSURLPboardType]];
-    
-    [PREFERENCES addObserver:self forKeyPath:RenderIconsInCircles options:NSKeyValueObservingOptionNew context:NULL];
-    self.renderInCircles = [PREFERENCES boolForKey:RenderIconsInCircles];
-    [PREFERENCES addObserver:self forKeyPath:ResizeAutomatically options:NSKeyValueObservingOptionNew context:NULL];
-    [PREFERENCES addObserver:self forKeyPath:ShowRateInDock options:NSKeyValueObservingOptionNew context:NULL];
-    
-    [listView setDoubleAction:@selector(doubleClick:)];
-    [listView setTarget:self];
-    
-    dummy = [[ProjectURL alloc] initWithURL:[NSURL URLWithString:BASE_URL] identifier:0];
-    [dummy setIcon:[NSImage imageNamed:NSImageNameNetwork]];
-    
-    // [[self controllerSplitView] setCustomDividerThickness:0.0]; // Hide divider of split view
-    [controllerSplitView collapseView:[controllerSplitView firstView] withAnimation:false];
-    [listView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone]; // Selection is enabled for the dummy row only to enable editing
-    [listView setDoubleAction:@selector(doubleClick:)];
-    [listView setTarget:self];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editingDidEnd:) name:NSControlTextDidEndEditingNotification object:nil];
-    
-    // [projectSplitView setCustomDividerThickness:0.0]; // Remove separator line above stats view
-    // [windowSplitView setCustomDividerThickness:0.0]; // Remove line above path view field
-    
-    [self resizeWindow:true]; // At the end, when the window is fully set up
-    [self setShowDummy:true]; // After min/max size setup or it will mess up the size of the window and cause a negative min size
-    
-    statsIndices = [[NSMutableIndexSet alloc] init];
-    // [self renewTimer];
-    
-    [super windowDidLoad];
-        
-    if (![self.window isMainWindow]) {
-        // On runloop or the dummy edit interferes
-        [[NSRunLoop currentRunLoop] performSelector:@selector(updateMenus) target:self argument:nil order:0 modes:[NSArray arrayWithObject:NSDefaultRunLoopMode]];
-        [self windowDidResignMain:[NSNotification notificationWithName:NSWindowDidResignMainNotification object:self.window]];
-    }
-    
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    
-    if ([keyPath isEqualToString:RenderIconsInCircles]) {
-        self.renderInCircles = [PREFERENCES boolForKey:RenderIconsInCircles];
-        [listView reloadData];
-    }
-    else if ([keyPath isEqualToString:ResizeAutomatically])
-        [self resizeWindow:false];
-    else if ([keyPath isEqualToString:ShowRateInDock])
-        [[BadgeView sharedView] setVisible:self.project.isMirroring && [PREFERENCES boolForKey:ShowRateInDock]];
-    else
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    
-}
-
-- (void)updateInterface {
-    
-    [self updateInterface:nil];
-    
-}
-
-- (void)updateInterface:(NSTimer *)timer {
-    
-    [self updateRelevantURLs];
-    [self updateStatus];
-    
-    [toolbarAddPauseButton setSelected:showDummy forSegment:0];
-    [toolbarAddPauseButton setSelected:[[self project] isMirroring] && [[self project] isPaused] forSegment:1];
-    
-}
-
-- (void)updateStatus {
-    
-    NSString *status = @"No links";
-    
-    if (errorMessage) {
-        status = errorMessage;
-        errorMessage = nil;
-        NSBeep();
-    }
-    else {
-        
-        NSInteger count = [listView numberOfRows] - showDummy;
-        if (count == 1)
-            status = [NSString stringWithFormat:@"1 link"];
-        else if (count > 1)
-            status = [NSString stringWithFormat:@"%li link", (long)count];
-        
-        if ([self.project isPaused])
-            status = [NSString stringWithFormat:@"%@ - Paused", status];
-        else if ([statusField.stringValue contains:@"Pausing"])
-            status = [NSString stringWithFormat:@"%@ - Pausing ...", status];
-        else if ([self.project isCompleted])
-            status = @"Project completed.";
-        
-    }
-    
-    [statusField setStringValue:status];
-    
-}
-
-- (void)updateMenus {
-    
-    [super updateMenus];
-    
-    // Flags
-    BOOL paused = [self.project isPaused];
-    
-    // Update toolbar
-    [toolbarSearchButton setState:(![searchSplitView viewIsCollapsed:searchView] ? NSOnState : NSOffState)];
-    [toolbarAddPauseButton setSelected:[listView editedRow] != -1 forSegment:0];
-    [toolbarAddPauseButton setSelected:paused forSegment:1];
-    [toolbarAddPauseButton setEnabled:[self.project isMirroring] forSegment:1];
-    [toolbarAddPauseButton setEnabled:![self.project isCompleted]];
-    
-    // Update main menu
-    [PAUSE_ITEM setTitle:(paused ? @"Resume" : @"Pause")];
-    [PAUSE_ITEM setAction:(paused ? @selector(resume:) : @selector(pause:))];
-    [PAUSE_ITEM setTarget:self];
-    
-}
-
 - (void)setURL:(NSURL *)url edit:(BOOL)edit {
     
     ProjectURL *newURL = [[ProjectURL alloc] initWithURL:[NSURL URLWithString:[url absoluteString]] identifier:0];
@@ -683,6 +560,96 @@
     
 }
 
+#pragma mark Interface Updates
+
+- (void)updateInterface {
+    
+    [self updateInterface:nil];
+    
+}
+
+- (void)updateInterface:(NSTimer *)timer {
+    
+    [self updateRelevantURLs];
+    [self updateStatus];
+    
+}
+
+- (void)updateStatus {
+    
+    NSString *status = @"No links";
+    
+    if (errorMessage) {
+        status = errorMessage;
+        errorMessage = nil;
+        NSBeep();
+    }
+    else {
+        
+        NSInteger count = [listView numberOfRows] - showDummy;
+        if (count == 1)
+            status = [NSString stringWithFormat:@"1 link"];
+        else if (count > 1)
+            status = [NSString stringWithFormat:@"%li link", (long)count];
+        
+        if ([self.project isPaused])
+            status = [NSString stringWithFormat:@"%@ - Paused", status];
+        else if ([statusField.stringValue contains:@"Pausing"])
+            status = [NSString stringWithFormat:@"%@ - Pausing ...", status];
+        else if ([self.project isCompleted])
+            status = @"Project completed.";
+        
+    }
+    
+    [statusField setStringValue:status];
+    
+}
+
+- (void)updateMenus {
+    
+    [super updateMenus];
+    
+    // Flags
+    BOOL paused = [self.project isPaused];
+    
+    // Update toolbar
+    [toolbarSearchButton setState:(![searchSplitView viewIsCollapsed:searchView] ? NSOnState : NSOffState)];
+    [toolbarAddPauseButton setSelected:[listView editedRow] != -1 forSegment:0];
+    [toolbarAddPauseButton setEnabled:![self.project isCompleted]];
+    
+    // Update main menu
+    [PAUSE_ITEM setTitle:(paused ? @"Resume" : @"Pause")];
+    [PAUSE_ITEM setAction:(paused ? @selector(resume:) : @selector(pause:))];
+    [PAUSE_ITEM setTarget:self];
+    
+}
+
+- (void)updateGradient {
+    
+    if ([self.window isMainWindow])
+        [(GradientView *)[windowSplitView secondView] setGradient:[GradientView defaultGradient]];
+    else
+        [(GradientView *)[windowSplitView secondView] setGradient:[GradientView secondaryGradient]];
+    
+}
+
+- (void)updateRelevantURLs {
+    
+    NSIndexSet *columnIndices = [NSIndexSet indexSetWithIndex:0];
+    [statsIndices enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+        [listView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:idx + showDummy] columnIndexes:columnIndices];
+    }];
+    
+    [statsIndices removeAllIndexes];
+    
+}
+
+- (void)updateURLAtIndex:(NSInteger)index {
+    
+    [listView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:index] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+    
+}
+
 #pragma mark Project Delegate
 
 - (void)projectDidStart:(Project *)project {
@@ -699,6 +666,12 @@
     
 }
 
+- (void)projectDidStartEngine:(Project *)project {
+    
+    [toolbarAddPauseButton setEnabled:true forSegment:1];
+    
+}
+
 - (void)projectDidEnd:(Project *)project error:(NSString *)error {
     
     [self stopEditingDummy];
@@ -711,10 +684,12 @@
 }
 
 - (void)projectDidResume:(Project *)project {
-    
+        
     [self renewTimer];
     [self updateStatus];
     [self updateMenus];
+    [toolbarAddPauseButton setSelected:false forSegment:1];
+    [toolbarAddPauseButton setEnabled:true forSegment:1];
     
 }
 
@@ -723,6 +698,8 @@
     [self invalidateTimer];
     [self updateStatus];
     [self updateMenus];
+    [toolbarAddPauseButton setSelected:true forSegment:1];
+    [toolbarAddPauseButton setEnabled:true forSegment:1];
     [listView reloadData];
     
 }
@@ -821,9 +798,13 @@
 
 - (IBAction)pause:(id)sender {
         
-    if ([[self project] isMirroring]) {
+    if ([self.project isMirroring]) {
         [statusField setStringValue:@"Pausing ..."];
-        [[self project] pause];
+        if (![self.project isPaused]) {
+            [toolbarAddPauseButton setSelected:false forSegment:1];
+            [toolbarAddPauseButton setEnabled:false forSegment:1];
+            [[self project] pause];
+        }
     }
     else
         NSBeep();
@@ -834,7 +815,11 @@
     
     if ([[self project] isMirroring]) {
         [statusField setStringValue:@"Resuming ..."];
-        [[self project] resume];
+        if ([self.project isPaused]) {
+            [toolbarAddPauseButton setSelected:true forSegment:1];
+            [toolbarAddPauseButton setEnabled:false forSegment:1];
+            [[self project] resume];
+        }
     }
     else
         NSBeep();
@@ -871,10 +856,48 @@
 
 #pragma mark Events
 
-- (void)windowWillStartLiveResize:(NSNotification *)notification {
+- (void)windowDidLoad {
     
-    [self stopEditingDummy]; // Quick fix to avoid a bug with the field editor overlapping the text field
-    dummyStats = @"Double-click to edit & add a URL";
+    alternateRowColor = [[NSColor colorWithCalibratedWhite:0.95 alpha:1.0] retain];
+    listView.alternateColor = alternateRowColor;
+    
+    [self.window registerForDraggedTypes:[NSArray arrayWithObject:NSURLPboardType]];
+    
+    [PREFERENCES addObserver:self forKeyPath:RenderIconsInCircles options:NSKeyValueObservingOptionNew context:NULL];
+    self.renderInCircles = [PREFERENCES boolForKey:RenderIconsInCircles];
+    [PREFERENCES addObserver:self forKeyPath:ResizeAutomatically options:NSKeyValueObservingOptionNew context:NULL];
+    [PREFERENCES addObserver:self forKeyPath:ShowRateInDock options:NSKeyValueObservingOptionNew context:NULL];
+    
+    [listView setDoubleAction:@selector(doubleClick:)];
+    [listView setTarget:self];
+    
+    dummy = [[ProjectURL alloc] initWithURL:[NSURL URLWithString:BASE_URL] identifier:0];
+    [dummy setIcon:[NSImage imageNamed:NSImageNameNetwork]];
+    
+    // [[self controllerSplitView] setCustomDividerThickness:0.0]; // Hide divider of split view
+    [controllerSplitView collapseView:[controllerSplitView firstView] withAnimation:false];
+    [listView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone]; // Selection is enabled for the dummy row only to enable editing
+    [listView setDoubleAction:@selector(doubleClick:)];
+    [listView setTarget:self];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editingDidEnd:) name:NSControlTextDidEndEditingNotification object:nil];
+    
+    // [projectSplitView setCustomDividerThickness:0.0]; // Remove separator line above stats view
+    // [windowSplitView setCustomDividerThickness:0.0]; // Remove line above path view field
+    
+    [self resizeWindow:true]; // At the end, when the window is fully set up
+    [self setShowDummy:true]; // After min/max size setup or it will mess up the size of the window and cause a negative min size
+    
+    statsIndices = [[NSMutableIndexSet alloc] init];
+    // [self renewTimer];
+    
+    [super windowDidLoad];
+    
+    if (![self.window isMainWindow]) {
+        // On runloop or the dummy edit interferes
+        [[NSRunLoop currentRunLoop] performSelector:@selector(updateMenus) target:self argument:nil order:0 modes:[NSArray arrayWithObject:NSDefaultRunLoopMode]];
+        [self windowDidResignMain:[NSNotification notificationWithName:NSWindowDidResignMainNotification object:self.window]];
+    }
     
 }
 
@@ -897,9 +920,6 @@
     
     [super windowDidResignMain:notification];
     
-    [toolbarAddPauseButton setSelected:false forSegment:0];
-    [toolbarAddPauseButton setSelected:false forSegment:1];
-    
     [listView reloadVisibleRect];
     [self updateGradient];
     [statusField setTextColor:[NSColor lightGrayColor]];
@@ -911,12 +931,10 @@
     
 }
 
-- (void)updateGradient {
+- (void)windowWillStartLiveResize:(NSNotification *)notification {
     
-    if ([self.window isMainWindow])
-        [(GradientView *)[windowSplitView secondView] setGradient:[GradientView defaultGradient]];
-    else
-        [(GradientView *)[windowSplitView secondView] setGradient:[GradientView secondaryGradient]];
+    [self stopEditingDummy]; // Quick fix to avoid a bug with the field editor overlapping the text field
+    dummyStats = @"Double-click to edit & add a URL";
     
 }
 
@@ -989,40 +1007,18 @@
   
 }
 
-#pragma mark List View Data Source & Delegation
-
-- (void)invalidateTimer {
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     
-    [statsTimer invalidate];
-    [statsTimer release];
-    statsTimer = nil;
-    
-}
-
-- (void)renewTimer {
-    
-    if (statsTimer)
-        [self invalidateTimer];
-    
-    statsTimer = [[NSTimer scheduledTimerWithTimeInterval:1.0/4.0 target:self selector:@selector(updateInterface:) userInfo:nil repeats:true] retain];
-    [[NSRunLoop mainRunLoop] addTimer:statsTimer forMode:NSRunLoopCommonModes]; // If timer is to be fired when main menu is active
-    
-}
-
-- (void)updateRelevantURLs {
-    
-    NSIndexSet *columnIndices = [NSIndexSet indexSetWithIndex:0];
-    [statsIndices enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-        [listView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:idx + showDummy] columnIndexes:columnIndices];
-    }];
-    
-    [statsIndices removeAllIndexes];
-    
-}
-
-- (void)updateURLAtIndex:(NSInteger)index {
-    
-    [listView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:index] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+    if ([keyPath isEqualToString:RenderIconsInCircles]) {
+        self.renderInCircles = [PREFERENCES boolForKey:RenderIconsInCircles];
+        [listView reloadData];
+    }
+    else if ([keyPath isEqualToString:ResizeAutomatically])
+        [self resizeWindow:false];
+    else if ([keyPath isEqualToString:ShowRateInDock])
+        [[BadgeView sharedView] setVisible:self.project.isMirroring && [PREFERENCES boolForKey:ShowRateInDock]];
+    else
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     
 }
 
@@ -1038,6 +1034,28 @@
     }
     
 }
+
+#pragma mark Timer
+
+- (void)invalidateTimer {
+    
+    [statsTimer invalidate];
+    [statsTimer release];
+    statsTimer = nil;
+    
+}
+
+- (void)renewTimer {
+    
+    if (statsTimer)
+        [self invalidateTimer];
+    
+    statsTimer = [[NSTimer scheduledTimerWithTimeInterval:TIMER_INTERVAL target:self selector:@selector(updateInterface:) userInfo:nil repeats:true] retain];
+    [[NSRunLoop mainRunLoop] addTimer:statsTimer forMode:NSRunLoopCommonModes]; // If timer is to be fired when main menu is active
+    
+}
+
+#pragma mark List View Data Source & Delegation
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     
@@ -1410,43 +1428,9 @@
     
 }
 
-- (void)windowDidLoad {
-    
-    if ([self.window respondsToSelector:@selector(setAppearance:)]) { // Prevent scroll view from changing the window color
-        [self.window setAppearance:[NSAppearance appearanceNamed:NSAppearanceNameAqua]];
-        [[STATISTICS window] setAppearance:[NSAppearance appearanceNamed:NSAppearanceNameAqua]];
-        [[OPTIONS window] setAppearance:[NSAppearance appearanceNamed:NSAppearanceNameAqua]];
-    }
-    
-    theme = (WindowTheme)[PREFERENCES integerForKey:MainWindowTheme];
-    [self readTheme];
-    [PREFERENCES addObserver:self forKeyPath:MainWindowTheme options:NSKeyValueObservingOptionNew context:NULL];
-    
-    [toolbarAddPauseButton setOverrideDrawing:false]; // Disable custom segmented control drawing
-    [self updateGradient];
-    
-    statsOutlineView.dataSource = self.project.statistics;
-    statsOutlineView.delegate = self.project.statistics;
-    self.project.statistics.outlineView = statsOutlineView;
-    
-    [self updateFileListView:false];
-    
-    [super windowDidLoad]; // At the end, as the superclass is responsible for showing the window
-    
-}
-
 - (CGFloat)minWindowWidth {
     
     return (theme == WindowThemeYosemite ? 480 : [super minWindowWidth]);
-    
-}
-
-- (IBAction)showContextualMenu:(id)sender {
-    
-    NSRect firstFrame = [menuView frameOfCellAtColumn:0 row:0];
-    NSRect secondFrame = [menuView frameOfCellAtColumn:1 row:0];
-    NSPoint location = NSMakePoint(firstFrame.size.width + secondFrame.size.width/2.0, firstFrame.size.height + secondFrame.size.height/2.0);
-    [contextualMenu popUpMenuPositioningItem:[contextualMenu itemAtIndex:0] atLocation:location inView:menuView];
     
 }
 
@@ -1469,6 +1453,8 @@
     
 }
 
+#pragma mark Interface Updates
+
 - (void)updateInterface:(NSTimer *)timer {
     
     if (theme == WindowThemeYosemite) {
@@ -1484,7 +1470,7 @@
             if (selectedRow == 1)
                 [statsOutlineView reloadData];
             
-            return;
+            // Could postpone socket/file update by updating only here instead of real-time
             
         }
         
@@ -1507,31 +1493,6 @@
     
 }
 
-- (IBAction)showStatistics:(id)sender {
-    
-    if (theme == WindowThemeYosemite)
-        [menuView selectRowIndexes:[NSIndexSet indexSetWithIndex:1] byExtendingSelection:false];
-    else
-        [super showStatistics:sender];
-    
-}
-
-- (void)windowDidBecomeMain:(NSNotification *)notification {
-    
-    [super windowDidBecomeMain:notification];
-    
-    [filesStatusField setTextColor:[NSColor darkGrayColor]];
-    
-}
-
-- (void)windowDidResignMain:(NSNotification *)notification {
-    
-    [super windowDidResignMain:notification];
-    
-    [filesStatusField setTextColor:[NSColor lightGrayColor]];
-    
-}
-
 #pragma mark Project Delegate
 
 - (void)projectDidStart:(Project *)project {
@@ -1545,6 +1506,15 @@
 }
 
 #pragma mark Actions
+
+- (IBAction)showContextualMenu:(id)sender {
+    
+    NSRect firstFrame = [menuView frameOfCellAtColumn:0 row:0];
+    NSRect secondFrame = [menuView frameOfCellAtColumn:1 row:0];
+    NSPoint location = NSMakePoint(firstFrame.size.width + secondFrame.size.width/2.0, firstFrame.size.height + secondFrame.size.height/2.0);
+    [contextualMenu popUpMenuPositioningItem:[contextualMenu itemAtIndex:0] atLocation:location inView:menuView];
+    
+}
 
 - (IBAction)clearList:(id)sender {
     
@@ -1596,11 +1566,63 @@
     
 }
 
+- (IBAction)showStatistics:(id)sender {
+    
+    if (theme == WindowThemeYosemite)
+        [menuView selectRowIndexes:[NSIndexSet indexSetWithIndex:1] byExtendingSelection:false];
+    else
+        [super showStatistics:sender];
+    
+}
+
 - (IBAction)switchFileView:(id)sender {
     
     BOOL socketsShown = [[fileListView infoForBinding:NSContentBinding] objectForKey:NSObservedObjectKey] == self.project.sockets;
     
     [self updateFileListView:!socketsShown];
+    
+}
+
+#pragma mark Events
+
+- (void)windowDidLoad {
+    
+    if ([self.window respondsToSelector:@selector(setAppearance:)]) { // Prevent scroll view from changing the window color
+        [self.window setAppearance:[NSAppearance appearanceNamed:NSAppearanceNameAqua]];
+        [[STATISTICS window] setAppearance:[NSAppearance appearanceNamed:NSAppearanceNameAqua]];
+        [[OPTIONS window] setAppearance:[NSAppearance appearanceNamed:NSAppearanceNameAqua]];
+    }
+    
+    theme = (WindowTheme)[PREFERENCES integerForKey:MainWindowTheme];
+    [self readTheme];
+    [PREFERENCES addObserver:self forKeyPath:MainWindowTheme options:NSKeyValueObservingOptionNew context:NULL];
+    
+    [toolbarAddPauseButton setOverrideDrawing:false]; // Disable custom segmented control drawing
+    [self updateGradient];
+    
+    statsOutlineView.dataSource = self.project.statistics;
+    statsOutlineView.delegate = self.project.statistics;
+    self.project.statistics.outlineView = statsOutlineView;
+    
+    [self updateFileListView:false];
+    
+    [super windowDidLoad]; // At the end, as the superclass is responsible for showing the window
+    
+}
+
+- (void)windowDidBecomeMain:(NSNotification *)notification {
+    
+    [super windowDidBecomeMain:notification];
+    
+    [filesStatusField setTextColor:[NSColor darkGrayColor]];
+    
+}
+
+- (void)windowDidResignMain:(NSNotification *)notification {
+    
+    [super windowDidResignMain:notification];
+    
+    [filesStatusField setTextColor:[NSColor lightGrayColor]];
     
 }
 

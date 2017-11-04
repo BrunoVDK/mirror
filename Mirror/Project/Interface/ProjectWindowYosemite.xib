@@ -363,7 +363,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" selectionHighlightStyle="none" autosaveColumns="NO" typeSelect="NO" headerView="Vca-44-Rjb" id="mHG-Q3-Mc8" userLabel="Files List View" customClass="WindowAdaptedTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="315" height="19"/>
+                                <rect key="frame" x="0.0" y="0.0" width="330" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="1" height="2"/>
                                 <color key="backgroundColor" red="1" green="0.15845071569999999" blue="0.1098531936" alpha="0.0" colorSpace="calibratedRGB"/>

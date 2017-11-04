@@ -69,13 +69,14 @@
 }
 
 - (void)checkHover:(NSEvent *)theEvent {
-    
+        
     NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
     NSInteger row = [self rowAtPoint:point];
     
     if (row != self.hoveredRow) {
         _hoveredRow = row;
-        [self reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:self.selectedRow] columnIndexes:[NSIndexSet indexSetWithIndex:1]];
+        [self reloadData];
+        [self reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:self.selectedRow] columnIndexes:[self columnIndexesInRect:[self visibleRect]]];
     }
     
 }

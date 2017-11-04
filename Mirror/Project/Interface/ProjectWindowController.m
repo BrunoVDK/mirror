@@ -1494,14 +1494,6 @@
     
 }
 
-- (void)updateStatus {
-    
-    [menuView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:0] columnIndexes:[menuView columnIndexesInRect:[menuView visibleRect]]];
-    
-    [super updateStatus];
-    
-}
-
 - (void)updateMenus {
     
     [super updateMenus];
@@ -1620,7 +1612,7 @@
     if (showSockets) contentController = self.project.sockets;
     
     // Update interface elements
-    [[filesMenu itemAtIndex:1] setTitle:(showSockets ? @"Show Active Sockets" : @"Show Recent Files")];
+    [[filesMenu itemAtIndex:1] setTitle:(showSockets ? @"Show Recent Files" : @"Show Active Sockets")];
     [[[fileListView tableColumns] objectAtIndex:1] setIdentifier:(showSockets ? @"socketDescription" : @"fileName")];
     [[[fileListView tableColumns] objectAtIndex:2] setIdentifier:(showSockets ? @"progress" : @"size")];
     ((NSTableHeaderCell *)[[[fileListView tableColumns] objectAtIndex:1] headerCell]).stringValue
@@ -1736,7 +1728,7 @@
                 cell.image = nil, cell.action = NULL;
             
             [cell setEnabled:true];
-
+            
         }
         else if ([identifier isEqualToString:@"Caption"])
             [cell setEnabled:(row == 0)];

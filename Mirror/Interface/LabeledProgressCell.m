@@ -13,10 +13,12 @@
 
 - (void)setObjectValue:(id<NSCopying>)obj {
     
-    if ([(NSObject *)obj isKindOfClass:[NSNumber class]])
+    if ([(NSObject *)obj isKindOfClass:[NSNumber class]]) {
         progress = [(NSNumber *)obj floatValue];
-    
-    [super setObjectValue:obj];
+        self.stringValue = [NSString stringWithFormat:@"%i", (int)(progress*100)];
+    }
+    else
+        [super setObjectValue:obj];
     
 }
 

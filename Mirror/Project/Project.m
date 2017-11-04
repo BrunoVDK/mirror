@@ -338,10 +338,12 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
                     [[self.window standardWindowButton:NSWindowDocumentIconButton] setImage:[NSImage imageNamed:@"documenticon"]]; // Bit crude, icon doesn't show otherwise (not sure why)
                     
 #if CHECK_INTERNET_CONNECTION
-                    if (hasInternetConnection())
+                    if (hasInternetConnection()) {
 #endif
+                        [self.delegate projectDidStart:self];
                         [self performSelectorInBackground:@selector(mirrorInBackground) withObject:nil];
 #if CHECK_INTERNET_CONNECTION
+                    }
                     else
                         [self.delegate projectDidEnd:self error:@"No internet connection."];
 #endif
@@ -700,7 +702,7 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
 int __cdecl httrack_start(t_hts_callbackarg *carg, httrackp *opt) { // Called when the engine starts
     
     Project *project = (__bridge Project *)carg->userdef;
-    dispatch_async(dispatch_get_main_queue(), ^{[project.delegate projectDidStart:project];});
+    // Nothing is done here so far, notifying delegate is done earlier
     
     return 1;
     

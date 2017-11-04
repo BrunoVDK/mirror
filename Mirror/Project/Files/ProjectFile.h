@@ -38,7 +38,7 @@
 /**
  * This project file's size.
  */
-@property (nonatomic, readonly) NSNumber *size;
+@property (nonatomic, readonly) NSString *size;
 
 /**
  * Initialize a new project file with given source address, file path and size.

@@ -44,6 +44,10 @@
 /**
  * The `ProjectStatsOverviewPanelController` class controls a project statistics panel presenting notifications.
  */
-@interface ProjectStatsOverviewPanelController : ProjectStatsPanelController
+@interface ProjectStatsOverviewPanelController : ProjectStatsPanelController {
+    
+    IBOutlet NSOutlineView *outlineView;
+    
+}
 
 @end

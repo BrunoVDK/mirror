@@ -11,6 +11,15 @@
 
 @implementation LabeledProgressCell
 
+- (void)setObjectValue:(id<NSCopying>)obj {
+    
+    if ([(NSObject *)obj isKindOfClass:[NSNumber class]])
+        progress = [(NSNumber *)obj floatValue];
+    
+    [super setObjectValue:obj];
+    
+}
+
 #pragma mark Drawing
 
 - (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
@@ -23,7 +32,7 @@
     NSRect fillRect = NSInsetRect(cellFrame, 0, 4);
     fillRect.size.width *= progress; // (double)(rand()) / (double)(RAND_MAX);
     NSRectFill(fillRect);
-    
+        
     [super drawInteriorWithFrame:cellFrame inView:controlView];
     
     [[NSGraphicsContext currentContext] restoreGraphicsState];

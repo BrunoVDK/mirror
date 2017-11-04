@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <searchField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" id="SAx-eE-neX">
-                    <rect key="frame" x="133" y="3" width="86" height="15"/>
+                    <rect key="frame" x="226" y="3" width="71" height="15"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                     <searchFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" placeholderString="" drawsBackground="YES" usesSingleLineMode="YES" sendsSearchStringImmediately="YES" id="LpH-A5-1uw">
                         <font key="font" metaFont="miniSystem"/>
@@ -36,7 +36,7 @@
                     </connections>
                 </searchField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="H0s-HG-lsi">
-                    <rect key="frame" x="4" y="4" width="123" height="11"/>
+                    <rect key="frame" x="4" y="4" width="216" height="11"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="No files" id="UVn-rx-N1A">
                         <font key="font" metaFont="miniSystem"/>
@@ -69,6 +69,9 @@
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
                                         <imageCell key="dataCell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="ddA-jT-Smq" customClass="WindowAdaptedImageCell"/>
+                                        <connections>
+                                            <binding destination="-2" name="value" keyPath="self.project.files.arrangedObjects.icon" id="rZH-2r-Wbp"/>
+                                        </connections>
                                     </tableColumn>
                                     <tableColumn identifier="File" editable="NO" width="138" minWidth="10" maxWidth="3.4028234663852886e+38" id="bdb-zK-7fd">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="File">
@@ -83,6 +86,13 @@
                                         </textFieldCell>
                                         <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="fileName"/>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
+                                        <connections>
+                                            <binding destination="-2" name="value" keyPath="self.project.files.arrangedObjects.fileName" id="luF-Fa-6Cf">
+                                                <dictionary key="options">
+                                                    <bool key="NSConditionallySetsEditable" value="YES"/>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
                                     </tableColumn>
                                     <tableColumn identifier="Size" width="68" minWidth="10" maxWidth="3.4028234663852886e+38" id="gsc-Xs-X7M">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Size">
@@ -97,6 +107,13 @@
                                         </textFieldCell>
                                         <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="size"/>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                        <connections>
+                                            <binding destination="-2" name="value" keyPath="self.project.files.arrangedObjects.size" id="JlZ-hQ-4hb">
+                                                <dictionary key="options">
+                                                    <bool key="NSConditionallySetsEditable" value="NO"/>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
                                     </tableColumn>
                                     <tableColumn identifier="Reveal" editable="NO" width="50" minWidth="10" maxWidth="3.4028234663852886e+38" id="uAR-DS-iGo">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
@@ -108,10 +125,18 @@
                                             <behavior key="behavior" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <binding destination="-2" name="target" keyPath="self.project.files.arrangedObjects" id="wBB-Dl-32V">
+                                                <dictionary key="options">
+                                                    <string key="NSSelectorName">revealInFinder:</string>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
                                     </tableColumn>
                                 </tableColumns>
                                 <connections>
-                                    <binding destination="-2" name="sortDescriptors" keyPath="self.controller.project.files.sortDescriptors" id="GqH-dV-9hM"/>
+                                    <binding destination="-2" name="content" keyPath="self.project.files.arrangedObjects" id="UsT-2m-dQQ"/>
+                                    <binding destination="-2" name="sortDescriptors" keyPath="self.project.files.sortDescriptors" previousBinding="UsT-2m-dQQ" id="02f-Cb-mQq"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -130,20 +155,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
-                <segmentedControl verticalHuggingPriority="750" id="dOw-Iq-LVi">
-                    <rect key="frame" x="222" y="3" width="74" height="15"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                    <segmentedCell key="cell" controlSize="mini" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="hd9-MG-4sz" customClass="CustomEnablingSegmentedControlCell">
-                        <font key="font" metaFont="miniSystem"/>
-                        <segments>
-                            <segment label="Files" width="26"/>
-                            <segment label="Sockets" width="41" selected="YES" tag="1"/>
-                        </segments>
-                    </segmentedCell>
-                    <connections>
-                        <action selector="socketSwitch:" target="-2" id="zep-lf-yYa"/>
-                    </connections>
-                </segmentedControl>
             </subviews>
             <point key="canvasLocation" x="611" y="456"/>
         </customView>

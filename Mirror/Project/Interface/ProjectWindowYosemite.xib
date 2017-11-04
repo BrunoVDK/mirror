@@ -378,7 +378,7 @@
                                         </tableHeaderCell>
                                         <imageCell key="dataCell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="Ffo-VF-WuY" customClass="WindowAdaptedImageCell"/>
                                     </tableColumn>
-                                    <tableColumn identifier="fileName" editable="NO" width="149" minWidth="10" maxWidth="3.4028234663852886e+38" id="yPe-pG-Vg4">
+                                    <tableColumn identifier="fileName" editable="NO" width="164" minWidth="10" maxWidth="3.4028234663852886e+38" id="yPe-pG-Vg4">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="File">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -398,10 +398,10 @@
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
-                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="center" title="Text Cell" id="iQ6-dT-Nuf" customClass="WindowAdaptedTextFieldCell">
+                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="center" title="Text Cell" id="iQ6-dT-Nuf" customClass="LabeledProgressCell">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                         <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="size"/>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>

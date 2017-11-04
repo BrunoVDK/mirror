@@ -42,12 +42,21 @@
 
 - (NSString *)status {
     
-    NSInteger nbOfSockets = [self.arrangedObjects count];
+    NSInteger nbOfSockets = [self.content count];
     return (nbOfSockets == 0 ? @"No connections." : [NSString stringWithFormat:(nbOfSockets == 1 ? @"%li connection." : @"%li connections."), (long)nbOfSockets]);
 
 }
 
 #pragma mark Mutating
+
+- (void)setContent:(id)content {
+    
+    [super setContent:content];
+    
+    [self willChangeValueForKey:@"status"];
+    [self didChangeValueForKey:@"status"];
+    
+}
 
 - (void)addObject:(id)object {
     

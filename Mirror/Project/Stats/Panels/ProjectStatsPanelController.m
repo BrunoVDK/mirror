@@ -6,6 +6,8 @@
 //  Copyright (c) 2016 BV. All rights reserved.
 //
 
+#import "Project.h"
+#import "ProjectStatsDictionary.h"
 #import "ProjectStatsPanelController.h"
 
 #pragma mark Project Statistics Panel Controller
@@ -61,6 +63,15 @@
 @end
 
 @implementation ProjectStatsOverviewPanelController
+
+- (void)setProject:(Project *)project {
+    
+    [super setProject:project];
+    
+    outlineView.delegate = project.statistics;
+    outlineView.dataSource = project.statistics;
+    
+}
 
 - (NSImage *)panelIcon {
     

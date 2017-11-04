@@ -38,9 +38,9 @@
     
 }
 
-- (NSNumber *)size {
+- (NSString *)size {
     
-    return [NSNumber numberWithUnsignedLongLong:_size];
+    return [NSString stringForByteCount:_size];
     
 }
 

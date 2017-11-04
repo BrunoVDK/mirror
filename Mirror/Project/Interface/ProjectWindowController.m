@@ -1646,7 +1646,7 @@
              withKeyPath:(showSockets ? @"project" : @"arrangedObjects")
                  options:[NSDictionary dictionaryWithObjectsAndKeys:(showSockets ? @"cancel:" : @"revealInFinder:"), NSSelectorNameBindingOption, nil]];
         }
-        else
+        else // This also takes care of sorting
             [column bind:NSValueBinding
                 toObject:contentController
              withKeyPath:[@"arrangedObjects." stringByAppendingString:column.identifier]

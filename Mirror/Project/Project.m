@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 BV. All rights reserved.
 //
 
+
+#import <time.h>
+
 #include "htslib.h"
 
 #import "CircularBuffer.h"
@@ -854,10 +857,12 @@ int __cdecl httrack_loop(t_hts_callbackarg *carg, httrackp *opt, lien_back *back
     // Read statistics
     if (stats) {
         
-        dispatch_async(dispatch_get_main_queue(), ^{ // On main queue
+        dispatch_async(dispatch_get_main_queue(), ^{
             
             // if (stats->stat_files >= 0)
-            // [project.statistics setValue:[NSNumber numberWithInt:stats->stat_files] forStatisticOfType:ProjectStatisticWritten];
+                // [project.statistics setValue:[NSNumber numberWithInt:stats->stat_files] forStatisticOfType:ProjectStatisticWritten];
+            [project.statistics setValue:[NSNumber numberWithUnsignedInteger:project.files.count]
+                      forStatisticOfType:ProjectStatisticWritten];
             [project.statistics setValue:[NSString stringForSpeed:stats->rate] forStatisticOfType:ProjectStatisticTransferRate];
             if (stats->stat_updated_files >= 0)
                 [project.statistics setValue:[NSNumber numberWithInt:stats->stat_nsocket] forStatisticOfType:ProjectStatisticSockets];
@@ -867,12 +872,12 @@ int __cdecl httrack_loop(t_hts_callbackarg *carg, httrackp *opt, lien_back *back
                 [project.statistics setValue:[NSNumber numberWithInt:stats->stat_warnings] forStatisticOfType:ProjectStatisticWarnings];
             if (stats->stat_infos >= 0)
                 [project.statistics setValue:[NSNumber numberWithInt:stats->stat_infos] forStatisticOfType:ProjectStatisticInfoMessages];
-            if (stats->stat_warnings >= 0)
-                [project.statistics setValue:[NSNumber numberWithInt:stats->stat_infos] forStatisticOfType:ProjectStatisticInfoMessages];
             if (stats->nb >= 0)
-                [project.statistics setValue:[NSNumber numberWithLongLong:stats->nb] forStatisticOfType:ProjectStatisticBytes];
+                [project.statistics setValue:[NSString stringForByteCount:stats->nb] forStatisticOfType:ProjectStatisticBytes];
             if (stats->HTS_TOTAL_RECV >= 0)
-                [project.statistics setValue:[NSNumber numberWithLongLong:stats->HTS_TOTAL_RECV] forStatisticOfType:ProjectStatisticTotalReceived];
+                [project.statistics setValue:[NSString stringForByteCount:stats->HTS_TOTAL_RECV] forStatisticOfType:ProjectStatisticTotalReceived];
+            if (lien_tot >= 0)
+                [project.statistics setValue:[NSNumber numberWithLongLong:lien_tot] forStatisticOfType:ProjectStatisticLinks];
             
         });
         

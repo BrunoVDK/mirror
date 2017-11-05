@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 BV. All rights reserved.
 //
 
+#import <time.h>
+
 #import "BadgeView.h"
 #import "Globals.h"
 #import "NSColor+Additions.h"
@@ -20,7 +22,7 @@
 #import "ProjectStatsWindowController.h"
 #import "ProjectWindowController.h"
 
-#define TIMER_INTERVAL 1.0/4.0
+#define TIMER_INTERVAL 1.0/2.0
 
 #pragma mark Project Window Controller
 
@@ -573,6 +575,11 @@
     // [self updateRelevantURLs];
     // [self updateStatus];
     [self updateTransferRate];
+    if (self.project.engineOptions->stats.stat_timestart != 0) {
+        long long seconds = time(NULL) - self.project.engineOptions->stats.stat_timestart;
+        [self.project.statistics setValue:[NSString elapsedTimeForSeconds:seconds] forStatisticOfType:ProjectStatisticTime];
+    }
+    [self.project.statistics.outlineView reloadData];
     
 }
 
@@ -1486,6 +1493,7 @@
 
 #pragma mark Interface Updates
 
+/*
 - (void)updateInterface:(NSTimer *)timer {
     
     if (theme == WindowThemeYosemite) {
@@ -1512,6 +1520,7 @@
         [super updateInterface:timer];
     
 }
+ */
 
 - (void)updateMenus {
     

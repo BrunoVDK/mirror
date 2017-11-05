@@ -171,7 +171,8 @@ HTSEXT_API const char* hts_version(void);
 int hts_read(htsblk * r, char *buff, int size, httrackp *opt, unsigned long base_id);
 
 //int HTS_TOTAL_RECV_CHECK(int var);
-LLint check_downloadable_bytes(int rate);
+/* MIRROR_ADAPTATION : added opt argument */
+LLint check_downloadable_bytes(int rate, httrackp *opt);
 
 HTSEXT_API int hts_uninit_module(void);
 

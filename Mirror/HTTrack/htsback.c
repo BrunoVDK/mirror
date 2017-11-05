@@ -2458,7 +2458,7 @@ int back_add(struct_back * sback, httrackp * opt, cache_back * cache, const char
                     // maximum data which can be received for a socket, if limited
                     if (nsockets) {
                         if (opt->maxrate > 0) {
-                            max_read_bytes = (check_downloadable_bytes(opt->maxrate) / nsockets);
+                            max_read_bytes = (check_downloadable_bytes(opt->maxrate, opt) / nsockets); // MIRROR_ADAPTATION : added opt argument
                             if (max_read_bytes > TAILLE_BUFFER) {
                                 /* limit size */
                                 max_read_bytes = TAILLE_BUFFER;

@@ -4408,7 +4408,8 @@ HTSEXT_API hts_stat_struct HTS_STAT;
 // see engine_stats() routine, too
 // this routine works quite well for big files and regular ones, but apparently the rate limiter has
 // some problems with very small files (rate too high)
-LLint check_downloadable_bytes(int rate) {
+LLint check_downloadable_bytes(int rate, httrackp *opt) {
+    /* MIRROR_ADAPTATION : added opt arguments and changed global to local (HTS_STAT --> opt->stats */
     if (rate > 0) {
         TStamp time_now;
         TStamp elapsed_useconds;
@@ -4416,13 +4417,13 @@ LLint check_downloadable_bytes(int rate) {
         LLint left;
         
         // get the older timer
-        int id_timer = (HTS_STAT.istat_idlasttimer + 1) % 2;
+        int id_timer = (opt->stats.istat_idlasttimer + 1) % 2;
         
         time_now = mtime_local();
-        elapsed_useconds = time_now - HTS_STAT.istat_timestart[id_timer];
+        elapsed_useconds = time_now - opt->stats.istat_timestart[id_timer];
         // NO totally stupid - elapsed_useconds+=1000;      // for the next second, too
         bytes_transferred_during_period =
-        (HTS_STAT.HTS_TOTAL_RECV - HTS_STAT.istat_bytes[id_timer]);
+        (opt->stats.HTS_TOTAL_RECV - opt->stats.istat_bytes[id_timer]);
         
         left = ((rate * elapsed_useconds) / 1000) - bytes_transferred_during_period;
         if (left <= 0)

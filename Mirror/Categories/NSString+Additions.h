@@ -24,6 +24,15 @@
 + (NSString *)stringForByteCount:(long long)size;
 
 /**
+ * Returns a formatted string representing the given elapsed time (in seconds).
+ *  The string represents elapsed time in terms of seconds, minutes, hours and days.
+ *
+ * @param seconds The elapsed time in seconds.
+ * @return A formatted string representing the given elapsed time.
+ */
++ (NSString *)elapsedTimeForSeconds:(long long)seconds;
+
+/**
  * Returns an attributed string with given title, color, font and alignment.
  *
  * @param title The title of the new attributed string.

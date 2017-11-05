@@ -45,6 +45,26 @@ static int unitCount = sizeof units - 1;
     
 }
 
++ (NSString *)elapsedTimeForSeconds:(long long)seconds {
+    
+    seconds = (seconds % 60);
+    int minutes = (seconds % 3600) / 60;
+    int hours = (seconds % 86400) / 3600;
+    int days = (seconds % (86400 * 30)) / 86400;
+    
+    if (days > 0)
+        return [NSString stringWithFormat:@"%i days, %i hours, %i minutes", days, hours, minutes];
+    else if (hours > 0)
+        return [NSString stringWithFormat:@"%i hours, %i minutes", hours, minutes];
+    else if (minutes > 0)
+        return [NSString stringWithFormat:@"%i minutes, %lli seconds", minutes, seconds];
+    else if (seconds > 0)
+        return [NSString stringWithFormat:@"%lli seconds", seconds];
+    
+    return @"--";
+    
+}
+
 + (NSString *)stringForByteCount:(long long)size { // http://stackoverflow.com/questions/7846495/how-to-get-file-size-properly-and-convert-it-to-mb-gb-in-cocoa
     
     int exponent = 0;

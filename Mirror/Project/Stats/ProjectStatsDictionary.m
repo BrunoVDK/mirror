@@ -182,8 +182,7 @@ enum {
     
     if (type < [statistics count]) {
         [(ProjectStat *)[statistics objectAtIndex:type] setValue:value];
-        [_outlineView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:type]
-                                columnIndexes:[NSIndexSet indexSetWithIndex:2]];
+        // [_outlineView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:type] columnIndexes:[NSIndexSet indexSetWithIndex:2]];
     }
     
 }

@@ -8,7 +8,6 @@
 
 #import "Globals.h"
 #import "NSString+Additions.h"
-#import "PieGraphView.h"
 #import "Project.h"
 #import "ProjectFile.h"
 #import "ProjectStatsDictionary.h"
@@ -193,6 +192,14 @@ enum {
         return [(ProjectStatFileType *)[fileTypes objectAtIndex:type] value];
     
     return 0;
+    
+}
+
+#pragma mark Interface
+
+- (void)setPieGraphTheme:(PieGraphTheme)theme {
+    
+    [pieGraphView adoptTheme:theme];
     
 }
 

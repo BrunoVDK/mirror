@@ -14,11 +14,14 @@
 - (void)setObjectValue:(id<NSCopying>)obj {
     
     if ([(NSObject *)obj isKindOfClass:[NSNumber class]]) {
-        progress = [(NSNumber *)obj floatValue];
-        self.stringValue = [NSString stringWithFormat:@"%i", (int)(progress*100)];
+        float newProgress = [(NSNumber *)obj floatValue];
+        self.stringValue = [NSString stringWithFormat:@"%i", (int)(newProgress*100)];
+        progress = newProgress;
     }
-    else
+    else {
+        progress = 0.0f;
         [super setObjectValue:obj];
+    }
     
 }
 

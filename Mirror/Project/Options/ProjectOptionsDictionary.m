@@ -10,6 +10,7 @@
 #import "PreferencesConstants.h"
 #import "Project.h"
 #import "ProjectOptionsDictionary.h"
+#import "ProjectStatsDictionary.h"
 
 NSString *const ProjectOptionsDictionaryWillChange = @"ProjectOptionsDictionaryWillChange";
 NSString *const ProjectOptionsDictionaryDidChange = @"ProjectOptionsDictionaryDidChange";
@@ -81,6 +82,30 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
     }
     
     return generalOptionKeys;
+    
+}
+
++ (NSString *)descriptionForGeneralOptionKey:(NSString *)key {
+    
+    static NSDictionary *generalOptionDescriptions = nil;
+    
+    if (!generalOptionDescriptions) {
+        
+        NSMutableDictionary *mutableDictionary = [NSMutableDictionary new];
+        NSDictionary *generalOptions = [ProjectOptionsDictionary generalOptionKeys];
+        
+        for (NSString *category in [generalOptions allKeys]) {
+            NSArray *optionKeys = (NSMutableArray *)[generalOptions valueForKey:category];
+            for (NSString *optionKey in optionKeys)
+                [mutableDictionary setValue:[NSString formattedStringFromCamelCasing:optionKey] forKey:optionKey];
+        }
+        
+        generalOptionDescriptions = [[NSDictionary alloc] initWithDictionary:mutableDictionary];
+        [mutableDictionary release];
+        
+    }
+    
+    return [generalOptionDescriptions objectForKey:key];
     
 }
 
@@ -236,7 +261,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
             @"TestAllLinks", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
             @"ForceHTTP10", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
             @"PrioritiseHTML", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"EnableURLHacks", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            @"EnableUrlHacks", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
             @"EnableUpdateHacks", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
             @"AcceptCookies", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
             @"TolerantRequests", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
@@ -252,7 +277,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
             @"ParseJavaDefault", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
             @"ParseJavaClass", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
             @"ParseJavaJS", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"PareJavaAggressive", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            @"ParseJavaAggressive", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
             nil];
     
 }
@@ -278,7 +303,28 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 + (NSArray *)designOptions { // Key - Default Value - Mutating Block - Alterable when Engine Runs (YES/NO - use -boolValue to check value)
     
     return [NSArray arrayWithObjects:
-            // No design options yet
+            @"IndexHTMLTitle", @"Index", ^(httrackp *options, id value) {
+                if (options->template_htmltitle)
+                    free(options->template_htmltitle);
+                NSString *string = (NSString *)value;
+                const char *dest = string.UTF8String;
+                options->template_htmltitle = malloc(strlen(dest) + 1);
+                strcpybuff(options->template_htmltitle, dest);}, @NO,
+            @"IndexTitle", @"Index", ^(httrackp *options, id value) {
+                if (options->template_title)
+                    free(options->template_title);
+                NSString *string = (NSString *)value;
+                const char *dest = string.UTF8String;
+                options->template_title = malloc(strlen(dest) + 1);
+                strcpybuff(options->template_title, dest);}, @NO,
+            @"IndexCSS", @"body {background-color: gray;}\n.footer {text-align: center;}", ^(httrackp *options, id value) {
+                if (options->template_css)
+                    free(options->template_css);
+                NSString *string = [value string];
+                const char *dest = string.UTF8String;
+                options->template_css = malloc(strlen(dest) + 1);
+                strcpybuff(options->template_css, dest);}, @NO,
+            @"PieTheme", [NSNumber numberWithInt:0], ^(httrackp *options, id value) {}, @YES,
             nil];
     
 }
@@ -291,6 +337,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
             @"FooterString", @"<!-- Mirrored from %s%s by Mirror, %s -->", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
             @"UserAgent", @"Mozilla/4.5 (compatible; Mirror 1.0; Windows 98)", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
             @"FromEmailAddress", @"", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            @"DefaultRefererURL", @"", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
             @"Headers", @"", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
             // Proxy
             @"UseProxy", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
@@ -428,8 +475,12 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
         
         [optionsDictionary setValue:value forKey:key]; // Alter the dictionary itself
         
-        // void(^mutatingBlock)(httrackp *, id) = [ProjectOptionsDictionary mutatingBlockForOptionKey:key];
-        // mutatingBlock(self.project.engineOptions, value); // Alter the project engine's options structure
+        if ([key isEqualToString:@"PieTheme"])
+            [self.project.statistics setPieGraphTheme:[value unsignedIntValue]];
+        else {
+            void(^mutatingBlock)(httrackp *, id) = [ProjectOptionsDictionary mutatingBlockForOptionKey:key];
+            mutatingBlock(self.project.engineOptions, value); // Alter the project engine's options structure
+        }
         
         if (![_presetIdentifier isEqualToString:CustomPresetName]) {
             [_presetIdentifier release];

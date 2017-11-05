@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1060" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ProjectOptionsIdentityPanelController">
@@ -51,6 +51,9 @@
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.project.options.Language" id="IlU-4L-3lp"/>
+                    </connections>
                 </textField>
                 <textField toolTip="The default referer URL." focusRingType="none" verticalHuggingPriority="750" id="4Zb-jm-x3s">
                     <rect key="frame" x="146" y="130" width="113" height="19"/>
@@ -60,6 +63,9 @@
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.project.options.DefaultRefererURL" id="n1g-9U-eXo"/>
+                    </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="2YH-VT-s2b" customClass="ProjectOptionsLabel">
                     <rect key="frame" x="24" y="157" width="133" height="14"/>
@@ -78,6 +84,9 @@
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.project.options.UserAgent" id="Cjh-nn-U16"/>
+                    </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="uKQ-Cw-AGY" customClass="ProjectOptionsLabel">
                     <rect key="frame" x="24" y="182" width="85" height="14"/>
@@ -96,6 +105,9 @@
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.project.options.FooterString" id="ddC-Ns-85d"/>
+                    </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="hOy-Qt-Kmd" customClass="ProjectOptionsLabel">
                     <rect key="frame" x="24" y="107" width="133" height="14"/>
@@ -114,6 +126,9 @@
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.project.options.FromEmailAddress" id="1h5-Jt-P0y"/>
+                    </connections>
                 </textField>
                 <textField toolTip="Any additional HTTP headers." focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="p5n-6p-z2S">
                     <rect key="frame" x="17" y="15" width="443" height="61"/>
@@ -123,6 +138,9 @@
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.project.options.Headers" id="dYa-qD-PqN"/>
+                    </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="HxY-ZF-6pV" customClass="ProjectOptionsLabel">
                     <rect key="frame" x="24" y="207" width="74" height="14"/>
@@ -147,6 +165,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="smallSystem"/>
                                 </buttonCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.UseProxy" id="k29-70-GMr"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Wyr-dN-Bxg" customClass="ProjectOptionsLabel">
                                 <rect key="frame" x="114" y="83" width="9" height="14"/>
@@ -169,6 +190,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.ProxyAddress" id="VUh-V3-nqJ"/>
+                                </connections>
                             </textField>
                             <button id="GpQ-1s-S1A">
                                 <rect key="frame" x="12" y="16" width="152" height="18"/>
@@ -190,6 +214,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.ProxyUsername" id="IOU-Mm-6Lv"/>
+                                </connections>
                             </textField>
                             <textField toolTip="The port the proxy listens on." focusRingType="none" verticalHuggingPriority="750" id="NTk-YZ-oig">
                                 <rect key="frame" x="126" y="80" width="49" height="19"/>
@@ -206,6 +233,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.ProxyPort" id="jhe-al-DJO"/>
+                                </connections>
                             </textField>
                             <secureTextField toolTip="The password of the above username. Only fill out this field if necessary." focusRingType="none" verticalHuggingPriority="750" id="bnT-dW-iRo">
                                 <rect key="frame" x="14" y="36" width="161" height="16"/>
@@ -218,6 +248,9 @@
                                         <string>NSAllRomanInputSourcesLocaleIdentifier</string>
                                     </allowedInputSourceLocales>
                                 </secureTextFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.ProxyPasswords" id="dUv-AG-D0V"/>
+                                </connections>
                             </secureTextField>
                         </subviews>
                     </view>

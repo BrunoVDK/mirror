@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14F2411" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
@@ -35,6 +35,9 @@
                             </items>
                         </menu>
                     </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedIndex" keyPath="self.project.options.Connections" id="ben-cK-bGL"/>
+                    </connections>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="505-62-7v3" customClass="ProjectOptionsLabel">
                     <rect key="frame" x="21" y="235" width="65" height="14"/>
@@ -69,6 +72,9 @@
                             </items>
                         </menu>
                     </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedIndex" keyPath="self.project.options.Retries" id="7E2-i4-AKP"/>
+                    </connections>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="SeL-YG-RtQ" customClass="ProjectOptionsLabel">
                     <rect key="frame" x="354" y="233" width="55" height="14"/>
@@ -86,6 +92,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="miniSystem"/>
                     </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.project.options.PersistentConnections" id="8ne-Je-y7i"/>
+                    </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="XE3-aS-UM6" customClass="ProjectOptionsLabel">
                     <rect key="frame" x="49" y="206" width="117" height="14"/>
@@ -120,6 +129,9 @@
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.project.options.Timeout" id="dCf-j3-IfE"/>
+                    </connections>
                 </textField>
                 <textField toolTip="The minimum transfer rate a connection is supposed to maintain." focusRingType="none" verticalHuggingPriority="750" tag="1" id="73R-KV-CKZ">
                     <rect key="frame" x="155" y="204" width="82" height="19"/>
@@ -133,6 +145,9 @@
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.project.options.MinTransferRate" id="L2b-ry-PJ4"/>
+                    </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="d1H-Ra-gFT" customClass="ProjectOptionsLabel">
                     <rect key="frame" x="125" y="238" width="42" height="11"/>
@@ -150,6 +165,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="miniSystem"/>
                     </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.project.options.AbandonTimeoutHosts" id="wXx-tQ-GNW"/>
+                    </connections>
                 </button>
                 <button toolTip="Abandon hosts that are too slow." tag="1" id="bSR-vX-bb2">
                     <rect key="frame" x="320" y="206" width="112" height="18"/>
@@ -158,6 +176,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="miniSystem"/>
                     </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.project.options.AbandonSlowHosts" id="Oxk-8G-oRY"/>
+                    </connections>
                 </button>
                 <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="TaI-Cn-eKc">
                     <rect key="frame" x="16" y="169" width="445" height="5"/>
@@ -166,15 +187,6 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="v45-CQ-yVS" customClass="ProjectOptionsLabel">
-                    <rect key="frame" x="124" y="181" width="138" height="14"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Pause after :" id="GSX-kq-296">
-                        <font key="font" metaFont="smallSystem"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <textField toolTip="The number of bytes after which a project should pause." focusRingType="none" verticalHuggingPriority="750" id="lkP-Xv-BBr">
                     <rect key="frame" x="200" y="180" width="116" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -190,6 +202,9 @@
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.project.options.PauseMilestoneBytes" id="7Tj-3Y-nzm"/>
+                    </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="viL-RZ-Sje" customClass="ProjectOptionsLabel">
                     <rect key="frame" x="322" y="184" width="33" height="11"/>
@@ -249,6 +264,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.MaximumHTMLSize" id="o4C-Jc-75j"/>
+                                </connections>
                             </textField>
                             <textField toolTip="The maximum size of any non-HTML file that is to be mirrored." focusRingType="none" verticalHuggingPriority="750" tag="1" id="VrA-Ks-Hmy">
                                 <rect key="frame" x="316" y="84" width="73" height="16"/>
@@ -265,6 +283,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.MaximumNonHTMLSize" id="NRn-Lo-pvm"/>
+                                </connections>
                             </textField>
                             <textField toolTip="The maximum amount of bytes the project is allowed to download (in bytes)." focusRingType="none" verticalHuggingPriority="750" tag="1" id="qR5-YJ-mYl">
                                 <rect key="frame" x="316" y="59" width="73" height="16"/>
@@ -281,6 +302,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.MaximumOverallSize" id="yA2-Vj-Vty"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="CMU-7n-oJy" customClass="ProjectOptionsLabel">
                                 <rect key="frame" x="206" y="110" width="103" height="14"/>
@@ -342,6 +366,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.MaximumTime" id="Wkt-20-Kec"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="35E-4n-LUx" customClass="ProjectOptionsLabel">
                                 <rect key="frame" x="12" y="36" width="138" height="14"/>
@@ -367,6 +394,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.MaximumConnectionsSecond" id="j3P-Zw-iC4"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="mnD-vq-Y6f" customClass="ProjectOptionsLabel">
                                 <rect key="frame" x="12" y="13" width="89" height="14"/>
@@ -401,6 +431,9 @@
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.MirroringDepth" id="XLc-GQ-1ra"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="sIF-DF-C39" customClass="ProjectOptionsLabel">
                                 <rect key="frame" x="12" y="110" width="126" height="14"/>
@@ -435,6 +468,9 @@
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.MaximumLinks" id="vFW-aO-9JM"/>
+                                </connections>
                             </textField>
                             <textField toolTip="The maximum external mirroring depth." focusRingType="none" verticalHuggingPriority="750" id="c71-wf-ch5">
                                 <rect key="frame" x="123" y="61" width="60" height="16"/>
@@ -451,6 +487,9 @@
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.ExternalDepth" id="dZe-aC-1RU"/>
+                                </connections>
                             </textField>
                             <textField toolTip="The maximum transfer rate of the project." focusRingType="none" verticalHuggingPriority="750" tag="1" id="o4h-Cc-lqq">
                                 <rect key="frame" x="109" y="11" width="131" height="16"/>
@@ -467,6 +506,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.MaximumTransferRate" id="dM3-RT-wkZ"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="iez-t8-oLI" customClass="ProjectOptionsLabel">
                                 <rect key="frame" x="253" y="14" width="64" height="11"/>
@@ -491,6 +533,17 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button id="y7E-B9-HAD">
+                    <rect key="frame" x="101" y="177" width="89" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Pause after :" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="A59-CH-OAJ">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.project.options.UsePauseMilestone" id="j8M-d5-lSJ"/>
+                    </connections>
+                </button>
             </subviews>
             <point key="canvasLocation" x="603" y="291"/>
         </customView>

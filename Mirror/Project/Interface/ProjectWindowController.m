@@ -707,6 +707,7 @@
     [self updateStatus];
     [self updateMenus];
     [self updateTransferRate];
+    [self.project.sockets setContent:nil];
     
 }
 
@@ -1678,6 +1679,7 @@
     if (showSockets) contentController = self.project.sockets;
     
     // Update interface elements
+    [filesSearchField setEnabled:!showSockets];
     [[filesMenu itemAtIndex:1] setTitle:(showSockets ? @"Show Recent Files" : @"Show Active Sockets")];
     [[[fileListView tableColumns] objectAtIndex:1] setIdentifier:(showSockets ? @"socketDescription" : @"fileName")];
     [[[fileListView tableColumns] objectAtIndex:2] setIdentifier:(showSockets ? @"progress" : @"size")];
@@ -1691,8 +1693,8 @@
     [filesStatusField bind:NSValueBinding toObject:contentController withKeyPath:@"status" options:nil];
     
     // Update bindings
-    [fileListView bind:NSContentBinding toObject:contentController withKeyPath:@"arrangedObjects" options:nil];
     [fileListView bind:NSSortDescriptorsBinding toObject:contentController withKeyPath:@"sortDescriptors" options:nil];
+    [fileListView bind:NSContentBinding toObject:contentController withKeyPath:@"arrangedObjects" options:nil];
     NSString *identifier = nil;
     for (NSTableColumn *column in fileListView.tableColumns) {
         identifier = column.identifier;
@@ -1710,6 +1712,7 @@
              withKeyPath:[@"arrangedObjects." stringByAppendingString:column.identifier]
                  options:[NSDictionary dictionaryWithObjectsAndKeys:!showSockets, NSCreatesSortDescriptorBindingOption, nil]];
     }
+    [fileListView reloadData];
     
 }
 

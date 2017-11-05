@@ -84,7 +84,7 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     _addURLBuffer = [[CircularBuffer alloc] initWithCapacity:MAX_URLS];
     _cancelURLBuffer = [[CircularBuffer alloc] initWithCapacity:MAX_URLS];
     
-    _options = [ProjectOptionsDictionary new]; // A new dictionary means that the default options are used (options are set when reading a document)
+    _options = [[ProjectOptionsDictionary alloc] initWithProject:self]; // A new dictionary means that the default options are used (options are set when reading a document)
     filters = [NSMutableArray new];
     engineOptions = hts_create_opt();
     assert(engineOptions->size_httrackp == sizeof(httrackp));
@@ -719,7 +719,10 @@ int  httrack_end(t_hts_callbackarg *carg, httrackp *opt) { // Called when the en
     // dispatch_async(dispatch_get_main_queue(), ^{[project.windowController updateStatus];}); // Updates on main queue
     
     Project *project = (__bridge Project *)carg->userdef;
-    dispatch_async(dispatch_get_main_queue(), ^{[project.delegate projectDidEnd:project error:nil];});
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // [project.sockets remove:nil];
+        [project.delegate projectDidEnd:project error:nil];
+    });
     
     return 1;
     
@@ -848,8 +851,7 @@ int __cdecl httrack_loop(t_hts_callbackarg *carg, httrackp *opt, lien_back *back
         }
         
         dispatch_sync(dispatch_get_main_queue(), ^{ // On main queue
-            [project.sockets remove:nil];
-            [project.sockets setContent:socketArray];
+            [project.sockets setContent:[socketArray copy]];
         });
         
     }
@@ -936,9 +938,9 @@ void __cdecl httrack_filesave(t_hts_callbackarg * carg, httrackp * opt, const ch
         size = [[[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil] fileSize];
     
     // Add project file to list
-    ProjectFile *projectFile = [[[ProjectFile alloc] initWithAddress:address file:path size:size] autorelease];
     dispatch_async(dispatch_get_main_queue(), ^{
-        [project.files addObject:projectFile];
+        ProjectFile *projectFile = [[[ProjectFile alloc] initWithAddress:address file:path size:size] autorelease];
+        [project.files add:projectFile];
         [project.statistics registerFile:projectFile];
         // [project.delegate project:project savedFile:projectFile];
     });

@@ -52,6 +52,14 @@ FOUNDATION_EXPORT NSString *const DefaultPresetPreferencesKey; // The preference
 + (NSDictionary *)generalOptionKeys;
 
 /**
+ * Returns the description of the general option with given key.
+ *
+ * @param key The key of the option whose description is desired.
+ * @return The description of the option with given key.
+ */
++ (NSString *)descriptionForGeneralOptionKey:(NSString *)key;
+
+/**
  * Returns an array of preset names that have been saved in the user defaults.
  */
 + (NSArray *)savedPresetNames;

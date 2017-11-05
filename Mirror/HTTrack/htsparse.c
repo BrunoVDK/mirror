@@ -563,10 +563,13 @@ int htsparse(htsmoduleStruct * str, htsmoduleStructExtended * stre) {
                                                                "index.html"));
                                             if (makeindex_fp != NULL) {
                                                 
-                                                // MIRROR_ADAPTATION : Adapted header
+                                                // MIRROR_ADAPTATION : Adapted header, added title/css
                                                 // Header
                                                 hts_template_format(makeindex_fp, template_header,
-                                                                    "<!-- Mirror and index made by Mirror -->", "Mirror of http://google.com", /* EOF */ NULL);
+                                                                    opt->template_htmltitle,
+                                                                    "<!-- Mirror and index made by Mirror -->",
+                                                                    opt->template_css,
+                                                                    opt->template_title, /* EOF */ NULL);
                                                 
                                             } else
                                                 makeindex_done = -1;    // fait, erreur

@@ -51,9 +51,8 @@
 
 - (void)setContent:(id)content {
     
-    [super setContent:content];
-    
     [self willChangeValueForKey:@"status"];
+    [super setContent:content];
     [self didChangeValueForKey:@"status"];
     
 }
@@ -61,13 +60,10 @@
 - (void)addObject:(id)object {
     
     if ([object isMemberOfClass:[ProjectSocket class]]) {
-        
         [self willChangeValueForKey:@"status"];
-        
-        [super addObject:object];
-        
+        [self.content addObject:object];
+        [self rearrangeObjects];
         [self didChangeValueForKey:@"status"];
-        
     }
     
 }

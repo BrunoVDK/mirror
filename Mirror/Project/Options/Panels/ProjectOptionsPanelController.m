@@ -133,6 +133,114 @@
     
 }
 
+#pragma mark Interface 
+
+- (void)awakeFromNib {
+    
+    [super awakeFromNib];
+    
+    [outlineView expandItem:nil expandChildren:true];
+    
+}
+
+- (void)updatePanel {
+    
+    [super updatePanel];
+    
+    [outlineView reloadData];
+    
+}
+
+#pragma mark Outline View Delegate & - Data Source
+
+- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item {
+    
+    if (item == nil)
+        return [[[ProjectOptionsDictionary generalOptionKeys] allKeys] count];
+    
+    NSString *categoryName = (NSString *)item;
+    return [[[ProjectOptionsDictionary generalOptionKeys] objectForKey:categoryName] count];
+    
+}
+
+- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item {
+    
+    if (item == nil)
+        return [[[ProjectOptionsDictionary generalOptionKeys] allKeys] objectAtIndex:index];
+    
+    NSString *categoryName = (NSString *)item;
+    return [[[ProjectOptionsDictionary generalOptionKeys] objectForKey:categoryName] objectAtIndex:index];
+    
+}
+
+- (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item {
+        
+    if ([tableColumn.identifier isEqualToString:@"Value"])
+        return nil;
+    
+    if ([[ProjectOptionsDictionary generalOptionKeys] objectForKey:(NSString *)item])
+        return item;
+    
+    return [ProjectOptionsDictionary descriptionForGeneralOptionKey:(NSString *)item];
+    
+}
+
+- (void)outlineView:(NSOutlineView *)outlineView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item {
+    
+    if ([tableColumn.identifier isEqualToString:@"Value"]) {
+        
+        [cell setTransparent:true];
+        
+        if (![[ProjectOptionsDictionary generalOptionKeys] objectForKey:(NSString *)item]) {
+            
+            NSButtonCell *buttonCell = (NSButtonCell *)cell;
+            [buttonCell setTransparent:false];
+            
+            BOOL flag = [[self.project.options valueForKey:(NSString *)item] boolValue];
+            [buttonCell setState:flag];
+            
+            BOOL started = self.project.hasStarted;
+            [buttonCell setEnabled:!started || [ProjectOptionsDictionary optionCanBeAltered:(NSString *)item]];
+            
+        }
+        
+    }
+    
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item {
+    
+    return [[ProjectOptionsDictionary generalOptionKeys] objectForKey:(NSString *)item] != nil;
+    
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(NSTableColumn *)tableColumn item:(id)item {
+    
+    return ![[ProjectOptionsDictionary generalOptionKeys] objectForKey:(NSString *)item];
+    
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item {
+    
+    return false;
+    
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldTrackCell:(NSCell *)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item {
+    
+    return [tableColumn.identifier isEqualToString:@"Value"]
+    && [[ProjectOptionsDictionary generalOptionKeys] objectForKey:(NSString *)item] == nil;
+    
+}
+
+- (IBAction)outlineViewValueClicked:(id)sender {
+    
+    NSString *key = [outlineView itemAtRow:outlineView.clickedRow];
+    BOOL flag = [[self.project.options valueForKey:key] boolValue];
+    [self.project.options setValue:[NSNumber numberWithBool:!flag] forKey:key];
+    
+}
+
 @end
 
 #define IMAGE_EXCLUSION_RULES @[@"-*.gif",@"-*.jpg",@"-*.jpeg",@"-*.png",@"-*.tif",@"-*.bmp"]

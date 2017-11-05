@@ -91,6 +91,34 @@ static int unitCount = sizeof units - 1;
     
 }
 
++ (NSString *)formattedStringFromCamelCasing:(NSString *)string {
+    
+    // Adapted from https://stackoverflow.com/questions/7322498/insert-or-split-string-at-uppercase-letters-objective-c
+    
+    int index = 1;
+    NSMutableString *mutableInputString = [NSMutableString stringWithString:string];
+    NSCharacterSet *uppercase = [NSCharacterSet uppercaseLetterCharacterSet];
+    NSMutableCharacterSet *lowercase = [NSMutableCharacterSet lowercaseLetterCharacterSet];
+    [lowercase addCharactersInString:@"0123456789"];
+    
+    while (index < mutableInputString.length) {
+        
+        if ([uppercase characterIsMember:[mutableInputString characterAtIndex:index]]) {
+            if (index > 0
+                && [lowercase characterIsMember:[mutableInputString characterAtIndex:index-1]]) {
+                [mutableInputString insertString:@" " atIndex:index];
+                index++;
+            }
+        }
+        
+        index++;
+        
+    }
+    
+    return [NSString stringWithString:mutableInputString];
+    
+}
+
 - (void)convertToCString:(char *)cStringPointer {
     
     NSUInteger length = [self lengthOfBytesUsingEncoding:NSUTF8StringEncoding] + 1;

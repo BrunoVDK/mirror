@@ -881,8 +881,7 @@ int hts_template_format_str(char *buffer, size_t size, const char *format, ...) 
 }
 
 /* Note: NOT utf-8 */
-HTSEXT_API int hts_buildtopindex(httrackp * opt, const char *path,
-                                 const char *binpath) {
+HTSEXT_API int hts_buildtopindex(httrackp * opt, const char *path, const char *binpath) {
   FILE *fpo;
   int retval = 0;
   char BIGSTK rpath[1024 * 2];
@@ -918,9 +917,14 @@ HTSEXT_API int hts_buildtopindex(httrackp * opt, const char *path,
       find_handle h;
 
       verif_backblue(opt, concat(catbuff, sizeof(catbuff), rpath, "/")); // générer gif
-      // Header
+     // MIRROR_ADAPTATION : Adapted header to include titles and css
+        // Header
       hts_template_format(fpo, toptemplate_header,
-              "<!-- Mirror and index made by Miroir -->", /* EOF */ NULL);
+                          opt->template_htmltitle,
+                          "<!-- Mirror and index made by Mirror -->",
+                          opt->template_css,
+                          opt->template_title,
+                          /* EOF */ NULL);
 
       /* Find valid project names */
       h = hts_findfirst(rpath);
@@ -1032,7 +1036,7 @@ HTSEXT_API int hts_buildtopindex(httrackp * opt, const char *path,
       }
       // Footer
       hts_template_format(fpo, toptemplate_footer,
-              "<!-- Mirror and index made by Miroir -->", /* EOF */ NULL);
+              "<!-- Mirror and index made by Mirror -->", /* EOF */ NULL);
 
       fclose(fpo);
 

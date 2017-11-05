@@ -24,7 +24,7 @@
     
     if (self = [super init]) {
         
-        self.automaticallyRearrangesObjects = true;
+        self.automaticallyRearrangesObjects = false;
         self.usesLazyFetching = false;
         self.clearsFilterPredicateOnInsertion = false;
         
@@ -78,6 +78,14 @@
 
 }
 
+- (void)setFilterPredicate:(NSPredicate *)filterPredicate {
+    
+    [self willChangeValueForKey:@"status"];
+    [super setFilterPredicate:filterPredicate];
+    [self didChangeValueForKey:@"status"];
+    
+}
+
 #pragma mark KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -88,17 +96,19 @@
 
 #pragma mark Mutating
 
-- (void)addObject:(id)object {
+- (void)add:(id)object {
     
     if ([object isMemberOfClass:[ProjectFile class]]) {
         
-        if ([self count] > maximumCapacity) {
-            [self removeObject:[(NSMutableArray *)self.content firstObject]];
-            [super addObject:object];
+        if ([self count] == maximumCapacity) {
+            [self.content removeObjectAtIndex:0];
+            [self.content addObject:object];
+            [self rearrangeObjects];
         }
         else {
             [self willChangeValueForKey:@"status"];
-            [super addObject:object];
+            [self.content addObject:object];
+            [self rearrangeObjects];
             [self didChangeValueForKey:@"status"];
         }
         

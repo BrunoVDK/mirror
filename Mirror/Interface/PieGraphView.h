@@ -24,18 +24,6 @@ enum {
      */
     PieGraphThemeSea,
     /**
-     * Pie graph view forest theme.
-     */
-    PieGraphThemeForest,
-    /**
-     * Pie graph view fire theme.
-     */
-    PieGraphThemeFire,
-    /**
-     * Pie graph view sunrise theme.
-     */
-    PieGraphThemeSunrise,
-    /**
      * The number of themes that have been defined for a pie graph view.
      */
     PieGraphThemeCount,

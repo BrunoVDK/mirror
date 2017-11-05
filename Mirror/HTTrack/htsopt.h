@@ -450,6 +450,10 @@ extern "C" {
         int debug_head;               // debug head (used to be global)
         FILE *ioinfo;                 // io info (used to be global)
         // --- MIRROR_ADAPTATION END : Added stats that used to be global, to enable use of multiple engines at once
+        // MIRROR_ADAPTATION : Added index template variables (html title + title + css) to make them changeable within the app
+        char *template_htmltitle;
+        char *template_title;
+        char *template_css;
     };
     
     // structure pour paramètres supplémentaires lors de la requête

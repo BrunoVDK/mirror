@@ -53,6 +53,14 @@
 + (NSString *)stringForSpeedAbbrev:(long long)speed;
 
 /**
+ * Formats the given camel-cased string so that it becomes readable.
+ *  (eg. 'FormatThisString' --> 'Format This String')
+ *
+ * @param string The camel-case string to format.
+ */
++ (NSString *)formattedStringFromCamelCasing:(NSString *)string;
+
+/**
  * Convert this string to a C string.
  *
  * @param cStringPointer A pointer to a C string. It will point to the converted NSString if the conversion was successful.

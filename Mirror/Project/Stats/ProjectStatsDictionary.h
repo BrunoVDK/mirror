@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "PieGraphView.h"
+
 /**
  * An enumeration for types of statistics referring to those of a `Project`.
  */
@@ -58,7 +60,7 @@ enum {
     ProjectStatisticCount,
 } typedef ProjectStatisticType;
 
-@class PieGraphView, Project, ProjectFile, ProjectStatsFileTypeCell;
+@class Project, ProjectFile, ProjectStatsFileTypeCell;
 
 /**
  * The `ProjectStatsDictionary` class keeps track of a project's statistics.
@@ -123,6 +125,13 @@ enum {
  * @param type The type of the statistic that is to be set.
  */
 - (void)setValue:(id)value forStatisticOfType:(ProjectStatisticType)type;
+
+/**
+ * Alter the pie graph theme to match the given one.
+ *
+ * @param theme The new theme for the pie graph.
+ */
+- (void)setPieGraphTheme:(PieGraphTheme)theme;
 
 /**
  * Register the given project file, that is, update the stats dictionary to reflect the addition of this file.

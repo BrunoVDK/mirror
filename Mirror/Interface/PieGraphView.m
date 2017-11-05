@@ -25,7 +25,7 @@
     if (theme >= PieGraphThemeCount)
         return nil;
     
-    static const NSString *themeNames[] = {@"Classic", @"Fire", @"Forest", @"Sunrise", @"Sea"};
+    static const NSString *themeNames[] = {@"Classic", @"Forest"};
     
     return themeNames[theme];
     
@@ -33,7 +33,7 @@
 
 + (const NSArray *)colorsForTheme:(PieGraphTheme)theme {
     
-    static const NSArray *classicColors = nil, *fireColors = nil, *forestColors = nil, *sunriseColors = nil, *seaColors = nil;
+    static const NSArray *classicColors = nil, *seaColors = nil;
     
     if (theme == PieGraphThemeClassic) {
         
@@ -48,36 +48,17 @@
         return classicColors;
         
     }
-    else if (theme == PieGraphThemeFire) {
-        
-        if (!fireColors)
-            fireColors = [@[[NSColor redColor], [NSColor blueColor], [NSColor greenColor], [NSColor yellowColor], [NSColor magentaColor]] retain];
-        
-        return fireColors;
-        
-    }
-    else if (theme == PieGraphThemeForest) {
-        
-        if (!forestColors)
-            forestColors = [@[[NSColor redColor], [NSColor blueColor], [NSColor greenColor], [NSColor yellowColor], [NSColor magentaColor]] retain];
-        
-        return forestColors;
-        
-    }
-    else if (theme == PieGraphThemeSunrise) {
-        
-        if (!sunriseColors)
-            sunriseColors = [@[[NSColor redColor], [NSColor blueColor], [NSColor greenColor], [NSColor yellowColor], [NSColor magentaColor]] retain];
-        
-        return sunriseColors;
-        
-    }
     else if (theme == PieGraphThemeSea) {
         
         if (!seaColors)
-            seaColors = [@[[NSColor redColor], [NSColor blueColor], [NSColor greenColor], [NSColor yellowColor], [NSColor magentaColor]] retain];
+            seaColors =     [@[[NSColor colorWithCalibratedRed:.42 green:.66 blue:.40 alpha:1.0],
+                               [NSColor colorWithCalibratedRed:.94 green:.92 blue:.27 alpha:1.0],
+                               [NSColor colorWithCalibratedRed:.61 green:.74 blue:.29 alpha:1.0],
+                               [NSColor colorWithCalibratedRed:.58 green:.56 blue:.40 alpha:1.0],
+                               [NSColor colorWithCalibratedRed:.49 green:.76 blue:.80 alpha:1.0],
+                               ] retain];
         
-        return classicColors;
+        return seaColors;
         
     }
     
@@ -237,14 +218,16 @@
 }
 
 - (void)adoptTheme:(PieGraphTheme)theme {
-    
-    if (theme == PieGraphThemeCount)
+        
+    if (theme >= PieGraphThemeCount) // Nominal programming
         return;
     
     const NSArray *colors = [PieGraphView colorsForTheme:theme];
     
     for (int i=0 ; i<[self numberOfSlices] ; i++)
         [self setColor:[colors objectAtIndex:i] forSliceAtIndex:i];
+    
+    [self setNeedsDisplay:true];
     
 }
 

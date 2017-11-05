@@ -61,7 +61,11 @@
 /**
  * The `ProjectOptionsCrawlerPanelController` class controls a project options panel with spider options.
  */
-@interface ProjectOptionsCrawlerPanelController : ProjectOptionsPanelController
+@interface ProjectOptionsCrawlerPanelController : ProjectOptionsPanelController <NSOutlineViewDataSource, NSOutlineViewDelegate> {
+    
+    IBOutlet NSOutlineView *outlineView;
+    
+}
 
 @end
 

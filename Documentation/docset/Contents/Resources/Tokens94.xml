@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/SplitViewDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/SplitViewDelegate</TokenIdentifier>
+			<Abstract type="html">The SplitViewDelegate protocol provides optional methods that can be implemented by a SplitView delegate, so as to be notified of particular events.</Abstract>
+			<DeclaredIn>SplitView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="94"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SplitViewDelegate/splitViewDidLoad:</TokenIdentifier>
+			<Abstract type="html">This method is called when a SplitView finished loading.</Abstract>
+			<DeclaredIn>SplitView.h</DeclaredIn>
+			
+			<Declaration>- (void)splitViewDidLoad:(SplitView *)splitView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>splitView</Name>
+					<Abstract type="html">The SplitView in question.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/splitViewDidLoad:</Anchor>
+            <NodeRef refid="94"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SplitViewDelegate/splitViewDidCollapse:</TokenIdentifier>
+			<Abstract type="html">This method is called when a SplitView finished collapsing.</Abstract>
+			<DeclaredIn>SplitView.h</DeclaredIn>
+			
+			<Declaration>- (void)splitViewDidCollapse:(SplitView *)splitView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>splitView</Name>
+					<Abstract type="html">The SplitView in question.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/splitViewDidCollapse:</Anchor>
+            <NodeRef refid="94"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SplitViewDelegate/splitViewDidUnCollapse:</TokenIdentifier>
+			<Abstract type="html">This method is called when a SplitView finished uncollapsing.</Abstract>
+			<DeclaredIn>SplitView.h</DeclaredIn>
+			
+			<Declaration>- (void)splitViewDidUnCollapse:(SplitView *)splitView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>splitView</Name>
+					<Abstract type="html">The SplitView in question.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/splitViewDidUnCollapse:</Anchor>
+            <NodeRef refid="94"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

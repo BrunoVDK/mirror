@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/WindowAdaptedTextFieldCell.html">
+	<File path="Classes/WindowAdaptedTableView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/WindowAdaptedTextFieldCell</TokenIdentifier>
-			<Abstract type="html">A WindowAdaptedTextFieldCell adapts its design to the state of the parent window.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/cl/WindowAdaptedTableView</TokenIdentifier>
+			<Abstract type="html">A WindowAdaptedTableView adapts its design to the state of the parent window.</Abstract>
 			<DeclaredIn>WindowAdaptedCell.h</DeclaredIn>
             
 			
@@ -12,6 +12,7 @@
 		</Token>
 		
 		
+        
         
 	</File>
 </Tokens>

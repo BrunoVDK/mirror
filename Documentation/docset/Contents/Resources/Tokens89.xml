@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSShadow+Additions.html">
+	<File path="Categories/NSImage+Additions.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSShadow(Additions)</TokenIdentifier>
-			<Abstract type="html">A category for adding functionality to the NSShadow class.</Abstract>
-			<DeclaredIn>NSShadow+Additions.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/NSImage(Additions)</TokenIdentifier>
+			<Abstract type="html">A category for adding functionality to the NSImage class.</Abstract>
+			<DeclaredIn>NSImage+Additions.h</DeclaredIn>
             
 			
 			<NodeRef refid="89"/>
@@ -13,28 +13,23 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSShadow/initWithColor:offset:blurRadius:</TokenIdentifier>
-			<Abstract type="html">Initialize a new shadow with given color, offset and blur radius.</Abstract>
-			<DeclaredIn>NSShadow+Additions.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSImage/copyWithTint:</TokenIdentifier>
+			<Abstract type="html">Returns a copy of this image, tinted with the given color.</Abstract>
+			<DeclaredIn>NSImage+Additions.h</DeclaredIn>
 			
-			<Declaration>- (id)initWithColor:(NSColor *)color offset:(NSSize)offset blurRadius:(CGFloat)blur</Declaration>
+			<Declaration>- (NSImage *)copyWithTint:(NSColor *)tint</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>color</Name>
-					<Abstract type="html">The color of the new shadow.</Abstract>
-				</Parameter><Parameter>
-					<Name>offset</Name>
-					<Abstract type="html">The offset of the new shadow.</Abstract>
-				</Parameter><Parameter>
-					<Name>blur</Name>
-					<Abstract type="html">The blur radius of the new shadow.</Abstract>
+					<Name>tint</Name>
+					<Abstract type="html">The color to tint with.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/initWithColor:offset:blurRadius:</Anchor>
+			<ReturnValue><Abstract type="html">An appropriately tinted version of this image.</Abstract></ReturnValue>
+			<Anchor>//api/name/copyWithTint:</Anchor>
             <NodeRef refid="89"/>
 		</Token>
 		
+        
         
 	</File>
 </Tokens>

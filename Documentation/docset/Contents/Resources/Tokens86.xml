@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSBezierPath+Additions.html">
+	<File path="Categories/NSApplication+Additions.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSBezierPath(Additions)</TokenIdentifier>
-			<Abstract type="html">A category for adding functionality to the NSBezierPath class.</Abstract>
-			<DeclaredIn>NSBezierPath+Additions.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/NSApplication(Additions)</TokenIdentifier>
+			<Abstract type="html">A category for adding functionality to the NSApp class.</Abstract>
+			<DeclaredIn>NSApp+Additions.h</DeclaredIn>
             
 			
 			<NodeRef refid="86"/>
@@ -13,88 +13,29 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSBezierPath/bezierPathWithCGPath:</TokenIdentifier>
-			<Abstract type="html">Create a path using the given graphics path.</Abstract>
-			<DeclaredIn>NSBezierPath+Additions.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSApplication/beginSheet:modalForWindow:didEndBlock:</TokenIdentifier>
+			<Abstract type="html">Attach a given sheet to a given window.</Abstract>
+			<DeclaredIn>NSApp+Additions.h</DeclaredIn>
 			
-			<Declaration>+ (NSBezierPath *)bezierPathWithCGPath:(CGPathRef)pathRef</Declaration>
+			<Declaration>- (void)beginSheet:(NSWindow *)sheet modalForWindow:(NSWindow *)docWindow didEndBlock:(void ( ^ ) ( NSInteger returnCode ))block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>pathRef</Name>
-					<Abstract type="html">The graphics path to transform.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new bezier path based on the given path.</Abstract></ReturnValue>
-			<Anchor>//api/name/bezierPathWithCGPath:</Anchor>
-            <NodeRef refid="86"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSBezierPath/createCGPath</TokenIdentifier>
-			<Abstract type="html">Creates a new CGPath by transforming this bezier path into a graphics path.</Abstract>
-			<DeclaredIn>NSBezierPath+Additions.h</DeclaredIn>
-			
-			<Declaration>- (CGPathRef)createCGPath</Declaration>
-			
-			<ReturnValue><Abstract type="html">A new graphics path based on this bezier path.</Abstract></ReturnValue>
-			<Anchor>//api/name/createCGPath</Anchor>
-            <NodeRef refid="86"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSBezierPath/bezierPathWithLeftRoundedRect:radius:</TokenIdentifier>
-			<Abstract type="html">Create a new bezier path within the given rectangle. The new path is a half-rounded rectangle,
-its left corners are both rounded.</Abstract>
-			<DeclaredIn>NSBezierPath+Additions.h</DeclaredIn>
-			
-			<Declaration>+ (NSBezierPath *)bezierPathWithLeftRoundedRect:(NSRect)rect radius:(float)radius</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>rect</Name>
-					<Abstract type="html">The rect to draw the new path in.</Abstract>
+					<Name>sheet</Name>
+					<Abstract type="html">The sheet to show.</Abstract>
 				</Parameter><Parameter>
-					<Name>radius</Name>
-					<Abstract type="html">The radius of the new path&apos;s rounded corners.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new bezier path in the form of a half-rounded rect (rounded on the left).</Abstract></ReturnValue>
-			<Anchor>//api/name/bezierPathWithLeftRoundedRect:radius:</Anchor>
-            <NodeRef refid="86"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSBezierPath/bezierPathWithRightRoundedRect:radius:</TokenIdentifier>
-			<Abstract type="html">Create a new bezier path within the given rectangle. The new path is a half-rounded rectangle,
-its right corners are both rounded.</Abstract>
-			<DeclaredIn>NSBezierPath+Additions.h</DeclaredIn>
-			
-			<Declaration>+ (NSBezierPath *)bezierPathWithRightRoundedRect:(NSRect)rect radius:(float)radius</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>rect</Name>
-					<Abstract type="html">The rect to draw the new path in.</Abstract>
+					<Name>docWindow</Name>
+					<Abstract type="html">The window to attach the sheet to.</Abstract>
 				</Parameter><Parameter>
-					<Name>radius</Name>
-					<Abstract type="html">The radius of the new path&apos;s rounded corners.</Abstract>
+					<Name>block</Name>
+					<Abstract type="html">The block of code to run on completion.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new bezier path in the form of a half-rounded rect (rounded on the right).</Abstract></ReturnValue>
-			<Anchor>//api/name/bezierPathWithRightRoundedRect:radius:</Anchor>
+			
+			<Anchor>//api/name/beginSheet:modalForWindow:didEndBlock:</Anchor>
             <NodeRef refid="86"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSBezierPath/strokeInside</TokenIdentifier>
-			<Abstract type="html">Stroke inside this bezier path.</Abstract>
-			<DeclaredIn>NSBezierPath+Additions.h</DeclaredIn>
-			
-			<Declaration>- (void)strokeInside</Declaration>
-			
-			
-			<Anchor>//api/name/strokeInside</Anchor>
-            <NodeRef refid="86"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

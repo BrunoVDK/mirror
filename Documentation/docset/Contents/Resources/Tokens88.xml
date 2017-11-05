@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSImage+Additions.html">
+	<File path="Categories/NSColor+Additions.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSImage(Additions)</TokenIdentifier>
-			<Abstract type="html">A category for adding functionality to the NSImage class.</Abstract>
-			<DeclaredIn>NSImage+Additions.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/NSColor(Additions)</TokenIdentifier>
+			<Abstract type="html">The ColoredView category alters the behaviour of the NSColor class.</Abstract>
+			<DeclaredIn>NSColor+Additions.h</DeclaredIn>
             
 			
 			<NodeRef refid="88"/>
@@ -13,22 +13,18 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSImage/copyWithTint:</TokenIdentifier>
-			<Abstract type="html">Returns a copy of this image, tinted with the given color.</Abstract>
-			<DeclaredIn>NSImage+Additions.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSColor/darkerGrayColor</TokenIdentifier>
+			<Abstract type="html">Returns a color that has a darkish gray tint.</Abstract>
+			<DeclaredIn>NSColor+Additions.h</DeclaredIn>
 			
-			<Declaration>- (NSImage *)copyWithTint:(NSColor *)tint</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>tint</Name>
-					<Abstract type="html">The color to tint with.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An appropriately tinted version of this image.</Abstract></ReturnValue>
-			<Anchor>//api/name/copyWithTint:</Anchor>
+			<Declaration>+ (NSColor *)darkerGrayColor</Declaration>
+			
+			
+			<Anchor>//api/name/darkerGrayColor</Anchor>
             <NodeRef refid="88"/>
 		</Token>
 		
+        
         
 	</File>
 </Tokens>

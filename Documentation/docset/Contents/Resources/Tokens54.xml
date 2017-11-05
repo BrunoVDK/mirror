@@ -17,7 +17,7 @@
 			<Abstract type="html">This project socket&apos;s icon.</Abstract>
 			<DeclaredIn>ProjectSocket.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *icon</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSImage *icon</Declaration>
 			
 			
 			<Anchor>//api/name/icon</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">This project socket&apos;s icon.</Abstract>
 			<DeclaredIn>ProjectSocket.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *icon</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSImage *icon</Declaration>
 			
 			
 			<Anchor>//api/name/icon</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">This project socket&apos;s icon.</Abstract>
 			<DeclaredIn>ProjectSocket.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *icon</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSImage *icon</Declaration>
 			
 			
 			<Anchor>//api/name/icon</Anchor>
@@ -328,6 +328,19 @@
             <NodeRef refid="54"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectSocket/fileName</TokenIdentifier>
+			<Abstract type="html">Returns the file name of this socket&apos;s associated file.</Abstract>
+			<DeclaredIn>ProjectSocket.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)fileName</Declaration>
+			
+			<ReturnValue><Abstract type="html">The filename of this socket&apos;s associated file.</Abstract></ReturnValue>
+			<Anchor>//api/name/fileName</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

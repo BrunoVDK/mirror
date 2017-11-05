@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ProjectStatsPanelController.html">
+	<File path="Classes/ProjectStatsOverviewPanelController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ProjectStatsPanelController</TokenIdentifier>
-			<Abstract type="html">The ProjectStatsPanelController class controls a panel of a project statistics window.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectStatsOverviewPanelController</TokenIdentifier>
+			<Abstract type="html">The ProjectStatsOverviewPanelController class controls a project statistics panel presenting notifications.</Abstract>
 			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
             
 			
@@ -13,53 +13,18 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsPanelController/setController:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsOverviewPanelController/setProject:</TokenIdentifier>
 			<Abstract type="html">This panel&apos;s window controller.</Abstract>
-			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
+			<DeclaredIn>ProjectStatsPanelController.m</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ProjectStatsWindowController *controller</Declaration>
+			<Declaration>- (void)setProject:(Project *)project</Declaration>
 			
 			
-			<Anchor>//api/name/controller</Anchor>
+			<Anchor>//api/name/setProject:</Anchor>
             <NodeRef refid="60"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsPanelController/controller</TokenIdentifier>
-			<Abstract type="html">This panel&apos;s window controller.</Abstract>
-			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) ProjectStatsWindowController *controller</Declaration>
-			
-			
-			<Anchor>//api/name/controller</Anchor>
-            <NodeRef refid="60"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ProjectStatsPanelController/controller</TokenIdentifier>
-			<Abstract type="html">This panel&apos;s window controller.</Abstract>
-			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) ProjectStatsWindowController *controller</Declaration>
-			
-			
-			<Anchor>//api/name/controller</Anchor>
-            <NodeRef refid="60"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsPanelController/project</TokenIdentifier>
-			<Abstract type="html">Returns this project statistics panel&apos;s associated project.</Abstract>
-			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
-			
-			<Declaration>- (Project *)project</Declaration>
-			
-			
-			<Anchor>//api/name/project</Anchor>
-            <NodeRef refid="60"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

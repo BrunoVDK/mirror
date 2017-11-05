@@ -17,7 +17,7 @@
 			<Abstract type="html">This project file&apos;s icon.</Abstract>
 			<DeclaredIn>ProjectFile.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *icon</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSImage *icon</Declaration>
 			
 			
 			<Anchor>//api/name/icon</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">This project file&apos;s icon.</Abstract>
 			<DeclaredIn>ProjectFile.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *icon</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSImage *icon</Declaration>
 			
 			
 			<Anchor>//api/name/icon</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">This project file&apos;s icon.</Abstract>
 			<DeclaredIn>ProjectFile.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *icon</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSImage *icon</Declaration>
 			
 			
 			<Anchor>//api/name/icon</Anchor>
@@ -125,7 +125,7 @@
 			<Abstract type="html">This project file&apos;s size.</Abstract>
 			<DeclaredIn>ProjectFile.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSNumber *size</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *size</Declaration>
 			
 			
 			<Anchor>//api/name/size</Anchor>
@@ -137,7 +137,7 @@
 			<Abstract type="html">This project file&apos;s size.</Abstract>
 			<DeclaredIn>ProjectFile.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSNumber *size</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *size</Declaration>
 			
 			
 			<Anchor>//api/name/size</Anchor>
@@ -149,7 +149,7 @@
 			<Abstract type="html">This project file&apos;s size.</Abstract>
 			<DeclaredIn>ProjectFile.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSNumber *size</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *size</Declaration>
 			
 			
 			<Anchor>//api/name/size</Anchor>
@@ -208,6 +208,7 @@
             <NodeRef refid="34"/>
 		</Token>
 		
+        
         
 	</File>
 </Tokens>

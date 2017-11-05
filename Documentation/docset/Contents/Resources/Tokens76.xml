@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VerticallyCenteredTextFieldCell.html">
+	<File path="Classes/UnhighlightedTableView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VerticallyCenteredTextFieldCell</TokenIdentifier>
-			<Abstract type="html">The VerticallyCenteredTextFieldCell class represents a text field cell in which the text is centered vertically.</Abstract>
-			<DeclaredIn>VerticallyCenteredTextFieldCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/UnhighlightedTableView</TokenIdentifier>
+			<Abstract type="html">An UnhighlightedTableView is an NSTableView that does not highlight rows when they&apos;re right-clicked.</Abstract>
+			<DeclaredIn>UnhighlightedTableView.h</DeclaredIn>
             
 			
 			<NodeRef refid="76"/>
 		</Token>
 		
 		
+        
         
 	</File>
 </Tokens>

@@ -570,8 +570,9 @@
 
 - (void)updateInterface:(NSTimer *)timer {
     
-    [self updateRelevantURLs];
-    [self updateStatus];
+    // [self updateRelevantURLs];
+    // [self updateStatus];
+    [self updateTransferRate];
     
 }
 
@@ -602,6 +603,23 @@
     }
     
     [statusField setStringValue:status];
+    
+}
+
+- (void)updateTransferRate {
+    
+    if ([self.window isMainWindow]
+        && [PREFERENCES boolForKey:ShowRateInDock]
+        && [self.project isMirroring]
+        && ![self.project isPaused]) {
+        NSString *rate = (NSString *)[self.project.statistics valueForStatisticOfType:ProjectStatisticTransferRate];
+        if (!rate)
+            rate = @"-- / s";
+        [[BadgeView sharedView] setMessage:rate];
+        [[BadgeView sharedView] setVisible:true];
+    }
+    else
+        [[BadgeView sharedView] setVisible:false];
     
 }
 
@@ -658,6 +676,7 @@
     [self renewTimer];
     [self updateStatus];
     [self updateMenus];
+    [self updateTransferRate];
     
     showDummy = false; // Remove dummy when interface is refreshed
     [self setSearchString:@""];
@@ -680,6 +699,7 @@
         errorMessage = error;
     [self updateStatus];
     [self updateMenus];
+    [self updateTransferRate];
     
 }
 
@@ -688,6 +708,7 @@
     [self renewTimer];
     [self updateStatus];
     [self updateMenus];
+    [self updateTransferRate];
     [toolbarAddPauseButton setSelected:false forSegment:1];
     [toolbarAddPauseButton setEnabled:true forSegment:1];
     
@@ -698,6 +719,7 @@
     [self invalidateTimer];
     [self updateStatus];
     [self updateMenus];
+    [self updateTransferRate];
     [toolbarAddPauseButton setSelected:true forSegment:1];
     [toolbarAddPauseButton setEnabled:true forSegment:1];
     [listView reloadData];
@@ -889,7 +911,7 @@
     [self setShowDummy:true]; // After min/max size setup or it will mess up the size of the window and cause a negative min size
     
     statsIndices = [[NSMutableIndexSet alloc] init];
-    // [self renewTimer];
+    [self renewTimer];
     
     [super windowDidLoad];
     
@@ -1420,6 +1442,15 @@
 
 @implementation ProjectWindowControllerYosemite
 
+- (void)setDocument:(NSDocument *)document {
+    
+    [super setDocument:document];
+    
+    if (theme == WindowThemeYosemite)
+        [self.project.statistics setOutlineView:statsOutlineView];
+    
+}
+
 #pragma mark Interface
 
 - (NSString *)windowNibName {
@@ -1473,6 +1504,8 @@
             // Could postpone socket/file update by updating only here instead of real-time
             
         }
+        
+        [self updateTransferRate];
         
     }
     else
@@ -1600,9 +1633,8 @@
     [toolbarAddPauseButton setOverrideDrawing:false]; // Disable custom segmented control drawing
     [self updateGradient];
     
-    statsOutlineView.dataSource = self.project.statistics;
-    statsOutlineView.delegate = self.project.statistics;
-    self.project.statistics.outlineView = statsOutlineView;
+    if (theme == WindowThemeYosemite)
+        self.project.statistics.outlineView = statsOutlineView;
     
     [self updateFileListView:false];
     
@@ -1615,6 +1647,9 @@
     [super windowDidBecomeMain:notification];
     
     [filesStatusField setTextColor:[NSColor darkGrayColor]];
+    
+    if (theme == WindowThemeYosemite)
+        [self.project.statistics setOutlineView:statsOutlineView];
     
 }
 

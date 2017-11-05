@@ -4,122 +4,13 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/ProjectFileList</TokenIdentifier>
-			<Abstract type="html">The ProjectFileList represents an array controller for a list of files downloaded by a Project.
-It also keeps track of files currently being addressed.</Abstract>
+			<Abstract type="html">A ProjectFileList represents an array controller for a list of files downloaded by a Project.</Abstract>
 			<DeclaredIn>ProjectFileList.h</DeclaredIn>
             
 			
 			<NodeRef refid="35"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectFileList/setProject:</TokenIdentifier>
-			<Abstract type="html">The project associated with this file list.</Abstract>
-			<DeclaredIn>ProjectFileList.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite, assign) Project *project</Declaration>
-			
-			
-			<Anchor>//api/name/project</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectFileList/project</TokenIdentifier>
-			<Abstract type="html">The project associated with this file list.</Abstract>
-			<DeclaredIn>ProjectFileList.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite, assign) Project *project</Declaration>
-			
-			
-			<Anchor>//api/name/project</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ProjectFileList/project</TokenIdentifier>
-			<Abstract type="html">The project associated with this file list.</Abstract>
-			<DeclaredIn>ProjectFileList.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite, assign) Project *project</Declaration>
-			
-			
-			<Anchor>//api/name/project</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectFileList/setTableView:</TokenIdentifier>
-			<Abstract type="html">The tableview this file list associates with to show its contents.</Abstract>
-			<DeclaredIn>ProjectFileList.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSTableView *tableView</Declaration>
-			
-			
-			<Anchor>//api/name/tableView</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectFileList/tableView</TokenIdentifier>
-			<Abstract type="html">The tableview this file list associates with to show its contents.</Abstract>
-			<DeclaredIn>ProjectFileList.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSTableView *tableView</Declaration>
-			
-			
-			<Anchor>//api/name/tableView</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ProjectFileList/tableView</TokenIdentifier>
-			<Abstract type="html">The tableview this file list associates with to show its contents.</Abstract>
-			<DeclaredIn>ProjectFileList.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSTableView *tableView</Declaration>
-			
-			
-			<Anchor>//api/name/tableView</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectFileList/setDisplayMode:</TokenIdentifier>
-			<Abstract type="html">The display mode for this file list.</Abstract>
-			<DeclaredIn>ProjectFileList.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) ProjectFileListDisplayMode displayMode</Declaration>
-			
-			
-			<Anchor>//api/name/displayMode</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectFileList/displayMode</TokenIdentifier>
-			<Abstract type="html">The display mode for this file list.</Abstract>
-			<DeclaredIn>ProjectFileList.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) ProjectFileListDisplayMode displayMode</Declaration>
-			
-			
-			<Anchor>//api/name/displayMode</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ProjectFileList/displayMode</TokenIdentifier>
-			<Abstract type="html">The display mode for this file list.</Abstract>
-			<DeclaredIn>ProjectFileList.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) ProjectFileListDisplayMode displayMode</Declaration>
-			
-			
-			<Anchor>//api/name/displayMode</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ProjectFileList/setStatus:</TokenIdentifier>
@@ -158,14 +49,14 @@ It also keeps track of files currently being addressed.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectFileList/size</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectFileList/count</TokenIdentifier>
 			<Abstract type="html">Returns the size of this file list.</Abstract>
 			<DeclaredIn>ProjectFileList.h</DeclaredIn>
 			
-			<Declaration>- (NSUInteger)size</Declaration>
+			<Declaration>- (NSUInteger)count</Declaration>
 			
 			<ReturnValue><Abstract type="html">The number of files this list keeps track of.</Abstract></ReturnValue>
-			<Anchor>//api/name/size</Anchor>
+			<Anchor>//api/name/count</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
@@ -181,18 +72,7 @@ It also keeps track of files currently being addressed.</Abstract>
             <NodeRef refid="35"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectFileList/updateSockets</TokenIdentifier>
-			<Abstract type="html">Update the sockets (the data is fetched from the associated project.</Abstract>
-			<DeclaredIn>ProjectFileList.h</DeclaredIn>
-			
-			<Declaration>- (void)updateSockets</Declaration>
-			
-			
-			<Anchor>//api/name/updateSockets</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

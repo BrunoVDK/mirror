@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSString+NSStringAdditions.html">
+	<File path="Categories/NSShadow+Additions.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSString(NSStringAdditions)</TokenIdentifier>
-			<Abstract type="html">A category for adding functionality to the NSString class.</Abstract>
-			<DeclaredIn>NSString+Additions.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/NSShadow(Additions)</TokenIdentifier>
+			<Abstract type="html">A category for adding functionality to the NSShadow class.</Abstract>
+			<DeclaredIn>NSShadow+Additions.h</DeclaredIn>
             
 			
 			<NodeRef refid="90"/>
@@ -13,171 +13,29 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/stringForByteCount:</TokenIdentifier>
-			<Abstract type="html">Returns a formatted string representing the given size in bytes.</Abstract>
-			<DeclaredIn>NSString+Additions.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSShadow/initWithColor:offset:blurRadius:</TokenIdentifier>
+			<Abstract type="html">Initialize a new shadow with given color, offset and blur radius.</Abstract>
+			<DeclaredIn>NSShadow+Additions.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)stringForByteCount:(long long)size</Declaration>
+			<Declaration>- (id)initWithColor:(NSColor *)color offset:(NSSize)offset blurRadius:(CGFloat)blur</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>size</Name>
-					<Abstract type="html">The size to convert to a string.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A newly created string representing the given byte count.</Abstract></ReturnValue>
-			<Anchor>//api/name/stringForByteCount:</Anchor>
-            <NodeRef refid="90"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/attributedStringWithTitle:color:font:alignment:</TokenIdentifier>
-			<Abstract type="html">Returns an attributed string with given title, color, font and alignment.</Abstract>
-			<DeclaredIn>NSString+Additions.h</DeclaredIn>
-			
-			<Declaration>+ (NSAttributedString *)attributedStringWithTitle:(NSString *)title color:(NSColor *)color font:(NSFont *)font alignment:(CTTextAlignment)alignment</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>title</Name>
-					<Abstract type="html">The title of the new attributed string.</Abstract>
-				</Parameter><Parameter>
 					<Name>color</Name>
-					<Abstract type="html">The color of the new attributed string.</Abstract>
+					<Abstract type="html">The color of the new shadow.</Abstract>
 				</Parameter><Parameter>
-					<Name>font</Name>
-					<Abstract type="html">The font used by the new attributed string.</Abstract>
+					<Name>offset</Name>
+					<Abstract type="html">The offset of the new shadow.</Abstract>
 				</Parameter><Parameter>
-					<Name>alignment</Name>
-					<Abstract type="html">The alignment of text in the attributed string.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A newly created string having the given attributes.</Abstract></ReturnValue>
-			<Anchor>//api/name/attributedStringWithTitle:color:font:alignment:</Anchor>
-            <NodeRef refid="90"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/stringForSpeed:</TokenIdentifier>
-			<Abstract type="html">Returns a formatted string for the given transfer rate.</Abstract>
-			<DeclaredIn>NSString+Additions.h</DeclaredIn>
-			
-			<Declaration>+ (NSString *)stringForSpeed:(CGFloat)speed</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>speed</Name>
-					<Abstract type="html">The transfer rate to base the string on.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A string representing the given speed.</Abstract></ReturnValue>
-			<Anchor>//api/name/stringForSpeed:</Anchor>
-            <NodeRef refid="90"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/convertToCString:</TokenIdentifier>
-			<Abstract type="html">Convert this string to a C string.</Abstract>
-			<DeclaredIn>NSString+Additions.h</DeclaredIn>
-			
-			<Declaration>- (void)convertToCString:(char *)cStringPointer</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>cStringPointer</Name>
-					<Abstract type="html">A pointer to a C string. It will point to the converted NSString if the conversion was successful.</Abstract>
+					<Name>blur</Name>
+					<Abstract type="html">The blur radius of the new shadow.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/convertToCString:</Anchor>
+			<Anchor>//api/name/initWithColor:offset:blurRadius:</Anchor>
             <NodeRef refid="90"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/unsignedLongLongValue</TokenIdentifier>
-			<Abstract type="html">Convert this string to an unsigned long long integer.</Abstract>
-			<DeclaredIn>NSString+Additions.h</DeclaredIn>
-			
-			<Declaration>- (unsigned long long)unsignedLongLongValue</Declaration>
-			
-			<ReturnValue><Abstract type="html">An unsigned long long integer, or zero if this string is empty.</Abstract></ReturnValue>
-			<Anchor>//api/name/unsignedLongLongValue</Anchor>
-            <NodeRef refid="90"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/isNumeric</TokenIdentifier>
-			<Abstract type="html">Checks whether this string is numeric.</Abstract>
-			<DeclaredIn>NSString+Additions.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)isNumeric</Declaration>
-			
-			<ReturnValue><Abstract type="html">True if and only if this string is numeric.</Abstract></ReturnValue>
-			<Anchor>//api/name/isNumeric</Anchor>
-            <NodeRef refid="90"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/isAlphaNumeric</TokenIdentifier>
-			<Abstract type="html">Checks whether this string is alphanumeric.</Abstract>
-			<DeclaredIn>NSString+Additions.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)isAlphaNumeric</Declaration>
-			
-			<ReturnValue><Abstract type="html">True if and only if this string is alphanumeric.</Abstract></ReturnValue>
-			<Anchor>//api/name/isAlphaNumeric</Anchor>
-            <NodeRef refid="90"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/isWhitespace</TokenIdentifier>
-			<Abstract type="html">Checks whether this string is made of whitespace only.</Abstract>
-			<DeclaredIn>NSString+Additions.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)isWhitespace</Declaration>
-			
-			<ReturnValue><Abstract type="html">True if and only if this string only contains whitespace characters.</Abstract></ReturnValue>
-			<Anchor>//api/name/isWhitespace</Anchor>
-            <NodeRef refid="90"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/isEmpty</TokenIdentifier>
-			<Abstract type="html">Checks whether this string is empty.</Abstract>
-			<DeclaredIn>NSString+Additions.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)isEmpty</Declaration>
-			
-			<ReturnValue><Abstract type="html">True if and only if this string has no characters or only whitespace characters.</Abstract></ReturnValue>
-			<Anchor>//api/name/isEmpty</Anchor>
-            <NodeRef refid="90"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/contains:</TokenIdentifier>
-			<Abstract type="html">Checks if this string contains the given substring.</Abstract>
-			<DeclaredIn>NSString+Additions.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)contains:(NSString *)string</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>string</Name>
-					<Abstract type="html">The substring to search for.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">True if and only if this string contains the given substring.</Abstract></ReturnValue>
-			<Anchor>//api/name/contains:</Anchor>
-            <NodeRef refid="90"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/UTI</TokenIdentifier>
-			<Abstract type="html">Get the uniform type identifier (UTI) of this string, which is supposed to represent a file path.</Abstract>
-			<DeclaredIn>NSString+Additions.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)UTI</Declaration>
-			
-			<ReturnValue><Abstract type="html">The UTI of this string.</Abstract></ReturnValue>
-			<Anchor>//api/name/UTI</Anchor>
-            <NodeRef refid="90"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

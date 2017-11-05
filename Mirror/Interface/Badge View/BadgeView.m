@@ -51,7 +51,7 @@
     
     if (self = [super initWithFrame:frameRect]) {
         
-        self.message = @"999.9 MB";
+        self.message = @"-- / s";
         badgeImage = [[NSImage imageNamed:@"Badge"] retain];
         
     }

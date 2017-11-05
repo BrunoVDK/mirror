@@ -10,6 +10,7 @@
 
 #import "CircularBuffer.h"
 #import "Globals.h"
+#import "NSString+Additions.h"
 #import "PreferencesConstants.h"
 #import "Project.h"
 #import "ProjectFile.h"
@@ -857,12 +858,17 @@ int __cdecl httrack_loop(t_hts_callbackarg *carg, httrackp *opt, lien_back *back
             
             // if (stats->stat_files >= 0)
             // [project.statistics setValue:[NSNumber numberWithInt:stats->stat_files] forStatisticOfType:ProjectStatisticWritten];
+            [project.statistics setValue:[NSString stringForSpeed:stats->rate] forStatisticOfType:ProjectStatisticTransferRate];
             if (stats->stat_updated_files >= 0)
-                [project.statistics setValue:[NSNumber numberWithInt:stats->stat_updated_files] forStatisticOfType:ProjectStatisticSockets];
+                [project.statistics setValue:[NSNumber numberWithInt:stats->stat_nsocket] forStatisticOfType:ProjectStatisticSockets];
             if (stats->stat_errors >= 0)
                 [project.statistics setValue:[NSNumber numberWithInt:stats->stat_errors] forStatisticOfType:ProjectStatisticErrors];
             if (stats->stat_warnings >= 0)
                 [project.statistics setValue:[NSNumber numberWithInt:stats->stat_warnings] forStatisticOfType:ProjectStatisticWarnings];
+            if (stats->stat_infos >= 0)
+                [project.statistics setValue:[NSNumber numberWithInt:stats->stat_infos] forStatisticOfType:ProjectStatisticInfoMessages];
+            if (stats->stat_warnings >= 0)
+                [project.statistics setValue:[NSNumber numberWithInt:stats->stat_infos] forStatisticOfType:ProjectStatisticInfoMessages];
             if (stats->nb >= 0)
                 [project.statistics setValue:[NSNumber numberWithLongLong:stats->nb] forStatisticOfType:ProjectStatisticBytes];
             if (stats->HTS_TOTAL_RECV >= 0)

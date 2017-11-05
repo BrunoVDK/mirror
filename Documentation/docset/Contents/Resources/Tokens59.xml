@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ProjectStatsOverviewPanelController.html">
+	<File path="Classes/ProjectStatsFilesPanelController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ProjectStatsOverviewPanelController</TokenIdentifier>
-			<Abstract type="html">The ProjectStatsOverviewPanelController class controls a project statistics panel presenting notifications.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectStatsFilesPanelController</TokenIdentifier>
+			<Abstract type="html">The ProjectStatsFilesPanelController class controls a project statistics panel presenting files that are downloading/downloaded.</Abstract>
 			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
             
 			
@@ -12,42 +12,7 @@
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsOverviewPanelController/setOutlineView:</TokenIdentifier>
-			<Abstract type="html">This panel&apos;s statistics outline view.</Abstract>
-			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) NSOutlineView *outlineView</Declaration>
-			
-			
-			<Anchor>//api/name/outlineView</Anchor>
-            <NodeRef refid="59"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsOverviewPanelController/outlineView</TokenIdentifier>
-			<Abstract type="html">This panel&apos;s statistics outline view.</Abstract>
-			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) NSOutlineView *outlineView</Declaration>
-			
-			
-			<Anchor>//api/name/outlineView</Anchor>
-            <NodeRef refid="59"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ProjectStatsOverviewPanelController/outlineView</TokenIdentifier>
-			<Abstract type="html">This panel&apos;s statistics outline view.</Abstract>
-			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) NSOutlineView *outlineView</Declaration>
-			
-			
-			<Anchor>//api/name/outlineView</Anchor>
-            <NodeRef refid="59"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

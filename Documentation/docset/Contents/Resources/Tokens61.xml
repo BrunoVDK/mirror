@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ProjectStatsWindowController.html">
+	<File path="Classes/ProjectStatsPanelController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ProjectStatsWindowController</TokenIdentifier>
-			<Abstract type="html">The ProjectStatsWindowController class controls a window with project statistics.</Abstract>
-			<DeclaredIn>ProjectStatsWindowController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectStatsPanelController</TokenIdentifier>
+			<Abstract type="html">The ProjectStatsPanelController class controls a panel of a project statistics window.</Abstract>
+			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
             
 			
 			<NodeRef refid="61"/>
@@ -13,9 +13,9 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsWindowController/setProject:</TokenIdentifier>
-			<Abstract type="html">The project associated with this statistics window controller.</Abstract>
-			<DeclaredIn>ProjectStatsWindowController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsPanelController/setProject:</TokenIdentifier>
+			<Abstract type="html">This panel&apos;s window controller.</Abstract>
+			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) Project *project</Declaration>
 			
@@ -25,9 +25,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsWindowController/project</TokenIdentifier>
-			<Abstract type="html">The project associated with this statistics window controller.</Abstract>
-			<DeclaredIn>ProjectStatsWindowController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsPanelController/project</TokenIdentifier>
+			<Abstract type="html">This panel&apos;s window controller.</Abstract>
+			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) Project *project</Declaration>
 			
@@ -37,9 +37,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ProjectStatsWindowController/project</TokenIdentifier>
-			<Abstract type="html">The project associated with this statistics window controller.</Abstract>
-			<DeclaredIn>ProjectStatsWindowController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectStatsPanelController/project</TokenIdentifier>
+			<Abstract type="html">This panel&apos;s window controller.</Abstract>
+			<DeclaredIn>ProjectStatsPanelController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) Project *project</Declaration>
 			
@@ -48,55 +48,7 @@
             <NodeRef refid="61"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ProjectStatsWindowController/sharedStatistics</TokenIdentifier>
-			<Abstract type="html">Get the shared project statistics window controller.</Abstract>
-			<DeclaredIn>ProjectStatsWindowController.h</DeclaredIn>
-			
-			<Declaration>+ (id)sharedStatistics</Declaration>
-			
-			<ReturnValue><Abstract type="html">A singleton, this application&apos;s project statistics window controller.</Abstract></ReturnValue>
-			<Anchor>//api/name/sharedStatistics</Anchor>
-            <NodeRef refid="61"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsWindowController/initWithProject:</TokenIdentifier>
-			<Abstract type="html">Initialize a new project statistics window controller for the given project.</Abstract>
-			<DeclaredIn>ProjectStatsWindowController.h</DeclaredIn>
-			
-			<Declaration>- (id)initWithProject:(Project *)project</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>project</Name>
-					<Abstract type="html">The project to associate the new window controller with.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/initWithProject:</Anchor>
-            <NodeRef refid="61"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsWindowController/activatePanelController:animate:</TokenIdentifier>
-			<Abstract type="html">Manually activate the given panel controller, with or without animation.</Abstract>
-			<DeclaredIn>ProjectStatsWindowController.m</DeclaredIn>
-			
-			<Declaration>- (void)activatePanelController:(id&lt;AnimatedPanelControllerProtocol&gt;)panelController animate:(BOOL)animate</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>panelController</Name>
-					<Abstract type="html">The panel to activate.</Abstract>
-				</Parameter><Parameter>
-					<Name>animate</Name>
-					<Abstract type="html">Set to true if animation is desired.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/activatePanelController:animate:</Anchor>
-            <NodeRef refid="61"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

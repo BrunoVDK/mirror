@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/RoundedImageCell.html">
+	<File path="Classes/RoundedCornerTextField.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/RoundedImageCell</TokenIdentifier>
-			<Abstract type="html">The RoundedImageCell class represents a round image cell.</Abstract>
-			<DeclaredIn>RoundedImageCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/RoundedCornerTextField</TokenIdentifier>
+			<Abstract type="html">The RoundedCornerTextField class represents a text field with rounded corners.</Abstract>
+			<DeclaredIn>RoundedCornerTextField.h</DeclaredIn>
             
 			
 			<NodeRef refid="70"/>
 		</Token>
 		
 		
+        
         
 	</File>
 </Tokens>

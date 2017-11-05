@@ -40,8 +40,8 @@
  * @param speed The transfer rate to base the string on.
  * @return A string representing the given speed.
  */
-+ (NSString *)stringForSpeed:(CGFloat)speed;
-+ (NSString *)stringForSpeedAbbrev:(CGFloat)speed;
++ (NSString *)stringForSpeed:(long long)speed;
++ (NSString *)stringForSpeedAbbrev:(long long)speed;
 
 /**
  * Convert this string to a C string.

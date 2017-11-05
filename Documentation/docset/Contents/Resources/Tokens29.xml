@@ -121,38 +121,74 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Project/setFileList:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/setFiles:</TokenIdentifier>
 			<Abstract type="html">The recent file list of this project.</Abstract>
 			<DeclaredIn>Project.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) ProjectFileList *fileList</Declaration>
+			<Declaration>@property (nonatomic, readonly) ProjectFileList *files</Declaration>
 			
 			
-			<Anchor>//api/name/fileList</Anchor>
+			<Anchor>//api/name/files</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Project/fileList</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/files</TokenIdentifier>
 			<Abstract type="html">The recent file list of this project.</Abstract>
 			<DeclaredIn>Project.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) ProjectFileList *fileList</Declaration>
+			<Declaration>@property (nonatomic, readonly) ProjectFileList *files</Declaration>
 			
 			
-			<Anchor>//api/name/fileList</Anchor>
+			<Anchor>//api/name/files</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Project/fileList</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/Project/files</TokenIdentifier>
 			<Abstract type="html">The recent file list of this project.</Abstract>
 			<DeclaredIn>Project.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) ProjectFileList *fileList</Declaration>
+			<Declaration>@property (nonatomic, readonly) ProjectFileList *files</Declaration>
 			
 			
-			<Anchor>//api/name/fileList</Anchor>
+			<Anchor>//api/name/files</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/setSockets:</TokenIdentifier>
+			<Abstract type="html">The recent socket list of this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectSocketList *sockets</Declaration>
+			
+			
+			<Anchor>//api/name/sockets</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/sockets</TokenIdentifier>
+			<Abstract type="html">The recent socket list of this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectSocketList *sockets</Declaration>
+			
+			
+			<Anchor>//api/name/sockets</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Project/sockets</TokenIdentifier>
+			<Abstract type="html">The recent socket list of this project.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) ProjectSocketList *sockets</Declaration>
+			
+			
+			<Anchor>//api/name/sockets</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
@@ -539,31 +575,19 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Project/nbOfSockets</TokenIdentifier>
-			<Abstract type="html">Returns the number of sockets kept by this project.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/Project/cancelSocket:</TokenIdentifier>
+			<Abstract type="html">Cancels the given socket.</Abstract>
 			<DeclaredIn>Project.h</DeclaredIn>
 			
-			<Declaration>- (NSUInteger)nbOfSockets</Declaration>
-			
-			<ReturnValue><Abstract type="html">The number of active connection of this project.</Abstract></ReturnValue>
-			<Anchor>//api/name/nbOfSockets</Anchor>
-            <NodeRef refid="29"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Project/socketAtIndex:</TokenIdentifier>
-			<Abstract type="html">Get the project socket at the given index.</Abstract>
-			<DeclaredIn>Project.h</DeclaredIn>
-			
-			<Declaration>- (ProjectSocket *)socketAtIndex:(NSUInteger)index</Declaration>
+			<Declaration>- (void)cancelSocket:(ProjectSocket *)socket</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>index</Name>
-					<Abstract type="html">The index of the project socket that is being requested.</Abstract>
+					<Name>socket</Name>
+					<Abstract type="html">The socket to cancel.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A project socket at the given index.</Abstract></ReturnValue>
-			<Anchor>//api/name/socketAtIndex:</Anchor>
+			
+			<Anchor>//api/name/cancelSocket:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
@@ -710,6 +734,7 @@
             <NodeRef refid="29"/>
 		</Token>
 		
+        
         
 	</File>
 </Tokens>

@@ -22,7 +22,6 @@
 @interface ProjectWindowController : NSWindowController<NSWindowDelegate, ProjectDelegate> {
     
     BOOL _renderInCircles;
-    BadgeView *badgeView;
     IBOutlet NSButton *toolbarOptionsButton, *toolbarSearchButton, *toolbarStatsButton;
     
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ProjectURL.html">
+	<File path="Classes/ProjectStatsWindowController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ProjectURL</TokenIdentifier>
-			<Abstract type="html">The ProjectURL class represents a base URL of a Project.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectStatsWindowController</TokenIdentifier>
+			<Abstract type="html">The ProjectStatsWindowController class controls a window with project statistics.</Abstract>
+			<DeclaredIn>ProjectStatsWindowController.h</DeclaredIn>
             
 			
 			<NodeRef refid="62"/>
@@ -13,361 +13,91 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/setIdentifier:</TokenIdentifier>
-			<Abstract type="html">This project&apos;s identifier.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsWindowController/setProject:</TokenIdentifier>
+			<Abstract type="html">The project associated with this statistics window controller.</Abstract>
+			<DeclaredIn>ProjectStatsWindowController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger identifier</Declaration>
+			<Declaration>@property (nonatomic, assign) Project *project</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/project</Anchor>
             <NodeRef refid="62"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/identifier</TokenIdentifier>
-			<Abstract type="html">This project&apos;s identifier.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsWindowController/project</TokenIdentifier>
+			<Abstract type="html">The project associated with this statistics window controller.</Abstract>
+			<DeclaredIn>ProjectStatsWindowController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger identifier</Declaration>
+			<Declaration>@property (nonatomic, assign) Project *project</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/project</Anchor>
             <NodeRef refid="62"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ProjectURL/identifier</TokenIdentifier>
-			<Abstract type="html">This project&apos;s identifier.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ProjectStatsWindowController/project</TokenIdentifier>
+			<Abstract type="html">The project associated with this statistics window controller.</Abstract>
+			<DeclaredIn>ProjectStatsWindowController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger identifier</Declaration>
+			<Declaration>@property (nonatomic, assign) Project *project</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/project</Anchor>
             <NodeRef refid="62"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/setTitle:</TokenIdentifier>
-			<Abstract type="html">This project URL&apos;s title.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/ProjectStatsWindowController/sharedStatistics</TokenIdentifier>
+			<Abstract type="html">Get the shared project statistics window controller.</Abstract>
+			<DeclaredIn>ProjectStatsWindowController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSString *title</Declaration>
+			<Declaration>+ (id)sharedStatistics</Declaration>
 			
-			
-			<Anchor>//api/name/title</Anchor>
+			<ReturnValue><Abstract type="html">A singleton, this application&apos;s project statistics window controller.</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedStatistics</Anchor>
             <NodeRef refid="62"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/title</TokenIdentifier>
-			<Abstract type="html">This project URL&apos;s title.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy) NSString *title</Declaration>
-			
-			
-			<Anchor>//api/name/title</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ProjectURL/title</TokenIdentifier>
-			<Abstract type="html">This project URL&apos;s title.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy) NSString *title</Declaration>
-			
-			
-			<Anchor>//api/name/title</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/setIcon:</TokenIdentifier>
-			<Abstract type="html">This project URL&apos;s favicon, if any.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) NSImage *icon</Declaration>
-			
-			
-			<Anchor>//api/name/icon</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/icon</TokenIdentifier>
-			<Abstract type="html">This project URL&apos;s favicon, if any.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) NSImage *icon</Declaration>
-			
-			
-			<Anchor>//api/name/icon</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ProjectURL/icon</TokenIdentifier>
-			<Abstract type="html">This project URL&apos;s favicon, if any.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) NSImage *icon</Declaration>
-			
-			
-			<Anchor>//api/name/icon</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/setURL:</TokenIdentifier>
-			<Abstract type="html">This project URL&apos;s address.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSURL *URL</Declaration>
-			
-			
-			<Anchor>//api/name/URL</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/URL</TokenIdentifier>
-			<Abstract type="html">This project URL&apos;s address.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSURL *URL</Declaration>
-			
-			
-			<Anchor>//api/name/URL</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ProjectURL/URL</TokenIdentifier>
-			<Abstract type="html">This project URL&apos;s address.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSURL *URL</Declaration>
-			
-			
-			<Anchor>//api/name/URL</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/setCancelled:</TokenIdentifier>
-			<Abstract type="html">A boolean denoting whether or not this project URL was cancelled.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite, getter=isCancelled) BOOL cancelled</Declaration>
-			
-			
-			<Anchor>//api/name/cancelled</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/isCancelled</TokenIdentifier>
-			<Abstract type="html">A boolean denoting whether or not this project URL was cancelled.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite, getter=isCancelled) BOOL cancelled</Declaration>
-			
-			
-			<Anchor>//api/name/cancelled</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ProjectURL/cancelled</TokenIdentifier>
-			<Abstract type="html">A boolean denoting whether or not this project URL was cancelled.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite, getter=isCancelled) BOOL cancelled</Declaration>
-			
-			
-			<Anchor>//api/name/cancelled</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/setFailed:</TokenIdentifier>
-			<Abstract type="html">A boolean denoting whether or not this project URL failed to be processed.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) BOOL failed</Declaration>
-			
-			
-			<Anchor>//api/name/failed</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/failed</TokenIdentifier>
-			<Abstract type="html">A boolean denoting whether or not this project URL failed to be processed.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) BOOL failed</Declaration>
-			
-			
-			<Anchor>//api/name/failed</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ProjectURL/failed</TokenIdentifier>
-			<Abstract type="html">A boolean denoting whether or not this project URL failed to be processed.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) BOOL failed</Declaration>
-			
-			
-			<Anchor>//api/name/failed</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/setBytesScanned:</TokenIdentifier>
-			<Abstract type="html">The amount of bytes of this URL and sub-URLS that were scanned.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) long long bytesScanned</Declaration>
-			
-			
-			<Anchor>//api/name/bytesScanned</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/bytesScanned</TokenIdentifier>
-			<Abstract type="html">The amount of bytes of this URL and sub-URLS that were scanned.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) long long bytesScanned</Declaration>
-			
-			
-			<Anchor>//api/name/bytesScanned</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ProjectURL/bytesScanned</TokenIdentifier>
-			<Abstract type="html">The amount of bytes of this URL and sub-URLS that were scanned.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) long long bytesScanned</Declaration>
-			
-			
-			<Anchor>//api/name/bytesScanned</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/setBytesWritten:</TokenIdentifier>
-			<Abstract type="html">The amount of bytes of this URL and sub-URLS that were written on disk.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) long long bytesWritten</Declaration>
-			
-			
-			<Anchor>//api/name/bytesWritten</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/bytesWritten</TokenIdentifier>
-			<Abstract type="html">The amount of bytes of this URL and sub-URLS that were written on disk.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) long long bytesWritten</Declaration>
-			
-			
-			<Anchor>//api/name/bytesWritten</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ProjectURL/bytesWritten</TokenIdentifier>
-			<Abstract type="html">The amount of bytes of this URL and sub-URLS that were written on disk.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) long long bytesWritten</Declaration>
-			
-			
-			<Anchor>//api/name/bytesWritten</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/setLinksDetected:</TokenIdentifier>
-			<Abstract type="html">The amount of links that were detected starting from this URL.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) long long linksDetected</Declaration>
-			
-			
-			<Anchor>//api/name/linksDetected</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/linksDetected</TokenIdentifier>
-			<Abstract type="html">The amount of links that were detected starting from this URL.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) long long linksDetected</Declaration>
-			
-			
-			<Anchor>//api/name/linksDetected</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ProjectURL/linksDetected</TokenIdentifier>
-			<Abstract type="html">The amount of links that were detected starting from this URL.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) long long linksDetected</Declaration>
-			
-			
-			<Anchor>//api/name/linksDetected</Anchor>
-            <NodeRef refid="62"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/initWithURL:identifier:</TokenIdentifier>
-			<Abstract type="html">Initialize a new project URL with the given link and identifier.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
-			
-			<Declaration>- (id)initWithURL:(NSURL *)url identifier:(NSUInteger)identifier</Declaration>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsWindowController/initWithProject:</TokenIdentifier>
+			<Abstract type="html">Initialize a new project statistics window controller for the given project.</Abstract>
+			<DeclaredIn>ProjectStatsWindowController.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithProject:(Project *)project</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The address to initialize this project URL with.</Abstract>
-				</Parameter><Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">The identifier of the new project URL.</Abstract>
+					<Name>project</Name>
+					<Abstract type="html">The project to associate the new window controller with.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new project URL with given address and identifier.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithURL:identifier:</Anchor>
+			
+			<Anchor>//api/name/initWithProject:</Anchor>
             <NodeRef refid="62"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectURL/fetchAttributes</TokenIdentifier>
-			<Abstract type="html">Fetch the attributes of this project URL.</Abstract>
-			<DeclaredIn>ProjectURL.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectStatsWindowController/activatePanelController:animate:</TokenIdentifier>
+			<Abstract type="html">Manually activate the given panel controller, with or without animation.</Abstract>
+			<DeclaredIn>ProjectStatsWindowController.m</DeclaredIn>
 			
-			<Declaration>- (BOOL)fetchAttributes</Declaration>
+			<Declaration>- (void)activatePanelController:(id&lt;AnimatedPanelControllerProtocol&gt;)panelController animate:(BOOL)animate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>panelController</Name>
+					<Abstract type="html">The panel to activate.</Abstract>
+				</Parameter><Parameter>
+					<Name>animate</Name>
+					<Abstract type="html">Set to true if animation is desired.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			<ReturnValue><Abstract type="html">YES if the operation was successful.</Abstract></ReturnValue>
-			<Anchor>//api/name/fetchAttributes</Anchor>
+			<Anchor>//api/name/activatePanelController:animate:</Anchor>
             <NodeRef refid="62"/>
 		</Token>
 		
+        
         
 	</File>
 </Tokens>

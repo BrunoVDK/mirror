@@ -1,42 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ScrollingTextView.html">
+	<File path="Classes/Scroller.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ScrollingTextView</TokenIdentifier>
-			<Abstract type="html">The ScrollingTextView class represents a text view that scrolls continuously.
-As the user hovers the text view, scrolling stops temporarily.</Abstract>
-			<DeclaredIn>ScrollingTextView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Scroller</TokenIdentifier>
+			<Abstract type="html">The Scroller class customizes the interface of the NSScroller class.
+It currently removes the background.</Abstract>
+			<DeclaredIn>Scroller.h</DeclaredIn>
             
 			
 			<NodeRef refid="72"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ScrollingTextView/stick</TokenIdentifier>
-			<Abstract type="html">Stop this text view from scrolling.</Abstract>
-			<DeclaredIn>ScrollingTextView.h</DeclaredIn>
-			
-			<Declaration>- (void)stick</Declaration>
-			
-			
-			<Anchor>//api/name/stick</Anchor>
-            <NodeRef refid="72"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ScrollingTextView/scroll</TokenIdentifier>
-			<Abstract type="html">Make this text view scroll.</Abstract>
-			<DeclaredIn>ScrollingTextView.h</DeclaredIn>
-			
-			<Declaration>- (void)scroll</Declaration>
-			
-			
-			<Anchor>//api/name/scroll</Anchor>
-            <NodeRef refid="72"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

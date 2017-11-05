@@ -49,17 +49,18 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotificationList/size</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectNotificationList/count</TokenIdentifier>
 			<Abstract type="html">Returns the size of this notification list.</Abstract>
 			<DeclaredIn>ProjectNotificationList.h</DeclaredIn>
 			
-			<Declaration>- (NSUInteger)size</Declaration>
+			<Declaration>- (NSUInteger)count</Declaration>
 			
 			<ReturnValue><Abstract type="html">The number of notifications this list keeps track of.</Abstract></ReturnValue>
-			<Anchor>//api/name/size</Anchor>
+			<Anchor>//api/name/count</Anchor>
             <NodeRef refid="40"/>
 		</Token>
 		
+        
         
 	</File>
 </Tokens>

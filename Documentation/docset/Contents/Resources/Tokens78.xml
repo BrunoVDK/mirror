@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/WindowAdaptedButtonCell.html">
+	<File path="Classes/WhiteView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/WindowAdaptedButtonCell</TokenIdentifier>
-			<Abstract type="html">A WindowAdaptedButtonCell adapts its design to the state of the parent window.</Abstract>
-			<DeclaredIn>WindowAdaptedCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/WhiteView</TokenIdentifier>
+			<Abstract type="html">The ColoredView class represents a view with a white background color.</Abstract>
+			<DeclaredIn>WhiteView.h</DeclaredIn>
             
 			
 			<NodeRef refid="78"/>
 		</Token>
 		
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WhiteView/setColor:</TokenIdentifier>
+			<Abstract type="html">This instance&apos;s background color.</Abstract>
+			<DeclaredIn>WhiteView.m</DeclaredIn>
+			
+			<Declaration>- (void)setColor:(NSColor *)color</Declaration>
+			
+			
+			<Anchor>//api/name/setColor:</Anchor>
+            <NodeRef refid="78"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

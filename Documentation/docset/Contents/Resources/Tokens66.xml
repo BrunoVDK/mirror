@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ProjectWindowControllerYosemite.html">
+	<File path="Classes/ProjectWindowControllerLion.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ProjectWindowControllerYosemite</TokenIdentifier>
-			<Abstract type="html">The ProjectWindowControllerYosemite class is a subclass of ProjectWindowControllerLion, adding functionalities for OS X Yosemite in particular.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/cl/ProjectWindowControllerLion</TokenIdentifier>
+			<Abstract type="html">The ProjectWindowControllerLion class is a subclass of ProjectWindowController, adding functionalities for OS X &lt; 10.10.</Abstract>
 			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
             
 			
@@ -13,22 +13,149 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowControllerYosemite/showContextualMenu:</TokenIdentifier>
-			<Abstract type="html">Show the controller&apos;s contextual menu.</Abstract>
-			<DeclaredIn>ProjectWindowController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowControllerLion/restoreInterface:</TokenIdentifier>
+			<Abstract type="html">Restore the interface of the given controller.</Abstract>
+			<DeclaredIn>ProjectWindowController.m</DeclaredIn>
 			
-			<Declaration>- (IBAction)showContextualMenu:(id)sender</Declaration>
+			<Declaration>- (void)restoreInterface:(ProjectWindowController *)controller</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>sender</Name>
-					<Abstract type="html">The object sending this message.</Abstract>
+					<Name>controller</Name>
+					<Abstract type="html">The controller whose interface is to be adopted by the current one.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/showContextualMenu:</Anchor>
+			<Anchor>//api/name/restoreInterface:</Anchor>
             <NodeRef refid="66"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowControllerLion/updateInterface</TokenIdentifier>
+			<Abstract type="html">Update the window&apos;s interface (eg. when a project ends mirroring).</Abstract>
+			<DeclaredIn>ProjectWindowController.m</DeclaredIn>
+			
+			<Declaration>- (void)updateInterface</Declaration>
+			
+			
+			<Anchor>//api/name/updateInterface</Anchor>
+            <NodeRef refid="66"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowControllerLion/updateStatus</TokenIdentifier>
+			<Abstract type="html">Update the status.</Abstract>
+			<DeclaredIn>ProjectWindowController.m</DeclaredIn>
+			
+			<Declaration>- (void)updateStatus</Declaration>
+			
+			
+			<Anchor>//api/name/updateStatus</Anchor>
+            <NodeRef refid="66"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowControllerLion/updateURLAtIndex:</TokenIdentifier>
+			<Abstract type="html">Update the project URL at the given index listed in the window.</Abstract>
+			<DeclaredIn>ProjectWindowController.m</DeclaredIn>
+			
+			<Declaration>- (void)updateURLAtIndex:(NSInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index of the project link to update.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateURLAtIndex:</Anchor>
+            <NodeRef refid="66"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowControllerLion/addURL:</TokenIdentifier>
+			<Abstract type="html">Show a view where a user can add project URLs.</Abstract>
+			<DeclaredIn>ProjectWindowController.m</DeclaredIn>
+			
+			<Declaration>- (IBAction)addURL:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The action&apos;s sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addURL:</Anchor>
+            <NodeRef refid="66"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowControllerLion/toggleSearch:</TokenIdentifier>
+			<Abstract type="html">Toggle the filtering field on/off.</Abstract>
+			<DeclaredIn>ProjectWindowController.m</DeclaredIn>
+			
+			<Declaration>- (IBAction)toggleSearch:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The action&apos;s sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/toggleSearch:</Anchor>
+            <NodeRef refid="66"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowControllerLion/hideSearch:</TokenIdentifier>
+			<Abstract type="html">Hide the filtering field.</Abstract>
+			<DeclaredIn>ProjectWindowController.m</DeclaredIn>
+			
+			<Declaration>- (IBAction)hideSearch:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The action&apos;s sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/hideSearch:</Anchor>
+            <NodeRef refid="66"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowControllerLion/showSearch:</TokenIdentifier>
+			<Abstract type="html">Show the filtering field.</Abstract>
+			<DeclaredIn>ProjectWindowController.m</DeclaredIn>
+			
+			<Declaration>- (IBAction)showSearch:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The action&apos;s sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showSearch:</Anchor>
+            <NodeRef refid="66"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ProjectWindowControllerLion/showStatistics:</TokenIdentifier>
+			<Abstract type="html">Show the statistics panel.</Abstract>
+			<DeclaredIn>ProjectWindowController.m</DeclaredIn>
+			
+			<Declaration>- (IBAction)showStatistics:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The action&apos;s sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showStatistics:</Anchor>
+            <NodeRef refid="66"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

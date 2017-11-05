@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/SplitViewDelegate.html">
+	<File path="Protocols/ProjectOptionsSavePresetSheetDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/SplitViewDelegate</TokenIdentifier>
-			<Abstract type="html">The SplitViewDelegate protocol provides optional methods that can be implemented by a SplitView delegate, so as to be notified of particular events.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ProjectOptionsSavePresetSheetDelegate</TokenIdentifier>
+			<Abstract type="html">The ProjectOptionsSavePresetSheetDelegate protocol allows a delegate of preset saving sheet controller to prevent the use of particular preset names.</Abstract>
+			<DeclaredIn>ProjectOptionsSavePresetSheetController.h</DeclaredIn>
             
 			
 			<NodeRef refid="93"/>
@@ -13,56 +13,26 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SplitViewDelegate/splitViewDidLoad:</TokenIdentifier>
-			<Abstract type="html">This method is called when a SplitView finished loading.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/ProjectOptionsSavePresetSheetDelegate/projectOptionsSavePresetSheetController:errorForPresetName:</TokenIdentifier>
+			<Abstract type="html">Called when a project options save preset sheet controller wants to create a new preset, to make sure that the new preset&apos;s name is permissible.</Abstract>
+			<DeclaredIn>ProjectOptionsSavePresetSheetController.h</DeclaredIn>
 			
-			<Declaration>- (void)splitViewDidLoad:(SplitView *)splitView</Declaration>
+			<Declaration>- (NSString *)projectOptionsSavePresetSheetController:(ProjectOptionsSavePresetSheetController *)controller errorForPresetName:(NSString *)presetName</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>splitView</Name>
-					<Abstract type="html">The SplitView in question.</Abstract>
+					<Name>controller</Name>
+					<Abstract type="html">The sheet controller.</Abstract>
+				</Parameter><Parameter>
+					<Name>presetName</Name>
+					<Abstract type="html">The name for the new preset.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/splitViewDidLoad:</Anchor>
+			<ReturnValue><Abstract type="html">An error description if the given preset name is not permissible, or nil or an empty string if it is.</Abstract></ReturnValue>
+			<Anchor>//api/name/projectOptionsSavePresetSheetController:errorForPresetName:</Anchor>
             <NodeRef refid="93"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SplitViewDelegate/splitViewDidCollapse:</TokenIdentifier>
-			<Abstract type="html">This method is called when a SplitView finished collapsing.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>- (void)splitViewDidCollapse:(SplitView *)splitView</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>splitView</Name>
-					<Abstract type="html">The SplitView in question.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/splitViewDidCollapse:</Anchor>
-            <NodeRef refid="93"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SplitViewDelegate/splitViewDidUnCollapse:</TokenIdentifier>
-			<Abstract type="html">This method is called when a SplitView finished uncollapsing.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>- (void)splitViewDidUnCollapse:(SplitView *)splitView</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>splitView</Name>
-					<Abstract type="html">The SplitView in question.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/splitViewDidUnCollapse:</Anchor>
-            <NodeRef refid="93"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

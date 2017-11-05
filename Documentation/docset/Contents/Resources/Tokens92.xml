@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ProjectOptionsSavePresetSheetDelegate.html">
+	<File path="Protocols/ProjectDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ProjectOptionsSavePresetSheetDelegate</TokenIdentifier>
-			<Abstract type="html">The ProjectOptionsSavePresetSheetDelegate protocol allows a delegate of preset saving sheet controller to prevent the use of particular preset names.</Abstract>
-			<DeclaredIn>ProjectOptionsSavePresetSheetController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ProjectDelegate</TokenIdentifier>
+			<Abstract type="html">The ProjectDelegate protocol allows a project delegate to be notified of various occurences.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
             
 			
 			<NodeRef refid="92"/>
@@ -13,25 +13,94 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ProjectOptionsSavePresetSheetDelegate/projectOptionsSavePresetSheetController:errorForPresetName:</TokenIdentifier>
-			<Abstract type="html">Called when a project options save preset sheet controller wants to create a new preset, to make sure that the new preset&apos;s name is permissible.</Abstract>
-			<DeclaredIn>ProjectOptionsSavePresetSheetController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/ProjectDelegate/projectDidStart:</TokenIdentifier>
+			<Abstract type="html">Called when a project started.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)projectOptionsSavePresetSheetController:(ProjectOptionsSavePresetSheetController *)controller errorForPresetName:(NSString *)presetName</Declaration>
+			<Declaration>- (void)projectDidStart:(Project *)project</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>controller</Name>
-					<Abstract type="html">The sheet controller.</Abstract>
-				</Parameter><Parameter>
-					<Name>presetName</Name>
-					<Abstract type="html">The name for the new preset.</Abstract>
+					<Name>project</Name>
+					<Abstract type="html">The very project.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An error description if the given preset name is not permissible, or nil or an empty string if it is.</Abstract></ReturnValue>
-			<Anchor>//api/name/projectOptionsSavePresetSheetController:errorForPresetName:</Anchor>
+			
+			<Anchor>//api/name/projectDidStart:</Anchor>
             <NodeRef refid="92"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ProjectDelegate/projectDidStartEngine:</TokenIdentifier>
+			<Abstract type="html">Called when a project&apos;s httrack engine started.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)projectDidStartEngine:(Project *)project</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>project</Name>
+					<Abstract type="html">The very project.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/projectDidStartEngine:</Anchor>
+            <NodeRef refid="92"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ProjectDelegate/projectDidEnd:error:</TokenIdentifier>
+			<Abstract type="html">Called when a project ended.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)projectDidEnd:(Project *)project error:(NSString *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>project</Name>
+					<Abstract type="html">The very project.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">A string of characters representing an error description. This is nil if no error occured before the project ended.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/projectDidEnd:error:</Anchor>
+            <NodeRef refid="92"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ProjectDelegate/projectDidResume:</TokenIdentifier>
+			<Abstract type="html">Called when a project resumed.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)projectDidResume:(Project *)project</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>project</Name>
+					<Abstract type="html">The very project that resumed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/projectDidResume:</Anchor>
+            <NodeRef refid="92"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ProjectDelegate/projectDidPause:</TokenIdentifier>
+			<Abstract type="html">Called when a project was successfully paused.</Abstract>
+			<DeclaredIn>Project.h</DeclaredIn>
+			
+			<Declaration>- (void)projectDidPause:(Project *)project</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>project</Name>
+					<Abstract type="html">The very project that paused.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/projectDidPause:</Anchor>
+            <NodeRef refid="92"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

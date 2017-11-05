@@ -95,6 +95,7 @@
 						<NodeRef refid="82"/>
 						<NodeRef refid="83"/>
 						<NodeRef refid="84"/>
+						<NodeRef refid="85"/>
 						
 					</Subnodes>
 				</Node>
@@ -104,12 +105,12 @@
 					<Name>Categories</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="85"/>
 						<NodeRef refid="86"/>
 						<NodeRef refid="87"/>
 						<NodeRef refid="88"/>
 						<NodeRef refid="89"/>
 						<NodeRef refid="90"/>
+						<NodeRef refid="91"/>
 						
 					</Subnodes>
 				</Node>
@@ -119,13 +120,14 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="91"/>
 						<NodeRef refid="92"/>
 						<NodeRef refid="93"/>
+						<NodeRef refid="94"/>
 						
 					</Subnodes>
 				</Node>
 				
+                
                 
 			</Subnodes>
         </Node>
@@ -1253,6 +1255,33 @@
             
         </Node>
 		<Node id="55" type="file" documentType="reference">
+            <Name>ProjectSocketList</Name>
+            <Path>Classes/ProjectSocketList.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ProjectSocketList.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ProjectSocketList.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ProjectSocketList.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="56" type="file" documentType="reference">
             <Name>ProjectStatsCell</Name>
             <Path>Classes/ProjectStatsCell.html</Path>
             
@@ -1279,7 +1308,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="56" type="file" documentType="reference">
+		<Node id="57" type="file" documentType="reference">
             <Name>ProjectStatsDictionary</Name>
             <Path>Classes/ProjectStatsDictionary.html</Path>
             
@@ -1312,39 +1341,17 @@
             </Subnodes>
             
         </Node>
-		<Node id="57" type="file" documentType="reference">
+		<Node id="58" type="file" documentType="reference">
             <Name>ProjectStatsFileTypeCell</Name>
             <Path>Classes/ProjectStatsFileTypeCell.html</Path>
             
         </Node>
-		<Node id="58" type="file" documentType="reference">
+		<Node id="59" type="file" documentType="reference">
             <Name>ProjectStatsFilesPanelController</Name>
             <Path>Classes/ProjectStatsFilesPanelController.html</Path>
             
-                <Subnodes>
-                <Node type="section">
-                    <Path>Classes/ProjectStatsFilesPanelController.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Classes/ProjectStatsFilesPanelController.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/ProjectStatsFilesPanelController.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
-                
-            </Subnodes>
-            
         </Node>
-		<Node id="59" type="file" documentType="reference">
+		<Node id="60" type="file" documentType="reference">
             <Name>ProjectStatsOverviewPanelController</Name>
             <Path>Classes/ProjectStatsOverviewPanelController.html</Path>
             
@@ -1360,18 +1367,18 @@
                     <Anchor>tasks</Anchor>
                 </Node>
                 
+                
+                
                 <Node type="section">
                     <Path>Classes/ProjectStatsOverviewPanelController.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
                 </Node>
-                
-                
                 
             </Subnodes>
             
         </Node>
-		<Node id="60" type="file" documentType="reference">
+		<Node id="61" type="file" documentType="reference">
             <Name>ProjectStatsPanelController</Name>
             <Path>Classes/ProjectStatsPanelController.html</Path>
             
@@ -1395,16 +1402,10 @@
                 
                 
                 
-                <Node type="section">
-                    <Path>Classes/ProjectStatsPanelController.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
-                
             </Subnodes>
             
         </Node>
-		<Node id="61" type="file" documentType="reference">
+		<Node id="62" type="file" documentType="reference">
             <Name>ProjectStatsWindowController</Name>
             <Path>Classes/ProjectStatsWindowController.html</Path>
             
@@ -1443,7 +1444,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="62" type="file" documentType="reference">
+		<Node id="63" type="file" documentType="reference">
             <Name>ProjectURL</Name>
             <Path>Classes/ProjectURL.html</Path>
             
@@ -1476,12 +1477,12 @@
             </Subnodes>
             
         </Node>
-		<Node id="63" type="file" documentType="reference">
+		<Node id="64" type="file" documentType="reference">
             <Name>ProjectWindow</Name>
             <Path>Classes/ProjectWindow.html</Path>
             
         </Node>
-		<Node id="64" type="file" documentType="reference">
+		<Node id="65" type="file" documentType="reference">
             <Name>ProjectWindowController</Name>
             <Path>Classes/ProjectWindowController.html</Path>
             
@@ -1514,7 +1515,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="65" type="file" documentType="reference">
+		<Node id="66" type="file" documentType="reference">
             <Name>ProjectWindowControllerLion</Name>
             <Path>Classes/ProjectWindowControllerLion.html</Path>
             
@@ -1541,7 +1542,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="66" type="file" documentType="reference">
+		<Node id="67" type="file" documentType="reference">
             <Name>ProjectWindowControllerYosemite</Name>
             <Path>Classes/ProjectWindowControllerYosemite.html</Path>
             
@@ -1568,7 +1569,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="67" type="file" documentType="reference">
+		<Node id="68" type="file" documentType="reference">
             <Name>RealtimeGraphLayer</Name>
             <Path>Classes/RealtimeGraphLayer.html</Path>
             
@@ -1595,7 +1596,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="68" type="file" documentType="reference">
+		<Node id="69" type="file" documentType="reference">
             <Name>RealtimeGraphView</Name>
             <Path>Classes/RealtimeGraphView.html</Path>
             
@@ -1628,22 +1629,22 @@
             </Subnodes>
             
         </Node>
-		<Node id="69" type="file" documentType="reference">
+		<Node id="70" type="file" documentType="reference">
             <Name>RoundedCornerTextField</Name>
             <Path>Classes/RoundedCornerTextField.html</Path>
             
         </Node>
-		<Node id="70" type="file" documentType="reference">
+		<Node id="71" type="file" documentType="reference">
             <Name>RoundedImageCell</Name>
             <Path>Classes/RoundedImageCell.html</Path>
             
         </Node>
-		<Node id="71" type="file" documentType="reference">
+		<Node id="72" type="file" documentType="reference">
             <Name>Scroller</Name>
             <Path>Classes/Scroller.html</Path>
             
         </Node>
-		<Node id="72" type="file" documentType="reference">
+		<Node id="73" type="file" documentType="reference">
             <Name>ScrollingTextView</Name>
             <Path>Classes/ScrollingTextView.html</Path>
             
@@ -1670,7 +1671,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="73" type="file" documentType="reference">
+		<Node id="74" type="file" documentType="reference">
             <Name>SplitView</Name>
             <Path>Classes/SplitView.html</Path>
             
@@ -1703,22 +1704,22 @@
             </Subnodes>
             
         </Node>
-		<Node id="74" type="file" documentType="reference">
+		<Node id="75" type="file" documentType="reference">
             <Name>TextView</Name>
             <Path>Classes/TextView.html</Path>
             
         </Node>
-		<Node id="75" type="file" documentType="reference">
+		<Node id="76" type="file" documentType="reference">
             <Name>UnhighlightedTableView</Name>
             <Path>Classes/UnhighlightedTableView.html</Path>
             
         </Node>
-		<Node id="76" type="file" documentType="reference">
+		<Node id="77" type="file" documentType="reference">
             <Name>VerticallyCenteredTextFieldCell</Name>
             <Path>Classes/VerticallyCenteredTextFieldCell.html</Path>
             
         </Node>
-		<Node id="77" type="file" documentType="reference">
+		<Node id="78" type="file" documentType="reference">
             <Name>WhiteView</Name>
             <Path>Classes/WhiteView.html</Path>
             
@@ -1745,43 +1746,43 @@
             </Subnodes>
             
         </Node>
-		<Node id="78" type="file" documentType="reference">
+		<Node id="79" type="file" documentType="reference">
             <Name>WindowAdaptedButtonCell</Name>
             <Path>Classes/WindowAdaptedButtonCell.html</Path>
             
         </Node>
-		<Node id="79" type="file" documentType="reference">
+		<Node id="80" type="file" documentType="reference">
             <Name>WindowAdaptedCell</Name>
             <Path>Classes/WindowAdaptedCell.html</Path>
             
         </Node>
-		<Node id="80" type="file" documentType="reference">
+		<Node id="81" type="file" documentType="reference">
             <Name>WindowAdaptedImageCell</Name>
             <Path>Classes/WindowAdaptedImageCell.html</Path>
             
         </Node>
-		<Node id="81" type="file" documentType="reference">
+		<Node id="82" type="file" documentType="reference">
             <Name>WindowAdaptedOutlineView</Name>
             <Path>Classes/WindowAdaptedOutlineView.html</Path>
             
         </Node>
-		<Node id="82" type="file" documentType="reference">
+		<Node id="83" type="file" documentType="reference">
             <Name>WindowAdaptedTableHeaderCell</Name>
             <Path>Classes/WindowAdaptedTableHeaderCell.html</Path>
             
         </Node>
-		<Node id="83" type="file" documentType="reference">
+		<Node id="84" type="file" documentType="reference">
             <Name>WindowAdaptedTableView</Name>
             <Path>Classes/WindowAdaptedTableView.html</Path>
             
         </Node>
-		<Node id="84" type="file" documentType="reference">
+		<Node id="85" type="file" documentType="reference">
             <Name>WindowAdaptedTextFieldCell</Name>
             <Path>Classes/WindowAdaptedTextFieldCell.html</Path>
             
         </Node>
 		
-		<Node id="85" type="file" documentType="reference">
+		<Node id="86" type="file" documentType="reference">
             <Name>NSApplication(Additions)</Name>
             <Path>Categories/NSApplication+Additions.html</Path>
             
@@ -1808,7 +1809,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="86" type="file" documentType="reference">
+		<Node id="87" type="file" documentType="reference">
             <Name>NSBezierPath(Additions)</Name>
             <Path>Categories/NSBezierPath+Additions.html</Path>
             
@@ -1841,7 +1842,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="87" type="file" documentType="reference">
+		<Node id="88" type="file" documentType="reference">
             <Name>NSColor(Additions)</Name>
             <Path>Categories/NSColor+Additions.html</Path>
             
@@ -1868,7 +1869,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="88" type="file" documentType="reference">
+		<Node id="89" type="file" documentType="reference">
             <Name>NSImage(Additions)</Name>
             <Path>Categories/NSImage+Additions.html</Path>
             
@@ -1895,7 +1896,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="89" type="file" documentType="reference">
+		<Node id="90" type="file" documentType="reference">
             <Name>NSShadow(Additions)</Name>
             <Path>Categories/NSShadow+Additions.html</Path>
             
@@ -1922,7 +1923,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="90" type="file" documentType="reference">
+		<Node id="91" type="file" documentType="reference">
             <Name>NSString(NSStringAdditions)</Name>
             <Path>Categories/NSString+NSStringAdditions.html</Path>
             
@@ -1956,7 +1957,7 @@
             
         </Node>
 		
-        <Node id="91" type="file" documentType="reference">
+        <Node id="92" type="file" documentType="reference">
             <Name>ProjectDelegate</Name>
             <Path>Protocols/ProjectDelegate.html</Path>
             
@@ -1983,7 +1984,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="92" type="file" documentType="reference">
+		<Node id="93" type="file" documentType="reference">
             <Name>ProjectOptionsSavePresetSheetDelegate</Name>
             <Path>Protocols/ProjectOptionsSavePresetSheetDelegate.html</Path>
             
@@ -2010,7 +2011,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="93" type="file" documentType="reference">
+		<Node id="94" type="file" documentType="reference">
             <Name>SplitViewDelegate</Name>
             <Path>Protocols/SplitViewDelegate.html</Path>
             
@@ -2038,6 +2039,7 @@
             
         </Node>
 		
+        
         
 	</Library>
 </DocSetNodes>

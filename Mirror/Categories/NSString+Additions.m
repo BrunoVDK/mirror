@@ -15,7 +15,7 @@ static int unitCount = sizeof units - 1;
 
 @interface NSString (Private)
 
-+ (NSString *)stringForSpeed:(CGFloat)speed kb:(NSString *)kb mb:(NSString *)mb gb:(NSString *)gb;
++ (NSString *)stringForSpeed:(long long)speed b:(NSString *)b kb:(NSString *)kb mb:(NSString *)mb gb:(NSString *)gb;
 
 - (NSString *)removeAlphaNumeric;
 - (NSString *)removeNonAlphaNumeric;
@@ -59,15 +59,15 @@ static int unitCount = sizeof units - 1;
     
 }
 
-+ (NSString *)stringForSpeed:(CGFloat)speed {
++ (NSString *)stringForSpeed:(long long)speed {
     
-    return [self stringForSpeed:speed kb:@"KB/s" mb:@"MB/s" gb:@"GB/s"];
+    return [self stringForSpeed:speed b:@"b/s" kb:@"KB/s" mb:@"MB/s" gb:@"GB/s"];
     
 }
 
-+ (NSString *)stringForSpeedAbbrev:(CGFloat) speed {
++ (NSString *)stringForSpeedAbbrev:(long long)speed {
     
-    return [self stringForSpeed:speed kb:@"K" mb:@"M" gb:@"G"];
+    return [self stringForSpeed:speed b:@"b" kb:@"K" mb:@"M" gb:@"G"];
     
 }
 
@@ -138,19 +138,18 @@ static int unitCount = sizeof units - 1;
 
 @implementation NSString (Private)
 
-+ (NSString *) stringForSpeed: (CGFloat) speed kb: (NSString *) kb mb: (NSString *) mb gb: (NSString *) gb {
++ (NSString *)stringForSpeed:(long long)speed b:(NSString *)b kb:(NSString *)kb mb:(NSString *)mb gb:(NSString *)gb {
     
-    if (speed <= 999.95) //0.0 KB/s to 999.9 KB/s
-        return [NSString localizedStringWithFormat: @"%.1f %@", speed, kb];
-    
-    speed /= 1000.0;
-    
-    if (speed <= 99.995) //1.00 MB/s to 99.99 MB/s
-        return [NSString localizedStringWithFormat: @"%.2f %@", speed, mb];
-    else if (speed <= 999.95) //100.0 MB/s to 999.9 MB/s
-        return [NSString localizedStringWithFormat: @"%.1f %@", speed, mb];
-    else //insane speeds
-        return [NSString localizedStringWithFormat: @"%.2f %@", (speed / 1000.0), gb];
+    if (speed < 1000)
+        return [NSString stringWithFormat:@"%lli %@", speed, b];
+    speed /= 1000;
+    if (speed <= 1000)
+        return [NSString stringWithFormat:@"%lli %@", speed, kb];
+    speed /= 1000;
+    if (speed <= 1000)
+        return [NSString stringWithFormat:@"%lli %@", speed, mb];
+
+    return [NSString stringWithFormat:@"%lli %@", speed/1000, gb];
     
 }
 

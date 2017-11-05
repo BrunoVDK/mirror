@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SplitView.html">
+	<File path="Classes/ScrollingTextView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SplitView</TokenIdentifier>
-			<Abstract type="html">The SplitView class represents a split view with a sidebar (supposed to be on the left) and a main view (on the right).
-Both views can be (un)collapsed programmatically.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ScrollingTextView</TokenIdentifier>
+			<Abstract type="html">The ScrollingTextView class represents a text view that scrolls continuously.
+As the user hovers the text view, scrolling stops temporarily.</Abstract>
+			<DeclaredIn>ScrollingTextView.h</DeclaredIn>
             
 			
 			<NodeRef refid="73"/>
@@ -14,250 +14,30 @@ Both views can be (un)collapsed programmatically.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SplitView/setFirstView:</TokenIdentifier>
-			<Abstract type="html">This split view&apos;s first subview.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ScrollingTextView/stick</TokenIdentifier>
+			<Abstract type="html">Stop this text view from scrolling.</Abstract>
+			<DeclaredIn>ScrollingTextView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSView *firstView</Declaration>
+			<Declaration>- (void)stick</Declaration>
 			
 			
-			<Anchor>//api/name/firstView</Anchor>
+			<Anchor>//api/name/stick</Anchor>
             <NodeRef refid="73"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SplitView/firstView</TokenIdentifier>
-			<Abstract type="html">This split view&apos;s first subview.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ScrollingTextView/scroll</TokenIdentifier>
+			<Abstract type="html">Make this text view scroll.</Abstract>
+			<DeclaredIn>ScrollingTextView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSView *firstView</Declaration>
+			<Declaration>- (void)scroll</Declaration>
 			
 			
-			<Anchor>//api/name/firstView</Anchor>
+			<Anchor>//api/name/scroll</Anchor>
             <NodeRef refid="73"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SplitView/firstView</TokenIdentifier>
-			<Abstract type="html">This split view&apos;s first subview.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSView *firstView</Declaration>
-			
-			
-			<Anchor>//api/name/firstView</Anchor>
-            <NodeRef refid="73"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SplitView/setSecondView:</TokenIdentifier>
-			<Abstract type="html">This split view&apos;s second subview.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSView *secondView</Declaration>
-			
-			
-			<Anchor>//api/name/secondView</Anchor>
-            <NodeRef refid="73"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SplitView/secondView</TokenIdentifier>
-			<Abstract type="html">This split view&apos;s second subview.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSView *secondView</Declaration>
-			
-			
-			<Anchor>//api/name/secondView</Anchor>
-            <NodeRef refid="73"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SplitView/secondView</TokenIdentifier>
-			<Abstract type="html">This split view&apos;s second subview.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSView *secondView</Declaration>
-			
-			
-			<Anchor>//api/name/secondView</Anchor>
-            <NodeRef refid="73"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SplitView/setCustomDividerThickness:</TokenIdentifier>
-			<Abstract type="html">This instance&apos;s divider thickness.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) CGFloat customDividerThickness</Declaration>
-			
-			
-			<Anchor>//api/name/customDividerThickness</Anchor>
-            <NodeRef refid="73"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SplitView/customDividerThickness</TokenIdentifier>
-			<Abstract type="html">This instance&apos;s divider thickness.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) CGFloat customDividerThickness</Declaration>
-			
-			
-			<Anchor>//api/name/customDividerThickness</Anchor>
-            <NodeRef refid="73"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SplitView/customDividerThickness</TokenIdentifier>
-			<Abstract type="html">This instance&apos;s divider thickness.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) CGFloat customDividerThickness</Declaration>
-			
-			
-			<Anchor>//api/name/customDividerThickness</Anchor>
-            <NodeRef refid="73"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SplitView/collapseView:</TokenIdentifier>
-			<Abstract type="html">Collapses the given view.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>- (void)collapseView:(NSView *)view</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">The view to collapse. Should be either the sidebar of the main view of this split view.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/collapseView:</Anchor>
-            <NodeRef refid="73"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SplitView/uncollapseView:</TokenIdentifier>
-			<Abstract type="html">Uncollapses the given view.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>- (void)uncollapseView:(NSView *)view</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">The view to uncollapse. Should be either the sidebar of the main view of this split view.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/uncollapseView:</Anchor>
-            <NodeRef refid="73"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SplitView/collapseView:withAnimation:</TokenIdentifier>
-			<Abstract type="html">Collapses the given view, with or without animation.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>- (void)collapseView:(NSView *)view withAnimation:(BOOL)flag</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">The view to collapse. Should be either the sidebar of the main view of this split view.</Abstract>
-				</Parameter><Parameter>
-					<Name>flag</Name>
-					<Abstract type="html">Use this flag to enable or disable animation.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/collapseView:withAnimation:</Anchor>
-            <NodeRef refid="73"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SplitView/uncollapseView:withAnimation:</TokenIdentifier>
-			<Abstract type="html">Uncollapses the given view, with or without animation.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>- (void)uncollapseView:(NSView *)view withAnimation:(BOOL)flag</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">The view to uncollapse. Should be either the sidebar of the main view of this split view.</Abstract>
-				</Parameter><Parameter>
-					<Name>flag</Name>
-					<Abstract type="html">Use this flag to enable or disable animation.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/uncollapseView:withAnimation:</Anchor>
-            <NodeRef refid="73"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SplitView/collapseView:withAnimation:completionBlock:</TokenIdentifier>
-			<Abstract type="html">Collapses the given view (with or without animation), and runs the given block on completion.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>- (void)collapseView:(NSView *)view withAnimation:(BOOL)flag completionBlock:(void ( ^ ) ( void ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">The view to collapse. Should be either the sidebar of the main view of this split view.</Abstract>
-				</Parameter><Parameter>
-					<Name>flag</Name>
-					<Abstract type="html">Use this flag to enable or disable animation.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The block to run on completion.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/collapseView:withAnimation:completionBlock:</Anchor>
-            <NodeRef refid="73"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SplitView/uncollapseView:withAnimation:completionBlock:</TokenIdentifier>
-			<Abstract type="html">Uncollapses the given view (with or without animation), and runs the given block on completion.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>- (void)uncollapseView:(NSView *)view withAnimation:(BOOL)flag completionBlock:(void ( ^ ) ( void ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">The view to uncollapse. Should be either the sidebar of the main view of this split view.</Abstract>
-				</Parameter><Parameter>
-					<Name>flag</Name>
-					<Abstract type="html">Use this flag to enable or disable animation.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The block to run on completion.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/uncollapseView:withAnimation:completionBlock:</Anchor>
-            <NodeRef refid="73"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SplitView/positionForDividerAtIndex:</TokenIdentifier>
-			<Abstract type="html">Returns the position of the divider at the given index.</Abstract>
-			<DeclaredIn>SplitView.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)positionForDividerAtIndex:(NSInteger)idx</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>idx</Name>
-					<Abstract type="html">The index of the divider.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The position of the divider at the given index.</Abstract></ReturnValue>
-			<Anchor>//api/name/positionForDividerAtIndex:</Anchor>
-            <NodeRef refid="73"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

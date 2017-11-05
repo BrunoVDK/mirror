@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Scroller.html">
+	<File path="Classes/RoundedImageCell.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Scroller</TokenIdentifier>
-			<Abstract type="html">The Scroller class customizes the interface of the NSScroller class.
-It currently removes the background.</Abstract>
-			<DeclaredIn>Scroller.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/RoundedImageCell</TokenIdentifier>
+			<Abstract type="html">The RoundedImageCell class represents a round image cell.</Abstract>
+			<DeclaredIn>RoundedImageCell.h</DeclaredIn>
             
 			
 			<NodeRef refid="71"/>
 		</Token>
 		
 		
+        
         
 	</File>
 </Tokens>

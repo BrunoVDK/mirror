@@ -23,10 +23,10 @@
                         <rect key="frame" x="1" y="1" width="223" height="133"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView drawsBackground="NO" importsGraphics="NO" richText="NO" findStyle="bar" allowsUndo="YES" verticallyResizable="YES" smartInsertDelete="YES" id="P7r-VX-KIW">
+                            <textView drawsBackground="NO" importsGraphics="NO" richText="NO" selectionGranularity="word" allowsUndo="YES" verticallyResizable="YES" id="P7r-VX-KIW">
                                 <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" red="0.38579150880000002" green="0.38579150880000002" blue="0.38579150880000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="minSize" width="438" height="81"/>
                                 <size key="maxSize" width="463" height="10000000"/>
@@ -52,6 +52,9 @@
                         <rect key="frame" x="224" y="1" width="15" height="133"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
+                    <connections>
+                        <outlet property="nextKeyView" destination="3TL-E9-0Wz" id="hn2-We-nMR"/>
+                    </connections>
                 </scrollView>
                 <popUpButton verticalHuggingPriority="750" id="O6b-78-Wlc">
                     <rect key="frame" x="231" y="15" width="101" height="22"/>
@@ -106,6 +109,7 @@
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
                         </binding>
+                        <outlet property="nextKeyView" destination="R1M-Wv-i3a" id="8IC-R2-Khr"/>
                     </connections>
                 </textField>
                 <textField toolTip="The title of the index page itself (put between &lt;title&gt; tags)." horizontalHuggingPriority="251" verticalHuggingPriority="750" id="CO0-8j-D9X" customClass="ProjectOptionsLabel">
@@ -131,6 +135,7 @@
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
                         </binding>
+                        <outlet property="nextKeyView" destination="P7r-VX-KIW" id="OWQ-Jb-L5O"/>
                     </connections>
                 </textField>
                 <textField toolTip="The title shown at the top of the index page." horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Oz1-Rc-gUk" customClass="ProjectOptionsLabel">

@@ -504,6 +504,25 @@
     
 }
 
+- (id)valueForKey:(NSString *)key {
+    
+    if ([key isEqualToString:@"ProxyUsername"] || [key isEqualToString:@"ProxyPassword"])
+        return [self.project.options valueForKey:key];
+    else
+        return [super valueForKey:key];
+    
+}
+
+- (void)setValue:(id)value forKey:(NSString *)key {
+    
+    if ([key isEqualToString:@"ProxyUsername"] || [key isEqualToString:@"ProxyPassword"])
+        [self.project.options setValue:[[usernameField stringValue] stringByAppendingString:[passwordField stringValue]]
+                                forKey:@"ProxyUsername"];
+    else
+        [super setValue:value forKeyPath:key];
+    
+}
+
 @end
 
 @implementation ProjectOptionsEnginePanelController

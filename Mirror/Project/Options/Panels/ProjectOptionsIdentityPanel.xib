@@ -7,6 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ProjectOptionsIdentityPanelController">
             <connections>
+                <outlet property="passwordField" destination="bnT-dW-iRo" id="zAE-dj-cdz"/>
+                <outlet property="usernameField" destination="1um-nK-1fm" id="Rvl-O3-492"/>
                 <outlet property="view" destination="c22-O7-iKe" id="jaM-zV-tzY"/>
             </connections>
         </customObject>
@@ -52,7 +54,11 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.project.options.Language" id="IlU-4L-3lp"/>
+                        <binding destination="-2" name="value" keyPath="self.project.options.Language" id="eXl-3Q-8LQ">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
                     </connections>
                 </textField>
                 <textField toolTip="The default referer URL." focusRingType="none" verticalHuggingPriority="750" id="4Zb-jm-x3s">
@@ -64,7 +70,11 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.project.options.DefaultRefererURL" id="n1g-9U-eXo"/>
+                        <binding destination="-2" name="value" keyPath="self.project.options.DefaultRefererURL" id="gCC-Zk-hJ2">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="2YH-VT-s2b" customClass="ProjectOptionsLabel">
@@ -85,7 +95,11 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.project.options.UserAgent" id="Cjh-nn-U16"/>
+                        <binding destination="-2" name="value" keyPath="self.project.options.UserAgent" id="bs4-vC-H1H">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="uKQ-Cw-AGY" customClass="ProjectOptionsLabel">
@@ -106,7 +120,11 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.project.options.FooterString" id="ddC-Ns-85d"/>
+                        <binding destination="-2" name="value" keyPath="self.project.options.FooterString" id="nfc-tW-vi9">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="hOy-Qt-Kmd" customClass="ProjectOptionsLabel">
@@ -127,7 +145,11 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.project.options.FromEmailAddress" id="1h5-Jt-P0y"/>
+                        <binding destination="-2" name="value" keyPath="self.project.options.FromEmailAddress" id="3Ua-pt-JdF">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
                     </connections>
                 </textField>
                 <textField toolTip="Any additional HTTP headers." focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="p5n-6p-z2S">
@@ -139,7 +161,11 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.project.options.Headers" id="dYa-qD-PqN"/>
+                        <binding destination="-2" name="value" keyPath="self.project.options.Headers" id="JxH-Td-qTP">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="HxY-ZF-6pV" customClass="ProjectOptionsLabel">
@@ -182,16 +208,16 @@
                                 <rect key="frame" x="14" y="80" width="96" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" placeholderString="Address" drawsBackground="YES" id="oSR-Jh-FzG">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="eJn-5Q-UsR" customClass="IntegerFormatter">
-                                        <real key="minimum" value="0.0"/>
-                                        <real key="maximum" value="9999"/>
-                                    </numberFormatter>
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="-2" name="value" keyPath="self.project.options.ProxyAddress" id="VUh-V3-nqJ"/>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.ProxyAddress" id="YaE-ZL-tOt">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </textField>
                             <button id="GpQ-1s-S1A">
@@ -201,21 +227,24 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="miniSystem"/>
                                 </buttonCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.ProxyFTP" id="twc-k6-zx1"/>
+                                </connections>
                             </button>
                             <textField toolTip="The username to authenticate with. Only fill out this field if necessary." focusRingType="none" verticalHuggingPriority="750" id="1um-nK-1fm">
                                 <rect key="frame" x="14" y="56" width="161" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" placeholderString="Username" drawsBackground="YES" id="QTz-hB-iUA">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="eAm-iu-XUu" customClass="IntegerFormatter">
-                                        <real key="minimum" value="0.0"/>
-                                        <real key="maximum" value="9999"/>
-                                    </numberFormatter>
                                     <font key="font" metaFont="miniSystem"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="-2" name="value" keyPath="self.project.options.ProxyUsername" id="IOU-Mm-6Lv"/>
+                                    <binding destination="-2" name="value" keyPath="self.ProxyUsername" id="DDM-cw-Wbx">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </textField>
                             <textField toolTip="The port the proxy listens on." focusRingType="none" verticalHuggingPriority="750" id="NTk-YZ-oig">
@@ -234,7 +263,11 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="-2" name="value" keyPath="self.project.options.ProxyPort" id="jhe-al-DJO"/>
+                                    <binding destination="-2" name="value" keyPath="self.project.options.ProxyPort" id="xNn-m2-Yrq">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </textField>
                             <secureTextField toolTip="The password of the above username. Only fill out this field if necessary." focusRingType="none" verticalHuggingPriority="750" id="bnT-dW-iRo">
@@ -249,7 +282,11 @@
                                     </allowedInputSourceLocales>
                                 </secureTextFieldCell>
                                 <connections>
-                                    <binding destination="-2" name="value" keyPath="self.project.options.ProxyPasswords" id="dUv-AG-D0V"/>
+                                    <binding destination="-2" name="value" keyPath="self.ProxyPassword" id="V7p-0Q-R1t">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </secureTextField>
                         </subviews>

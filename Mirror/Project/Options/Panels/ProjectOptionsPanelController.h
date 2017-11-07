@@ -93,8 +93,11 @@
 /**
  * The `ProjectOptionsIdentityPanelController` class controls a project options panel with identity options.
  */
-@interface ProjectOptionsIdentityPanelController : ProjectOptionsPanelController
-
+@interface ProjectOptionsIdentityPanelController : ProjectOptionsPanelController {
+    
+    IBOutlet NSTextField *usernameField, *passwordField;
+    
+}
 @end
 
 /**

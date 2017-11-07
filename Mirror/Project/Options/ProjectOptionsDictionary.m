@@ -232,13 +232,13 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 + (NSArray *)buildOptions { // Key - Default Value - Mutating Block - Alterable when Engine Runs (YES/NO - use -boolValue to check value)
     
     return [NSArray arrayWithObjects:
-            @"UTF8Links", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"ReplaceExternal", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"GenerateMHT", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"HidePasswords", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"HideQueryStrings", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"GenerateErrorHTML", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"PurgeOldFiles", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            @"ConvertLinksToUTF8", @YES, ^(httrackp *options, id value) {options->convert_utf8 = [value intValue];}, @NO,
+            @"ReplaceExternalLinksWithErrorPages", @NO, ^(httrackp *options, id value) {options->external = [value intValue];}, @NO,
+            @"GenerateMIME-HTML", @NO, ^(httrackp *options, id value) {options->mimehtml = [value intValue];}, @NO,
+            @"HidePasswords", @NO, ^(httrackp *options, id value) {options->passprivacy = [value intValue];}, @NO,
+            @"HideQueryStrings", @NO, ^(httrackp *options, id value) {options->includequery = ![value intValue];}, @NO,
+            @"GenerateErrorPages", @YES, ^(httrackp *options, id value) {options->errpage = [value intValue];}, @NO,
+            @"PurgeOldFiles", @YES, ^(httrackp *options, id value) {options->delete_old = [value intValue];}, @NO,
             nil];
     
 }
@@ -246,11 +246,11 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 + (NSArray *)cacheOptions { // Key - Default Value - Mutating Block - Alterable when Engine Runs (YES/NO - use -boolValue to check value)
     
     return [NSArray arrayWithObjects:
-            @"UseCache", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"CacheAll", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"LocallyErased", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"MakeIndex", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"CreateLogs", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            @"UseCache", @YES, ^(httrackp *options, id value) {options->cache = [value intValue];}, @NO,
+            @"CacheEverything", @NO, ^(httrackp *options, id value) {options->all_in_cache = [value intValue];}, @NO,
+            @"IgnoreLocallyErasedFiles", @NO, ^(httrackp *options, id value) {options->norecatch = [value intValue];}, @NO,
+            @"MakeIndex", @YES, ^(httrackp *options, id value) {options->makeindex = [value intValue];}, @NO,
+            // @"CreateLogs", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
             nil];
     
 }
@@ -258,15 +258,15 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 + (NSArray *)crawlerOptions { // Key - Default Value - Mutating Block - Alterable when Engine Runs (YES/NO - use -boolValue to check value)
     
     return [NSArray arrayWithObjects:
-            @"TestAllLinks", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"ForceHTTP10", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"PrioritiseHTML", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"EnableUrlHacks", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"EnableUpdateHacks", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            // @"TestAllLinks", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
+            @"ForceHTTP1-0", @NO, ^(httrackp *options, id value) {options->http10 = [value intValue];}, @NO,
+            // @"PrioritiseHTML", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            @"EnableUrlHacks", @YES, ^(httrackp *options, id value) {options->urlhack = [value intValue];}, @NO,
+            @"EnableUpdateHacks", @NO, ^(httrackp *options, id value) {options->sizehack = [value intValue];}, @NO,
             @"AcceptCookies", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"TolerantRequests", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"ParseAll", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"GetNearbyFiles", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
+            @"TolerantRequests", @NO, ^(httrackp *options, id value) {options->tolerant = [value intValue];}, @NO,
+            @"ParseAll", @YES, ^(httrackp *options, id value) {options->parseall = [value intValue];}, @YES,
+            // @"GetNearbyFiles", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
             nil];
     
 }
@@ -274,10 +274,10 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 + (NSArray *)javaOptions { // Key - Default Value - Mutating Block - Alterable when Engine Runs (YES/NO - use -boolValue to check value)
     
     return [NSArray arrayWithObjects:
-            @"ParseJavaDefault", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"ParseJavaClass", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"ParseJavaJS", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"ParseJavaAggressive", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            @"ParseJava", @YES, ^(httrackp *options, id value) {options->parsejava = ([value intValue] ? HTSPARSE_DEFAULT : HTSPARSE_NONE);}, @NO,
+            // @"ParseJavaClasses", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            // @"ParseJavaScript", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            // @"ParseJavaNon-Aggressively", @NO, ^(httrackp *options, id value) {if ([value intValue]) options->parsejava = HTSPARSE_NO_AGGRESSIVE;}, @NO,
             nil];
     
 }
@@ -285,29 +285,35 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 + (NSArray *)dangerousOptions { // Key - Default Value - Mutating Block - Alterable when Engine Runs (YES/NO - use -boolValue to check value)
     
     return [NSArray arrayWithObjects:
-            @"BypassSecurity", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            @"BypassSecurityLimits", @NO, ^(httrackp *options, id value) {options->bypass_limits = [value intValue];}, @NO,
             nil];
     
 }
 
 + (NSArray *)structureOptions { // Key - Default Value - Mutating Block - Alterable when Engine Runs (YES/NO - use -boolValue to check value)
     
+    static int savenameMapping[] = {0,1,2,3,4,5,99,100,101,102,103,104,105,199,1001,1002,1003,1004,1005,1099};
+    
     return [NSArray arrayWithObjects:
-            @"LocalStructure", [NSNumber numberWithDouble:0], ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"FileNames", [NSNumber numberWithDouble:0], ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"Links", [NSNumber numberWithDouble:0], ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            @"LocalStructure", [NSNumber numberWithDouble:0], ^(httrackp *options, id value) {options->savename_type = savenameMapping[[value intValue]];}, @NO,
+            @"FileNames", [NSNumber numberWithDouble:0], ^(httrackp *options, id value) {options->savename_83 = [value intValue];}, @NO,
+            @"Links", [NSNumber numberWithDouble:2], ^(httrackp *options, id value) {options->urlmode = [value intValue];if (options->urlmode > 0) options->urlmode++;}, @NO,
             nil];
     
 }
 
 + (NSArray *)designOptions { // Key - Default Value - Mutating Block - Alterable when Engine Runs (YES/NO - use -boolValue to check value)
     
-    return [NSArray arrayWithObjects:
+    NSDictionary *defaultCSSAttributes = [[NSDictionary alloc] initWithObjectsAndKeys:[NSColor colorWithCalibratedWhite:0.1 alpha:1.0], NSForegroundColorAttributeName, [NSFont systemFontOfSize:11.0], NSFontAttributeName, nil];
+    NSAttributedString *defaultCSS = [[NSAttributedString alloc] initWithString:@"body {background-color: white;}\n.footer {text-align: center;font-size:11px;}" attributes:defaultCSSAttributes];
+    
+    NSArray *designOptions = [NSArray arrayWithObjects:
             @"IndexHTMLTitle", @"Index", ^(httrackp *options, id value) {
                 if (options->template_htmltitle)
                     free(options->template_htmltitle);
                 NSString *string = (NSString *)value;
                 const char *dest = string.UTF8String;
+                if (dest == NULL) dest = "";
                 options->template_htmltitle = malloc(strlen(dest) + 1);
                 strcpybuff(options->template_htmltitle, dest);}, @NO,
             @"IndexTitle", @"Index", ^(httrackp *options, id value) {
@@ -315,17 +321,23 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
                     free(options->template_title);
                 NSString *string = (NSString *)value;
                 const char *dest = string.UTF8String;
+                if (dest == NULL) dest = "";
                 options->template_title = malloc(strlen(dest) + 1);
                 strcpybuff(options->template_title, dest);}, @NO,
-            @"IndexCSS", @"body {background-color: gray;}\n.footer {text-align: center;}", ^(httrackp *options, id value) {
+            @"IndexCSS", defaultCSS, ^(httrackp *options, id value) {
                 if (options->template_css)
                     free(options->template_css);
                 NSString *string = [value string];
                 const char *dest = string.UTF8String;
+                if (dest == NULL) dest = "";
                 options->template_css = malloc(strlen(dest) + 1);
                 strcpybuff(options->template_css, dest);}, @NO,
             @"PieTheme", [NSNumber numberWithInt:0], ^(httrackp *options, id value) {}, @YES,
             nil];
+    
+    [defaultCSS release];
+    [defaultCSSAttributes release];
+    return designOptions;
     
 }
 
@@ -333,19 +345,41 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
     
     return [NSArray arrayWithObjects:
             // Identity
-            @"Language", @"en, *", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"FooterString", @"<!-- Mirrored from %s%s by Mirror, %s -->", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"UserAgent", @"Mozilla/4.5 (compatible; Mirror 1.0; Windows 98)", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"FromEmailAddress", @"", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"DefaultRefererURL", @"", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"Headers", @"", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            @"Language", @"en, *", ^(httrackp *options, id value) {
+                StringCopy(options->lang_iso, [value UTF8String]);
+            }, @NO,
+            @"FooterString", @"<!-- Mirrored from %s%s by Mirror, %s -->", ^(httrackp *options, id value) {
+                StringCopy(options->footer, [value UTF8String]);
+            }, @NO,
+            @"UserAgent", @"Mozilla/4.5 (compatible; Mirror 1.0; Windows 98)", ^(httrackp *options, id value) {
+                StringCopy(options->user_agent, [value UTF8String]);
+            }, @YES,
+            @"FromEmailAddress", @"", ^(httrackp *options, id value) {
+                StringCopy(options->from, [value UTF8String]);
+            }, @NO,
+            @"DefaultRefererURL", @"", ^(httrackp *options, id value) {
+                StringCopy(options->referer, [value UTF8String]);
+            }, @NO,
+            @"Headers", @"", ^(httrackp *options, id value) {
+                StringCopy(options->headers, [value UTF8String]);
+            }, @NO,
             // Proxy
-            @"UseProxy", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"ProxyAddress", @"", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"ProxyPort", @"8080", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"ProxyUsername", @"", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"ProxyPassword", @"", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"ProxyFTP", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            @"UseProxy", @NO, ^(httrackp *options, id value) {
+                options->proxy.active = [value intValue];
+            }, @NO,
+            @"ProxyAddress", @"", ^(httrackp *options, id value) {
+                StringCopy(options->proxy.bindhost, [value UTF8String]);
+            }, @NO,
+            @"ProxyPort", @"8080", ^(httrackp *options, id value) {
+                int port = [value intValue];
+                options->proxy.port = (port ==0 ? 8080 : port);
+            }, @NO,
+            @"ProxyUsername", @"", ^(httrackp *options, id value) {
+                StringCopy(options->proxy.name, [value UTF8String]);
+            }, @NO,
+            @"ProxyFTP", @YES, ^(httrackp *options, id value) {
+                options->ftp_proxy = [value intValue];
+            }, @NO,
             nil];
     
 }
@@ -354,29 +388,28 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
     
     return [NSArray arrayWithObjects:
             // Network
-            @"Connections", [NSNumber numberWithInt:4], ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"PersistentConnections", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"Timeout", @"120", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"AbandonTimeoutHosts", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"Retries", [NSNumber numberWithInt:2], ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"MinTransferRate", @"0", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"AbandonSlowHosts", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
+            @"Connections", [NSNumber numberWithInt:4], ^(httrackp *options, id value) {options->maxsoc = [value intValue];}, @YES,
+            @"PersistentConnections", @YES, ^(httrackp *options, id value) {options->nokeepalive = ![value boolValue];}, @NO,
+            @"Timeout", @"120", ^(httrackp *options, id value) {options->timeout = [value intValue];}, @YES,
+            @"AbandonHosts", [NSNumber numberWithInt:0], ^(httrackp *options, id value) {options->hostcontrol = [value intValue];}, @YES,
+            @"Retries", [NSNumber numberWithInt:2], ^(httrackp *options, id value) {options->retry = [value intValue];}, @YES,
+            @"MinTransferRate", @"0", ^(httrackp *options, id value) {options->rateout = [value intValue];}, @YES,
             // Limits
-            @"MirroringDepth", @"9999", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"ExternalDepth", @"0", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"UseMaximumHTMLSize", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"MaximumHTMLSize", @"0", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"UseMaximumNonHTMLSize", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"MaximumNonHTMLSize", @"0", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"UseMaximumOverallSize", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"MaximumOverallSize", @"0", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"UsePauseMilestone", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"PauseMilestoneBytes", @"0", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"UseMaximumTime", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"MaximumTime", @"0", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"MaximumTransferRate", @"25000", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"MaximumConnectionsSecond", @"4", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
-            @"MaximumLinks", @"100000", ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            @"MirroringDepth", @"9999", ^(httrackp *options, id value) {options->depth = [value intValue];}, @NO,
+            @"ExternalDepth", @"0", ^(httrackp *options, id value) {options->extdepth = [value intValue];}, @NO,
+            // @"UseMaximumHTMLSize", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
+            @"MaximumHTMLSize", @"-1", ^(httrackp *options, id value) {options->maxfile_html = [value intValue];}, @YES,
+            // @"UseMaximumNonHTMLSize", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
+            @"MaximumNonHTMLSize", @"-1", ^(httrackp *options, id value) {options->maxfile_nonhtml = [value intValue];}, @YES,
+            // @"UseMaximumOverallSize", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
+            @"MaximumOverallSize", @"-1", ^(httrackp *options, id value) {options->maxsite = [value intValue];}, @YES,
+            // @"UsePauseMilestone", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            @"PauseMilestoneBytes", @"-1", ^(httrackp *options, id value) {options->fragment = [value intValue];}, @NO,
+            // @"UseMaximumTime", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
+            @"MaximumTime", @"-1", ^(httrackp *options, id value) {options->maxtime = [value intValue];}, @YES,
+            @"MaximumTransferRate", @"25000", ^(httrackp *options, id value) {options->maxrate = [value intValue];}, @YES,
+            @"MaximumConnectionsSecond", @"4", ^(httrackp *options, id value) {options->maxsoc = [value intValue];}, @YES,
+            @"MaximumLinks", @"100000", ^(httrackp *options, id value) {options->maxlink = [value intValue];}, @NO,
             nil];
     
 }
@@ -384,8 +417,8 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 + (NSArray *)miscOptions { // Key - Default Value - Mutating Block - Alterable when Engine Runs (YES/NO - use -boolValue to check value)
     
     return [NSArray arrayWithObjects:
-            @"FollowRobots", [NSNumber numberWithInt:2], ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"CheckType", [NSNumber numberWithInt:1], ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
+            @"FollowRobots", [NSNumber numberWithInt:2], ^(httrackp *options, id value) {options->robots = [value intValue];}, @NO,
+            @"CheckType", [NSNumber numberWithInt:1], ^(httrackp *options, id value) {options->check_type = [value intValue];}, @NO,
             nil];
     
 }

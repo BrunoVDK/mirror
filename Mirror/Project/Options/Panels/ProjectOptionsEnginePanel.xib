@@ -13,11 +13,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe" userLabel="Engine Panel">
-            <rect key="frame" x="0.0" y="6" width="480" height="296"/>
+            <rect key="frame" x="0.0" y="-1" width="480" height="340"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <popUpButton toolTip="The number of connections the project can make." verticalHuggingPriority="750" tag="1" id="qAi-pf-IQ3">
-                    <rect key="frame" x="188" y="257" width="58" height="22"/>
+                    <rect key="frame" x="187" y="301" width="58" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="GPb-Kn-1MQ">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -40,7 +40,7 @@
                     </connections>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="505-62-7v3" customClass="ProjectOptionsLabel">
-                    <rect key="frame" x="21" y="235" width="65" height="14"/>
+                    <rect key="frame" x="106" y="279" width="65" height="14"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Timeout :" id="sY5-Rb-frZ">
                         <font key="font" metaFont="smallSystem"/>
@@ -49,7 +49,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="l4a-Sq-Lb0" customClass="ProjectOptionsLabel">
-                    <rect key="frame" x="55" y="262" width="160" height="14"/>
+                    <rect key="frame" x="54" y="306" width="160" height="14"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Number of connections :" id="DYV-f0-R6x">
                         <font key="font" metaFont="smallSystem"/>
@@ -58,7 +58,7 @@
                     </textFieldCell>
                 </textField>
                 <popUpButton toolTip="The number of retries after a timeout or non-fatal error." verticalHuggingPriority="750" tag="1" id="Vdc-Uv-2CL">
-                    <rect key="frame" x="401" y="228" width="60" height="22"/>
+                    <rect key="frame" x="315" y="276" width="60" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="65R-3I-NFB">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -77,7 +77,7 @@
                     </connections>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="SeL-YG-RtQ" customClass="ProjectOptionsLabel">
-                    <rect key="frame" x="354" y="233" width="55" height="14"/>
+                    <rect key="frame" x="268" y="280" width="55" height="14"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Retries :" id="VGe-jh-esn">
                         <font key="font" metaFont="smallSystem"/>
@@ -86,7 +86,7 @@
                     </textFieldCell>
                 </textField>
                 <button toolTip="Keep connections alive if possible." id="NC3-18-bTO">
-                    <rect key="frame" x="247" y="259" width="180" height="22"/>
+                    <rect key="frame" x="246" y="303" width="180" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Persistent connections (Keep-Alive)" bezelStyle="regularSquare" imagePosition="left" alignment="right" controlSize="mini" inset="2" id="USW-p5-wAn">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -97,7 +97,7 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="XE3-aS-UM6" customClass="ProjectOptionsLabel">
-                    <rect key="frame" x="49" y="206" width="117" height="14"/>
+                    <rect key="frame" x="111" y="214" width="117" height="14"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Min transfer rate :" id="bwx-Pd-e4Z">
                         <font key="font" metaFont="smallSystem"/>
@@ -106,7 +106,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="Igw-7a-Yt1" customClass="ProjectOptionsLabel">
-                    <rect key="frame" x="243" y="209" width="64" height="11"/>
+                    <rect key="frame" x="305" y="217" width="64" height="11"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="bytes/second" id="XhX-ey-BUO">
                         <font key="font" metaFont="miniSystem"/>
@@ -115,9 +115,9 @@
                     </textFieldCell>
                 </textField>
                 <textField toolTip="The number of seconds after which a non-responding link is shut down." focusRingType="none" verticalHuggingPriority="750" tag="1" id="nbN-2U-SSD">
-                    <rect key="frame" x="78" y="233" width="46" height="19"/>
+                    <rect key="frame" x="163" y="278" width="46" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="right" drawsBackground="YES" id="X4o-Yf-yJr">
+                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="right" drawsBackground="YES" id="X4o-Yf-yJr">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" localizesFormat="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="Grn-4u-4sn" customClass="IntegerFormatter">
                             <real key="minimum" value="0.0"/>
                             <real key="maximum" value="10000"/>
@@ -125,7 +125,7 @@
                                 <real key="inspectorSampleValue" value="1"/>
                             </metadata>
                         </numberFormatter>
-                        <font key="font" metaFont="smallSystem"/>
+                        <font key="font" metaFont="miniSystem"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -134,14 +134,14 @@
                     </connections>
                 </textField>
                 <textField toolTip="The minimum transfer rate a connection is supposed to maintain." focusRingType="none" verticalHuggingPriority="750" tag="1" id="73R-KV-CKZ">
-                    <rect key="frame" x="155" y="204" width="82" height="19"/>
+                    <rect key="frame" x="217" y="214" width="82" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="right" drawsBackground="YES" id="MbK-vH-cZj">
+                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="right" drawsBackground="YES" id="MbK-vH-cZj">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" localizesFormat="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="zg3-DT-pfY" customClass="IntegerFormatter">
                             <real key="minimum" value="0.0"/>
                             <real key="maximum" value="1000000"/>
                         </numberFormatter>
-                        <font key="font" metaFont="smallSystem"/>
+                        <font key="font" metaFont="miniSystem"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -150,7 +150,7 @@
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="d1H-Ra-gFT" customClass="ProjectOptionsLabel">
-                    <rect key="frame" x="125" y="238" width="42" height="11"/>
+                    <rect key="frame" x="210" y="281" width="42" height="11"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="seconds" id="WnU-Jb-S8J">
                         <font key="font" metaFont="miniSystem"/>
@@ -158,37 +158,15 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button toolTip="Abandon hosts after a timeout." tag="1" id="gJC-pr-q8V">
-                    <rect key="frame" x="185" y="232" width="140" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="Abandon hosts on timeout" bezelStyle="regularSquare" imagePosition="left" alignment="right" controlSize="mini" inset="2" id="u3T-7k-8J1">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="miniSystem"/>
-                    </buttonCell>
-                    <connections>
-                        <binding destination="-2" name="value" keyPath="self.project.options.AbandonTimeoutHosts" id="wXx-tQ-GNW"/>
-                    </connections>
-                </button>
-                <button toolTip="Abandon hosts that are too slow." tag="1" id="bSR-vX-bb2">
-                    <rect key="frame" x="320" y="206" width="112" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="Abandon slow hosts" bezelStyle="regularSquare" imagePosition="left" alignment="right" controlSize="mini" inset="2" id="ZMX-Lo-wWE">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="miniSystem"/>
-                    </buttonCell>
-                    <connections>
-                        <binding destination="-2" name="value" keyPath="self.project.options.AbandonSlowHosts" id="Oxk-8G-oRY"/>
-                    </connections>
-                </button>
                 <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="TaI-Cn-eKc">
-                    <rect key="frame" x="16" y="169" width="445" height="5"/>
+                    <rect key="frame" x="18" y="175" width="445" height="5"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
                 <textField toolTip="The number of bytes after which a project should pause." focusRingType="none" verticalHuggingPriority="750" id="lkP-Xv-BBr">
-                    <rect key="frame" x="200" y="180" width="116" height="16"/>
+                    <rect key="frame" x="190" y="188" width="120" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="right" drawsBackground="YES" id="Y6r-kp-2Jg">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" localizesFormat="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="dB3-0D-R20" customClass="IntegerFormatter">
@@ -207,7 +185,7 @@
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="viL-RZ-Sje" customClass="ProjectOptionsLabel">
-                    <rect key="frame" x="322" y="184" width="33" height="11"/>
+                    <rect key="frame" x="316" y="192" width="33" height="11"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="bytes" id="9MA-6W-Sb8">
                         <font key="font" metaFont="miniSystem"/>
@@ -216,7 +194,7 @@
                     </textFieldCell>
                 </textField>
                 <box autoresizesSubviews="NO" borderType="line" titlePosition="noTitle" id="j1q-56-egb">
-                    <rect key="frame" x="17" y="10" width="445" height="134"/>
+                    <rect key="frame" x="19" y="16" width="445" height="134"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView">
                         <rect key="frame" x="1" y="1" width="443" height="132"/>
@@ -525,7 +503,7 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="9jG-Ja-a6D" customClass="ProjectOptionsLabel">
-                    <rect key="frame" x="194" y="152" width="92" height="11"/>
+                    <rect key="frame" x="194" y="156" width="92" height="11"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Maximum ..." id="GyK-ef-4N2">
                         <font key="font" metaFont="smallSystem"/>
@@ -533,19 +511,47 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button id="y7E-B9-HAD">
-                    <rect key="frame" x="101" y="177" width="89" height="20"/>
+                <popUpButton toolTip="The number of retries after a timeout or non-fatal error." verticalHuggingPriority="750" tag="1" id="hre-A2-Tlp">
+                    <rect key="frame" x="156" y="242" width="263" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="Pause after :" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="A59-CH-OAJ">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="On timeout or when they're too slow" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="k6m-7r-bTu" id="WjT-jH-uIj">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystem"/>
-                    </buttonCell>
+                        <menu key="menu" id="78M-Ly-L2a">
+                            <items>
+                                <menuItem title="Never" id="lRD-2M-uuz">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="On timeout" id="fdS-0c-jrm"/>
+                                <menuItem title="When they're too slow" id="Cnn-y9-FRf"/>
+                                <menuItem title="On timeout or when they're too slow" state="on" id="k6m-7r-bTu"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.project.options.UsePauseMilestone" id="j8M-d5-lSJ"/>
+                        <binding destination="-2" name="selectedIndex" keyPath="self.project.options.AbandonHosts" id="sgG-8j-43W"/>
                     </connections>
-                </button>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="Prd-nL-lkn" customClass="ProjectOptionsLabel">
+                    <rect key="frame" x="62" y="247" width="91" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Abandon hosts :" id="Ssi-MA-pl1">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" id="bAN-9a-2s1" customClass="ProjectOptionsLabel">
+                    <rect key="frame" x="111" y="189" width="117" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Pause after :" id="6Rx-so-1Hs">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
-            <point key="canvasLocation" x="603" y="291"/>
+            <point key="canvasLocation" x="603" y="313"/>
         </customView>
     </objects>
 </document>

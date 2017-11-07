@@ -18,16 +18,16 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <popUpButton toolTip="When to check files for their type." verticalHuggingPriority="750" id="0HL-5R-aiF">
-                    <rect key="frame" x="293" y="187" width="123" height="22"/>
+                    <rect key="frame" x="302" y="187" width="123" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="4Ft-rz-x5x">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystem"/>
                         <menu key="menu" id="3oR-cB-2EA">
                             <items>
-                                <menuItem title="Always" id="r3G-d0-UFO"/>
-                                <menuItem title="If not known" id="4KD-Yy-uqf"/>
-                                <menuItem title="Never" id="Ugj-Bt-uET"/>
+                                <menuItem title="Never" id="r3G-d0-UFO"/>
+                                <menuItem title="All except /" id="4KD-Yy-uqf"/>
+                                <menuItem title="Always" id="Ugj-Bt-uET"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
@@ -36,16 +36,16 @@
                     </connections>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Xjr-HK-bw8" customClass="ProjectOptionsLabel">
-                    <rect key="frame" x="290" y="211" width="125" height="11"/>
+                    <rect key="frame" x="280" y="211" width="163" height="11"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Check document type" id="9ra-p0-OS3">
+                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Check document type if not known" id="9ra-p0-OS3">
                         <font key="font" metaFont="miniSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <popUpButton toolTip="How to treat the robots.txt file and the meta tags." verticalHuggingPriority="750" id="lHV-Gd-Lan">
-                    <rect key="frame" x="64" y="187" width="211" height="22"/>
+                    <rect key="frame" x="38" y="187" width="211" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="ciD-yI-hsV">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -64,7 +64,7 @@
                     </connections>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="OoI-Tb-FUf" customClass="ProjectOptionsLabel">
-                    <rect key="frame" x="69" y="211" width="205" height="11"/>
+                    <rect key="frame" x="43" y="211" width="205" height="11"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Follow robots.txt rules and robot meta tags" id="qsD-0T-Kj1">
                         <font key="font" metaFont="miniSystem"/>
@@ -80,7 +80,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <outlineView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="16" headerView="GYf-EJ-zQR" indentationPerLevel="16" outlineTableColumn="NrB-g9-4yE" id="S5p-qk-ZhA">
-                                <rect key="frame" x="0.0" y="0.0" width="238" height="117"/>
+                                <rect key="frame" x="0.0" y="0.0" width="436" height="18"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -99,7 +99,7 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                     </tableColumn>
-                                    <tableColumn identifier="Value" width="68" minWidth="40" maxWidth="1000" id="k3w-f3-7NF">
+                                    <tableColumn identifier="Value" width="70" minWidth="40" maxWidth="1000" id="k3w-f3-7NF">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Value">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>

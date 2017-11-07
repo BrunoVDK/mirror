@@ -17,12 +17,12 @@
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <popUpButton toolTip="The way the mirror is structured on disk." verticalHuggingPriority="750" id="wyf-ZY-jDD">
-                    <rect key="frame" x="52" y="54" width="375" height="22"/>
+                    <rect key="frame" x="28" y="54" width="425" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingMiddle" borderStyle="borderAndBezel" imageScaling="axesIndependently" inset="2" id="MBb-21-rbt">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingMiddle" borderStyle="borderAndBezel" imageScaling="axesIndependently" inset="2" autoenablesItems="NO" id="MBb-21-rbt">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystem"/>
-                        <menu key="menu" id="271-du-ELV">
+                        <menu key="menu" autoenablesItems="NO" id="271-du-ELV">
                             <items>
                                 <menuItem title="Site-structure" id="MSi-DQ-y9b">
                                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -101,12 +101,12 @@
                     </textFieldCell>
                 </textField>
                 <popUpButton toolTip="The format of file names in the mirror." verticalHuggingPriority="750" id="4Rc-hi-950">
-                    <rect key="frame" x="52" y="17" width="180" height="22"/>
+                    <rect key="frame" x="28" y="17" width="224" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="LWB-1f-GQt">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="axesIndependently" inset="2" autoenablesItems="NO" id="LWB-1f-GQt">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystem"/>
-                        <menu key="menu" id="O2W-3g-YA9">
+                        <menu key="menu" autoenablesItems="NO" id="O2W-3g-YA9">
                             <items>
                                 <menuItem title="Long names" id="obo-1d-usI"/>
                                 <menuItem title="DOS-83 conversion" id="dlf-RB-wNo"/>
@@ -119,7 +119,7 @@
                     </connections>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="2Vs-1V-kfo" customClass="ProjectOptionsLabel">
-                    <rect key="frame" x="87" y="38" width="110" height="11"/>
+                    <rect key="frame" x="92" y="38" width="110" height="11"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="File names" id="box-P0-dVA">
                         <font key="font" metaFont="miniSystem"/>
@@ -128,17 +128,17 @@
                     </textFieldCell>
                 </textField>
                 <popUpButton toolTip="How links are rendered." verticalHuggingPriority="750" id="FQt-HK-ndM">
-                    <rect key="frame" x="247" y="17" width="180" height="22"/>
+                    <rect key="frame" x="273" y="17" width="180" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="gyn-ei-t7a">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" autoenablesItems="NO" id="gyn-ei-t7a">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystem"/>
-                        <menu key="menu" id="lC9-Tv-uIt">
+                        <menu key="menu" autoenablesItems="NO" id="lC9-Tv-uIt">
                             <items>
-                                <menuItem title="Relative links" id="KYE-Lk-gHs"/>
                                 <menuItem title="Absolute links" id="kvf-nK-Np3"/>
-                                <menuItem title="Original links" id="bYd-Gx-xcf"/>
+                                <menuItem title="Relative links" id="KYE-Lk-gHs"/>
                                 <menuItem title="Absolute URI links" id="fFS-Pg-HVq"/>
+                                <menuItem title="Original links" id="bYd-Gx-xcf"/>
                                 <menuItem title="Transparent proxy links" id="Kof-0D-57H"/>
                             </items>
                         </menu>

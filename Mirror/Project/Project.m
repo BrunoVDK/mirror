@@ -145,7 +145,6 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
         return false;
     
     NSString *address = [url URL].absoluteString;
-    NSLog(@"%@", address);
     BOOL success = hts_cancel_file_push(self.engineOptions, [address UTF8String]);
     if (success)
         [url setCancelled:true];

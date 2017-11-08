@@ -51,7 +51,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView focusRingType="none" appearanceType="vibrantLight" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="16" id="qs0-sQ-ClX" customClass="ProjectMenuView">
-                                            <rect key="frame" x="0.0" y="0.0" width="125" height="19"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="123" height="19"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="4" height="3"/>
                                             <color key="backgroundColor" red="1" green="0.070236308710000001" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -153,7 +153,7 @@
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn identifier="Project" width="271" minWidth="40" maxWidth="9999" id="Pqg-6v-gdm" userLabel="Project">
+                                    <tableColumn identifier="Project" width="289" minWidth="40" maxWidth="9999" id="Pqg-6v-gdm" userLabel="Project">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -181,7 +181,7 @@
                                         </buttonCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
                                     </tableColumn>
-                                    <tableColumn identifier="Cancel" editable="NO" width="13" minWidth="13" maxWidth="13" id="iW1-w7-r1i" userLabel="Cancel">
+                                    <tableColumn identifier="Cancel" editable="NO" width="13" minWidth="13" maxWidth="13" hidden="YES" id="iW1-w7-r1i" userLabel="Cancel">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -363,7 +363,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" selectionHighlightStyle="none" autosaveColumns="NO" typeSelect="NO" headerView="Vca-44-Rjb" id="mHG-Q3-Mc8" userLabel="Files List View" customClass="WindowAdaptedTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="315" height="19"/>
+                                <rect key="frame" x="0.0" y="0.0" width="330" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="1" height="2"/>
                                 <color key="backgroundColor" red="1" green="0.15845071569999999" blue="0.1098531936" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -378,7 +378,7 @@
                                         </tableHeaderCell>
                                         <imageCell key="dataCell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="Ffo-VF-WuY" customClass="WindowAdaptedImageCell"/>
                                     </tableColumn>
-                                    <tableColumn identifier="fileName" editable="NO" width="164" minWidth="10" maxWidth="3.4028234663852886e+38" id="yPe-pG-Vg4">
+                                    <tableColumn identifier="fileName" editable="NO" width="149" minWidth="10" maxWidth="3.4028234663852886e+38" id="yPe-pG-Vg4">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="File">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>

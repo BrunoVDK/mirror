@@ -83,7 +83,7 @@ EFVudGl0bGVkIFByb2plY3Q
                                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                                                             <tableColumns>
-                                                                                                <tableColumn identifier="Project" width="341" minWidth="40" maxWidth="9999" id="oSR-xS-rgg" userLabel="Project">
+                                                                                                <tableColumn identifier="Project" width="359" minWidth="40" maxWidth="9999" id="oSR-xS-rgg" userLabel="Project">
                                                                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                                                                         <font key="font" metaFont="smallSystem"/>
                                                                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -107,7 +107,7 @@ EFVudGl0bGVkIFByb2plY3Q
                                                                                                     </buttonCell>
                                                                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
                                                                                                 </tableColumn>
-                                                                                                <tableColumn identifier="Cancel" editable="NO" width="13" minWidth="13" maxWidth="13" id="uhD-jp-jV0" userLabel="Cancel">
+                                                                                                <tableColumn identifier="Cancel" editable="NO" width="13" minWidth="13" maxWidth="13" hidden="YES" id="uhD-jp-jV0" userLabel="Cancel">
                                                                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center">
                                                                                                         <font key="font" metaFont="smallSystem"/>
                                                                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>

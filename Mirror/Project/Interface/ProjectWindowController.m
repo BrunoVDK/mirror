@@ -1699,12 +1699,12 @@
     for (NSTableColumn *column in fileListView.tableColumns) {
         identifier = column.identifier;
         if ([identifier isEqualToString:@"Action"]) {
-            if (showSockets) // Set up 'cancel' action (argument is the socket itself)
-                [column bind:NSArgumentBinding toObject:contentController withKeyPath:@"arrangedObjects" options:nil];
             [column bind:NSTargetBinding
-                toObject:(showSockets ? self : contentController)
-             withKeyPath:(showSockets ? @"project" : @"arrangedObjects")
-                 options:[NSDictionary dictionaryWithObjectsAndKeys:(showSockets ? @"cancel:" : @"revealInFinder:"), NSSelectorNameBindingOption, nil]];
+                toObject:contentController
+             withKeyPath:@"arrangedObjects"
+                 options:[NSDictionary dictionaryWithObjectsAndKeys:(showSockets ? @"cancelInProject:" : @"revealInFinder:"), NSSelectorNameBindingOption, nil]];
+            if (showSockets) // Set up 'cancel' action (argument is the socket itself)
+                [column bind:NSArgumentBinding toObject:self withKeyPath:@"project" options:nil];
         }
         else // This also takes care of sorting
             [column bind:NSValueBinding

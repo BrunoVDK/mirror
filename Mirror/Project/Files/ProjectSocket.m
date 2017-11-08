@@ -6,6 +6,7 @@
 //  Copyright (c) 2017 BV. All rights reserved.
 //
 
+#import "Project.h"
 #import "ProjectSocket.h"
 
 #pragma mark Project Socket
@@ -48,6 +49,14 @@
 - (id)copyWithZone:(NSZone *)zone {
     
     return [ProjectSocket socketWithAddress:_address file:_file size:_size totalSize:_totalSize];
+    
+}
+
+#pragma mark Interaction
+
+- (void)cancelInProject:(Project *)project {
+    
+    [project cancelSocket:self];
     
 }
 

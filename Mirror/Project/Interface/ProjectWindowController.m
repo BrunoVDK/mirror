@@ -330,18 +330,19 @@
 
 - (void)setDocument:(Project *)project {
     
-    if (project && self.document != project) {
+    if (self.document != project) {
         
-        project.delegate = self;
-        
+        if (project)
+            project.delegate = self;
+            
         [super setDocument:project];
-        
+            
         [OPTIONS setProject:self.project];
         [NOTIFICATIONS setProject:self.project];
         [STATISTICS setProject:self.project];
         
     }
-    
+        
 }
 
 - (IBAction)showOptions:(id)sender {
@@ -411,16 +412,6 @@
 - (IBAction)hideSearch:(id)sender {
     
     // Abstract method
-    
-}
-
-#pragma mark Memory Management
-
-- (void)close {
-    
-    [STATISTICS setProject:nil];
-    
-    [super close];
     
 }
 
@@ -562,6 +553,14 @@
     
 }
 
+- (void)close {
+    
+    [self invalidateTimer];
+    
+    [super close];
+    
+}
+
 #pragma mark Interface Updates
 
 - (void)updateInterface {
@@ -574,8 +573,9 @@
     
     // [self updateRelevantURLs];
     // [self updateStatus];
+
     [self updateTransferRate];
-    if (self.project.engineOptions->stats.stat_timestart != 0) {
+    if (self.project && self.project.engineOptions->stats.stat_timestart != 0) {
         long long seconds = time(NULL) - self.project.engineOptions->stats.stat_timestart;
         [self.project.statistics setValue:[NSString elapsedTimeForSeconds:seconds] forStatisticOfType:ProjectStatisticTime];
     }
@@ -615,18 +615,20 @@
 
 - (void)updateTransferRate {
     
-    if ([self.window isMainWindow]
-        && [PREFERENCES boolForKey:ShowRateInDock]
-        && [self.project isMirroring]
-        && ![self.project isPaused]) {
-        NSString *rate = (NSString *)[self.project.statistics valueForStatisticOfType:ProjectStatisticTransferRate];
-        if (!rate)
-            rate = @"-- / s";
-        [[BadgeView sharedView] setMessage:rate];
-        [[BadgeView sharedView] setVisible:true];
+    if (![[[BadgeView sharedView] message] hasPrefix:@"Closing"]) {
+        if ([self.window isMainWindow]
+            && [PREFERENCES boolForKey:ShowRateInDock]
+            && [self.project isMirroring]
+            && ![self.project isPaused]) {
+            NSString *rate = (NSString *)[self.project.statistics valueForStatisticOfType:ProjectStatisticTransferRate];
+            if (!rate)
+                rate = @"-- / s";
+            [[BadgeView sharedView] setMessage:rate];
+            [[BadgeView sharedView] setVisible:true];
+        }
+        else
+            [[BadgeView sharedView] setVisible:false];
     }
-    else
-        [[BadgeView sharedView] setVisible:false];
     
 }
 
@@ -969,13 +971,14 @@
 }
 
 - (void)windowWillClose:(NSNotification *)notification {
-
-    [super windowWillClose:notification];
-
+    
     if (notification.object == self.window) {
         [projectListController unbind:@"contentArray"]; // Or there will be complaints about a deallocated project being observed
-        [self invalidateTimer];
     }
+    
+    [self invalidateTimer];
+    
+    [super windowWillClose:notification];
     
 }
 
@@ -1417,6 +1420,7 @@
 
 - (void)dealloc {
     
+    [self invalidateTimer];
     [self stopEditingDummy];
     
     [PREFERENCES removeObserver:self forKeyPath:RenderIconsInCircles];
@@ -1489,6 +1493,13 @@
     }
     
     return [super validateMenuItem:menuItem];
+    
+}
+
+- (void)stopEditingDummy {
+    
+    [super stopEditingDummy];
+    [menuView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:0] columnIndexes:[NSIndexSet indexSetWithIndex:2]];
     
 }
 
@@ -1976,6 +1987,8 @@
 - (void)dealloc {
     
     [PREFERENCES removeObserver:self forKeyPath:MainWindowTheme];
+    
+    [menuView release];
     
     if (headerView)
         [headerView release];

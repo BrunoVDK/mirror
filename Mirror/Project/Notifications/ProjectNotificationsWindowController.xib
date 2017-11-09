@@ -124,7 +124,12 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="-2" name="value" keyPath="self.project.notifications.status" id="BJt-MZ-e4D"/>
+                            <binding destination="-2" name="value" keyPath="self.project.notifications.status" id="rfZ-DU-izI">
+                                <dictionary key="options">
+                                    <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                </dictionary>
+                            </binding>
                         </connections>
                     </textField>
                 </subviews>

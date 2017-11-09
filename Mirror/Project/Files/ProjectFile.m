@@ -30,6 +30,28 @@
     
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    
+    if (self = [super init]) {
+        
+        _address = [[aDecoder decodeObjectForKey:@"Address"] retain];
+        _path = [[aDecoder decodeObjectForKey:@"Path"] retain];
+        _size = [aDecoder decodeInt64ForKey:@"Size"];
+        
+    }
+    
+    return self;
+    
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    
+    [aCoder encodeObject:_address forKey:@"Address"];
+    [aCoder encodeObject:_path forKey:@"Path"];
+    [aCoder encodeInt64:_size forKey:@"Size"];
+    
+}
+
 #pragma mark Properties
 
 - (NSImage *)icon {

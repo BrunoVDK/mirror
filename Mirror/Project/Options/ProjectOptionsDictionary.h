@@ -29,11 +29,10 @@ FOUNDATION_EXPORT NSString *const DefaultPresetPreferencesKey; // The preference
  *
  * This class also takes care of presets saved in the user defaults.
  */
-@interface ProjectOptionsDictionary : NSObject {
+@interface ProjectOptionsDictionary : NSObject<NSCoding> {
     
     Project *_project;
     NSMutableDictionary *optionsDictionary; // The dictionary this instance proxies to (private)
-    NSMutableArray *filter;
     NSString *_presetIdentifier;
     
 }
@@ -123,6 +122,13 @@ FOUNDATION_EXPORT NSString *const DefaultPresetPreferencesKey; // The preference
  * @return A new options dictionary attached to the given project, with the same values as the given dictionary.
  */
 - (id)initWithProject:(Project *)project usingDictionary:(ProjectOptionsDictionary *)dictionary;
+
+/**
+ * Adopt the values in the given options dictionary.
+ *
+ * @param dictionary The dictionary to take values from.
+ */
+- (void)adoptDictionary:(ProjectOptionsDictionary *)dictionary;
 
 /**
  * Checks whether or not the given preset name is a valid name for saving this options dictionary as a preset.

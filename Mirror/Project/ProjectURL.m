@@ -99,7 +99,6 @@
         NSURL *fetchURL = (self.URL.pathExtension == nil ? self.URL : [NSURL URLWithString:[NSString stringWithFormat:@"%@://%@", self.URL.scheme, self.URL.host]]);
         if (fetchURL == nil)
             fetchURL = self.URL;
-        NSLog(@"%@", self.URL);
         HTMLDocument *document = [[HTMLDocument alloc] initWithContentsOfURL:fetchURL error:&error];
         
         if (!error) {

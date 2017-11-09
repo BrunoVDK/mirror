@@ -20,12 +20,12 @@
                 <popUpButton toolTip="When to check files for their type." verticalHuggingPriority="750" id="0HL-5R-aiF">
                     <rect key="frame" x="302" y="187" width="123" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="4Ft-rz-x5x">
+                    <popUpButtonCell key="cell" type="push" title="Never" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="r3G-d0-UFO" id="4Ft-rz-x5x">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystem"/>
                         <menu key="menu" id="3oR-cB-2EA">
                             <items>
-                                <menuItem title="Never" id="r3G-d0-UFO"/>
+                                <menuItem title="Never" state="on" id="r3G-d0-UFO"/>
                                 <menuItem title="All except /" id="4KD-Yy-uqf"/>
                                 <menuItem title="Always" id="Ugj-Bt-uET"/>
                             </items>
@@ -80,7 +80,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <outlineView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="16" headerView="GYf-EJ-zQR" indentationPerLevel="16" outlineTableColumn="NrB-g9-4yE" id="S5p-qk-ZhA">
-                                <rect key="frame" x="0.0" y="0.0" width="436" height="18"/>
+                                <rect key="frame" x="0.0" y="0.0" width="438" height="18"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>

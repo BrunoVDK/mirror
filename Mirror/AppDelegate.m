@@ -49,6 +49,8 @@
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
     
     if ([[[NSDocumentController sharedDocumentController] documents] count] > 0) {
+        [[BadgeView sharedView] setMessage:@"Closing"];
+        [[BadgeView sharedView] setVisible:true];
         [[NSDocumentController sharedDocumentController] closeAllDocumentsWithDelegate:self
                                                                    didCloseAllSelector:@selector(documentController:didCloseAll:contextInfo:)
                                                                            contextInfo:nil];

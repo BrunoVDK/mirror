@@ -43,7 +43,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="125" height="210"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView focusRingType="none" borderType="none" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" id="cSq-eB-Rnt">
+                            <scrollView focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" id="cSq-eB-Rnt">
                                 <rect key="frame" x="0.0" y="0.0" width="125" height="180"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <clipView key="contentView" focusRingType="none" drawsBackground="NO" copiesOnScroll="NO" id="hFd-Pb-K5r">
@@ -51,14 +51,14 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView focusRingType="none" appearanceType="vibrantLight" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="16" id="qs0-sQ-ClX" customClass="ProjectMenuView">
-                                            <rect key="frame" x="0.0" y="0.0" width="123" height="19"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="126" height="19"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="4" height="3"/>
                                             <color key="backgroundColor" red="1" green="0.070236308710000001" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn identifier="Title" editable="NO" width="48" minWidth="30" maxWidth="1000" id="QBG-Tk-2lP">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center">
+                                                <tableColumn identifier="Title" editable="NO" width="48" minWidth="48" maxWidth="1000" id="QBG-Tk-2lP">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="right">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -69,7 +69,7 @@
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </tableColumn>
-                                                <tableColumn identifier="Button" editable="NO" width="14" minWidth="14" maxWidth="16" id="b5c-bB-Bqr">
+                                                <tableColumn identifier="Button" editable="NO" width="14" minWidth="14" maxWidth="14" id="b5c-bB-Bqr">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -83,7 +83,7 @@
                                                         </connections>
                                                     </buttonCell>
                                                 </tableColumn>
-                                                <tableColumn identifier="Caption" editable="NO" width="49" minWidth="36" maxWidth="3.4028234663852886e+38" id="gkO-1F-Kja">
+                                                <tableColumn identifier="Caption" editable="NO" width="52" minWidth="36" maxWidth="3.4028234663852886e+38" id="gkO-1F-Kja">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -120,7 +120,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="QJX-qs-zH4"/>
             </connections>
-            <point key="canvasLocation" x="664" y="532"/>
+            <point key="canvasLocation" x="1231" y="548"/>
         </window>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="lgp-qS-iTA" userLabel="Links Panel">
@@ -363,7 +363,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" selectionHighlightStyle="none" autosaveColumns="NO" typeSelect="NO" headerView="Vca-44-Rjb" id="mHG-Q3-Mc8" userLabel="Files List View" customClass="WindowAdaptedTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="330" height="19"/>
+                                <rect key="frame" x="0.0" y="0.0" width="315" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="1" height="2"/>
                                 <color key="backgroundColor" red="1" green="0.15845071569999999" blue="0.1098531936" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -378,7 +378,7 @@
                                         </tableHeaderCell>
                                         <imageCell key="dataCell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="Ffo-VF-WuY" customClass="WindowAdaptedImageCell"/>
                                     </tableColumn>
-                                    <tableColumn identifier="fileName" editable="NO" width="149" minWidth="10" maxWidth="3.4028234663852886e+38" id="yPe-pG-Vg4">
+                                    <tableColumn identifier="fileName" editable="NO" width="164" minWidth="10" maxWidth="3.4028234663852886e+38" id="yPe-pG-Vg4">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="File">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>

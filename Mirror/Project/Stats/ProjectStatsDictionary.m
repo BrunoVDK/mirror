@@ -10,6 +10,7 @@
 #import "NSString+Additions.h"
 #import "Project.h"
 #import "ProjectFile.h"
+#import "ProjectNotification.h"
 #import "ProjectStatsDictionary.h"
 #import "WindowAdaptedCell.h"
 #include "VerticallyCenteredTextFieldCell.h"
@@ -58,7 +59,7 @@ enum {
 
 #pragma mark - Project Statistic (Private Helper Class)
 
-@interface ProjectStat : NSObject {
+@interface ProjectStat : NSObject<NSCoding> {
     
     NSInteger _type;
     id _value;
@@ -143,15 +144,7 @@ enum {
         for (int type=0 ; type<ProjectStatisticFileCount ; type++)
             [fileTypes addObject:[[ProjectStatFileType alloc] initWithType:type value:@"--"]];
         
-        if (dictionary) { // Read given dictionary and copy its values into the newly created dictionary
-            
-            for (int type=0 ; type<ProjectStatisticCount ; type++)
-                [self setValue:[dictionary valueForStatisticOfType:(ProjectStatisticType)type] forStatisticOfType:(ProjectStatisticType)type];
-            
-            for (int type=0 ; type<ProjectStatisticCount ; type++)
-                [(ProjectStatFileType *)[fileTypes objectAtIndex:type] setValue:[NSNumber numberWithInt:[dictionary nbOfFilesOfType:type]]];
-            
-        }
+        [self adoptDictionary:dictionary]; // Read given dictionary and copy its values into the newly created dictionary
                 
         _project = project; // Assign
         
@@ -160,9 +153,49 @@ enum {
             [pieGraphView addSliceWithWeight:0];
         [pieGraphView adoptTheme:PieGraphThemeClassic];
         
+        [(ProjectStat *)[statistics objectAtIndex:ProjectStatisticWarnings] setValue:[NSNumber numberWithInt:0]];
+        [(ProjectStat *)[statistics objectAtIndex:ProjectStatisticErrors] setValue:[NSNumber numberWithInt:0]];
+        [(ProjectStat *)[statistics objectAtIndex:ProjectStatisticInfoMessages] setValue:[NSNumber numberWithInt:0]];
+        
     }
     
     return self;
+    
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+
+    if (self = [self init]) {
+        
+        [statistics release];
+        [fileTypes release];
+        statistics = [[aDecoder decodeObjectForKey:@"Statistics"] mutableCopy];
+        fileTypes = [[aDecoder decodeObjectForKey:@"FileTypes"] mutableCopy];
+        
+    }
+    
+    return self;
+    
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    
+    [aCoder encodeObject:statistics forKey:@"Statistics"];
+    [aCoder encodeObject:fileTypes forKey:@"FileTypes"];
+    
+}
+
+- (void)adoptDictionary:(ProjectStatsDictionary *)dictionary {
+    
+    if (dictionary) {
+        
+        for (int type=0 ; type<ProjectStatisticCount ; type++)
+            [self setValue:[dictionary valueForStatisticOfType:(ProjectStatisticType)type] forStatisticOfType:(ProjectStatisticType)type];
+        
+        for (int type=0 ; type<ProjectStatisticFileCount ; type++)
+            [(ProjectStatFileType *)[fileTypes objectAtIndex:type] setValue:[NSNumber numberWithInt:[dictionary nbOfFilesOfType:type]]];
+        
+    }
     
 }
 
@@ -226,6 +259,24 @@ enum {
         
         [_outlineView reloadData];
         
+    }
+    
+}
+
+- (void)registerNotification:(ProjectNotification *)notification {
+    
+    switch (notification.type) {
+        case ProjectNotificationWarning:
+            [(ProjectStat *)[statistics objectAtIndex:ProjectStatisticWarnings] incrementValue];
+            break;
+        case ProjectNotificationError:
+            [(ProjectStat *)[statistics objectAtIndex:ProjectStatisticErrors] incrementValue];
+            break;
+        case ProjectNotificationUpdate:
+            [(ProjectStat *)[statistics objectAtIndex:ProjectStatisticInfoMessages] incrementValue];
+            break;
+        default:
+            break;
     }
     
 }
@@ -437,6 +488,24 @@ enum {
     }
     
     return self;
+    
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    
+    if ([super init]) {
+        _type = [aDecoder decodeIntegerForKey:@"type"];
+        _value = [[aDecoder decodeObjectForKey:@"value"] retain];
+    }
+    
+    return self;
+    
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    
+    [aCoder encodeInteger:_type forKey:@"type"];
+    [aCoder encodeObject:_value forKey:@"value"];
     
 }
 

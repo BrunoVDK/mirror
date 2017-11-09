@@ -161,11 +161,10 @@
         [NOTIFICATION_CENTER removeObserver:self name:ProjectOptionsDictionaryWillChange object:_project.options];
         
         _project = project; // Assign
+        for (ProjectOptionsPanelController *panel in self.panelControllers)
+            [panel setProject:project]; // Update panels
         
-        if (project) {
-            
-            for (ProjectOptionsPanelController *panel in self.panelControllers)
-                [panel setProject:project]; // Update panels
+        if (project) {            
             
             NSMenuItem *newSelectedItem = [presetMenu itemWithTitle:PRESET_IDENTIFIER];
             if (!newSelectedItem)

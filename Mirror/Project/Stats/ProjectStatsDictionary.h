@@ -60,7 +60,7 @@ enum {
     ProjectStatisticCount,
 } typedef ProjectStatisticType;
 
-@class Project, ProjectFile, ProjectStatsFileTypeCell;
+@class Project, ProjectFile, ProjectNotification, ProjectStatsFileTypeCell;
 
 /**
  * The `ProjectStatsDictionary` class keeps track of a project's statistics.
@@ -68,7 +68,7 @@ enum {
  * This class conforms to the `NSOutlineViewDataSource` protocol so that the dictionary can readily
  *  be displayed in an `NSOutlineView`.
  */
-@interface ProjectStatsDictionary : NSObject <NSOutlineViewDataSource, NSOutlineViewDelegate> {
+@interface ProjectStatsDictionary : NSObject <NSCoding, NSOutlineViewDataSource, NSOutlineViewDelegate> {
     
     Project *_project;
     
@@ -111,6 +111,13 @@ enum {
 - (id)initWithProject:(Project *)project usingDictionary:(ProjectStatsDictionary *)dictionary;
 
 /**
+ * Adopt the values in the given stats dictionary.
+ *
+ * @param dictionary The dictionary to take values from.
+ */
+- (void)adoptDictionary:(ProjectStatsDictionary *)dictionary;
+
+/**
  * Return the value for the statistic of the given type.
  *
  * @param type The type of the statistic whose value is to be mutated.
@@ -139,5 +146,12 @@ enum {
  * @param file The project file to take into account.
  */
 - (void)registerFile:(ProjectFile *)file;
+
+/**
+ * Register the given notification.
+ *
+ * @param notification The notification to register.
+ */
+- (void)registerNotification:(ProjectNotification *)notification;
 
 @end

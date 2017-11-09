@@ -21,7 +21,10 @@
     [newWindow invalidateCursorRectsForView:self];
     
     trackingArea = [[NSTrackingArea alloc] initWithRect:NSZeroRect
-                                                options:(NSTrackingMouseMoved | NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways | NSTrackingInVisibleRect)
+                                                options:(NSTrackingMouseMoved
+                                                         | NSTrackingMouseEnteredAndExited
+                                                         | NSTrackingActiveAlways
+                                                         | NSTrackingInVisibleRect)
                                                   owner:self
                                                userInfo:nil];
     [self addTrackingArea:trackingArea];
@@ -32,6 +35,8 @@
                 [NSColor colorWithDeviceRed:0.90 green:0.90 blue:0.90 alpha:0.8], 0.0,
                 [NSColor colorWithDeviceRed:0.80 green:0.80 blue:0.80 alpha:0.8], 1.0,
                 nil];
+    
+    [self reloadData];
     
 }
 
@@ -75,7 +80,6 @@
     
     if (row != self.hoveredRow) {
         _hoveredRow = row;
-        [self reloadData];
         [self reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:self.selectedRow] columnIndexes:[self columnIndexesInRect:[self visibleRect]]];
     }
     

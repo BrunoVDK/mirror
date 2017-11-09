@@ -485,9 +485,61 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
         
         _project = project;
         
+        if (project) {
+            NSArray *designOptions = [ProjectOptionsDictionary designOptions];
+            NSString *optionKey = nil;
+            for (int i=0 ; i<[designOptions count] ; i+=4) {
+                optionKey = [designOptions objectAtIndex:i];
+                [self setValue:[self valueForKey:optionKey] forKey:optionKey];
+            }
+        }
+        
     }
     
     return self;
+    
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    
+    if (self = [self init]) {
+        
+        [optionsDictionary release];
+        [_presetIdentifier release];
+        optionsDictionary = [[aDecoder decodeObjectForKey:@"Options"] mutableCopy];
+        _presetIdentifier = [[aDecoder decodeObjectForKey:@"Preset"] mutableCopy];
+        
+    }
+    
+    return self;
+    
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    
+    [aCoder encodeObject:optionsDictionary forKey:@"Options"];
+    [aCoder encodeObject:_presetIdentifier forKey:@"Preset"];
+    
+}
+
+- (void)adoptDictionary:(ProjectOptionsDictionary *)dictionary {
+    
+    if (dictionary) {
+        
+        for (NSString *optionKey in [dictionary customisedOptionKeys])
+            [optionsDictionary setObject:[dictionary valueForKey:optionKey] forKey:optionKey];
+        
+        NSString *dictionaryPresetName = [dictionary presetName];
+        if (!dictionaryPresetName
+            || dictionaryPresetName.length < 1
+            || [dictionaryPresetName isEqualToString:CustomPresetName])
+            _presetIdentifier = [CustomPresetName copy];
+        else if ([[ProjectOptionsDictionary savedPresetNames] containsObject:dictionaryPresetName])
+            _presetIdentifier = [dictionaryPresetName copy];
+        else
+            [[NSString stringWithFormat:@"%@ (%@)", CustomPresetName, dictionaryPresetName] copy];
+        
+    }
     
 }
 

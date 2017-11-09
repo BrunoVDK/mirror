@@ -13,7 +13,7 @@
  *
  *  It has a source address, a path (relative location on disk), a size and a progress value.
  */
-@interface ProjectFile : NSObject {
+@interface ProjectFile : NSObject<NSCoding> {
     
     NSString *_address, *_path;
     unsigned long long _size;

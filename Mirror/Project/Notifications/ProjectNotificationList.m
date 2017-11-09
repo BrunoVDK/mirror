@@ -104,17 +104,17 @@
 
 #pragma mark Mutating
 
-- (void)add:(id)object {
+- (void)addObject:(id)object {
     
     if ([object isMemberOfClass:[ProjectNotification class]]) {
         
         if ([self count] > maximumCapacity) {
             [self remove:[(NSMutableArray *)self.content firstObject]];
-            [super add:object];
+            [super addObject:object];
         }
         else {
             [self willChangeValueForKey:@"status"];
-            [super add:object];
+            [super addObject:object];
             [self didChangeValueForKey:@"status"];
         }
         

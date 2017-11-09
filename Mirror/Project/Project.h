@@ -54,6 +54,7 @@
     
     // Flags
     BOOL _shouldCancel, _started, _completed, _writingPermission;
+    NSInvocation *closeInvocation;
     
 }
 

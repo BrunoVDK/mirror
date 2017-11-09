@@ -80,17 +80,18 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     
     self = [super init]; // "If you override init, make sure that your override never returns nil." - Apple docs
     
+    closeInvocation = nil;
+    
     _URLs = [NSMutableArray new];
     _addURLBuffer = [[CircularBuffer alloc] initWithCapacity:MAX_URLS];
     _cancelURLBuffer = [[CircularBuffer alloc] initWithCapacity:MAX_URLS];
     
+    engineOptions = hts_create_opt();
+    // assert(engineOptions->size_httrackp == sizeof(httrackp));
     _options = [[ProjectOptionsDictionary alloc] initWithProject:self]; // A new dictionary means that the default options are used (options are set when reading a document)
     filters = [NSMutableArray new];
-    engineOptions = hts_create_opt();
-    assert(engineOptions->size_httrackp == sizeof(httrackp));
     
-    _statistics = [ProjectStatsDictionary new];
-    
+    _statistics = [[ProjectStatsDictionary alloc] initWithProject:self];
     _files = [ProjectFileList new];
     _sockets = [ProjectSocketList new];
     _notifications = [ProjectNotificationList new];
@@ -206,7 +207,11 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     _completed = [[properties objectForKey:@"Completed"] boolValue];
     for (ProjectURL *url in [properties objectForKey:@"URLs"])
         [[self URLs] addObject:url];
-    
+    [_statistics adoptDictionary:[properties objectForKey:@"Statistics"]];
+    [_options adoptDictionary:[properties objectForKey:@"Options"]];
+    if (filters)
+        [filters release];
+    filters = [[properties objectForKey:@"Filters"] retain];
     if (_files)
         [_files release];
     _files = [[properties objectForKey:@"Files"] retain];
@@ -221,7 +226,11 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     [[self windowController] updateInterface];
     
     // Start mirroring
-    [self mirror];
+    if (_completed) {
+        [self.delegate projectDidEnd:self error:@""];
+    }
+    else
+        [self mirror];
     
     return true;
     
@@ -230,16 +239,57 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError {
     
     NSDictionary *properties = [NSDictionary dictionaryWithObjectsAndKeys:
-                                // self.options, @"Options", // Keeps track of preset identifier
-                                // self.statistics, @"Statistics", // Keeps track of all stats except number of files for each type
+                                // Keeps track of preset identifier
+                                self.options, @"Options",
+                                // Keeps track of all stats except number of files for each type
+                                self.statistics, @"Statistics",
                                 _files, @"Files",
                                 _notifications, @"Notifications",
-                                [NSNumber numberWithBool:_completed], @"Completed", // Avoid continuing a finished project
+                                // Avoid continuing a finished project
+                                [NSNumber numberWithBool:_completed], @"Completed",
                                 bookmarkData, @"BookmarkData",
                                 self.URLs, @"URLs",
                                 nil];
     
     return [NSKeyedArchiver archivedDataWithRootObject:properties];
+    
+}
+
+- (void)saveDocument:(id)sender {
+    
+    NSString *fileName = [NSString stringWithFormat:@"%@.%@",self.exportDirectory.lastPathComponent,DOCUMENT_EXTENSION];
+    self.fileURL = [self.exportDirectory URLByAppendingPathComponent:fileName];
+    self.fileType  = DOCUMENT_TYPE;
+    [self saveToURL:self.fileURL
+             ofType:self.fileType
+   forSaveOperation:NSSaveOperation
+  completionHandler:^(NSError *error) {}];
+    
+}
+
+- (void)close {
+    
+    [self saveDocument:self];
+    [super close];
+    
+}
+
+- (void)canCloseDocumentWithDelegate:(id)delegate shouldCloseSelector:(SEL)shouldCloseSelector contextInfo:(void *)contextInfo {
+    
+    // http://stackoverflow.com/questions/34032032/how-can-you-implement-the-nsdocument-method-canclosedocumentwithdelegateshould
+    BOOL shouldClose = true;
+    [closeInvocation release];
+    closeInvocation = [[NSInvocation invocationWithMethodSignature:[delegate methodSignatureForSelector:shouldCloseSelector]] retain];
+    closeInvocation.target = delegate;
+    closeInvocation.selector = shouldCloseSelector;
+    [closeInvocation setArgument:&self atIndex:2]; // Index 0 = target, Index 1 = selector
+    [closeInvocation setArgument:&shouldClose atIndex:3];
+    [closeInvocation setArgument:&contextInfo atIndex:4];
+    
+    if (self.isMirroring)
+        self.shouldCancel = true;
+    else
+        [closeInvocation invoke];
     
 }
 
@@ -296,7 +346,7 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
         
     }
     
-    _windowController = [windowController retain];
+    _windowController = windowController;
     
 }
 
@@ -318,11 +368,6 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
             if (success) {
                 
                 _writingPermission = true;
-                
-                NSString *fileName = [NSString stringWithFormat:@"%@.%@",self.exportDirectory.lastPathComponent,DOCUMENT_EXTENSION];
-                self.fileURL = [self.exportDirectory URLByAppendingPathComponent:fileName];
-                self.fileType  = DOCUMENT_TYPE;
-                [self saveToURL:self.fileURL ofType:self.fileType forSaveOperation:NSSaveOperation completionHandler:^(NSError *error) {}];
                 
                 // Create cache directory
                 NSError *error = nil;
@@ -411,15 +456,20 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
         // End (uninitialize) mirror
         hts_uninit();
         
-        // Beep, quit
-        NSBeep();
-        
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        
+        // Beep, quit
+        if (closeInvocation)
+            [closeInvocation invoke];
+        else
+            NSBeep();
+        
         _completed = true;
         [self.delegate projectDidEnd:self error:error];
         [[self windowController] updateInterface]; // Completion
+        
     });
     
 }
@@ -449,21 +499,6 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
         [self setShouldCancel:true];
         
     }
-    
-}
-
-- (void)canCloseDocumentWithDelegate:(id)delegate shouldCloseSelector:(SEL)shouldCloseSelector contextInfo:(void *)contextInfo {
-    
-    BOOL shouldClose = true;
-    
-    // http://stackoverflow.com/questions/34032032/how-can-you-implement-the-nsdocument-method-canclosedocumentwithdelegateshould
-    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[delegate methodSignatureForSelector:shouldCloseSelector]];
-    invocation.target = delegate;
-    invocation.selector = shouldCloseSelector;
-    [invocation setArgument:&self atIndex:2]; // Index 0 = target, Index 1 = selector
-    [invocation setArgument:&shouldClose atIndex:3];
-    [invocation setArgument:&contextInfo atIndex:4];
-    [invocation invoke];
     
 }
 
@@ -867,12 +902,12 @@ int __cdecl httrack_loop(t_hts_callbackarg *carg, httrackp *opt, lien_back *back
             [project.statistics setValue:[NSString stringForSpeed:stats->rate] forStatisticOfType:ProjectStatisticTransferRate];
             if (stats->stat_updated_files >= 0)
                 [project.statistics setValue:[NSNumber numberWithInt:stats->stat_nsocket] forStatisticOfType:ProjectStatisticSockets];
-            if (stats->stat_errors >= 0)
-                [project.statistics setValue:[NSNumber numberWithInt:stats->stat_errors] forStatisticOfType:ProjectStatisticErrors];
-            if (stats->stat_warnings >= 0)
-                [project.statistics setValue:[NSNumber numberWithInt:stats->stat_warnings] forStatisticOfType:ProjectStatisticWarnings];
-            if (stats->stat_infos >= 0)
-                [project.statistics setValue:[NSNumber numberWithInt:stats->stat_infos] forStatisticOfType:ProjectStatisticInfoMessages];
+//            if (stats->stat_errors >= 0)
+//                [project.statistics setValue:[NSNumber numberWithInt:stats->stat_errors] forStatisticOfType:ProjectStatisticErrors];
+//            if (stats->stat_warnings >= 0)
+//                [project.statistics setValue:[NSNumber numberWithInt:stats->stat_warnings] forStatisticOfType:ProjectStatisticWarnings];
+//            if (stats->stat_infos >= 0)
+//                [project.statistics setValue:[NSNumber numberWithInt:stats->stat_infos] forStatisticOfType:ProjectStatisticInfoMessages];
             if (stats->nb >= 0)
                 [project.statistics setValue:[NSString stringForByteCount:stats->nb] forStatisticOfType:ProjectStatisticBytes];
             if (stats->HTS_TOTAL_RECV >= 0)
@@ -970,7 +1005,7 @@ void __cdecl httrack_baseupdated(t_hts_callbackarg *carg, httrackp *opt, uint8_t
     base_url.linksDetected += links_written;
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        if (!project.shouldCancel)
+        // if (!project.shouldCancel)
             [[project windowController] updateURLAtIndex:index];
     });
     
@@ -994,6 +1029,7 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     ProjectNotification *notification = [ProjectNotification notificationOfType:notificationType content:formatString andDate:[NSDate date]];
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        [project.statistics registerNotification:notification];
         [project.notifications addObject:notification];
     });
     
@@ -1005,10 +1041,8 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     
     [self setDelegate:nil];
     
-    if (_windowController) {
-        [_windowController close];
-        [_windowController release];
-    }
+    [_windowController close];
+    [self removeWindowController:_windowController];
     
     [self setExportDirectory:nil];
     
@@ -1035,6 +1069,8 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     }
     
     hts_uninit();
+    
+    [closeInvocation release];
     
     [super dealloc];
     

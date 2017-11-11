@@ -111,6 +111,7 @@
 
 @implementation ProjectOptionsBuildPanelController
 
+
 - (NSString *)panelTitle {
     
     return @" Structure ";
@@ -120,6 +121,8 @@
 @end
 
 @implementation ProjectOptionsCrawlerPanelController
+
+@synthesize outlineView = _outlineView;
 
 - (NSString *)panelTitle {
     
@@ -139,7 +142,7 @@
     
     [super awakeFromNib];
     
-    [outlineView expandItem:nil expandChildren:true];
+    [_outlineView expandItem:nil expandChildren:true];
     
 }
 
@@ -147,7 +150,7 @@
     
     [super updatePanel];
     
-    [outlineView reloadData];
+    [_outlineView reloadData];
     
 }
 
@@ -235,9 +238,17 @@
 
 - (IBAction)outlineViewValueClicked:(id)sender {
     
-    NSString *key = [outlineView itemAtRow:outlineView.clickedRow];
+    NSString *key = [_outlineView itemAtRow:_outlineView.clickedRow];
     BOOL flag = [[self.project.options valueForKey:key] boolValue];
     [self.project.options setValue:[NSNumber numberWithBool:!flag] forKey:key];
+    
+}
+
+- (void)dealloc {
+    
+    self.outlineView = nil;
+    
+    [super dealloc];
     
 }
 
@@ -255,7 +266,18 @@
 #define VIDEO_EXCLUSION_RULES @[@"-*.mov",@"-*.mpg",@"-*.mpeg",@"-*.avi",@"-*.asf",@"-*.wmv",@"-*.rm",@"-*.vob",@"-*.qt",@"-*.vid"]
 #define VIDEO_INCLUSION_RULES @[@"+*.mov",@"+*.mpg",@"+*.mpeg",@"+*.avi",@"+*.asf",@"+*.wmv",@"+*.rm",@"+*.vob",@"+*.qt",@"+*.vid"]
 
+@interface ProjectOptionsFiltersPanelController ()
+
+@property (nonatomic, retain) IBOutlet NSTableView *filterListView;
+@property (nonatomic, retain) IBOutlet NSButton *includeImagesButton, *includeAudioButton, *includeArchivesButton, *includeVideoButton;
+@property (nonatomic, retain) IBOutlet NSPopUpButton *addFilterMenu;
+@property (nonatomic, retain) IBOutlet NSTextField *addFilterField;
+
+@end
+
 @implementation ProjectOptionsFiltersPanelController
+
+@synthesize filterListView = _filterListView, includeArchivesButton = _includeArchivesButton, includeAudioButton = _includeAudioButton, includeImagesButton = _includeImagesButton, includeVideoButton = _includeVideoButton, addFilterField = _addFilterField, addFilterMenu = _addFilterMenu;
 
 - (void)updatePanel {
     
@@ -275,7 +297,7 @@
 
 - (IBAction)removeSelected:(NSButton *)sender {
     
-    [self.project removeFiltersAtIndexes:[filterListView selectedRowIndexes]];
+    [self.project removeFiltersAtIndexes:[_filterListView selectedRowIndexes]];
     [self updateInclusionButtons];
     
 }
@@ -302,7 +324,7 @@
     
     [self updateInclusionButtons];
     
-    [filterListView scrollRowToVisible:filterListView.numberOfRows - 1];
+    [_filterListView scrollRowToVisible:_filterListView.numberOfRows - 1];
     
 }
 
@@ -335,7 +357,7 @@
     else
         [self.project removeFilters:imageInclusionRules];
     
-    [filterListView scrollRowToVisible:filterListView.numberOfRows - 1];
+    [_filterListView scrollRowToVisible:_filterListView.numberOfRows - 1];
     
 }
 
@@ -351,7 +373,7 @@
     else
         [self.project removeFilters:audioInclusionRules];
     
-    [filterListView scrollRowToVisible:filterListView.numberOfRows - 1];
+    [_filterListView scrollRowToVisible:_filterListView.numberOfRows - 1];
     
 }
 
@@ -367,7 +389,7 @@
     else
         [self.project removeFilters:archivesInclusionRules];
     
-    [filterListView scrollRowToVisible:filterListView.numberOfRows - 1];
+    [_filterListView scrollRowToVisible:_filterListView.numberOfRows - 1];
     
 }
 
@@ -383,7 +405,7 @@
     else
         [self.project removeFilters:videoInclusionRules];
     
-    [filterListView scrollRowToVisible:filterListView.numberOfRows - 1];
+    [_filterListView scrollRowToVisible:_filterListView.numberOfRows - 1];
     
 }
 
@@ -392,9 +414,9 @@
 - (NSString *)currentInputRule {
     
     NSString *format;
-    NSString *input = [addFilterField stringValue];
+    NSString *input = [_addFilterField stringValue];
     
-    switch ([addFilterMenu indexOfSelectedItem]) {
+    switch ([_addFilterMenu indexOfSelectedItem]) {
         case 0:
             format = @"*.%@";
             break;
@@ -437,7 +459,7 @@
 - (void)updateInclusionButtons {
     
     int index = 0;
-    NSArray *checkboxes = @[includeImagesButton, includeAudioButton, includeVideoButton, includeArchivesButton];
+    NSArray *checkboxes = @[_includeImagesButton, _includeAudioButton, _includeVideoButton, _includeArchivesButton];
     
     for (NSArray *filterArray in @[IMAGE_INCLUSION_RULES, AUDIO_INCLUSION_RULES, VIDEO_INCLUSION_RULES, ARCHIVES_INCLUSION_RULES]) {
         
@@ -458,15 +480,15 @@
 
 - (void)dealloc {
     
-    [filterListView release];
+    self.filterListView = nil;
     
-    [includeImagesButton release];
-    [includeAudioButton release];
-    [includeArchivesButton release];
-    [includeVideoButton release];
+    self.includeImagesButton = nil;
+    self.includeAudioButton = nil;
+    self.includeArchivesButton = nil;
+    self.includeVideoButton = nil;
     
-    [addFilterMenu release];
-    [addFilterField release];
+    self.addFilterMenu = nil;
+    self.addFilterField = nil;
     
     [super dealloc];
     

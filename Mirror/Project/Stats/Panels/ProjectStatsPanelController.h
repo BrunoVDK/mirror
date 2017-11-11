@@ -46,8 +46,13 @@
  */
 @interface ProjectStatsOverviewPanelController : ProjectStatsPanelController {
     
-    IBOutlet NSOutlineView *outlineView;
+    NSOutlineView *_outlineView;
     
 }
+
+/**
+ * The outlineview for this stats panel controller.
+ */
+@property (nonatomic, retain) IBOutlet NSOutlineView *outlineView;
 
 @end

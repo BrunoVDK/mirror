@@ -56,9 +56,9 @@
     
     NSMutableArray *presets;
     
-    IBOutlet NSTableView *presetsListView;
-    IBOutlet NSPopUpButton *defaultPresetMenu;
-    IBOutlet NSButton *removeSelectedButton, *removeAllButton;
+    NSTableView *_presetsListView;
+    NSPopUpButton *_defaultPresetMenu;
+    NSButton *_removeSelectedButton, *_removeAllButton;
     
 }
 

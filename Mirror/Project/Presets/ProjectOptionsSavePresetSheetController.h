@@ -20,8 +20,8 @@
     
     NSWindow *modalWindow; // For Yosemite+
     void (^block)(NSInteger returnCode);
-    IBOutlet NSTextField *textField, *warningLabel;
-    IBOutlet NSButton *cancelButton, *okButton;
+    NSTextField *_textField, *_warningLabel;
+    NSButton *_cancelButton, *_okButton;
     
 }
 

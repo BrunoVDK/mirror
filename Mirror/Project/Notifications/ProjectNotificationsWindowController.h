@@ -18,7 +18,7 @@
 @interface ProjectNotificationsWindowController : NSWindowController {
     
     Project *_project;
-    IBOutlet NSTableView *tableView;
+    NSTableView *_tableView;
     
 }
 
@@ -26,6 +26,11 @@
  * The project associated with this notifications window controller.
  */
 @property (nonatomic, assign) Project *project;
+
+/**
+ * The table view for this notifications window controller.
+ */
+@property (nonatomic, retain) IBOutlet NSTableView *tableView;
 
 /**
  * Get the shared project notifications window controller.

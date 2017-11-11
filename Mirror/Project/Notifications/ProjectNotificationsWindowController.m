@@ -16,7 +16,7 @@
 
 @implementation ProjectNotificationsWindowController
 
-@synthesize project = _project;
+@synthesize project = _project, tableView = _tableView;
 
 #pragma mark Class Methods
 
@@ -94,9 +94,9 @@
 
 - (IBAction)copy:(id)sender {
     
-    NSInteger selectedRow = tableView.clickedRow;
+    NSInteger selectedRow = _tableView.clickedRow;
     if (selectedRow == -1)
-        selectedRow = tableView.selectedRow;
+        selectedRow = _tableView.selectedRow;
     
     if (selectedRow != NSNotFound) {
         
@@ -127,7 +127,7 @@
     [PREFERENCES removeObserver:self forKeyPath:PanelWindowTheme context:NULL];
     [PREFERENCES removeObserver:self forKeyPath:KeepPanelsOnTop context:NULL];
     
-    [tableView release];
+    self.tableView = nil;
     
     [super dealloc];
     

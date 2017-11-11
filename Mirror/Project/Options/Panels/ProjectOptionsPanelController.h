@@ -63,9 +63,14 @@
  */
 @interface ProjectOptionsCrawlerPanelController : ProjectOptionsPanelController <NSOutlineViewDataSource, NSOutlineViewDelegate> {
     
-    IBOutlet NSOutlineView *outlineView;
+    NSOutlineView *_outlineView;
     
 }
+
+/**
+ * The outline view for this crawler options panel.
+ */
+@property (nonatomic, retain) IBOutlet NSOutlineView *outlineView;
 
 @end
 
@@ -81,10 +86,10 @@
  */
 @interface ProjectOptionsFiltersPanelController : ProjectOptionsPanelController {
     
-    IBOutlet NSTableView *filterListView;
-    IBOutlet NSButton *includeImagesButton, *includeAudioButton, *includeArchivesButton, *includeVideoButton;
-    IBOutlet NSPopUpButton *addFilterMenu;
-    IBOutlet NSTextField *addFilterField;
+    NSTableView *_filterListView;
+    NSButton *_includeImagesButton, *_includeAudioButton, *_includeArchivesButton, *_includeVideoButton;
+    NSPopUpButton *_addFilterMenu;
+    NSTextField *_addFilterField;
     
 }
 

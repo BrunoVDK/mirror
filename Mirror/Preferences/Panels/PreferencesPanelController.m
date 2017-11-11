@@ -94,7 +94,17 @@
 
 @end
 
+@interface PreferencesPresetsPanelController ()
+
+@property (nonatomic, retain) IBOutlet NSTableView *presetsListView;
+@property (nonatomic, retain) IBOutlet NSPopUpButton *defaultPresetMenu;
+@property (nonatomic, retain) IBOutlet NSButton *removeSelectedButton, *removeAllButton;
+
+@end
+
 @implementation PreferencesPresetsPanelController
+
+@synthesize presetsListView = _presetsListView, defaultPresetMenu = _defaultPresetMenu, removeAllButton = _removeAllButton, removeSelectedButton = _removeSelectedButton;
 
 - (instancetype)init {
     
@@ -125,7 +135,7 @@
         [presets release];
         presets = [[[PREFERENCES dictionaryForKey:PresetsPreferencesKey] allKeys] mutableCopy];
         
-        [presetsListView reloadData];
+        [_presetsListView reloadData];
         [self populatePresetMenu];
         
     }
@@ -144,16 +154,16 @@
     
     NSUserDefaults *defaults = PREFERENCES;
     
-    [defaultPresetMenu removeAllItems];
+    [_defaultPresetMenu removeAllItems];
     
     for (NSString *presetName in presets)
-        [defaultPresetMenu addItemWithTitle:presetName];
+        [_defaultPresetMenu addItemWithTitle:presetName];
     
     NSString *defaultPreset = [defaults stringForKey:PresetsPreferencesKey];
-    if (!defaultPreset || ![defaultPresetMenu itemWithTitle:defaultPreset])
+    if (!defaultPreset || ![_defaultPresetMenu itemWithTitle:defaultPreset])
         defaultPreset = @"AYAYAYAYA";
     
-    [defaultPresetMenu selectItemWithTitle:defaultPreset];
+    [_defaultPresetMenu selectItemWithTitle:defaultPreset];
     
 }
 
@@ -181,7 +191,7 @@
 
 - (IBAction)selectDefault:(id)sender {
     
-    [PREFERENCES setObject:[[defaultPresetMenu selectedItem] title] forKey:PresetsPreferencesKey];
+    [PREFERENCES setObject:[[_defaultPresetMenu selectedItem] title] forKey:PresetsPreferencesKey];
     
 }
 
@@ -189,7 +199,7 @@
     
     NSMutableDictionary *presetsDictionary = [[PREFERENCES objectForKey:PresetsPreferencesKey] mutableCopy];
     
-    NSIndexSet *selectedIndexes = [presetsListView selectedRowIndexes];
+    NSIndexSet *selectedIndexes = [_presetsListView selectedRowIndexes];
     
     [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
         [presetsDictionary removeObjectForKey:[presets objectAtIndex:idx]];
@@ -200,7 +210,7 @@
     [PREFERENCES setObject:presetsDictionary forKey:PresetsPreferencesKey];
     [presetsDictionary release];
     
-    [presetsListView reloadData];
+    [_presetsListView reloadData];
     [self populatePresetMenu];
     
 }
@@ -213,7 +223,7 @@
     
     [presets removeAllObjects];
     
-    [presetsListView reloadData];
+    [_presetsListView reloadData];
     [self populatePresetMenu];
     
 }
@@ -225,10 +235,11 @@
     [PREFERENCES removeObserver:self forKeyPath:[@"values." stringByAppendingString:PresetsPreferencesKey]];
     
     [presets release];
-    [presetsListView release];
-    [defaultPresetMenu release];
-    [removeSelectedButton release];
-    [removeAllButton release];
+    
+    self.presetsListView = nil;
+    self.defaultPresetMenu = nil;
+    self.removeSelectedButton = nil;
+    self.removeAllButton = nil;
     
     [super dealloc];
     

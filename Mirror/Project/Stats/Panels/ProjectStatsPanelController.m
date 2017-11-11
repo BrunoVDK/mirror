@@ -64,11 +64,13 @@
 
 @implementation ProjectStatsOverviewPanelController
 
+@synthesize outlineView = _outlineView;
+
 - (void)setProject:(Project *)project {
     
     [project.statistics setOutlineView:nil];
     [super setProject:project];
-    [project.statistics setOutlineView:outlineView];
+    [project.statistics setOutlineView:_outlineView];
     
 }
 
@@ -76,6 +78,14 @@
     
     return [NSImage imageNamed:@"Network"];
 
+}
+
+- (void)dealloc {
+    
+    self.outlineView = nil;
+    
+    [super dealloc];
+    
 }
 
 @end

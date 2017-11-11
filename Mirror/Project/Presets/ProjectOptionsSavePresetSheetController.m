@@ -12,9 +12,16 @@
 
 #pragma mark Project Options Save Preset Sheet Controller
 
+@interface ProjectOptionsSavePresetSheetController ()
+
+@property (nonatomic, retain) IBOutlet NSTextField *textField, *warningLabel;
+@property (nonatomic, retain) IBOutlet NSButton *cancelButton, *okButton;
+
+@end
+
 @implementation ProjectOptionsSavePresetSheetController
 
-@synthesize delegate = _delegate;
+@synthesize delegate = _delegate, textField = _textField, warningLabel = _warningLabel, cancelButton = _cancelButton, okButton = _okButton;
 
 #pragma mark Constructors
 
@@ -34,12 +41,12 @@
 
 - (NSString *)presetName {
     
-    return [[[textField stringValue] copy] autorelease];
+    return [[[_textField stringValue] copy] autorelease];
     
 }
 - (void)awakeFromNib {
     
-    [warningLabel setStringValue:@""]; // Reset warning label
+    [_warningLabel setStringValue:@""]; // Reset warning label
     
 }
 
@@ -70,7 +77,7 @@
 
 - (void)endSheetPresentation:(NSButton *)senderButton {
     
-    NSModalResponse response = (senderButton == okButton ? NSModalResponseOK : NSModalResponseCancel);
+    NSModalResponse response = (senderButton == _okButton ? NSModalResponseOK : NSModalResponseCancel);
     
     if (response == NSModalResponseOK) {
         
@@ -80,7 +87,7 @@
         if (self.delegate)
             warning = [self.delegate projectOptionsSavePresetSheetController:self errorForPresetName:presetName];
         if (warning)
-            return [warningLabel setStringValue:warning];
+            return [_warningLabel setStringValue:warning];
         
     }
     
@@ -99,6 +106,11 @@
     
     if (block != NULL)
         Block_release(block);
+    
+    self.warningLabel = nil;
+    self.okButton = nil;
+    self.warningLabel = nil;
+    self.textField = nil;
     
     [super dealloc];
     

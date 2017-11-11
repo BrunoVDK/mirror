@@ -108,7 +108,7 @@
     
     if ([object isMemberOfClass:[ProjectNotification class]]) {
         
-        if ([self count] > maximumCapacity) {
+        if ([self count] >= maximumCapacity) {
             [self remove:[(NSMutableArray *)self.content firstObject]];
             [super addObject:object];
         }

@@ -18,6 +18,9 @@
 
 - (void)viewWillMoveToWindow:(NSWindow *)newWindow {
     
+    if (!newWindow)
+        return;
+    
     [newWindow invalidateCursorRectsForView:self];
     
     trackingArea = [[NSTrackingArea alloc] initWithRect:NSZeroRect

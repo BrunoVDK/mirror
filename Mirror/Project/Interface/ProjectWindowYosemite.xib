@@ -26,7 +26,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="MHE-7J-ku4" customClass="ProjectWindow">
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" visibleAtLaunch="NO" animationBehavior="default" id="MHE-7J-ku4" customClass="ProjectWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES" fullSizeContentView="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
             <rect key="contentRect" x="263" y="667" width="480" height="210"/>
@@ -363,7 +363,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" selectionHighlightStyle="none" autosaveColumns="NO" typeSelect="NO" headerView="Vca-44-Rjb" id="mHG-Q3-Mc8" userLabel="Files List View" customClass="WindowAdaptedTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="315" height="19"/>
+                                <rect key="frame" x="0.0" y="0.0" width="330" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="1" height="2"/>
                                 <color key="backgroundColor" red="1" green="0.15845071569999999" blue="0.1098531936" alpha="0.0" colorSpace="calibratedRGB"/>

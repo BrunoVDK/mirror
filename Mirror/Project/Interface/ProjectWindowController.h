@@ -22,7 +22,7 @@
 @interface ProjectWindowController : NSWindowController<NSWindowDelegate, ProjectDelegate> {
     
     BOOL _renderInCircles;
-    IBOutlet NSButton *toolbarOptionsButton, *toolbarSearchButton, *toolbarStatsButton;
+    NSButton *_toolbarOptionsButton, *_toolbarSearchButton, *_toolbarStatsButton;
     
 }
 
@@ -160,25 +160,24 @@
     
     BOOL showDummy; // Flag denoting whether or not the dummy are visible
     
-    IBOutlet NSArrayController *projectListController;
-    IBOutlet ProjectListView *listView;
     NSTextView *textView;
-    
-    IBOutlet NSSearchField *searchField;
-    IBOutlet NSTextField *statusField;
     NSText *searchTextView;
-    
-    IBOutlet SplitView *windowSplitView, *controllerSplitView, *projectSplitView, *searchSplitView;
-    IBOutlet CapsuleSegmentedControl *toolbarAddPauseButton;
-    IBOutlet ColoredView *searchView;
     
     NSColor *alternateRowColor;
     
     NSTimer *statsTimer;
     NSMutableIndexSet *statsIndices;
     
-    
     NSString *errorMessage;
+    
+    // Outlets
+    NSArrayController *_projectListController;
+    ProjectListView *_listView;
+    NSSearchField *_searchField;
+    NSTextField *_statusField;
+    SplitView *_windowSplitView, *_controllerSplitView, *_projectSplitView, *_searchSplitView;
+    CapsuleSegmentedControl *_toolbarAddPauseButton;
+    ColoredView *_searchView;
     
 }
 
@@ -192,16 +191,15 @@
 @interface ProjectWindowControllerYosemite : ProjectWindowControllerLion {
     
     WindowTheme theme;
-    
     HeaderView *headerView;
-    IBOutlet NSMenu *contextualMenu, *filesMenu;
-    IBOutlet ProjectMenuView *menuView;
-    IBOutlet NSOutlineView *statsOutlineView;
-    IBOutlet NSTableView *fileListView;
-    IBOutlet NSTextField *speedStatField, *sizeStatField, *filesStatusField;
-    IBOutlet NSSearchField *filesSearchField;
     
-    IBOutlet NSView *panelView, *linksPanel, *statsPanel, *filesPanel;
+    NSMenu *_contextualMenu, *_filesMenu;
+    ProjectMenuView *_menuView;
+    NSOutlineView *_statsOutlineView;
+    NSTableView *_fileListView;
+    NSTextField *_speedStatField, *_sizeStatField, *_filesStatusField;
+    NSSearchField *_filesSearchField;
+    NSView *_panelView, *_linksPanel, *_statsPanel, *_filesPanel;
     
 }
 

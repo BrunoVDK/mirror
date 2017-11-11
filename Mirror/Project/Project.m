@@ -205,6 +205,7 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     // Read properties
     bookmarkData = [[properties objectForKey:@"BookmarkData"] retain];
     _completed = [[properties objectForKey:@"Completed"] boolValue];
+    _started = [[properties objectForKey:@"Completed"] boolValue];
     for (ProjectURL *url in [properties objectForKey:@"URLs"])
         [[self URLs] addObject:url];
     [_statistics adoptDictionary:[properties objectForKey:@"Statistics"]];
@@ -247,6 +248,7 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
                                 _notifications, @"Notifications",
                                 // Avoid continuing a finished project
                                 [NSNumber numberWithBool:_completed], @"Completed",
+                                [NSNumber numberWithBool:_started], @"Started",
                                 bookmarkData, @"BookmarkData",
                                 self.URLs, @"URLs",
                                 nil];
@@ -346,7 +348,7 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
         
     }
     
-    _windowController = windowController;
+    _windowController = [windowController retain];
     
 }
 

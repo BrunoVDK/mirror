@@ -100,7 +100,7 @@
     
     if ([object isMemberOfClass:[ProjectFile class]]) {
         
-        if ([self count] == maximumCapacity) {
+        if ([self count] >= maximumCapacity) {
             [self.content removeObjectAtIndex:0];
             [self.content addObject:object];
             [self rearrangeObjects];

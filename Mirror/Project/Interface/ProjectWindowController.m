@@ -28,6 +28,8 @@
 
 @interface ProjectWindowController() <NSTableViewDataSource, NSTableViewDelegate, NSToolbarDelegate>
 
+@property (nonatomic, retain) IBOutlet NSButton *toolbarOptionsButton, *toolbarSearchButton, *toolbarStatsButton;
+
 + (NSMenuItem *)pauseMainMenuItem;
 - (void)requestExportDirectoryForBaseURL:(ProjectURL *)URL completion:(void(^)(BOOL success))completion;
 - (NSString *)getRootDomain:(NSURL *)url;
@@ -37,7 +39,7 @@
 @implementation ProjectWindowController
 
 @dynamic project;
-@synthesize renderInCircles = _renderInCircles;
+@synthesize renderInCircles = _renderInCircles, toolbarOptionsButton = _toolbarOptionsButton, toolbarSearchButton = _toolbarSearchButton, toolbarStatsButton = _toolbarStatsButton;
 
 - (Project *)project {
     
@@ -90,9 +92,9 @@
     
     [self setWindowFrameAutosaveName:[self className]];
     
-    [[toolbarSearchButton cell] setHighlightsBy:NSNoCellMask];
-    [[toolbarOptionsButton cell] setHighlightsBy:NSNoCellMask];
-    [[toolbarStatsButton cell] setHighlightsBy:NSNoCellMask];
+    [[_toolbarSearchButton cell] setHighlightsBy:NSNoCellMask];
+    [[_toolbarOptionsButton cell] setHighlightsBy:NSNoCellMask];
+    [[_toolbarStatsButton cell] setHighlightsBy:NSNoCellMask];
     
 }
 
@@ -124,12 +126,12 @@
 - (void)updateMenus {
     
     BOOL statsShown = [[STATISTICS window] isVisible];
-    [toolbarStatsButton setState:(statsShown ? NSOnState : NSOffState)];
-    [toolbarStatsButton setAction:(statsShown ? @selector(hideStatistics:) : @selector(showStatistics:))];
+    [_toolbarStatsButton setState:(statsShown ? NSOnState : NSOffState)];
+    [_toolbarStatsButton setAction:(statsShown ? @selector(hideStatistics:) : @selector(showStatistics:))];
     
     BOOL optionsShown = [[OPTIONS window] isVisible];
-    [toolbarOptionsButton setState:(optionsShown ? NSOnState : NSOffState)];
-    [toolbarOptionsButton setAction:(optionsShown ? @selector(hideOptions:) : @selector(showOptions:))];
+    [_toolbarOptionsButton setState:(optionsShown ? NSOnState : NSOffState)];
+    [_toolbarOptionsButton setAction:(optionsShown ? @selector(hideOptions:) : @selector(showOptions:))];
     
 }
 
@@ -294,9 +296,9 @@
 
 - (void)windowDidResignMain:(NSNotification *)notification {
     
-    [toolbarOptionsButton setState:NSOffState];
-    [toolbarStatsButton setState:NSOffState];
-    [toolbarSearchButton setState:NSOffState];
+    [_toolbarOptionsButton setState:NSOffState];
+    [_toolbarStatsButton setState:NSOffState];
+    [_toolbarSearchButton setState:NSOffState];
     
 }
 
@@ -347,7 +349,6 @@
 
 - (IBAction)showOptions:(id)sender {
     
-    // [self hideStatistics:self];
     [OPTIONS showWindow:self];
     [self updateMenus];
     
@@ -362,7 +363,6 @@
 
 - (IBAction)showStatistics:(id)sender {
     
-    // [self hideOptions:self];
     [STATISTICS showWindow:self];
     [self updateMenus];
     
@@ -415,6 +415,32 @@
     
 }
 
+
+#pragma mark Memory Management
+
+- (void)dealloc {
+    
+    self.toolbarOptionsButton = nil;
+    self.toolbarSearchButton = nil;
+    self.toolbarStatsButton = nil;
+    
+    [super dealloc];
+    
+}
+
+/*
+// For testing purposes
+
+- (id)retain {
+    
+    // https://stackoverflow.com/questions/5587509/is-there-a-way-to-find-mystery-retains
+    NSLog(@"%@", [NSThread callStackSymbols]);
+    NSLog(@"%li", self.retainCount);
+    return [super retain];
+    
+}
+ */
+
 @end
 
 //
@@ -438,6 +464,16 @@
 
 @interface ProjectWindowControllerLion() <SplitViewDelegate, NSTextDelegate>
 
+@property (nonatomic, retain) IBOutlet NSArrayController *projectListController;
+@property (nonatomic, retain) IBOutlet ProjectListView *listView;
+
+@property (nonatomic, retain) IBOutlet NSSearchField *searchField;
+@property (nonatomic, retain) IBOutlet NSTextField *statusField;
+
+@property (nonatomic, retain) IBOutlet SplitView *windowSplitView, *controllerSplitView, *projectSplitView, *searchSplitView;
+@property (nonatomic, retain) IBOutlet CapsuleSegmentedControl *toolbarAddPauseButton;
+@property (nonatomic, retain) IBOutlet ColoredView *searchView;
+
 - (NSString *)currentSearchString;
 - (void)setSearchString:(NSString *)string;
 
@@ -451,6 +487,33 @@
 @end
 
 @implementation ProjectWindowControllerLion
+
+@synthesize projectListController = _projectListController, listView = _listView, searchField = _searchField, statusField = _statusField, windowSplitView = _windowSplitView, controllerSplitView = _controllerSplitView, projectSplitView = _projectSplitView, searchSplitView = _searchSplitView, toolbarAddPauseButton = _toolbarAddPauseButton, searchView = _searchView;
+
+- (id)init {
+    
+    if (self = [super init]) {
+        
+        [PREFERENCES addObserver:self
+                      forKeyPath:ResizeAutomatically
+                         options:NSKeyValueObservingOptionNew
+                         context:NULL];
+        [PREFERENCES addObserver:self
+                      forKeyPath:ShowRateInDock
+                         options:NSKeyValueObservingOptionNew
+                         context:NULL];
+        [PREFERENCES addObserver:self
+                      forKeyPath:RenderIconsInCircles
+                         options:NSKeyValueObservingOptionNew
+                         context:NULL];
+        
+        self.renderInCircles = [PREFERENCES boolForKey:RenderIconsInCircles];
+        
+    }
+    
+    return self;
+    
+}
 
 #pragma mark Interface
 
@@ -475,13 +538,13 @@
 
 - (NSString *)currentSearchString {
     
-    return [searchField stringValue];
+    return [_searchField stringValue];
     
 }
 
 - (void)setSearchString:(NSString *)string {
     
-    [searchField setStringValue:string];
+    [_searchField setStringValue:string];
     
 }
 
@@ -494,7 +557,7 @@
     self.window.contentMaxSize = NSMakeSize([self maxWindowWidth], maxHeight);
     
     // Calculate new frame height
-    CGFloat newHeight = [self contentHeightForNumberOfRows:[self numberOfRowsInTableView:listView]];
+    CGFloat newHeight = [self contentHeightForNumberOfRows:[self numberOfRowsInTableView:_listView]];
     if (newHeight > self.window.contentMaxSize.height)
         newHeight = self.window.contentMaxSize.height;
     if (newHeight < self.window.contentMinSize.height)
@@ -531,8 +594,8 @@
 
 - (CGFloat)contentHeightForNumberOfRows:(NSInteger)rows {
     
-    CGFloat contentHeight = [(NSView *)[self.window contentView] frame].size.height - [listView enclosingScrollView].frame.size.height;
-    return contentHeight + rows * [listView rowHeight];
+    CGFloat contentHeight = [(NSView *)[self.window contentView] frame].size.height - [_listView enclosingScrollView].frame.size.height;
+    return contentHeight + rows * [_listView rowHeight];
     
 }
 
@@ -570,7 +633,7 @@
 }
 
 - (void)updateInterface:(NSTimer *)timer {
-    
+        
     // [self updateRelevantURLs];
     // [self updateStatus];
 
@@ -594,7 +657,7 @@
     }
     else {
         
-        NSInteger count = [listView numberOfRows] - showDummy;
+        NSInteger count = [_listView numberOfRows] - showDummy;
         if (count == 1)
             status = [NSString stringWithFormat:@"1 link"];
         else if (count > 1)
@@ -602,14 +665,14 @@
         
         if ([self.project isPaused])
             status = [NSString stringWithFormat:@"%@ - Paused", status];
-        else if ([statusField.stringValue contains:@"Pausing"])
+        else if ([_statusField.stringValue contains:@"Pausing"])
             status = [NSString stringWithFormat:@"%@ - Pausing ...", status];
         else if ([self.project isCompleted])
             status = @"Project completed.";
         
     }
     
-    [statusField setStringValue:status];
+    [_statusField setStringValue:status];
     
 }
 
@@ -640,9 +703,9 @@
     BOOL paused = [self.project isPaused];
     
     // Update toolbar
-    [toolbarSearchButton setState:(![searchSplitView viewIsCollapsed:searchView] ? NSOnState : NSOffState)];
-    [toolbarAddPauseButton setSelected:[listView editedRow] != -1 forSegment:0];
-    [toolbarAddPauseButton setEnabled:![self.project isCompleted]];
+    [_toolbarSearchButton setState:(![_searchSplitView viewIsCollapsed:_searchView] ? NSOnState : NSOffState)];
+    [_toolbarAddPauseButton setSelected:[_listView editedRow] != -1 forSegment:0];
+    [_toolbarAddPauseButton setEnabled:![self.project isCompleted]];
     
     // Update main menu
     [PAUSE_ITEM setTitle:(paused ? @"Resume" : @"Pause")];
@@ -654,9 +717,9 @@
 - (void)updateGradient {
     
     if ([self.window isMainWindow])
-        [(GradientView *)[windowSplitView secondView] setGradient:[GradientView defaultGradient]];
+        [(GradientView *)[_windowSplitView secondView] setGradient:[GradientView defaultGradient]];
     else
-        [(GradientView *)[windowSplitView secondView] setGradient:[GradientView secondaryGradient]];
+        [(GradientView *)[_windowSplitView secondView] setGradient:[GradientView secondaryGradient]];
     
 }
 
@@ -664,7 +727,7 @@
     
     NSIndexSet *columnIndices = [NSIndexSet indexSetWithIndex:0];
     [statsIndices enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-        [listView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:idx + showDummy] columnIndexes:columnIndices];
+        [_listView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:idx + showDummy] columnIndexes:columnIndices];
     }];
     
     [statsIndices removeAllIndexes];
@@ -673,7 +736,7 @@
 
 - (void)updateURLAtIndex:(NSInteger)index {
     
-    [listView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:index] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+    [_listView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:index] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
     
 }
 
@@ -689,14 +752,14 @@
     
     showDummy = false; // Remove dummy when interface is refreshed
     [self setSearchString:@""];
-    [listView reloadData];
+    [_listView reloadData];
     [self resizeWindow:false];
     
 }
 
 - (void)projectDidStartEngine:(Project *)project {
     
-    [toolbarAddPauseButton setEnabled:true forSegment:1];
+    [_toolbarAddPauseButton setEnabled:true forSegment:1];
     
 }
 
@@ -719,8 +782,8 @@
     [self updateStatus];
     [self updateMenus];
     [self updateTransferRate];
-    [toolbarAddPauseButton setSelected:false forSegment:1];
-    [toolbarAddPauseButton setEnabled:true forSegment:1];
+    [_toolbarAddPauseButton setSelected:false forSegment:1];
+    [_toolbarAddPauseButton setEnabled:true forSegment:1];
     
 }
 
@@ -730,9 +793,9 @@
     [self updateStatus];
     [self updateMenus];
     [self updateTransferRate];
-    [toolbarAddPauseButton setSelected:true forSegment:1];
-    [toolbarAddPauseButton setEnabled:true forSegment:1];
-    [listView reloadData];
+    [_toolbarAddPauseButton setSelected:true forSegment:1];
+    [_toolbarAddPauseButton setEnabled:true forSegment:1];
+    [_listView reloadData];
     
 }
 
@@ -742,7 +805,7 @@
     
     if ([sender selectedSegment] == 0) { // Add button clicked
         
-        BOOL editing = [listView editedRow] != -1;
+        BOOL editing = [_listView editedRow] != -1;
         
         if (editing)
             [self setShowDummy:false];
@@ -772,14 +835,14 @@
     
     if (!showDummy)
         [self setShowDummy:true];
-    else if ([listView editedRow] == -1)
+    else if ([_listView editedRow] == -1)
         [self editDummy];
     
 }
 
 - (IBAction)toggleSearch:(id)sender {
     
-    if ([searchSplitView viewIsCollapsed:searchView])
+    if ([_searchSplitView viewIsCollapsed:_searchView])
         [self showSearch:self];
     else
         [self hideSearch:self];
@@ -788,18 +851,18 @@
 
 - (IBAction)hideSearch:(id)sender {
     
-    if ([searchSplitView viewIsCollapsed:searchView])
+    if ([_searchSplitView viewIsCollapsed:_searchView])
         return; // Or the methods below would interfere with smooth animations
     
-    if ([projectListController filterPredicate]) {
-        [projectListController setFilterPredicate:nil];
-        [listView reloadData];
+    if ([_projectListController filterPredicate]) {
+        [_projectListController setFilterPredicate:nil];
+        [_listView reloadData];
     }
     
-    [searchSplitView collapseView:[searchSplitView secondView] withAnimation:true completionBlock:^(void) {
+    [_searchSplitView collapseView:[_searchSplitView secondView] withAnimation:true completionBlock:^(void) {
         
-        [toolbarSearchButton setState:NSOffState];
-        [toolbarSearchButton setAction:@selector(showSearch:)];
+        [_toolbarSearchButton setState:NSOffState];
+        [_toolbarSearchButton setAction:@selector(showSearch:)];
         
     }];
     
@@ -807,22 +870,22 @@
 
 - (IBAction)showSearch:(id)sender {
     
-    if (![searchSplitView viewIsCollapsed:searchView])
+    if (![_searchSplitView viewIsCollapsed:_searchView])
         return;
-    else if ([searchField stringValue].length < 1)
-        [searchField setStringValue:@"search"];
+    else if ([_searchField stringValue].length < 1)
+        [_searchField setStringValue:@"search"];
     
     [self setShowDummy:false];
     
-    [searchSplitView uncollapseView:[searchSplitView secondView] withAnimation:true completionBlock:^(void) {
+    [_searchSplitView uncollapseView:[_searchSplitView secondView] withAnimation:true completionBlock:^(void) {
         
-        [toolbarSearchButton setState:NSOnState];
-        [toolbarSearchButton setAction:@selector(hideSearch:)];
+        [_toolbarSearchButton setState:NSOnState];
+        [_toolbarSearchButton setAction:@selector(hideSearch:)];
         
-        [self.window makeFirstResponder:searchField];
+        [self.window makeFirstResponder:_searchField];
         [searchTextView selectAll:self];
         
-        [[listView enclosingScrollView] setHasVerticalScroller:true];
+        [[_listView enclosingScrollView] setHasVerticalScroller:true];
         
     }];
     
@@ -831,10 +894,10 @@
 - (IBAction)pause:(id)sender {
         
     if ([self.project isMirroring]) {
-        [statusField setStringValue:@"Pausing ..."];
+        [_statusField setStringValue:@"Pausing ..."];
         if (![self.project isPaused]) {
-            [toolbarAddPauseButton setSelected:false forSegment:1];
-            [toolbarAddPauseButton setEnabled:false forSegment:1];
+            [_toolbarAddPauseButton setSelected:false forSegment:1];
+            [_toolbarAddPauseButton setEnabled:false forSegment:1];
             [[self project] pause];
         }
     }
@@ -846,10 +909,10 @@
 - (IBAction)resume:(id)sender {
     
     if ([[self project] isMirroring]) {
-        [statusField setStringValue:@"Resuming ..."];
+        [_statusField setStringValue:@"Resuming ..."];
         if ([self.project isPaused]) {
-            [toolbarAddPauseButton setSelected:true forSegment:1];
-            [toolbarAddPauseButton setEnabled:false forSegment:1];
+            [_toolbarAddPauseButton setSelected:true forSegment:1];
+            [_toolbarAddPauseButton setEnabled:false forSegment:1];
             [[self project] resume];
         }
     }
@@ -860,10 +923,10 @@
 
 - (IBAction)cancelURL:(id)sender {
     
-    ProjectURL *URL = [[projectListController arrangedObjects] objectAtIndex:[listView clickedRow] - showDummy];
+    ProjectURL *URL = [[_projectListController arrangedObjects] objectAtIndex:[_listView clickedRow] - showDummy];
     [self.project cancelURL:URL];
-    [listView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:[listView clickedRow]]
-                        columnIndexes:[listView columnIndexesInRect:[listView visibleRect]]];
+    [_listView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:[_listView clickedRow]]
+                         columnIndexes:[_listView columnIndexesInRect:[_listView visibleRect]]];
     
 }
 
@@ -891,34 +954,30 @@
 - (void)windowDidLoad {
     
     alternateRowColor = [[NSColor colorWithCalibratedWhite:0.95 alpha:1.0] retain];
-    listView.alternateColor = alternateRowColor;
+    _listView.alternateColor = alternateRowColor;
     
     [self.window registerForDraggedTypes:[NSArray arrayWithObject:NSURLPboardType]];
     
-    [PREFERENCES addObserver:self forKeyPath:RenderIconsInCircles options:NSKeyValueObservingOptionNew context:NULL];
-    self.renderInCircles = [PREFERENCES boolForKey:RenderIconsInCircles];
-    [PREFERENCES addObserver:self forKeyPath:ResizeAutomatically options:NSKeyValueObservingOptionNew context:NULL];
-    [PREFERENCES addObserver:self forKeyPath:ShowRateInDock options:NSKeyValueObservingOptionNew context:NULL];
-    
-    [listView setDoubleAction:@selector(doubleClick:)];
-    [listView setTarget:self];
+    [_listView setDoubleAction:@selector(doubleClick:)];
+    [_listView setTarget:self];
     
     dummy = [[ProjectURL alloc] initWithURL:[NSURL URLWithString:BASE_URL] identifier:0];
     [dummy setIcon:[NSImage imageNamed:NSImageNameNetwork]];
     
     // [[self controllerSplitView] setCustomDividerThickness:0.0]; // Hide divider of split view
-    [controllerSplitView collapseView:[controllerSplitView firstView] withAnimation:false];
-    [listView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone]; // Selection is enabled for the dummy row only to enable editing
-    [listView setDoubleAction:@selector(doubleClick:)];
-    [listView setTarget:self];
+    [_controllerSplitView collapseView:[_controllerSplitView firstView] withAnimation:false];
+    [_listView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone]; // Selection is enabled for the dummy row only to enable editing
+    [_listView setDoubleAction:@selector(doubleClick:)];
+    [_listView setTarget:self];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editingDidEnd:) name:NSControlTextDidEndEditingNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editingDidEnd:)
+                                                 name:NSControlTextDidEndEditingNotification object:nil];
     
     // [projectSplitView setCustomDividerThickness:0.0]; // Remove separator line above stats view
     // [windowSplitView setCustomDividerThickness:0.0]; // Remove line above path view field
     
     [self resizeWindow:true]; // At the end, when the window is fully set up
-    [self setShowDummy:true]; // After min/max size setup or it will mess up the size of the window and cause a negative min size
+    [self setShowDummy:(!self.project || !self.project.hasStarted)]; // After min/max size setup or it will mess up the size of the window and cause a negative min size
     
     statsIndices = [[NSMutableIndexSet alloc] init];
     [self renewTimer];
@@ -937,11 +996,11 @@
         
     [super windowDidBecomeMain:notification];
     
-    [listView reloadVisibleRect];
+    [_listView reloadVisibleRect];
     [self updateGradient];
-    [statusField setTextColor:[NSColor darkGrayColor]];
+    [_statusField setTextColor:[NSColor darkGrayColor]];
     [searchTextView setTextColor:[NSColor darkerGrayColor]];
-    [searchField setTextColor:[NSColor darkerGrayColor]];
+    [_searchField setTextColor:[NSColor darkerGrayColor]];
 #if CHANGE_NONKEY_MAIN_WINDOW_DESIGN
     [textView setTextColor:[NSColor darkerGrayColor]];
 #endif
@@ -952,11 +1011,11 @@
     
     [super windowDidResignMain:notification];
     
-    [listView reloadVisibleRect];
+    [_listView reloadVisibleRect];
     [self updateGradient];
-    [statusField setTextColor:[NSColor lightGrayColor]];
+    [_statusField setTextColor:[NSColor lightGrayColor]];
     [searchTextView setTextColor:[NSColor lightGrayColor]];
-    [searchField setTextColor:[NSColor lightGrayColor]];
+    [_searchField setTextColor:[NSColor lightGrayColor]];
 #if CHANGE_NONKEY_MAIN_WINDOW_DESIGN
     [textView setTextColor:[NSColor lightGrayColor]];
 #endif
@@ -973,7 +1032,7 @@
 - (void)windowWillClose:(NSNotification *)notification {
     
     if (notification.object == self.window) {
-        [projectListController unbind:@"contentArray"]; // Or there will be complaints about a deallocated project being observed
+        [_projectListController unbind:@"contentArray"]; // Or there will be complaints about a deallocated project being observed
     }
     
     [self invalidateTimer];
@@ -986,7 +1045,7 @@
    
     // Generate a separate field editor for the search/filter field, so it's easier for the window controller to figure out
     //  when it needs to collapse the field.
-    if (client == searchField) {
+    if (client == _searchField) {
         
         if (!searchTextView) {
             searchTextView = [NSText new];
@@ -1015,25 +1074,26 @@
         [self hideSearch:self];
     
     if (![aResponder isMemberOfClass:[ProjectStatsCell class]]) // Update dummy (there are some glitches otherwise)
-        [listView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:0] columnIndexes:[listView columnIndexesInRect:[listView visibleRect]]];
+        [_listView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:0]
+                             columnIndexes:[_listView columnIndexesInRect:[_listView visibleRect]]];
     
 }
 
 - (void)controlTextDidChange:(NSNotification *)notification {
     
-    if ([notification object] == searchField) {
+    if ([notification object] == _searchField) {
         
         NSPredicate *predicate = nil;
-        NSString *searchString = [searchField stringValue];
+        NSString *searchString = [_searchField stringValue];
         
         if ([searchString length] > 0) {
              predicate = [NSPredicate predicateWithFormat:@"self.URL.absoluteString CONTAINS[cd] %@ OR self.title CONTAINS[cd] %@", searchString, searchString];
-            [projectListController setFilterPredicate:predicate];
-            [listView reloadData];
+            [_projectListController setFilterPredicate:predicate];
+            [_listView reloadData];
         }
         else {
-            [projectListController setFilterPredicate:nil];
-            [listView reloadData];
+            [_projectListController setFilterPredicate:nil];
+            [_listView reloadData];
         }
         
     }
@@ -1044,7 +1104,7 @@
     
     if ([keyPath isEqualToString:RenderIconsInCircles]) {
         self.renderInCircles = [PREFERENCES boolForKey:RenderIconsInCircles];
-        [listView reloadData];
+        [_listView reloadData];
     }
     else if ([keyPath isEqualToString:ResizeAutomatically])
         [self resizeWindow:false];
@@ -1092,7 +1152,7 @@
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     
-    return  [[projectListController arrangedObjects] count] // Could be bound but that makes the use of a dummy more difficult
+    return  [[_projectListController arrangedObjects] count] // Could be bound but that makes the use of a dummy more difficult
             + showDummy;
     
 }
@@ -1105,12 +1165,16 @@
         
         BOOL hideButtons = isDummy;
         
+        [cell setImage:nil];
+        [cell setAction:NULL];
+        [cell setTarget:nil];
+        
         if (!isDummy) {
             
-            ProjectURL *URL = [[projectListController arrangedObjects] objectAtIndex:row - showDummy];
+            ProjectURL *URL = [[_projectListController arrangedObjects] objectAtIndex:row - showDummy];
             hideButtons = [URL isCancelled];
             
-            if ([tableColumn.identifier isEqualToString:@"Cancel"]) {
+            if ([tableColumn.identifier isEqualToString:@"Reveal"]) {
                 if (![self project].hasWritingPermission) {
                     if (row == showDummy) {
                         [(NSButtonCell *)cell setImage:[NSImage imageNamed:NSImageNameRefreshFreestandingTemplate]];
@@ -1121,8 +1185,8 @@
                         hideButtons = true;
                 }
                 else if (row == showDummy) {
-                    [(NSButtonCell *)cell setImage:[NSImage imageNamed:NSImageNameStopProgressFreestandingTemplate]];
-                    [(NSButtonCell *)cell setAction:@selector(cancelURL:)];
+                    [(NSButtonCell *)cell setImage:[NSImage imageNamed:NSImageNameRevealFreestandingTemplate]];
+                    [(NSButtonCell *)cell setAction:@selector(revealInFinder:)];
                     [(NSButtonCell *)cell setTarget:self];
                 }
             }
@@ -1143,7 +1207,7 @@
             [statsCell setColor:([tableView odd] ? alternateRowColor : [NSColor whiteColor])];
         }
         else {
-            [statsCell setURL:[[projectListController arrangedObjects] objectAtIndex:row - showDummy]];
+            [statsCell setURL:[[_projectListController arrangedObjects] objectAtIndex:row - showDummy]];
             [statsCell setStats:nil];
             [statsCell setRenderInCircles:self.renderInCircles];
         }
@@ -1212,7 +1276,7 @@
     NSString *identifier = [aTableColumn identifier];
     
     if ([identifier isEqualToString:@"Project"])
-        return [[[projectListController arrangedObjects] objectAtIndex:row - showDummy] title];
+        return [[[_projectListController arrangedObjects] objectAtIndex:row - showDummy] title];
     else if ([identifier isEqualToString:@"Reveal"])
         return @"Open URL";
     else if ([identifier isEqualToString:@"Cancel"])
@@ -1238,7 +1302,7 @@
     
     id sender = [notification object];
     
-    if (sender == listView) {
+    if (sender == _listView) {
         
         [self stopEditingDummy];
         
@@ -1279,22 +1343,22 @@
 
 - (void)editDummy { // Programmatically induce dummy editing
     
-    [toolbarAddPauseButton setSelected:true forSegment:0];
-    [listView editColumn:0 row:0 withEvent:nil select:true]; // Calls 'selectWithFrame:in View:editor:delegate:start:length:' when flag == true
+    [_toolbarAddPauseButton setSelected:true forSegment:0];
+    [_listView editColumn:0 row:0 withEvent:nil select:true]; // Calls 'selectWithFrame:in View:editor:delegate:start:length:' when flag == true
     
 }
 
 - (void)stopEditingDummy {
     
-    [toolbarAddPauseButton setSelected:false forSegment:0];
-    [listView abortEditing];
-    [listView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:0] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+    [_toolbarAddPauseButton setSelected:false forSegment:0];
+    [_listView abortEditing];
+    [_listView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:0] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
     
 }
 
 - (void)setShowDummy:(BOOL)flag { // Automatically edits it the dummy after updating the interface
     
-    ProjectListView *table = listView;
+    ProjectListView *table = _listView;
     
     if (flag) {
         
@@ -1345,14 +1409,14 @@
 
 - (void)splitViewDidLoad:(SplitView *)splitView {
     
-    if (splitView == projectSplitView) {
-        [projectSplitView collapseView:[projectSplitView secondView] withAnimation:false];
+    if (splitView == _projectSplitView) {
+        [_projectSplitView collapseView:[_projectSplitView secondView] withAnimation:false];
     }
-    else if (splitView == searchSplitView) {
+    else if (splitView == _searchSplitView) {
         
-        [searchSplitView collapseView:[searchSplitView secondView] withAnimation:false];
-        [toolbarSearchButton setState:NSOffState];
-        [toolbarSearchButton setAction:@selector(showSearch:)];
+        [_searchSplitView collapseView:[_searchSplitView secondView] withAnimation:false];
+        [_toolbarSearchButton setState:NSOffState];
+        [_toolbarSearchButton setAction:@selector(showSearch:)];
         
     }
     
@@ -1372,10 +1436,10 @@
 
 - (BOOL)splitView:(NSSplitView *)splitView shouldAdjustSizeOfSubview:(NSView *)view {
     
-    if (view == [windowSplitView secondView]
-        || view == [controllerSplitView firstView]
-        || view == [projectSplitView secondView]
-        || view == [searchSplitView secondView])
+    if (view == [_windowSplitView secondView]
+        || view == [_controllerSplitView firstView]
+        || view == [_projectSplitView secondView]
+        || view == [_searchSplitView secondView])
         return false;
     
     return true;
@@ -1421,10 +1485,10 @@
 - (void)dealloc {
     
     [self invalidateTimer];
-    [self stopEditingDummy];
     
     [PREFERENCES removeObserver:self forKeyPath:RenderIconsInCircles];
     [PREFERENCES removeObserver:self forKeyPath:ResizeAutomatically];
+    [PREFERENCES removeObserver:self forKeyPath:ShowRateInDock];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
@@ -1433,6 +1497,17 @@
     [statsIndices release];
     
     [alternateRowColor release];
+    
+    self.projectListController = nil;
+    self.listView = nil;
+    self.searchField = nil;
+    self.statusField = nil;
+    self.windowSplitView = nil;
+    self.controllerSplitView = nil;
+    self.projectSplitView = nil;
+    self.searchSplitView = nil;
+    self.toolbarAddPauseButton = nil;
+    self.searchView = nil;
     
     [super dealloc];
     
@@ -1448,18 +1523,28 @@
 
 @interface ProjectWindowControllerYosemite()
 
+@property (nonatomic, retain) IBOutlet NSMenu *contextualMenu, *filesMenu;
+@property (nonatomic, retain) IBOutlet ProjectMenuView *menuView;
+@property (nonatomic, retain) IBOutlet NSOutlineView *statsOutlineView;
+@property (nonatomic, retain) IBOutlet NSTableView *fileListView;
+@property (nonatomic, retain) IBOutlet NSTextField *speedStatField, *sizeStatField, *filesStatusField;
+@property (nonatomic, retain) IBOutlet NSSearchField *filesSearchField;
+@property (nonatomic, retain) IBOutlet NSView *panelView, *linksPanel, *statsPanel, *filesPanel;
+
 - (void)loadPanel;
 
 @end
 
 @implementation ProjectWindowControllerYosemite
 
+@synthesize contextualMenu = _contextualMenu, filesMenu = _filesMenu, menuView = _menuView, statsOutlineView = _statsOutlineView, fileListView = _fileListView, speedStatField = _speedStatField, sizeStatField = _sizeStatField, filesStatusField = _filesStatusField, filesSearchField = _filesSearchField, panelView = _panelView, linksPanel = _linksPanel, statsPanel = _statsPanel, filesPanel = _filesPanel;
+
 - (void)setDocument:(NSDocument *)document {
     
     [super setDocument:document];
     
     if (theme == WindowThemeYosemite)
-        [self.project.statistics setOutlineView:statsOutlineView];
+        [self.project.statistics setOutlineView:_statsOutlineView];
     
 }
 
@@ -1484,9 +1569,9 @@
         if (!self.project.isMirroring && [[menuItem title] contains:@"Statistics"])
             return false;
         else if (![menuItem.title contains:@"Options"] && ![menuItem.title contains:@"Notifications"]) {
-            if ([menuView selectedRow] == 1)
+            if ([_menuView selectedRow] == 1)
                 return false;
-            else if ([menuView selectedRow] == 2 && ![menuItem.title contains:@"Filter"] && ![menuItem.title contains:@"Statistics"])
+            else if ([_menuView selectedRow] == 2 && ![menuItem.title contains:@"Filter"] && ![menuItem.title contains:@"Statistics"])
                 return false;
         }
         
@@ -1499,7 +1584,8 @@
 - (void)stopEditingDummy {
     
     [super stopEditingDummy];
-    [menuView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:0] columnIndexes:[NSIndexSet indexSetWithIndex:2]];
+    [_menuView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:0]
+                         columnIndexes:[NSIndexSet indexSetWithIndex:2]];
     
 }
 
@@ -1540,7 +1626,7 @@
     
     // Adapt 'Pause' item of contextual menu of listView
     BOOL paused = [self.project isPaused];
-    NSMenuItem *pauseItem = [contextualMenu itemAtIndex:1];
+    NSMenuItem *pauseItem = [_contextualMenu itemAtIndex:1];
     [pauseItem setEnabled:self.project.isMirroring];
     [pauseItem setTitle:(paused ? @"Resume" : @"Pause")];
     [pauseItem setAction:(paused ? @selector(resume:) : @selector(pause:))];
@@ -1551,9 +1637,10 @@
 
 - (void)projectDidStart:(Project *)project {
     
-    [menuView beginUpdates];
-    [menuView insertRowsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, 2)] withAnimation:NSTableViewAnimationEffectNone];
-    [menuView endUpdates];
+    [_menuView beginUpdates];
+    [_menuView insertRowsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, 2)]
+                     withAnimation:NSTableViewAnimationEffectNone];
+    [_menuView endUpdates];
     
     [super projectDidStart:project];
     
@@ -1563,10 +1650,11 @@
 
 - (IBAction)showContextualMenu:(id)sender {
     
-    NSRect firstFrame = [menuView frameOfCellAtColumn:0 row:0];
-    NSRect secondFrame = [menuView frameOfCellAtColumn:1 row:0];
+    NSRect firstFrame = [_menuView frameOfCellAtColumn:0 row:0];
+    NSRect secondFrame = [_menuView frameOfCellAtColumn:1 row:0];
     NSPoint location = NSMakePoint(firstFrame.size.width + secondFrame.size.width/2.0, firstFrame.size.height + secondFrame.size.height/2.0);
-    [contextualMenu popUpMenuPositioningItem:[contextualMenu itemAtIndex:0] atLocation:location inView:menuView];
+    [_contextualMenu popUpMenuPositioningItem:[_contextualMenu itemAtIndex:0]
+                                   atLocation:location inView:_menuView];
     
 }
 
@@ -1591,12 +1679,12 @@
         [super hideSearch:sender];
     else {
         
-        if ([projectListController filterPredicate]) {
-            [projectListController setFilterPredicate:nil];
-            [listView reloadData];
+        if ([_projectListController filterPredicate]) {
+            [_projectListController setFilterPredicate:nil];
+            [_listView reloadData];
         }
         
-        [searchField setStringValue:@""];
+        [_searchField setStringValue:@""];
         
     }
     
@@ -1608,8 +1696,8 @@
         [super showSearch:sender];
     else {
         
-        BOOL isForFiles = ([menuView selectedRow] == 2); // Searching in files
-        [self.window makeFirstResponder:(isForFiles ? filesSearchField : searchField)];
+        BOOL isForFiles = ([_menuView selectedRow] == 2); // Searching in files
+        [self.window makeFirstResponder:(isForFiles ? _filesSearchField : _searchField)];
         
         if (!isForFiles) {
             [searchTextView selectAll:self];
@@ -1623,7 +1711,7 @@
 - (IBAction)showStatistics:(id)sender {
     
     if (theme == WindowThemeYosemite)
-        [menuView selectRowIndexes:[NSIndexSet indexSetWithIndex:1] byExtendingSelection:false];
+        [_menuView selectRowIndexes:[NSIndexSet indexSetWithIndex:1] byExtendingSelection:false];
     else
         [super showStatistics:sender];
     
@@ -1631,7 +1719,7 @@
 
 - (IBAction)switchFileView:(id)sender {
     
-    BOOL socketsShown = [[fileListView infoForBinding:NSContentBinding] objectForKey:NSObservedObjectKey] == self.project.sockets;
+    BOOL socketsShown = [[_fileListView infoForBinding:NSContentBinding] objectForKey:NSObservedObjectKey] == self.project.sockets;
     
     [self updateFileListView:!socketsShown];
     
@@ -1651,11 +1739,11 @@
     [self readTheme];
     [PREFERENCES addObserver:self forKeyPath:MainWindowTheme options:NSKeyValueObservingOptionNew context:NULL];
     
-    [toolbarAddPauseButton setOverrideDrawing:false]; // Disable custom segmented control drawing
+    [_toolbarAddPauseButton setOverrideDrawing:false]; // Disable custom segmented control drawing
     [self updateGradient];
     
     if (theme == WindowThemeYosemite)
-        self.project.statistics.outlineView = statsOutlineView;
+        self.project.statistics.outlineView = _statsOutlineView;
     
     [self updateFileListView:false];
     
@@ -1667,10 +1755,10 @@
     
     [super windowDidBecomeMain:notification];
     
-    [filesStatusField setTextColor:[NSColor darkGrayColor]];
+    [_filesStatusField setTextColor:[NSColor darkGrayColor]];
     
     if (theme == WindowThemeYosemite)
-        [self.project.statistics setOutlineView:statsOutlineView];
+        [self.project.statistics setOutlineView:_statsOutlineView];
     
 }
 
@@ -1678,7 +1766,7 @@
     
     [super windowDidResignMain:notification];
     
-    [filesStatusField setTextColor:[NSColor lightGrayColor]];
+    [_filesStatusField setTextColor:[NSColor lightGrayColor]];
     
 }
 
@@ -1690,24 +1778,24 @@
     if (showSockets) contentController = self.project.sockets;
     
     // Update interface elements
-    [filesSearchField setEnabled:!showSockets];
-    [[filesMenu itemAtIndex:1] setTitle:(showSockets ? @"Show Recent Files" : @"Show Active Sockets")];
-    [[[fileListView tableColumns] objectAtIndex:1] setIdentifier:(showSockets ? @"socketDescription" : @"fileName")];
-    [[[fileListView tableColumns] objectAtIndex:2] setIdentifier:(showSockets ? @"progress" : @"size")];
-    ((NSTableHeaderCell *)[[[fileListView tableColumns] objectAtIndex:1] headerCell]).stringValue
+    [_filesSearchField setEnabled:!showSockets];
+    [[_filesMenu itemAtIndex:1] setTitle:(showSockets ? @"Show Recent Files" : @"Show Active Sockets")];
+    [[[_fileListView tableColumns] objectAtIndex:1] setIdentifier:(showSockets ? @"socketDescription" : @"fileName")];
+    [[[_fileListView tableColumns] objectAtIndex:2] setIdentifier:(showSockets ? @"progress" : @"size")];
+    ((NSTableHeaderCell *)[[[_fileListView tableColumns] objectAtIndex:1] headerCell]).stringValue
     = (showSockets ? @"Description" : @"File");
-    ((NSTableHeaderCell *)[[[fileListView tableColumns] objectAtIndex:2] headerCell]).stringValue
+    ((NSTableHeaderCell *)[[[_fileListView tableColumns] objectAtIndex:2] headerCell]).stringValue
     = (showSockets ? @"Progress" : @"Size");
-    ((NSButtonCell *)[[[fileListView tableColumns] objectAtIndex:3] dataCell]).image
+    ((NSButtonCell *)[[[_fileListView tableColumns] objectAtIndex:3] dataCell]).image
     = [NSImage imageNamed:(showSockets ? NSImageNameStopProgressFreestandingTemplate : NSImageNameRevealFreestandingTemplate)];
-    fileListView.headerView.needsDisplay = true;
-    [filesStatusField bind:NSValueBinding toObject:contentController withKeyPath:@"status" options:nil];
+    _fileListView.headerView.needsDisplay = true;
+    [_filesStatusField bind:NSValueBinding toObject:contentController withKeyPath:@"status" options:nil];
     
     // Update bindings
-    [fileListView bind:NSSortDescriptorsBinding toObject:contentController withKeyPath:@"sortDescriptors" options:nil];
-    [fileListView bind:NSContentBinding toObject:contentController withKeyPath:@"arrangedObjects" options:nil];
+    [_fileListView bind:NSSortDescriptorsBinding toObject:contentController withKeyPath:@"sortDescriptors" options:nil];
+    [_fileListView bind:NSContentBinding toObject:contentController withKeyPath:@"arrangedObjects" options:nil];
     NSString *identifier = nil;
-    for (NSTableColumn *column in fileListView.tableColumns) {
+    for (NSTableColumn *column in _fileListView.tableColumns) {
         identifier = column.identifier;
         if ([identifier isEqualToString:@"Action"]) {
             [column bind:NSTargetBinding
@@ -1723,13 +1811,13 @@
              withKeyPath:[@"arrangedObjects." stringByAppendingString:column.identifier]
                  options:[NSDictionary dictionaryWithObjectsAndKeys:!showSockets, NSCreatesSortDescriptorBindingOption, nil]];
     }
-    [fileListView reloadData];
+    [_fileListView reloadData];
     
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     
-    if (tableView == menuView)
+    if (tableView == _menuView)
         return ([[self project] hasStarted] || [[self project] isCompleted] ? 3 : 1);
     else
         return [super numberOfRowsInTableView:tableView];
@@ -1738,7 +1826,7 @@
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     
-    if (tableView == menuView) {
+    if (tableView == _menuView) {
         
         NSString *identifier = [tableColumn identifier];
         
@@ -1771,7 +1859,7 @@
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
     
-    if (tableView == menuView)
+    if (tableView == _menuView)
         return 30;
     else
         return [super tableView:tableView heightOfRow:row];
@@ -1780,21 +1868,21 @@
 
 - (void)tableView:(NSTableView *)tableView willDisplayCell:(NSCell *)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     
-    if (tableView == menuView) {
+    if (tableView == _menuView) {
         
         NSInteger selectedRow = [tableView selectedRow];
         NSString *identifier = [tableColumn identifier];
         
         if (row == 0 && selectedRow == 0)
-            [cell setMenu:contextualMenu];
+            [cell setMenu:_contextualMenu];
         else if (row == 2 && selectedRow == 2)
-            [cell setMenu:filesMenu];
+            [cell setMenu:_filesMenu];
         else
             [cell setMenu:nil];
         
         if ([identifier isEqualToString:@"Button"]) {
             
-            if (selectedRow == row && menuView.hoveredRow == row) {
+            if (selectedRow == row && _menuView.hoveredRow == row) {
                 
                 if (row == 0)
                     cell.image = [NSImage imageNamed:@"AddBubble"], cell.action = @selector(addURL:);
@@ -1821,7 +1909,7 @@
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
     
-    if ([notification object] == menuView)
+    if ([notification object] == _menuView)
         [self loadPanel];
     else
         [super tableViewSelectionDidChange:notification];
@@ -1830,7 +1918,7 @@
 
 - (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row {
     
-    if (tableView == menuView)
+    if (tableView == _menuView)
         return (row == 0 || [[self project] hasStarted]);
     
     return [super tableView:tableView shouldSelectRow:row];
@@ -1839,13 +1927,13 @@
 
 - (BOOL)tableView:(NSTableView *)tableView shouldShowCellExpansionForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     
-    return  (tableView == menuView ? true : [super tableView:tableView shouldShowCellExpansionForTableColumn:tableColumn row:row]);
+    return  (tableView == _menuView ? true : [super tableView:tableView shouldShowCellExpansionForTableColumn:tableColumn row:row]);
     
 }
 
 - (NSString *)tableView:(NSTableView *)aTableView toolTipForCell:(NSCell *)aCell rect:(NSRectPointer)rect tableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)row mouseLocation:(NSPoint)mouseLocation {
     
-    if (aTableView == menuView) {
+    if (aTableView == _menuView) {
         
         if ([aCell isEnabled]) {
             
@@ -1861,7 +1949,7 @@
                     return @"Recently downloaded files.";
                 
             }
-            else if ([identifier isEqualToString:@"Button"] && row == [menuView selectedRow]) {
+            else if ([identifier isEqualToString:@"Button"] && row == [_menuView selectedRow]) {
                 
                 if (row == 0)
                     return @"Add a new link.";
@@ -1887,7 +1975,7 @@
 - (void)updateGradient {
     
     if ([PREFERENCES integerForKey:MainWindowTheme] != WindowThemeClassic)
-        [(GradientView *)[windowSplitView secondView] setGradient:nil]; // Remove footer gradient
+        [(GradientView *)[_windowSplitView secondView] setGradient:nil]; // Remove footer gradient
     else
         [super updateGradient];
     
@@ -1898,7 +1986,14 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     
     if ([keyPath isEqualToString:MainWindowTheme]) {
-        [self readTheme];
+        NSInteger newTheme = [PREFERENCES integerForKey:MainWindowTheme];
+        if ((newTheme == WindowThemeYosemite || theme == WindowThemeYosemite)
+            && newTheme != theme) { // Different nib
+            ProjectWindowControllerLion *newController = [[ProjectWindowControllerYosemite new] autorelease];
+            return [self.project setWindowController:newController];
+        }
+        else
+            [self readTheme];
         [self updateGradient];
     }
     else
@@ -1909,15 +2004,10 @@
 - (void)readTheme {
     
     NSInteger newTheme = [PREFERENCES integerForKey:MainWindowTheme];
-    
-    if ((newTheme == WindowThemeYosemite || theme == WindowThemeYosemite) && newTheme != theme) { // Different nib
-        ProjectWindowControllerLion *newController = [[ProjectWindowControllerYosemite new] autorelease];
-        return [self.project setWindowController:newController];
-    }
         
     if (newTheme == WindowThemeYosemite) {
         
-        for (NSArray *columnArray in @[fileListView.tableColumns, statsOutlineView.tableColumns])
+        for (NSArray *columnArray in @[_fileListView.tableColumns, _statsOutlineView.tableColumns])
             for (NSTableColumn *column in columnArray) {
                 [column setHeaderCell:[[WindowAdaptedTableHeaderCell alloc] initTextCell:[(NSTableHeaderCell *)column.headerCell stringValue]]];
                 [(NSTableHeaderCell *)column.headerCell setAlignment:NSCenterTextAlignment];
@@ -1931,11 +2021,11 @@
             [self.window setTitlebarAppearsTransparent:true];
 #pragma clang diagnostic pop
                 
-        [menuView reloadData];
+        [_menuView reloadData];
         
         HeaderView *outlineHeaderView = [HeaderView new];
         headerView.clickable = false; // Disable table header clicks
-        [statsOutlineView setHeaderView:outlineHeaderView];
+        [_statsOutlineView setHeaderView:outlineHeaderView];
         
         [self loadPanel];
         
@@ -1945,7 +2035,7 @@
         self.window.backgroundColor = [NSColor windowBackgroundColor];
         self.window.styleMask &= ~NSTexturedBackgroundWindowMask;
         
-        [searchView setColor:[NSColor colorWithCalibratedWhite:0.95 alpha:1.0]];
+        [_searchView setColor:[NSColor colorWithCalibratedWhite:0.95 alpha:1.0]];
         
     }
     else if (newTheme == WindowThemeWhite) {
@@ -1954,8 +2044,8 @@
         self.window.backgroundColor = [NSColor whiteColor];
         self.window.styleMask |= NSUnifiedTitleAndToolbarWindowMask;
         
-        [searchView setColor:[NSColor whiteColor]];
-        [searchSplitView setCustomDividerThickness:0.0]; // Remove line above filtering field
+        [_searchView setColor:[NSColor whiteColor]];
+        [_searchSplitView setCustomDividerThickness:0.0]; // Remove line above filtering field
         
     }
     
@@ -1965,18 +2055,20 @@
 
 - (void)loadPanel {
     
-    NSInteger selectedIndex = [menuView selectedRow];
+    NSInteger selectedIndex = [_menuView selectedRow];
     
     if (selectedIndex != -1) {
         
-        for (NSView *subview in panelView.subviews)
+        for (NSView *subview in _panelView.subviews)
             [subview removeFromSuperview];
         
-        NSView *newPanel = (selectedIndex == 0 ? linksPanel : (selectedIndex == 1 ? statsPanel : filesPanel));
-        NSRect newFrame = NSMakeRect(0, 0, panelView.frame.size.width, panelView.frame.size.height);
+        NSView *newPanel = (selectedIndex == 0
+                            ? _linksPanel
+                            : (selectedIndex == 1 ? _statsPanel : _filesPanel));
+        NSRect newFrame = NSMakeRect(0, 0, _panelView.frame.size.width, _panelView.frame.size.height);
         
         [newPanel setFrame:newFrame];
-        [panelView addSubview:newPanel];
+        [_panelView addSubview:newPanel];
         
     }
     
@@ -1988,10 +2080,22 @@
     
     [PREFERENCES removeObserver:self forKeyPath:MainWindowTheme];
     
-    [menuView release];
+    [headerView release];
+    headerView = nil;
     
-    if (headerView)
-        [headerView release];
+    self.menuView = nil;
+    self.contextualMenu = nil;
+    self.filesMenu = nil;
+    self.statsOutlineView = nil;
+    self.fileListView = nil;
+    self.speedStatField = nil;
+    self.sizeStatField = nil;
+    self.filesStatusField = nil;
+    self.filesSearchField = nil;
+    self.panelView = nil;
+    self.linksPanel = nil;
+    self.statsPanel = nil;
+    self.filesPanel = nil;
     
     [super dealloc];
     

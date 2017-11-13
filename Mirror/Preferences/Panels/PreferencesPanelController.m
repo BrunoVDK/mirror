@@ -130,15 +130,8 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     
-    if ([keyPath isEqualToString:[@"values." stringByAppendingString:PresetsPreferencesKey]]) {
-        
-        [presets release];
-        presets = [[[PREFERENCES dictionaryForKey:PresetsPreferencesKey] allKeys] mutableCopy];
-        
-        [_presetsListView reloadData];
-        [self populatePresetMenu];
-        
-    }
+    if ([keyPath isEqualToString:[@"values." stringByAppendingString:PresetsPreferencesKey]])
+        [self reloadPresets];
     
 }
 
@@ -146,6 +139,16 @@
     
     [super loadView];
     
+    [self populatePresetMenu];
+    
+}
+
+- (void)reloadPresets {
+    
+    [presets release];
+    presets = [[[PREFERENCES dictionaryForKey:PresetsPreferencesKey] allKeys] mutableCopy];
+    
+    [_presetsListView reloadData];
     [self populatePresetMenu];
     
 }
@@ -197,34 +200,19 @@
 
 - (IBAction)removeSelected:(NSButton *)sender {
     
-    NSMutableDictionary *presetsDictionary = [[PREFERENCES objectForKey:PresetsPreferencesKey] mutableCopy];
-    
     NSIndexSet *selectedIndexes = [_presetsListView selectedRowIndexes];
+    NSArray *namesToRemove = [presets objectsAtIndexes:selectedIndexes];
+    [ProjectOptionsDictionary removePresetsWithNames:namesToRemove];
     
-    [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-        [presetsDictionary removeObjectForKey:[presets objectAtIndex:idx]];
-    }];
-    
-    [presets removeObjectsAtIndexes:selectedIndexes];
-    
-    [PREFERENCES setObject:presetsDictionary forKey:PresetsPreferencesKey];
-    [presetsDictionary release];
-    
-    [_presetsListView reloadData];
-    [self populatePresetMenu];
+    [self reloadPresets];
     
 }
 
 - (IBAction)removeAll:(NSButton *)sender {
     
-    NSMutableDictionary *presetsDictionary = [NSMutableDictionary new];
-    [PREFERENCES setObject:presetsDictionary forKey:PresetsPreferencesKey];
-    [presetsDictionary release];
+    [ProjectOptionsDictionary removePresetsWithNames:presets];
     
-    [presets removeAllObjects];
-    
-    [_presetsListView reloadData];
-    [self populatePresetMenu];
+    [self reloadPresets];
     
 }
 

@@ -60,6 +60,8 @@
     if (block != NULL) // Reset completion block
         Block_release(block);
     
+    [_textField setStringValue:@""];
+    
     if (IS_PRE_YOSEMITE)
         [NSApp beginSheet:[self window] modalForWindow:window didEndBlock:completionBlock];
     else {
@@ -95,6 +97,8 @@
         [NSApp endSheet:[self window] returnCode:response];
     else
         [modalWindow endSheet:[self window] returnCode:response];
+    
+    [_warningLabel setStringValue:@""];
     
     [[self window] orderOut:self];
     

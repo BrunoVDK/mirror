@@ -14,6 +14,8 @@
 
 NSString *const ProjectOptionsDictionaryWillChange = @"ProjectOptionsDictionaryWillChange";
 NSString *const ProjectOptionsDictionaryDidChange = @"ProjectOptionsDictionaryDidChange";
+NSString *const ProjectOptionsDictionaryDidReset = @"ProjectOptionsDictionaryDidReset";
+NSString *const ProjectOptionsPresetWasRemoved = @"ProjectOptionsPresetWasRemoved";
 NSString *const CustomPresetName = @"Custom";
 NSString *const DefaultPresetName = @"Defaults";
 NSString *const PresetsPreferencesKey = @"Presets";
@@ -42,7 +44,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
     static NSArray *allOptionKeys = nil;
     
     if (!allOptionKeys)
-        allOptionKeys = [[ProjectOptionsDictionary allOptions] allKeys];
+        allOptionKeys = [[[ProjectOptionsDictionary allOptions] allKeys] retain] ;
     
     return allOptionKeys;
     
@@ -175,9 +177,15 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 + (void)removePresetsWithNames:(NSArray *)presetNames {
     
     NSMutableDictionary *currentPresets = [[PREFERENCES dictionaryForKey:PresetsPreferencesKey] mutableCopy];
+    for (NSString *presetName in presetNames) {
+        [currentPresets removeObjectForKey:presetName];
+        [NOTIFICATION_CENTER postNotificationName:ProjectOptionsPresetWasRemoved
+                                           object:self
+                                         userInfo:[NSDictionary dictionaryWithObject:presetName
+                                                                              forKey:@"presetName"]];
+    }
     
-    for (NSString *presetName in presetNames)
-        [currentPresets setObject:nil forKey:presetName];
+    // [currentPresets removeObjectsForKeys:presetNames];
     
     [PREFERENCES setObject:currentPresets forKey:PresetsPreferencesKey];
     [currentPresets release];
@@ -305,7 +313,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 + (NSArray *)designOptions { // Key - Default Value - Mutating Block - Alterable when Engine Runs (YES/NO - use -boolValue to check value)
     
     NSDictionary *defaultCSSAttributes = [[NSDictionary alloc] initWithObjectsAndKeys:[NSColor colorWithCalibratedWhite:0.1 alpha:1.0], NSForegroundColorAttributeName, [NSFont systemFontOfSize:11.0], NSFontAttributeName, nil];
-    NSAttributedString *defaultCSS = [[NSAttributedString alloc] initWithString:@"body {background-color: white;}\n.footer {text-align: center;font-size:11px;}" attributes:defaultCSSAttributes];
+    NSString *defaultCSS = @"body {background-color: white;}\n.footer {text-align: center;font-size:11px;}";
     
     NSArray *designOptions = [NSArray arrayWithObjects:
             @"IndexHTMLTitle", @"Index", ^(httrackp *options, id value) {
@@ -327,7 +335,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
             @"IndexCSS", defaultCSS, ^(httrackp *options, id value) {
                 if (options->template_css)
                     free(options->template_css);
-                NSString *string = [value string];
+                NSString *string = value;
                 const char *dest = string.UTF8String;
                 if (dest == NULL) dest = "";
                 options->template_css = malloc(strlen(dest) + 1);
@@ -474,18 +482,11 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
     
     if (self = [super init]) {
         
-        if (values) {
-            optionsDictionary = [values mutableCopy];
-            _presetIdentifier = [CustomPresetName copy];
-        }
-        else {
-            optionsDictionary = [NSMutableDictionary new];
-            _presetIdentifier = [DefaultPresetName copy];
-        }
+        optionsDictionary = (values ? [values mutableCopy] : [NSMutableDictionary new]);
         
         _project = project;
         
-        if (project) {
+        if (project) { // This block makes dictionary (temporarily) 'custom'
             NSArray *designOptions = [ProjectOptionsDictionary designOptions];
             NSString *optionKey = nil;
             for (int i=0 ; i<[designOptions count] ; i+=4) {
@@ -493,6 +494,13 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
                 [self setValue:[self valueForKey:optionKey] forKey:optionKey];
             }
         }
+        
+        _presetIdentifier = (values ? [CustomPresetName copy] : [DefaultPresetName copy]);
+        
+        [NOTIFICATION_CENTER addObserver:self
+                                selector:@selector(presetWasRemoved:)
+                                    name:ProjectOptionsPresetWasRemoved
+                                  object:nil];
         
     }
     
@@ -502,14 +510,11 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     
-    if (self = [self init]) {
-        
-        [optionsDictionary release];
-        [_presetIdentifier release];
-        optionsDictionary = [[aDecoder decodeObjectForKey:@"Options"] mutableCopy];
-        _presetIdentifier = [[aDecoder decodeObjectForKey:@"Preset"] mutableCopy];
-        
-    }
+    NSDictionary *codedDictionary = [[aDecoder decodeObjectForKey:@"Options"] mutableCopy];
+    
+    if (codedDictionary)
+        if (self = [self initWithProject:nil usingValues:codedDictionary])
+            _presetIdentifier = [[aDecoder decodeObjectForKey:@"Preset"] mutableCopy];
     
     return self;
     
@@ -527,7 +532,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
     if (dictionary) {
         
         for (NSString *optionKey in [dictionary customisedOptionKeys])
-            [optionsDictionary setObject:[dictionary valueForKey:optionKey] forKey:optionKey];
+            [self setValue:[dictionary valueForKey:optionKey] forKey:optionKey];
         
         NSString *dictionaryPresetName = [dictionary presetName];
         if (!dictionaryPresetName
@@ -543,6 +548,45 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
     
 }
 
+- (void)presetWasRemoved:(NSNotification *)notification {
+
+    NSString *presetName = (NSString *)[[notification userInfo] objectForKey:@"presetName"];
+
+    if ([_presetIdentifier isEqualToString:presetName])
+        [self adoptPresetWithName:DefaultPresetName];
+        
+}
+
+- (BOOL)adoptPresetWithName:(NSString *)presetName {
+    
+    BOOL ok = true, isDefaults = [presetName isEqualToString:DefaultPresetName];
+    NSString *key = nil;
+    
+    for (key in [ProjectOptionsDictionary allOptionKeys])
+        [self willChangeValueForKey:key];
+    
+    [optionsDictionary removeAllObjects]; // Revert to defaults
+    _presetIdentifier = [DefaultPresetName copy];
+    
+    NSDictionary *newOptions = [ProjectOptionsDictionary optionsForPresetWithName:presetName];
+    if (newOptions) { // Only if options are set
+        for (NSString *optionKey in [newOptions allKeys])
+            [self setValue:[newOptions valueForKey:optionKey] forKey:optionKey];
+        _presetIdentifier = [presetName copy];
+    }
+    else if (!isDefaults)
+        ok = false;
+    
+    if (isDefaults)
+        [NOTIFICATION_CENTER postNotificationName:ProjectOptionsDictionaryDidReset object:self];
+    
+    for (key in [ProjectOptionsDictionary allOptionKeys])
+        [self didChangeValueForKey:key];
+    
+    return ok;
+    
+}
+
 #pragma mark KVO
 
 - (id)valueForKey:(NSString *)key { // This will return nil for invalid keys
@@ -555,7 +599,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 - (void)setValue:(id)value forKey:(NSString *)key { // Value is never set if the given key is not valid
     
     if ([ProjectOptionsDictionary defaultValueForOptionKey:key]) { // Make sure key has default value (which means it is valid)
-        
+                
         [NOTIFICATION_CENTER postNotificationName:ProjectOptionsDictionaryWillChange object:self];
         
         [optionsDictionary setValue:value forKey:key]; // Alter the dictionary itself
@@ -640,6 +684,10 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 #pragma mark Memory Management
 
 - (void)dealloc {
+    
+    [NOTIFICATION_CENTER removeObserver:self
+                                   name:ProjectOptionsDictionaryWillChange
+                                 object:_project.options];
     
     _project = nil;
     

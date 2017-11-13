@@ -10,6 +10,8 @@
 
 FOUNDATION_EXPORT NSString *const ProjectOptionsDictionaryWillChange; // Notification sent before dictionary changes
 FOUNDATION_EXPORT NSString *const ProjectOptionsDictionaryDidChange; // Notification sent after dictionary changed
+FOUNDATION_EXPORT NSString *const ProjectOptionsDictionaryDidReset; // Notification sent after dictionary reverted to defaults
+FOUNDATION_EXPORT NSString *const ProjectOptionsPresetWasRemoved; // Notification sent after preset was removed
 FOUNDATION_EXPORT NSString *const CustomPresetName; // The reserved preset name for custom options
 FOUNDATION_EXPORT NSString *const DefaultPresetName; // The reserved preset name for default options
 FOUNDATION_EXPORT NSString *const PresetsPreferencesKey; // The preferences key under which presets are saved
@@ -129,6 +131,15 @@ FOUNDATION_EXPORT NSString *const DefaultPresetPreferencesKey; // The preference
  * @param dictionary The dictionary to take values from.
  */
 - (void)adoptDictionary:(ProjectOptionsDictionary *)dictionary;
+
+/**
+ * Adopt the option values of the preset with given name.
+ *
+ * @param presetName The name of the preset to adopt.
+ * @return  True if and only if the given preset name has a corresponding options dictionary
+ *          If no such dictionary was found, this dictionary reverts to defaults.
+ */
+- (BOOL)adoptPresetWithName:(NSString *)presetName;
 
 /**
  * Checks whether or not the given preset name is a valid name for saving this options dictionary as a preset.

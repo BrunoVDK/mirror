@@ -32,7 +32,7 @@
     
 }
 
-+ (NSMenu *)presetMenu {
++ (NSMenu *)presetMenu { // Fetches options menu (App > Project > Options -- should be in nib)
     
     static NSMenu *presetMenu = nil;
     
@@ -48,7 +48,7 @@
     
 }
 
-+ (void)reloadPresetMenu {
++ (void)reloadPresetMenu { // Loads all available presets + custom + defaults
     
     NSMenu *presetMenu = PRESET_MENU;
     [presetMenu removeAllItems];
@@ -68,7 +68,7 @@
     
 }
 
-+ (void)addPresetWithIdentifier:(NSString *)identifier {
++ (void)addPresetWithIdentifier:(NSString *)identifier { // Only removes from menu
     
     NSMenu *presetMenu = PRESET_MENU;
     NSArray *currentPresets = presetMenu.itemArray;
@@ -82,7 +82,7 @@
     
 }
 
-+ (void)removePresetWithIdentifier:(NSString *)identifier {
++ (void)removePresetWithIdentifier:(NSString *)identifier { // Only adds to menu
     
     NSMenu *presetMenu = PRESET_MENU;
     [presetMenu removeItem:[presetMenu itemWithTitle:identifier]];
@@ -157,8 +157,15 @@
         if (_project)
             [[presetMenu itemWithTitle:PRESET_IDENTIFIER] setState:NSOffState];
         
-        [NOTIFICATION_CENTER removeObserver:self name:ProjectOptionsDictionaryDidChange object:_project.options];
-        [NOTIFICATION_CENTER removeObserver:self name:ProjectOptionsDictionaryWillChange object:_project.options];
+        [NOTIFICATION_CENTER removeObserver:self
+                                       name:ProjectOptionsDictionaryDidChange
+                                     object:_project.options];
+        [NOTIFICATION_CENTER removeObserver:self
+                                       name:ProjectOptionsDictionaryWillChange
+                                     object:_project.options];
+        [NOTIFICATION_CENTER removeObserver:self
+                                       name:ProjectOptionsDictionaryDidReset
+                                     object:_project.options];
         
         _project = project; // Assign
         for (ProjectOptionsPanelController *panel in self.panelControllers)
@@ -167,12 +174,24 @@
         if (project) {            
             
             NSMenuItem *newSelectedItem = [presetMenu itemWithTitle:PRESET_IDENTIFIER];
-            if (!newSelectedItem)
+            if (!PRESET_IDENTIFIER || [PRESET_IDENTIFIER isEqualToString:DefaultPresetName])
+                newSelectedItem = [presetMenu itemWithTitle:DefaultPresetName];
+            else if (!newSelectedItem)
                 newSelectedItem = [presetMenu itemWithTitle:CustomPresetName];
             [newSelectedItem setState:NSOnState];
             
-            [NOTIFICATION_CENTER addObserver:self selector:@selector(optionsDictionaryDidChange:) name:ProjectOptionsDictionaryDidChange object:project.options];
-            [NOTIFICATION_CENTER addObserver:self selector:@selector(optionsDictionaryWillChange:) name:ProjectOptionsDictionaryWillChange object:project.options];
+            [NOTIFICATION_CENTER addObserver:self
+                                    selector:@selector(optionsDictionaryDidChange:)
+                                        name:ProjectOptionsDictionaryDidChange
+                                      object:project.options];
+            [NOTIFICATION_CENTER addObserver:self
+                                    selector:@selector(optionsDictionaryWillChange:)
+                                        name:ProjectOptionsDictionaryWillChange
+                                      object:project.options];
+            [NOTIFICATION_CENTER addObserver:self
+                                    selector:@selector(optionsDictionaryDidReset:)
+                                        name:ProjectOptionsDictionaryDidReset
+                                      object:project.options];
             
         }
         
@@ -193,7 +212,10 @@
         
     }
     else
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        [super observeValueForKeyPath:keyPath
+                             ofObject:object
+                               change:change
+                              context:context];
     
 }
 
@@ -239,15 +261,30 @@
 }
 
 - (void)loadPreset:(NSMenuItem *)sender {
-    
-    // Read preset with identifier equal to that of the menu item's
+        
+    if (self.project) {
+        NSString *presetName = [sender title];
+        [[PRESET_MENU itemWithTitle:PRESET_IDENTIFIER] setState:NSOffState];
+        [self.project.options adoptPresetWithName:presetName];
+        [[PRESET_MENU itemWithTitle:PRESET_IDENTIFIER] setState:NSOnState]; // Identifier should be updated
+        [[PRESET_MENU itemWithTitle:CustomPresetName] setState:NSOffState];
+        [self reloadCrawlerOptions];
+    }
     
 }
 
 - (void)revertToDefaults:(NSMenuItem *)sender {
     
-    if (self.project)
-        ; // Propagate options
+    if (self.project) {
+        [[PRESET_MENU itemWithTitle:PRESET_IDENTIFIER] setState:NSOffState];
+        [self.project.options adoptPresetWithName:DefaultPresetName];
+    }
+    
+}
+
+- (void)reloadCrawlerOptions {
+    
+    [[(ProjectOptionsCrawlerPanelController *)[self.panelControllers objectAtIndex:0] outlineView] reloadData];
     
 }
 
@@ -273,13 +310,28 @@
     
 }
 
+- (void)optionsDictionaryDidReset:(NSNotification *)notificaton {
+    
+    [[PRESET_MENU itemWithTitle:DefaultPresetName] setState:NSOnState]; // Identifier should be updated
+    [[PRESET_MENU itemWithTitle:CustomPresetName] setState:NSOffState];
+    [self reloadCrawlerOptions];
+    
+}
+
 #pragma mark Memory Management
 
 - (void)dealloc {
     
     if (_project) {
-        [NOTIFICATION_CENTER removeObserver:self name:ProjectOptionsDictionaryDidChange object:_project.options];
-        [NOTIFICATION_CENTER removeObserver:self name:ProjectOptionsDictionaryWillChange object:_project.options];
+        [NOTIFICATION_CENTER removeObserver:self
+                                       name:ProjectOptionsDictionaryDidChange
+                                     object:_project.options];
+        [NOTIFICATION_CENTER removeObserver:self
+                                       name:ProjectOptionsDictionaryWillChange
+                                     object:_project.options];
+        [NOTIFICATION_CENTER removeObserver:self
+                                       name:ProjectOptionsDictionaryDidReset
+                                     object:_project.options];
     }
     
     [savePresetSheetController release];

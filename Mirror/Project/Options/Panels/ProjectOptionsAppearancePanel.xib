@@ -34,9 +34,10 @@
                                 <size key="minSize" width="438" height="81"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                                 <connections>
-                                    <binding destination="-2" name="attributedString" keyPath="self.project.options.IndexCSS" id="ziI-rc-bJR">
+                                    <binding destination="-2" name="value" keyPath="self.project.options.IndexCSS" id="pdr-MM-5mP">
                                         <dictionary key="options">
                                             <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                         </dictionary>
                                     </binding>
                                 </connections>

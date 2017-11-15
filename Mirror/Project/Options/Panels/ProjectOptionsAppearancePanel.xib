@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="1" width="480" height="208"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="YC6-ap-I1K">
+                <scrollView toolTip="The CSS code backing the index page." horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="YC6-ap-I1K">
                     <rect key="frame" x="20" y="49" width="440" height="83"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="PE4-KS-ArP">
@@ -57,7 +57,7 @@
                         <outlet property="nextKeyView" destination="3TL-E9-0Wz" id="hn2-We-nMR"/>
                     </connections>
                 </scrollView>
-                <popUpButton verticalHuggingPriority="750" id="O6b-78-Wlc">
+                <popUpButton toolTip="The color of the bullets in the stats view." verticalHuggingPriority="750" id="O6b-78-Wlc">
                     <rect key="frame" x="231" y="15" width="101" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="e5g-LH-cxi">

@@ -13,7 +13,7 @@
 /**
  * A category for adding functionality to the `NSString` class.
  */
-@interface NSString (NSStringAdditions)
+@interface NSString (Additions)
 
 /**
  * Returns a formatted string representing the given size in bytes.

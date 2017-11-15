@@ -142,7 +142,7 @@ enum {
         
         fileTypes = [[NSMutableArray alloc] initWithCapacity:ProjectStatisticFileCount];
         for (int type=0 ; type<ProjectStatisticFileCount ; type++)
-            [fileTypes addObject:[[ProjectStatFileType alloc] initWithType:type value:@"--"]];
+            [fileTypes addObject:[[ProjectStatFileType alloc] initWithType:type value:[NSNumber numberWithInt:0]]];
         
         [self adoptDictionary:dictionary]; // Read given dictionary and copy its values into the newly created dictionary
                 
@@ -153,9 +153,9 @@ enum {
             [pieGraphView addSliceWithWeight:0];
         [pieGraphView adoptTheme:PieGraphThemeClassic];
         
-        [(ProjectStat *)[statistics objectAtIndex:ProjectStatisticWarnings] setValue:[NSNumber numberWithInt:0]];
-        [(ProjectStat *)[statistics objectAtIndex:ProjectStatisticErrors] setValue:[NSNumber numberWithInt:0]];
-        [(ProjectStat *)[statistics objectAtIndex:ProjectStatisticInfoMessages] setValue:[NSNumber numberWithInt:0]];
+        int types[] = {ProjectStatisticWarnings, ProjectStatisticErrors, ProjectStatisticInfoMessages};
+        for (int i=0 ; i<3 ; i++)
+            [(ProjectStat *)[statistics objectAtIndex:types[i]] setValue:[NSNumber numberWithInt:0]];
         
     }
     
@@ -232,6 +232,7 @@ enum {
 
 - (void)setPieGraphTheme:(PieGraphTheme)theme {
     
+    [_outlineView reloadData];
     [pieGraphView adoptTheme:theme];
     
 }
@@ -292,6 +293,7 @@ enum {
             outlineView.dataSource = self;
             outlineView.delegate = self;
             
+            /*
             NSRect pieFrame = NSIntersectionRect([outlineView rectOfColumn:2], NSUnionRect([outlineView rectOfRow:1], [outlineView rectOfRow:3]));
             pieFrame = NSInsetRect(pieFrame, 0, 8);
             pieFrame.origin.y += 3;
@@ -301,6 +303,7 @@ enum {
             [outlineView addSubview:pieGraphView];
             pieGraphView.frame = pieFrame;
             pieGraphView.autoresizingMask = NSViewMinXMargin;
+             */
             
             outlineView.autoresizesSubviews = true;
             outlineView.outlineTableColumn.resizingMask = NSTableColumnAutoresizingMask;
@@ -375,26 +378,34 @@ enum {
     
     if ([identifier isEqualToString:@"Title"]) {
         
-        if ([stat isMemberOfClass:[ProjectStatFileType class]])
+        if ([stat isMemberOfClass:[ProjectStatFileType class]]) {
             [fileTypeCell setBulletColor:[pieGraphView colorOfSliceAtIndex:stat.type]];
+            [cell setFont:[NSFont systemFontOfSize:8.0]];
+        }
         
         [cell setStringValue:[item valueForKey:identifier.lowercaseString]];
         
     }
     else if ([identifier isEqualToString:@"Description"]) {
         
-        if ([stat type] == ProjectStatisticWritten && [outlineView isItemExpanded:item])
-            [cell setStringValue:@""];
-        else if ([item isMemberOfClass:[ProjectStatFileType class]]) {
+        // if ([stat type] == ProjectStatisticWritten && [outlineView isItemExpanded:item])
+        //    [cell setStringValue:@""];
+        // else if ([item isMemberOfClass:[ProjectStatFileType class]]) {
+        if ([item isMemberOfClass:[ProjectStatFileType class]]) {
             
+            NSInteger type = [(ProjectStatFileType *)item type];
+            [cell setStringValue:[(ProjectStat *)[fileTypes objectAtIndex:type] value]];
+            
+            /*
             if (stat.type == ProjectStatisticAudioFiles)
                 [cell setStringValue:[(ProjectStat *)[statistics objectAtIndex:ProjectStatisticWritten] description]];
+             */
             
             [cell setFont:[NSFont systemFontOfSize:8.0]];
             
         }
         else
-            [cell setStringValue:[item valueForKey:identifier.lowercaseString]];
+            [cell setStringValue:[item description]];
         
     }
         
@@ -513,8 +524,8 @@ enum {
 
 - (NSString *)description {
     
-    if (self.type == ProjectStatisticWritten)
-        return [NSString stringWithFormat:@"%@ written", self.value];
+    // if (self.type == ProjectStatisticWritten)
+        // return [NSString stringWithFormat:@"%@ written", self.value];
     
     if ([self.value isKindOfClass:[NSString class]])
         return self.value;

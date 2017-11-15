@@ -137,7 +137,7 @@
     
     [self willChangeValueForKey:@"status"];
     
-    for (int i=0 ; i<(maximumCapacity-count) ; i++)
+    for (int i=0 ; i<(count-maximumCapacity) ; i++)
         [self removeObject:[(NSMutableArray *)self.content firstObject]];
     
     [self didChangeValueForKey:@"status"];

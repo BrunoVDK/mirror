@@ -49,7 +49,7 @@
                                                 <binding destination="-2" name="value" keyPath="self.project.notifications.arrangedObjects.icon" id="v9g-1c-ivj"/>
                                             </connections>
                                         </tableColumn>
-                                        <tableColumn identifier="Description" editable="NO" width="177" minWidth="40" maxWidth="9999" headerToolTip="The description of the notification." id="75c-Xx-E4V">
+                                        <tableColumn identifier="Description" editable="NO" width="169.70703125" minWidth="40" maxWidth="9999" headerToolTip="The description of the notification." id="75c-Xx-E4V">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Description">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -70,14 +70,14 @@
                                                 </binding>
                                             </connections>
                                         </tableColumn>
-                                        <tableColumn identifier="Date" editable="NO" width="95" minWidth="95" maxWidth="95" headerToolTip="The date of occurence of the notification." id="5J1-Qs-PVN">
+                                        <tableColumn identifier="Date" editable="NO" width="100" minWidth="100" maxWidth="100" headerToolTip="The date of occurence of the notification." id="5J1-Qs-PVN">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Date">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
                                             <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="center" title="Text Cell" id="Poj-K7-ua9">
-                                                <dateFormatter key="formatter" dateStyle="short" timeStyle="short" id="bgR-YX-7TV"/>
+                                                <dateFormatter key="formatter" dateStyle="short" timeStyle="medium" id="bgR-YX-7TV"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>

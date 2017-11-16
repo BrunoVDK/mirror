@@ -683,7 +683,7 @@
             && [PREFERENCES boolForKey:ShowRateInDock]
             && [self.project isMirroring]) {
             NSString *rate = (NSString *)[self.project.statistics valueForStatisticOfType:ProjectStatisticTransferRate];
-            if (!rate)
+            if (!rate || [self.project isPaused])
                 rate = @"--";
             [[BadgeView sharedView] setMessage:rate];
             [[BadgeView sharedView] setVisible:true];
@@ -761,6 +761,8 @@
 }
 
 - (void)projectDidEnd:(Project *)project error:(NSString *)error {
+    
+    [[BadgeView sharedView] setVisible:false];
     
     [self stopEditingDummy];
     [self invalidateTimer];
@@ -1650,6 +1652,14 @@
     
 }
 
+- (void)projectDidEnd:(Project *)project error:(NSString *)error {
+    
+    [super projectDidEnd:project error:error];
+    [_menuView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:0]
+                         columnIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)]];
+    
+}
+
 #pragma mark Actions
 
 - (IBAction)showContextualMenu:(id)sender {
@@ -1886,20 +1896,28 @@
         
         if ([identifier isEqualToString:@"Button"]) {
             
+            [cell setEnabled:true];
+            
             if (selectedRow == row && _menuView.hoveredRow == row) {
                 
                 if (row == 0)
-                    cell.image = [NSImage imageNamed:@"AddBubble"], cell.action = @selector(addURL:);
+                    cell.image = (self.project.completed
+                                  ? nil
+                                  : [NSImage imageNamed:@"AddBubble"]),
+                    cell.action = @selector(addURL:),
+                    cell.enabled = self.project.completed;
                 else if (row == 1)
-                    cell.image = nil, cell.action = NULL; // cell.image = [NSImage imageNamed:@"PauseBubble"], cell.action = @selector(pause:);
+                    cell.image = nil,
+                    cell.action = NULL; // cell.image = [NSImage imageNamed:@"PauseBubble"], cell.action = @selector(pause:);
                 else
-                    cell.image = [NSImage imageNamed:@"SwitchBubble"], cell.action = @selector(switchFileView:);
+                    cell.image = [NSImage imageNamed:@"SwitchBubble"],
+                    cell.action = @selector(switchFileView:);
                 
             }
             else
-                cell.image = nil, cell.action = NULL;
+                cell.image = nil,
+                cell.action = NULL;
             
-            [cell setEnabled:true];
             
         }
         else if ([identifier isEqualToString:@"Caption"])

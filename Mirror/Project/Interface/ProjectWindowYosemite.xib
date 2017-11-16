@@ -83,7 +83,7 @@
                                                         </connections>
                                                     </buttonCell>
                                                 </tableColumn>
-                                                <tableColumn identifier="Caption" editable="NO" width="52" minWidth="36" maxWidth="3.4028234663852886e+38" id="gkO-1F-Kja">
+                                                <tableColumn identifier="Caption" editable="NO" width="50" minWidth="50" maxWidth="50" id="gkO-1F-Kja">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>

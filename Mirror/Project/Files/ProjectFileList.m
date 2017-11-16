@@ -100,17 +100,16 @@
     
     if ([object isMemberOfClass:[ProjectFile class]]) {
         
+        [self willChangeValueForKey:@"status"];
+        
         if ([self count] >= maximumCapacity) {
             [self.content removeObjectAtIndex:0];
-            [self.content addObject:object];
-            [self rearrangeObjects];
+            
         }
-        else {
-            [self willChangeValueForKey:@"status"];
-            [self.content addObject:object];
-            [self rearrangeObjects];
-            [self didChangeValueForKey:@"status"];
-        }
+        
+        [self.content addObject:object];
+        [super rearrangeObjects];
+        [self didChangeValueForKey:@"status"];
         
     }
     
@@ -139,8 +138,8 @@
     
     [self willChangeValueForKey:@"status"];
     
-    for (int i=0 ; i<(maximumCapacity-count) ; i++)
-        [self removeObject:[(NSMutableArray *)self.content firstObject]];
+    [self.content removeObjectsInRange:NSMakeRange(maximumCapacity,count-maximumCapacity-1)];
+    [super rearrangeObjects];
     
     [self didChangeValueForKey:@"status"];
     

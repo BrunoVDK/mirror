@@ -108,15 +108,16 @@
     
     if ([object isMemberOfClass:[ProjectNotification class]]) {
         
+        [self willChangeValueForKey:@"status"];
+        
         if ([self count] >= maximumCapacity) {
-            [self remove:[(NSMutableArray *)self.content firstObject]];
-            [super addObject:object];
+            [self.content removeObjectAtIndex:0];
+            
         }
-        else {
-            [self willChangeValueForKey:@"status"];
-            [super addObject:object];
-            [self didChangeValueForKey:@"status"];
-        }
+        
+        [self.content addObject:object];
+        [super rearrangeObjects];
+        [self didChangeValueForKey:@"status"];
         
     }
     
@@ -137,8 +138,8 @@
     
     [self willChangeValueForKey:@"status"];
     
-    for (int i=0 ; i<(count-maximumCapacity) ; i++)
-        [self removeObject:[(NSMutableArray *)self.content firstObject]];
+    [self.content removeObjectsInRange:NSMakeRange(maximumCapacity,count-maximumCapacity-1)];
+    [super rearrangeObjects];
     
     [self didChangeValueForKey:@"status"];
     

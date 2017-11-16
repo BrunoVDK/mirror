@@ -680,17 +680,13 @@
     
     if (![[[BadgeView sharedView] message] hasPrefix:@"Closing"]) {
         if ([self.window isMainWindow]
-            && [PREFERENCES boolForKey:ShowRateInDock]
-            && [self.project isMirroring]
-            && ![self.project isPaused]) {
+            && [PREFERENCES boolForKey:ShowRateInDock]) {
             NSString *rate = (NSString *)[self.project.statistics valueForStatisticOfType:ProjectStatisticTransferRate];
-            if (!rate)
-                rate = @"-- / s";
+            if (!rate || ![self.project isMirroring] || [self.project isPaused])
+                rate = @"--";
             [[BadgeView sharedView] setMessage:rate];
             [[BadgeView sharedView] setVisible:true];
         }
-        else
-            [[BadgeView sharedView] setVisible:false];
     }
     
 }
@@ -996,6 +992,7 @@
         
     [super windowDidBecomeMain:notification];
     
+    [self updateTransferRate];
     [_listView reloadVisibleRect];
     [self updateGradient];
     [_statusField setTextColor:[NSColor darkGrayColor]];
@@ -1010,6 +1007,9 @@
 - (void)windowDidResignMain:(NSNotification *)notification {
     
     [super windowDidResignMain:notification];
+    
+    if (![[NSApp mainWindow] isKindOfClass:[ProjectWindow class]])
+        [[BadgeView sharedView] setVisible:false];
     
     [_listView reloadVisibleRect];
     [self updateGradient];
@@ -1109,7 +1109,7 @@
     else if ([keyPath isEqualToString:ResizeAutomatically])
         [self resizeWindow:false];
     else if ([keyPath isEqualToString:ShowRateInDock])
-        [[BadgeView sharedView] setVisible:self.project.isMirroring && [PREFERENCES boolForKey:ShowRateInDock]];
+        [[BadgeView sharedView] setVisible:[PREFERENCES boolForKey:ShowRateInDock]];
     else
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     

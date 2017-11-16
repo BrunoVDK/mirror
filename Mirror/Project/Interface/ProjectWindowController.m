@@ -764,6 +764,8 @@
     
     [[BadgeView sharedView] setVisible:false];
     
+    [self.listView reloadData];
+    
     [self stopEditingDummy];
     [self invalidateTimer];
     if (error)
@@ -1181,7 +1183,7 @@
             hideButtons = [URL isCancelled];
             
             if ([tableColumn.identifier isEqualToString:@"Reveal"]) {
-                if (![self project].hasWritingPermission) {
+                if (!self.project.hasWritingPermission || self.project.isCompleted) {
                     if (row == showDummy) {
                         [(NSButtonCell *)cell setImage:[NSImage imageNamed:NSImageNameRefreshFreestandingTemplate]];
                         [(NSButtonCell *)cell setAction:@selector(mirror)];

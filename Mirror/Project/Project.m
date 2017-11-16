@@ -228,7 +228,7 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     
     // Start mirroring
     if (_completed) {
-        [self.delegate projectDidEnd:self error:@""];
+        [self.delegate projectDidEnd:self error:nil];
     }
     else
         [self mirror];
@@ -361,6 +361,15 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     if (![self isMirroring]) {
         
         _started = true;
+        
+        if (_completed) {
+            [self.files clearFileList];
+            [self.notifications clearNotificationList];
+            [self.statistics reset];
+            for (ProjectURL *url in _URLs)
+                [url reset];
+            _completed = false;
+        }
         
         if (self.URLs.count < 1)
             return;

@@ -91,4 +91,9 @@
  */
 - (BOOL)fetchAttributes;
 
+/**
+ * Reset this URL (that is, set its parameters to zero).
+ */
+- (void)reset;
+
 @end

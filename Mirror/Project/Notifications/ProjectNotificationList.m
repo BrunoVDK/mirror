@@ -123,6 +123,14 @@
     
 }
 
+- (void)clearNotificationList {
+    
+    [self willChangeValueForKey:@"status"];
+    self.content = [NSMutableArray array]; // Renew content (releases former content array)
+    [self didChangeValueForKey:@"status"];
+    
+}
+
 - (BOOL)cleanArray { // Enforce maximum capacity
     
     maximumCapacity = MAX(10, MIN([PREFERENCES integerForKey:MaxUpdates], MAX_NOTIFICATIONS)); // Minimum of 10, maximum of MAX_NOTIFICATIONS

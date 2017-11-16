@@ -265,6 +265,12 @@
     
 }
 
+- (void)reset {
+    
+    bytesScanned = bytesWritten = linksDetected = 0;
+    
+}
+
 #pragma mark Memory Management
 
 - (void)dealloc {

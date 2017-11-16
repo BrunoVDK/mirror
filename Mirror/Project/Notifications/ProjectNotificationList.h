@@ -31,4 +31,9 @@
  */
 - (NSUInteger)count;
 
+/**
+ * Remove all notifications in this list.
+ */
+- (void)clearNotificationList;
+
 @end

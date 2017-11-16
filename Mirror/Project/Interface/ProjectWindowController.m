@@ -1643,11 +1643,13 @@
 
 - (void)projectDidStart:(Project *)project {
     
-    [_menuView beginUpdates];
-    [_menuView insertRowsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, 2)]
-                     withAnimation:NSTableViewAnimationEffectNone];
-    [_menuView endUpdates];
-    
+    if ([_menuView numberOfRows] < 2) {
+        [_menuView beginUpdates];
+        [_menuView insertRowsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, 2)]
+                         withAnimation:NSTableViewAnimationEffectNone];
+        [_menuView endUpdates];
+    }
+            
     [super projectDidStart:project];
     
 }

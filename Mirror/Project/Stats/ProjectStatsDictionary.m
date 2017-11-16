@@ -136,32 +136,46 @@ enum {
     
     if (self = [super init]) {
         
-        statistics = [[NSMutableArray alloc] initWithCapacity:ProjectStatisticCount];
-        for (int type=0 ; type<ProjectStatisticCount ; type++)
-            [statistics addObject:[[ProjectStat alloc] initWithType:type value:@"--"]];
-        
-        fileTypes = [[NSMutableArray alloc] initWithCapacity:ProjectStatisticFileCount];
-        for (int type=0 ; type<ProjectStatisticFileCount ; type++)
-            [fileTypes addObject:[[ProjectStatFileType alloc] initWithType:type value:[NSNumber numberWithInt:0]]];
-        
-        [self adoptDictionary:dictionary]; // Read given dictionary and copy its values into the newly created dictionary
-                
+        [self reset];
+        [self adoptDictionary:dictionary]; // Read dictionary and copy its values into the newly created dictionary
         _project = project; // Assign
-        
-        pieGraphView = [[PieGraphView alloc] init];
-        while ([pieGraphView numberOfSlices] < [fileTypes count])
-            [pieGraphView addSliceWithWeight:0];
-        [pieGraphView adoptTheme:PieGraphThemeClassic];
-        
-        int types[] = {ProjectStatisticWarnings, ProjectStatisticErrors, ProjectStatisticInfoMessages};
-        for (int i=0 ; i<3 ; i++)
-            [(ProjectStat *)[statistics objectAtIndex:types[i]] setValue:[NSNumber numberWithInt:0]];
         
     }
     
     return self;
     
 }
+
+- (void)reset {
+    
+    if (statistics)
+        [statistics release];
+    statistics = [[NSMutableArray alloc] initWithCapacity:ProjectStatisticCount];
+    for (int type=0 ; type<ProjectStatisticCount ; type++)
+        [statistics addObject:[[ProjectStat alloc] initWithType:type value:@"--"]];
+    
+    if (fileTypes)
+        [fileTypes release];
+    fileTypes = [[NSMutableArray alloc] initWithCapacity:ProjectStatisticFileCount];
+    for (int type=0 ; type<ProjectStatisticFileCount ; type++)
+        [fileTypes addObject:[[ProjectStatFileType alloc] initWithType:type value:[NSNumber numberWithInt:0]]];
+    
+    if (pieGraphView)
+        [pieGraphView release];
+    pieGraphView = [[PieGraphView alloc] init];
+    while ([pieGraphView numberOfSlices] < [fileTypes count])
+        [pieGraphView addSliceWithWeight:0];
+    [pieGraphView adoptTheme:PieGraphThemeClassic];
+    [self addPieGraphViewToOutlineView:_outlineView];
+    
+    int types[] = {ProjectStatisticWarnings, ProjectStatisticErrors, ProjectStatisticInfoMessages};
+    for (int i=0 ; i<3 ; i++)
+        [(ProjectStat *)[statistics objectAtIndex:types[i]] setValue:[NSNumber numberWithInt:0]];
+    
+    [_outlineView reloadData];
+    
+}
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
 
@@ -292,22 +306,9 @@ enum {
             
             outlineView.dataSource = self;
             outlineView.delegate = self;
-            
-            /*
-            NSRect pieFrame = NSIntersectionRect([outlineView rectOfColumn:2], NSUnionRect([outlineView rectOfRow:1], [outlineView rectOfRow:3]));
-            pieFrame = NSInsetRect(pieFrame, 0, 8);
-            pieFrame.origin.y += 3;
-            
-            pieGraphView.enabled = true;
-            [pieGraphView setHidden:false];
-            [outlineView addSubview:pieGraphView];
-            pieGraphView.frame = pieFrame;
-            pieGraphView.autoresizingMask = NSViewMinXMargin;
-             */
-            
+            // [self addPieGraphViewToOutlineView:outlineView];
             outlineView.autoresizesSubviews = true;
             outlineView.outlineTableColumn.resizingMask = NSTableColumnAutoresizingMask;
-            
             [outlineView expandItem:[statistics objectAtIndex:ProjectStatisticWritten]];
             
         }
@@ -317,6 +318,27 @@ enum {
         [pieGraphView removeFromSuperview];
     
     _outlineView = outlineView;
+    
+    
+}
+             
+- (void)addPieGraphViewToOutlineView:(NSOutlineView *)outlineView {
+    
+    if (outlineView)
+        return;
+    
+    if (pieGraphView.superview != nil)
+        [pieGraphView removeFromSuperview];
+    
+    NSRect pieFrame = NSIntersectionRect([outlineView rectOfColumn:2], NSUnionRect([outlineView rectOfRow:1], [outlineView rectOfRow:3]));
+    pieFrame = NSInsetRect(pieFrame, 0, 8);
+    pieFrame.origin.y += 3;
+    
+    pieGraphView.enabled = true;
+    [pieGraphView setHidden:false];
+    [_outlineView addSubview:pieGraphView];
+    pieGraphView.frame = pieFrame;
+    pieGraphView.autoresizingMask = NSViewMinXMargin;
     
 }
 

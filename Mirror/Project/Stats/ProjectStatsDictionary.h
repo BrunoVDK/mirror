@@ -118,6 +118,11 @@ enum {
 - (void)adoptDictionary:(ProjectStatsDictionary *)dictionary;
 
 /**
+ * Reset this dictionary.
+ */
+- (void)reset;
+
+/**
  * Return the value for the statistic of the given type.
  *
  * @param type The type of the statistic whose value is to be mutated.

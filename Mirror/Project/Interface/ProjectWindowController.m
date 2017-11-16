@@ -680,9 +680,10 @@
     
     if (![[[BadgeView sharedView] message] hasPrefix:@"Closing"]) {
         if ([self.window isMainWindow]
-            && [PREFERENCES boolForKey:ShowRateInDock]) {
+            && [PREFERENCES boolForKey:ShowRateInDock]
+            && [self.project isMirroring]) {
             NSString *rate = (NSString *)[self.project.statistics valueForStatisticOfType:ProjectStatisticTransferRate];
-            if (!rate || ![self.project isMirroring] || [self.project isPaused])
+            if (!rate)
                 rate = @"--";
             [[BadgeView sharedView] setMessage:rate];
             [[BadgeView sharedView] setVisible:true];
@@ -993,6 +994,9 @@
     [super windowDidBecomeMain:notification];
     
     [self updateTransferRate];
+    if (![self.project isMirroring])
+         [[BadgeView sharedView] setVisible:false];
+    
     [_listView reloadVisibleRect];
     [self updateGradient];
     [_statusField setTextColor:[NSColor darkGrayColor]];

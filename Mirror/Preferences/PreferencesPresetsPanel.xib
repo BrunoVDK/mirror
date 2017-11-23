@@ -117,7 +117,7 @@ CA
                         <action selector="removeSelected:" target="-2" id="hoJ-Pi-rRa"/>
                     </connections>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="HY0-ts-0zz" customClass="ProjectOptionsLabel">
+                <textField toolTip="List of presets. You can create new one by saving project options that you customised." horizontalHuggingPriority="251" verticalHuggingPriority="750" id="HY0-ts-0zz" customClass="ProjectOptionsLabel">
                     <rect key="frame" x="65" y="93" width="95" height="14"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Custom presets :" id="IZC-An-dTV">

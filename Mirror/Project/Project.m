@@ -952,11 +952,12 @@ int __cdecl httrack_loop(t_hts_callbackarg *carg, httrackp *opt, lien_back *back
     }
     else if (!project.addURLBuffer.isEmpty) {
         
-        char *url_addition[2];
+        char **url_addition = calloc(1, sizeof(char*));
         
         ProjectURL *url = (ProjectURL *)[project.addURLBuffer removeFirst];
         [url fetchAttributes];
-        url_addition[0] = (char *)[[url.URL absoluteString] UTF8String];
+        char *newURL = (char *)url.URL.absoluteString.UTF8String;
+        url_addition[0] = newURL;
         url_addition[1] = NULL;
         opt->state.hts_addurl_identifier = [url identifier];
         if (!hts_addurl(opt, url_addition))
@@ -1016,6 +1017,12 @@ int __cdecl httrack_linkdetected(t_hts_callbackarg *carg, httrackp *opt, char *l
 void __cdecl httrack_baseupdated(t_hts_callbackarg *carg, httrackp *opt, uint8_t base_id, LLint bytes_received, LLint bytes_written, int links_written) {
     
     Project *project = (__bridge Project *)carg->userdef;
+    
+    if (bytes_received > 1) {
+        NSURL *url = ((ProjectURL *)[project.URLs objectAtIndex:base_id]).URL;
+        NSLog(@"%i, %@", base_id, url.absoluteString);
+    }
+    
     unsigned long index = project.URLs.count - 1 - base_id; // URLs are added at the front of the array, so the base_id is backwards
     
     ProjectURL *base_url = [[project URLs] objectAtIndex:index];

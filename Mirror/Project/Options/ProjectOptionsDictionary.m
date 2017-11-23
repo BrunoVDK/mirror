@@ -23,9 +23,13 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 
 #pragma mark Project Options Dictionary
 
+@interface ProjectOptionsDictionary ()
+@property (nonatomic, copy) NSString *presetIdentifier;
+@end
+
 @implementation ProjectOptionsDictionary
 
-@synthesize project = _project;
+@synthesize project = _project, presetIdentifier = _presetIdentifier;
 
 + (void)initialize {
     
@@ -448,7 +452,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 - (id)initWithProject:(Project *)project usingPresetWithName:(NSString *)presetName {
     
     if (self = [self initWithProject:project usingValues:[ProjectOptionsDictionary optionsForPresetWithName:presetName]]) {
-        _presetIdentifier = [presetName copy];
+        self.presetIdentifier = presetName;
     }
     
     return self;
@@ -466,9 +470,9 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
             
             NSString *dictionaryPresetName = [dictionary presetName];
             if ([dictionaryPresetName isEqualToString:CustomPresetName])
-                _presetIdentifier = [CustomPresetName copy];
+                self.presetIdentifier = CustomPresetName;
             else
-                _presetIdentifier = [[NSString stringWithFormat:@"%@ (%@)", CustomPresetName, dictionaryPresetName] copy];
+                self.presetIdentifier = [NSString stringWithFormat:@"%@ (%@)", CustomPresetName, dictionaryPresetName];
             
         }
         
@@ -495,7 +499,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
             }
         }
         
-        _presetIdentifier = (values ? [CustomPresetName copy] : [DefaultPresetName copy]);
+        self.presetIdentifier = (values ? CustomPresetName : DefaultPresetName);
         
         [NOTIFICATION_CENTER addObserver:self
                                 selector:@selector(presetWasRemoved:)
@@ -514,7 +518,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
     
     if (codedDictionary)
         if (self = [self initWithProject:nil usingValues:codedDictionary])
-            _presetIdentifier = [[aDecoder decodeObjectForKey:@"Preset"] mutableCopy];
+            self.presetIdentifier = [aDecoder decodeObjectForKey:@"Preset"];
     
     return self;
     
@@ -538,9 +542,9 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
         if (!dictionaryPresetName
             || dictionaryPresetName.length < 1
             || [dictionaryPresetName isEqualToString:CustomPresetName])
-            _presetIdentifier = [CustomPresetName copy];
+            self.presetIdentifier = CustomPresetName;
         else if ([[ProjectOptionsDictionary savedPresetNames] containsObject:dictionaryPresetName])
-            _presetIdentifier = [dictionaryPresetName copy];
+            self.presetIdentifier = dictionaryPresetName;
         else
             [[NSString stringWithFormat:@"%@ (%@)", CustomPresetName, dictionaryPresetName] copy];
         
@@ -553,7 +557,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
     NSString *presetName = (NSString *)[[notification userInfo] objectForKey:@"presetName"];
 
     if ([_presetIdentifier isEqualToString:presetName])
-        [self adoptPresetWithName:DefaultPresetName];
+        self.presetIdentifier = CustomPresetName;
         
 }
 
@@ -566,13 +570,13 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
         [self willChangeValueForKey:key];
     
     [optionsDictionary removeAllObjects]; // Revert to defaults
-    _presetIdentifier = [DefaultPresetName copy];
+    self.presetIdentifier = DefaultPresetName;
     
     NSDictionary *newOptions = [ProjectOptionsDictionary optionsForPresetWithName:presetName];
     if (newOptions) { // Only if options are set
         for (NSString *optionKey in [newOptions allKeys])
             [self setValue:[newOptions valueForKey:optionKey] forKey:optionKey];
-        _presetIdentifier = [presetName copy];
+        self.presetIdentifier = presetName;
     }
     else if (!isDefaults)
         ok = false;
@@ -611,10 +615,8 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
             mutatingBlock(self.project.engineOptions, value); // Alter the project engine's options structure
         }
         
-        if (![_presetIdentifier isEqualToString:CustomPresetName]) {
-            [_presetIdentifier release];
-            _presetIdentifier = CustomPresetName;
-        }
+        if (![_presetIdentifier isEqualToString:CustomPresetName])
+            self.presetIdentifier = CustomPresetName;
         
         [NOTIFICATION_CENTER postNotificationName:ProjectOptionsDictionaryDidChange object:self];
         
@@ -656,8 +658,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
     
     [ProjectOptionsDictionary addPresetWithName:presetName values:optionsDictionary];
     
-    [_presetIdentifier release];
-    _presetIdentifier = [presetName copy];
+    self.presetIdentifier = presetName;
     
     return true;
     
@@ -692,7 +693,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
     _project = nil;
     
     [optionsDictionary release];
-    [_presetIdentifier release];
+    self.presetIdentifier = nil;
     
     [super dealloc];
     

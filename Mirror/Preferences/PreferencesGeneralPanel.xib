@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="4" width="440" height="53"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <button id="vZ5-Dj-mDi">
+                <button toolTip="Show the current transfer rate of projects in the dock (as an overlay on top of the app icon)." id="vZ5-Dj-mDi">
                     <rect key="frame" x="80" y="17" width="318" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="check" title="Show the total transfer rate in the dock" bezelStyle="regularSquare" imagePosition="left" alignment="center" controlSize="small" state="on" inset="2" id="Ids-wD-t7t">

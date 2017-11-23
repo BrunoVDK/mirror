@@ -77,7 +77,11 @@
 /**
  * The `ProjectOptionsAppearancePanelController` class controls a project options panel with appearance options.
  */
-@interface ProjectOptionsAppearancePanelController : ProjectOptionsPanelController
+@interface ProjectOptionsAppearancePanelController : ProjectOptionsPanelController {
+    
+    NSTextView *_cssTextView;
+    
+}
 
 @end
 

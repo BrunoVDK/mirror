@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ProjectOptionsAppearancePanelController">
             <connections>
+                <outlet property="cssTextView" destination="P7r-VX-KIW" id="XDO-sU-v39"/>
                 <outlet property="view" destination="c22-O7-iKe" id="jaM-zV-tzY"/>
             </connections>
         </customObject>
@@ -34,10 +35,11 @@
                                 <size key="minSize" width="438" height="81"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                                 <connections>
-                                    <binding destination="-2" name="value" keyPath="self.project.options.IndexCSS" id="pdr-MM-5mP">
+                                    <binding destination="-2" name="value" keyPath="self.project.options.IndexCSS" id="os3-Dt-eeb">
                                         <dictionary key="options">
                                             <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                             <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
                                         </dictionary>
                                     </binding>
                                 </connections>
@@ -105,9 +107,10 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.project.options.IndexHTMLTitle" id="afh-Ka-0me">
+                        <binding destination="-2" name="value" keyPath="self.project.options.IndexHTMLTitle" id="5Eh-iL-HgR">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                <bool key="NSValidatesImmediately" value="YES"/>
                             </dictionary>
                         </binding>
                         <outlet property="nextKeyView" destination="R1M-Wv-i3a" id="8IC-R2-Khr"/>
@@ -131,9 +134,10 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.project.options.IndexTitle" id="ZAj-aG-u0u">
+                        <binding destination="-2" name="value" keyPath="self.project.options.IndexTitle" id="Nue-Gh-WFU">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                <bool key="NSValidatesImmediately" value="YES"/>
                             </dictionary>
                         </binding>
                         <outlet property="nextKeyView" destination="P7r-VX-KIW" id="OWQ-Jb-L5O"/>

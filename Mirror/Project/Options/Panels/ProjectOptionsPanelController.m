@@ -68,7 +68,7 @@
     BOOL hasProject = (self.project != nil);
     BOOL projectStarted = (hasProject ? self.project.hasStarted : false);
     
-    for (id subview in [[self view] subviews]) {
+    for (id subview in self.view.subviews) {
         
         BOOL canChangeOptionAfterProjectStarted = false;
         NSDictionary *bindingInfo = [self infoForBinding:NSValueBinding];
@@ -78,11 +78,11 @@
             NSString *optionsKey = [[bindingInfo valueForKey:NSObservedKeyPathKey] substringFromIndex:16]; // 16 stands for length of prefix 'self.controller.'
             if (optionsKey)
                 canChangeOptionAfterProjectStarted = [ProjectOptionsDictionary optionCanBeAltered:optionsKey];
+            
         }
         
-        if ([subview respondsToSelector:@selector(setEnabled:)]
-            && (!hasProject || (projectStarted && canChangeOptionAfterProjectStarted)))
-            [subview setEnabled:false];
+        if ([subview respondsToSelector:@selector(setEnabled:)])
+            [subview setEnabled:(hasProject && (!projectStarted || canChangeOptionAfterProjectStarted))];
         
     }
     
@@ -458,6 +458,9 @@
 
 - (void)updateInclusionButtons {
     
+    BOOL hasProject = (self.project != nil);
+    BOOL projectStarted = (hasProject ? self.project.hasStarted : false);
+    
     int index = 0;
     NSArray *checkboxes = @[_includeImagesButton, _includeAudioButton, _includeVideoButton, _includeArchivesButton];
     
@@ -471,6 +474,7 @@
                 containsAll = false;
         
         [currentCheckbox setState:(containsAll ? NSOnState : NSOffState)];
+        [currentCheckbox setEnabled:(hasProject && !projectStarted)];
         
     }
     
@@ -496,7 +500,13 @@
 
 @end
 
+@interface ProjectOptionsAppearancePanelController ()
+@property (nonatomic, retain) IBOutlet NSTextView *cssTextView;
+@end
+
 @implementation ProjectOptionsAppearancePanelController
+
+@synthesize cssTextView = _cssTextView;
 
 - (NSString *)panelTitle {
     
@@ -507,6 +517,24 @@
 - (NSImage *)panelIcon {
     
     return [NSImage imageNamed:@"Design"];
+    
+}
+
+- (void)updatePanel {
+    
+    [super updatePanel];
+    
+    BOOL hasProject = (self.project != nil);
+    BOOL projectStarted = (hasProject ? self.project.hasStarted : false);
+    [self.cssTextView setEditable:(hasProject && !projectStarted)];
+    
+}
+
+- (void)dealloc {
+    
+    self.cssTextView = nil;
+    
+    [super dealloc];
     
 }
 

@@ -1566,6 +1566,18 @@
 
 @synthesize contextualMenu = _contextualMenu, filesMenu = _filesMenu, menuView = _menuView, statsOutlineView = _statsOutlineView, fileListView = _fileListView, speedStatField = _speedStatField, sizeStatField = _sizeStatField, filesStatusField = _filesStatusField, filesSearchField = _filesSearchField, panelView = _panelView, linksPanel = _linksPanel, statsPanel = _statsPanel, filesPanel = _filesPanel;
 
+- (id)init {
+    
+    if (self = [super init]) {
+        
+        [PREFERENCES addObserver:self forKeyPath:MainWindowTheme options:NSKeyValueObservingOptionNew context:NULL];
+        
+    }
+    
+    return self;
+    
+}
+
 - (void)setDocument:(NSDocument *)document {
     
     [super setDocument:document];
@@ -1777,7 +1789,6 @@
     
     theme = (WindowTheme)[PREFERENCES integerForKey:MainWindowTheme];
     [self readTheme];
-    [PREFERENCES addObserver:self forKeyPath:MainWindowTheme options:NSKeyValueObservingOptionNew context:NULL];
     
     [_toolbarAddPauseButton setOverrideDrawing:false]; // Disable custom segmented control drawing
     [self updateGradient];

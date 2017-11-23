@@ -435,12 +435,18 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
         
         // Make string with list of URLs in the project
         NSString *urlString = @"";
+        /*
         for (int i=0 ; i<[[self URLs] count] ; i++) {
-            ProjectURL *url = [[self URLs] objectAtIndex:0];
+            ProjectURL *url = [[self URLs] objectAtIndex:i];
             [url fetchAttributes];
             dispatch_async(dispatch_get_main_queue(), ^{[[self windowController] updateURLAtIndex:i];});
             urlString = [urlString stringByAppendingString:[[[url URL] absoluteString] stringByAppendingString:@" "]];
         }
+         */
+        ProjectURL *url = [[self URLs] objectAtIndex:0];
+        [url fetchAttributes];
+        dispatch_async(dispatch_get_main_queue(), ^{[[self windowController] updateURLAtIndex:0];});
+        urlString = [urlString stringByAppendingString:[[[url URL] absoluteString] stringByAppendingString:@" "]];
         for (NSString *filter in filters) // Add string with list of filters to previous string of urls
             urlString = [urlString stringByAppendingString:[filter stringByAppendingString:@" "]];
         if ([urlString length] > 0) // Cut last character

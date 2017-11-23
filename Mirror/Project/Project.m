@@ -1022,7 +1022,7 @@ void __cdecl httrack_baseupdated(t_hts_callbackarg *carg, httrackp *opt, uint8_t
     base_url.bytesScanned += bytes_received;
     base_url.bytesWritten += bytes_written;
     base_url.linksDetected += links_written;
-    
+            
     dispatch_async(dispatch_get_main_queue(), ^{
         // if (!project.shouldCancel)
             [[project windowController] updateURLAtIndex:index];

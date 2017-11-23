@@ -717,8 +717,8 @@ int back_finalize(httrackp * opt, cache_back * cache, struct_back * sback, const
                             opt->stats.stat_bytes += back[p].r.size;
                             opt->stats.stat_files++;
                             // MIRROR_ADAPTATION : Added callback to 'baseupdated'
-                            RUN_CALLBACK4(opt, baseupdated, back[p].base_id, back[p].r.size, back[p].r.size, 1);
-                            hts_log_print(opt, LOG_TRACE, "added file %s%s => %s",
+                            RUN_CALLBACK4(opt, baseupdated, back[p].base_id, 0, back[p].r.size, 1);
+                            hts_log_print(opt, LOG_TRACE, "Added file %s%s => %s",
                                           back[p].url_adr, back[p].url_fil,
                                           back[p].url_sav != NULL ? back[p].url_sav : "");
                         }

@@ -401,8 +401,11 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
 #endif
                         [self performSelectorInBackground:@selector(mirrorInBackground) withObject:nil];
 #if CHECK_INTERNET_CONNECTION
-                    else
+                    else {
+                        _completed = true;
+                        [self.statistics setValue:@"" forStatisticOfType:ProjectStatisticTransferRate];
                         [self.delegate projectDidEnd:self error:@"No internet connection."];
+                    }
 #endif
                 });
                 
@@ -474,12 +477,17 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
         // Beep, quit
         if (closeInvocation)
             [closeInvocation invoke];
-        else
-            NSBeep();
+        else {
+            // Notify user
+            if ([PREFERENCES boolForKey:NotifyOnCompletion])
+                [self.windowController notifyOfMessage:self.rootURL.description withTitle:@"Project completed."];
+        }
+        
         
         _completed = true;
+        [self.statistics setValue:@"" forStatisticOfType:ProjectStatisticTransferRate];
         [self.delegate projectDidEnd:self error:error];
-        [[self windowController] updateInterface]; // Completion
+        [self.windowController updateInterface]; // Completion
         
     });
     
@@ -1040,8 +1048,14 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     ProjectNotification *notification = [ProjectNotification notificationOfType:notificationType content:formatString andDate:[NSDate date]];
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        
         [project.statistics registerNotification:notification];
         [project.notifications addObject:notification];
+        
+        // Notify user
+        if (type == LOG_ERROR && [PREFERENCES boolForKey:NotifyOnError])
+            [project.windowController notifyOfMessage:formatString withTitle:@"An error occured."];
+        
     });
     
 }

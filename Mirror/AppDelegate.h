@@ -16,7 +16,7 @@
  *
  *  It handles basic actions of the main menu (showing preferences as well as the about window, opening documents, ...).
  */
-@interface AppDelegate : NSObject <NSApplicationDelegate> {
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate> {
     
     BOOL terminationRequested;
     BadgeView *badgeView;

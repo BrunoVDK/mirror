@@ -13,13 +13,13 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe" userLabel="General Preferences Panel">
-            <rect key="frame" x="0.0" y="5" width="440" height="77"/>
+            <rect key="frame" x="0.0" y="4" width="440" height="53"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <button id="vZ5-Dj-mDi">
-                    <rect key="frame" x="80" y="41" width="318" height="18"/>
+                    <rect key="frame" x="80" y="17" width="318" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="check" title="Show the total transfer rate in the dock" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="Ids-wD-t7t">
+                    <buttonCell key="cell" type="check" title="Show the total transfer rate in the dock" bezelStyle="regularSquare" imagePosition="left" alignment="center" controlSize="small" state="on" inset="2" id="Ids-wD-t7t">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
                     </buttonCell>
@@ -28,7 +28,7 @@
                     </connections>
                 </button>
                 <button hidden="YES" id="G16-qC-Xez">
-                    <rect key="frame" x="80" y="17" width="318" height="20"/>
+                    <rect key="frame" x="80" y="-7" width="318" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="check" title="Ask for confirmation when cancelling a project" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="Kna-pi-VVt">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -38,8 +38,8 @@
                         <binding destination="het-ST-ves" name="value" keyPath="values.AskForConfirmationOnCancel" id="m24-ba-3jD"/>
                     </connections>
                 </button>
-                <button id="Ta9-Mt-KD5">
-                    <rect key="frame" x="80" y="17" width="318" height="20"/>
+                <button hidden="YES" id="Ta9-Mt-KD5">
+                    <rect key="frame" x="80" y="-7" width="318" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="check" title="Immediately add drag-and-dropped links to a project" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="mTd-Z3-lns">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -50,7 +50,7 @@
                     </connections>
                 </button>
             </subviews>
-            <point key="canvasLocation" x="451" y="502.5"/>
+            <point key="canvasLocation" x="451" y="490.5"/>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="het-ST-ves"/>
     </objects>

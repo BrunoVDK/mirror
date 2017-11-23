@@ -23,7 +23,7 @@
     
     if (self = [super init]) {
         
-        fetchingAttributes = true;
+        fetchingAttributes = false;
         fetchedTitle = fetchedIcon = false;
         
         _identifier = identifier;

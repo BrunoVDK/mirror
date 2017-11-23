@@ -192,4 +192,4 @@ Please visit our Website: http://www.httrack.com \
 
 #define SQLITE3_DEBUG FALSE
 
-#define CHECK_INTERNET_CONNECTION FALSE
+#define CHECK_INTERNET_CONNECTION TRUE

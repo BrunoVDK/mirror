@@ -153,6 +153,19 @@
     
 }
 
+#pragma mark Notifications
+
+- (void)notifyOfMessage:(NSString *)message withTitle:(NSString *)title {
+    
+    NSUserNotification *notification = [NSUserNotification new];
+    notification.title = title;
+    notification.informativeText = message;
+    notification.soundName = NSUserNotificationDefaultSoundName;
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+    [notification release];
+    
+}
+
 #pragma mark Export Directory
 
 - (void)requestExportDirectory:(void(^)(BOOL success))completion {
@@ -390,7 +403,10 @@
 #pragma mark Menu
 
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem {
-        
+    
+    if ([menuItem.title contains:@"Add URL"])
+        return !self.project.isCompleted;
+    
     return (menuItem == PAUSE_ITEM ? self.project.isMirroring : true);
     
 }
@@ -638,7 +654,7 @@
     // [self updateStatus];
 
     [self updateTransferRate];
-    if (self.project && self.project.engineOptions->stats.stat_timestart != 0) {
+    if (self.project && self.project.engineOptions->stats.stat_timestart != 0 && !self.project.isCompleted) {
         long long seconds = time(NULL) - self.project.engineOptions->stats.stat_timestart;
         [self.project.statistics setValue:[NSString elapsedTimeForSeconds:seconds] forStatisticOfType:ProjectStatisticTime];
     }
@@ -650,7 +666,7 @@
     
     NSString *status = @"No links";
     
-    if (errorMessage) {
+    if (errorMessage && errorMessage.length > 0) {
         status = errorMessage;
         errorMessage = nil;
         NSBeep();
@@ -761,6 +777,9 @@
 }
 
 - (void)projectDidEnd:(Project *)project error:(NSString *)error {
+    
+    if ([PREFERENCES boolForKey:NotifyOnCompletion])
+        ;
     
     [[BadgeView sharedView] setVisible:false];
     
@@ -1286,7 +1305,7 @@
     if ([identifier isEqualToString:@"Project"])
         return [[[_projectListController arrangedObjects] objectAtIndex:row - showDummy] title];
     else if ([identifier isEqualToString:@"Reveal"])
-        return @"Open URL";
+        return (!self.project.hasWritingPermission || self.project.isCompleted ? @"Reload Project" : @"Open URL");
     else if ([identifier isEqualToString:@"Cancel"])
         return @"Cancel URL";
     
@@ -1639,6 +1658,9 @@
     [pauseItem setTitle:(paused ? @"Resume" : @"Pause")];
     [pauseItem setAction:(paused ? @selector(resume:) : @selector(pause:))];
     
+    // Adapt 'Add URL' item of contextual menu of listView
+    [[_contextualMenu itemAtIndex:0] setEnabled:!self.project.isCompleted];
+    
 }
 
 #pragma mark Project Delegate
@@ -1909,7 +1931,7 @@
                                   ? nil
                                   : [NSImage imageNamed:@"AddBubble"]),
                     cell.action = @selector(addURL:),
-                    cell.enabled = self.project.completed;
+                    cell.enabled = !self.project.completed;
                 else if (row == 1)
                     cell.image = nil,
                     cell.action = NULL; // cell.image = [NSImage imageNamed:@"PauseBubble"], cell.action = @selector(pause:);

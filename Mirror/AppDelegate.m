@@ -21,6 +21,8 @@
 
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
     
+    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
+    
     [self loadIcon];
     [PREFERENCES addObserver:self forKeyPath:UseLionIcon options:NSKeyValueObservingOptionNew context:NULL];
     
@@ -91,6 +93,14 @@
     
 }
 
+#pragma mark Notification Delegation
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification{
+    
+    return YES;
+    
+}
+
 #pragma mark Services
 
 - (void)mirrorURL:(NSPasteboard *)pboard userData:(NSString *)userData error:(NSString **)error {
@@ -129,6 +139,7 @@
     
     [[NSDocumentController sharedDocumentController] newDocument:self];
     Project *newDocument = [[NSDocumentController sharedDocumentController] currentDocument];
+        
     if ([newDocument addURL:url])
         return true;
     

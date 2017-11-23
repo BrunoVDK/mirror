@@ -68,7 +68,7 @@ enum {
 
 @property (nonatomic, readonly) NSInteger type;
 @property (nonatomic, readonly) NSString *title;
-@property (nonatomic, retain) id value;
+@property (nonatomic, copy) id value;
 
 - (id)initWithType:(NSInteger)type value:(id)value;
 - (void)incrementValue; // Only for numerical stats
@@ -236,7 +236,7 @@ enum {
 - (int)nbOfFilesOfType:(ProjectStatisticFileType)type {
     
     if (type < [fileTypes count])
-        return [(ProjectStatFileType *)[fileTypes objectAtIndex:type] value];
+        return [[(ProjectStatFileType *)[fileTypes objectAtIndex:type] value] intValue];
     
     return 0;
     
@@ -528,7 +528,7 @@ enum {
     
     if ([super init]) {
         _type = [aDecoder decodeIntegerForKey:@"type"];
-        _value = [[aDecoder decodeObjectForKey:@"value"] retain];
+        self.value = [aDecoder decodeObjectForKey:@"value"];
     }
     
     return self;

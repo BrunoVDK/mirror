@@ -136,6 +136,14 @@
 - (void)requestExportDirectory:(void(^)(BOOL success))completion;
 
 /**
+ * Display a user notification with given title and informative text.
+ *
+ * @param message The message for the notification.
+ * @param title The title of the notification.
+ */
+- (void)notifyOfMessage:(NSString *)message withTitle:(NSString *)title;
+
+/**
  * Restore the interface of the given controller.
  *
  * @param controller The controller whose interface is to be adopted by the current one.

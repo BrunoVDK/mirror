@@ -104,7 +104,7 @@
                     </connections>
                 </button>
                 <button toolTip="Remove the selected presets." verticalHuggingPriority="750" id="HS9-dA-KNq" customClass="PointerButton">
-                    <rect key="frame" x="229" y="15" width="81" height="17"/>
+                    <rect key="frame" x="225" y="15" width="85" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="squareTextured" title="Remove selected" bezelStyle="texturedSquare" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nsD-1X-EnG">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

@@ -206,8 +206,14 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     bookmarkData = [[properties objectForKey:@"BookmarkData"] retain];
     _completed = [[properties objectForKey:@"Completed"] boolValue];
     _started = [[properties objectForKey:@"Completed"] boolValue];
-    for (ProjectURL *url in [properties objectForKey:@"URLs"])
-        [[self URLs] addObject:url];
+    if (_URLs)
+        [_URLs release];
+    _URLs = [[properties objectForKey:@"URLs"] mutableCopy];
+    for (int i=0 ; i<_URLs.count-1 ; i++) {
+        ProjectURL *url = [_URLs objectAtIndex:i];
+        url.identifier = _URLs.count - 1 - i;
+        [self.addURLBuffer addObject:url];
+    }
     [_statistics adoptDictionary:[properties objectForKey:@"Statistics"]];
     [_options adoptDictionary:[properties objectForKey:@"Options"]];
     if (filters)
@@ -443,7 +449,7 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
             urlString = [urlString stringByAppendingString:[[[url URL] absoluteString] stringByAppendingString:@" "]];
         }
          */
-        ProjectURL *url = [[self URLs] objectAtIndex:0];
+        ProjectURL *url = [_URLs lastObject]; // Last is first added
         [url fetchAttributes];
         dispatch_async(dispatch_get_main_queue(), ^{[[self windowController] updateURLAtIndex:0];});
         urlString = [urlString stringByAppendingString:[[[url URL] absoluteString] stringByAppendingString:@" "]];
@@ -1024,10 +1030,12 @@ void __cdecl httrack_baseupdated(t_hts_callbackarg *carg, httrackp *opt, uint8_t
     
     Project *project = (__bridge Project *)carg->userdef;
     
+#if DEBUG
     if (bytes_received > 1) {
         NSURL *url = ((ProjectURL *)[project.URLs objectAtIndex:base_id]).URL;
         NSLog(@"%i, %@", base_id, url.absoluteString);
     }
+#endif
     
     unsigned long index = project.URLs.count - 1 - base_id; // URLs are added at the front of the array, so the base_id is backwards
     

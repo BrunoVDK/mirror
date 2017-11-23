@@ -33,7 +33,7 @@
 /**
  * This project's identifier.
  */
-@property (nonatomic, readonly) NSUInteger identifier;
+@property (nonatomic, readwrite) NSUInteger identifier;
 
 /**
  * This project URL's title.

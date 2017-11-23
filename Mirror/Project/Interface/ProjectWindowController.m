@@ -1820,8 +1820,8 @@
     // Update interface elements
     [_filesSearchField setEnabled:!showSockets];
     [[_filesMenu itemAtIndex:1] setTitle:(showSockets ? @"Show Recent Files" : @"Show Active Sockets")];
-    [[[_fileListView tableColumns] objectAtIndex:1] setIdentifier:(showSockets ? @"socketDescription" : @"fileName")];
-    [[[_fileListView tableColumns] objectAtIndex:2] setIdentifier:(showSockets ? @"progress" : @"size")];
+    [(NSTableColumn *)[[_fileListView tableColumns] objectAtIndex:1] setIdentifier:(showSockets ? @"socketDescription" : @"fileName")];
+    [(NSTableColumn *)[[_fileListView tableColumns] objectAtIndex:2] setIdentifier:(showSockets ? @"progress" : @"size")];
     ((NSTableHeaderCell *)[[[_fileListView tableColumns] objectAtIndex:1] headerCell]).stringValue
     = (showSockets ? @"Description" : @"File");
     ((NSTableHeaderCell *)[[[_fileListView tableColumns] objectAtIndex:2] headerCell]).stringValue

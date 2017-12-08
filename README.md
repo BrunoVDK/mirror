@@ -1,5 +1,5 @@
 <p align="center">
- <img src="https://github.com/BrunoVandekerkhove/Mirror/blob/master/Documents/icon128x128.png?raw=true" align="center">
+ <img src="https://github.com/BrunoVandekerkhove/Mirror/blob/master/Documents/icon128x128.png?raw=true">
 </p>
 
 <p>
@@ -11,6 +11,10 @@ It is available in the App Store, but you can compile it for free with XCode.
 ## How to Use
 
 Just open up the app, type in an URL, press enter. The rest should be fairly obvious. Bug reports are very welcome.
+
+<p align="center">
+ <img src="https://github.com/BrunoVandekerkhove/Mirror/blob/master/Documents/Screenshots/Screenshot%204.png?raw=true">
+</p>
 
 ## Useful Links
 

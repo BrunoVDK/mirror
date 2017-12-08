@@ -316,7 +316,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 
 + (NSArray *)designOptions { // Key - Default Value - Mutating Block - Alterable when Engine Runs (YES/NO - use -boolValue to check value)
     
-    NSDictionary *defaultCSSAttributes = [[NSDictionary alloc] initWithObjectsAndKeys:[NSColor colorWithCalibratedWhite:0.1 alpha:1.0], NSForegroundColorAttributeName, [NSFont systemFontOfSize:11.0], NSFontAttributeName, nil];
+    // NSDictionary *defaultCSSAttributes = [[NSDictionary alloc] initWithObjectsAndKeys:[NSColor colorWithCalibratedWhite:0.3 alpha:1.0], NSForegroundColorAttributeName, [NSFont systemFontOfSize:11.0], NSFontAttributeName, nil];
     NSString *defaultCSS = @"body {background-color: white;}\n.footer {text-align: center;font-size:11px;}";
     
     NSArray *designOptions = [NSArray arrayWithObjects:
@@ -348,7 +348,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
             nil];
     
     [defaultCSS release];
-    [defaultCSSAttributes release];
+    // [defaultCSSAttributes release];
     return designOptions;
     
 }

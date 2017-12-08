@@ -16,7 +16,7 @@
 // App preferences
 //
 
-#define HasLaunched @"HasLaunched4"
+#define HasLaunched @"HasLaunched5"
 
 #define UseLionIcon @"UseLionIcon"
 
@@ -60,7 +60,7 @@ static NSDictionary *defaultAppPreferences() {
             AskForConfirmationOnCancel : @YES,
             AddDroppedLinksImmediately : @YES,
             
-            SaveProjectsIn : [NSNumber numberWithInt:0],
+            SaveProjectsIn : [NSNumber numberWithInt:1],
             HideCache : @YES,
             BundleProjects : @NO,
             

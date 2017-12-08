@@ -192,7 +192,8 @@
         NSArray *URLs = [fileManager URLsForDirectory:NSDownloadsDirectory inDomains:NSUserDomainMask];
         if (URLs != nil || [URLs count] > 0) {
             
-            NSURL *downloadsDirectory = [URLs objectAtIndex:0];
+            // NSURL *downloadsDirectory = [URLs objectAtIndex:0];
+            NSURL *downloadsDirectory = [[URLs objectAtIndex:0] URLByAppendingPathComponent:@"org.brunovandekerkhove.mirror"];
             exportDirectory = [downloadsDirectory URLByAppendingPathComponent:[self getRootDomain:URL.URL]];
             
             if ([[exportDirectory absoluteString] length] > 0) {
@@ -202,7 +203,7 @@
                 
                 do {
                     
-                    if ([fileManager createDirectoryAtURL:exportDirectory withIntermediateDirectories:false attributes:nil error:&error]) {
+                    if ([fileManager createDirectoryAtURL:exportDirectory withIntermediateDirectories:true attributes:nil error:&error]) {
                         [[self project] setExportDirectory:exportDirectory];
                         break;
                     }
@@ -1342,8 +1343,10 @@
             
             if ([textMovement longLongValue] == NSReturnTextMovement) {
                 
-                if (newURL && newURL.scheme && newURL.host && [[self project] addURL:newURL])
+                if (newURL && newURL.scheme && newURL.host && [[self project] addURL:newURL]) {
                     showDummy = false;
+                    [self resizeWindow:false];
+                }
                 else {
                     
                     [self setShowDummy:true];

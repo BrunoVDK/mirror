@@ -1079,6 +1079,7 @@
 				ORGANIZATIONNAME = BV;
 				TargetAttributes = {
 					BF5A9C5F1BA45CEE005C112D = {
+						DevelopmentTeam = YEX37UG29L;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -1380,7 +1381,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_ENTITLEMENTS = Mirror/Mirror.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer: Bruno Vandekerkhove (FJN4Q5YFVU)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1393,7 +1394,7 @@
 				IBC_NOTICES = NO;
 				IBC_WARNINGS = YES;
 				INFOPLIST_FILE = "Mirror/Mirror-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = Mirror;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				WRAPPER_EXTENSION = app;
@@ -1405,7 +1406,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_ENTITLEMENTS = Mirror/Mirror.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer: Bruno Vandekerkhove (FJN4Q5YFVU)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1418,7 +1419,7 @@
 				IBC_NOTICES = NO;
 				IBC_WARNINGS = YES;
 				INFOPLIST_FILE = "Mirror/Mirror-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = Mirror;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				WRAPPER_EXTENSION = app;

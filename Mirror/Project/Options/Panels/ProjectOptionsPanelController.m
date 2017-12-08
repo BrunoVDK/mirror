@@ -202,8 +202,8 @@
             BOOL flag = [[self.project.options valueForKey:(NSString *)item] boolValue];
             [buttonCell setState:flag];
             
-            BOOL started = self.project.hasStarted;
-            [buttonCell setEnabled:!started || [ProjectOptionsDictionary optionCanBeAltered:(NSString *)item]];
+            BOOL hasProject = self.project != nil, started = (hasProject ? self.project.hasStarted : false);
+            [buttonCell setEnabled:hasProject && (!started || [ProjectOptionsDictionary optionCanBeAltered:(NSString *)item])];
             
         }
         
@@ -526,7 +526,9 @@
     
     BOOL hasProject = (self.project != nil);
     BOOL projectStarted = (hasProject ? self.project.hasStarted : false);
-    [self.cssTextView setEditable:(hasProject && !projectStarted)];
+    BOOL ok = (hasProject && !projectStarted);
+    [self.cssTextView setEditable:ok];
+    [self.cssTextView setTextColor:[NSColor colorWithCalibratedWhite:1.0 - (ok ? 0.9 : 0.5) alpha:1.0]];
     
 }
 

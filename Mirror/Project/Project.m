@@ -366,8 +366,6 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
     
     if (![self isMirroring]) {
         
-        _started = true;
-        
         if (_completed) {
             [self.files clearFileList];
             [self.notifications clearNotificationList];
@@ -403,10 +401,12 @@ void __cdecl httrack_log(t_hts_callbackarg *carg, httrackp *opt, int type, const
                     [[self.window standardWindowButton:NSWindowDocumentIconButton] setImage:[NSImage imageNamed:@"documenticon"]]; // Bit crude, icon doesn't show otherwise (not sure why)
                     
 #if CHECK_INTERNET_CONNECTION
-                    if (hasInternetConnection())
+                    if (hasInternetConnection()) {
 #endif
+                        _started = true;
                         [self performSelectorInBackground:@selector(mirrorInBackground) withObject:nil];
 #if CHECK_INTERNET_CONNECTION
+                    }
                     else {
                         _completed = true;
                         [self.statistics setValue:@"" forStatisticOfType:ProjectStatisticTransferRate];

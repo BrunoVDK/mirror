@@ -34,6 +34,10 @@
                                              [[PreferencesInterfacePanelController new] autorelease],
                                              [[PreferencesNotificationsPanelController new] autorelease],
                                              [[PreferencesPresetsPanelController new] autorelease]]];
+#if DEBUG
+        if (![_sharedObject windowIsKey])
+            exit(173);
+#endif
     });
     
     return _sharedObject;

@@ -36,7 +36,7 @@
                                              [[PreferencesPresetsPanelController new] autorelease]]];
 #if DEBUG
         if (![_sharedObject windowIsKey])
-            exit(173);
+            ;//exit(173);
 #endif
     });
     

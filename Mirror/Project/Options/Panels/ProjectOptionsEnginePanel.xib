@@ -399,7 +399,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="right" drawsBackground="YES" id="6Zz-ny-P3L">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" localizesFormat="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="6AX-h8-JZS" customClass="IntegerFormatter">
-                                        <real key="minimum" value="0.0"/>
+                                        <real key="minimum" value="-1"/>
                                         <real key="maximum" value="999999"/>
                                         <metadata>
                                             <real key="inspectorSampleValue" value="1"/>
@@ -455,7 +455,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="right" drawsBackground="YES" id="5sA-kN-vUo">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" localizesFormat="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="8k2-nx-B45" customClass="IntegerFormatter">
-                                        <real key="minimum" value="0.0"/>
+                                        <real key="minimum" value="-1"/>
                                         <real key="maximum" value="999999"/>
                                         <metadata>
                                             <real key="inspectorSampleValue" value="1"/>

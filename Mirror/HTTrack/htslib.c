@@ -5165,6 +5165,8 @@ HTSEXT_API int hts_init(void) {
         SSL_load_error_strings();
         SSL_library_init();
         
+        /* MIRROR_ADAPTATION - COMMENTED OUT LINES BELOW */
+        /*
         // Check CVE-2014-0160.
         version = SSLeay_version(SSLEAY_VERSION);
         if (ssl_vulnerable(version)) {
@@ -5173,6 +5175,7 @@ HTSEXT_API int hts_init(void) {
             abortLog("unable to initialize TLS: OpenSSL version seems vulnerable to heartbleed bug (CVE-2014-0160)");
             assertf("OpenSSL version seems vulnerable to heartbleed bug (CVE-2014-0160)" == NULL);
         }
+         */
         
         // OpenSSL_add_all_algorithms();
         openssl_ctx = SSL_CTX_new(SSLv23_client_method());
@@ -5412,7 +5415,7 @@ HTSEXT_API httrackp *hts_create_opt(void) {
     //  
     opt->travel = 0;              // même adresse
     opt->depth = 9999;            // mirror total par défaut
-    opt->extdepth = 0;            // mais pas à l'extérieur
+    opt->extdepth = 10;            // mais pas à l'extérieur
     opt->seeker = 1;              // down 
     opt->urlmode = 2;             // relatif par défaut
     opt->no_type_change = 0;      // change file types
@@ -5494,7 +5497,7 @@ HTSEXT_API httrackp *hts_create_opt(void) {
     opt->maxcache = 1048576 * 32; // a peu près 32Mo en cache max -- OPTION NON PARAMETRABLE POUR L'INSTANT --
     //opt->maxcache_anticipate=256;  // maximum de liens à anticiper
     opt->maxtime = -1;            // temps max en secondes
-    opt->maxrate = 25000;         // taux maxi
+    opt->maxrate = 0;         // taux maxi
     opt->maxconn = 5.0;           // nombre connexions/s
     opt->waittime = -1;           // wait until.. hh*3600+mm*60+ss
     //
@@ -5502,7 +5505,7 @@ HTSEXT_API httrackp *hts_create_opt(void) {
     opt->is_update = 0;           // not an update (yet)
     opt->dir_topindex = 0;        // do not built top index (yet)
     //
-    opt->bypass_limits = 0;       // enforce limits by default
+    opt->bypass_limits = 1;       // enforce limits by default
     opt->state.stop = 0;          // stopper
     opt->state.exit_xh = 0;       // abort
     //

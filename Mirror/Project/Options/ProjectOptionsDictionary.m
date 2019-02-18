@@ -273,7 +273,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
             // @"TestAllLinks", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
             @"ForceHTTP1-0", @NO, ^(httrackp *options, id value) {options->http10 = [value intValue];}, @NO,
             // @"PrioritiseHTML", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
-            @"EnableUrlHacks", @YES, ^(httrackp *options, id value) {options->urlhack = [value intValue];}, @NO,
+            @"EnableUrlHacks", @NO, ^(httrackp *options, id value) {options->urlhack = [value intValue];}, @NO,
             @"EnableUpdateHacks", @NO, ^(httrackp *options, id value) {options->sizehack = [value intValue];}, @NO,
             @"AcceptCookies", @YES, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @NO,
             @"TolerantRequests", @NO, ^(httrackp *options, id value) {options->tolerant = [value intValue];}, @NO,
@@ -297,7 +297,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
 + (NSArray *)dangerousOptions { // Key - Default Value - Mutating Block - Alterable when Engine Runs (YES/NO - use -boolValue to check value)
     
     return [NSArray arrayWithObjects:
-            @"BypassSecurityLimits", @NO, ^(httrackp *options, id value) {options->bypass_limits = [value intValue];}, @NO,
+            @"BypassSecurityLimits", @YES, ^(httrackp *options, id value) {options->bypass_limits = [value intValue];}, @NO,
             nil];
     
 }
@@ -408,7 +408,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
             @"MinTransferRate", @"0", ^(httrackp *options, id value) {options->rateout = [value intValue];}, @YES,
             // Limits
             @"MirroringDepth", @"9999", ^(httrackp *options, id value) {options->depth = [value intValue];}, @NO,
-            @"ExternalDepth", @"0", ^(httrackp *options, id value) {options->extdepth = [value intValue];}, @NO,
+            @"ExternalDepth", @"10", ^(httrackp *options, id value) {options->extdepth = [value intValue];}, @NO,
             // @"UseMaximumHTMLSize", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
             @"MaximumHTMLSize", @"-1", ^(httrackp *options, id value) {options->maxfile_html = [value intValue];}, @YES,
             // @"UseMaximumNonHTMLSize", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
@@ -419,7 +419,7 @@ NSString *const DefaultPresetPreferencesKey = @"DefaultPreset";
             @"PauseMilestoneBytes", @"-1", ^(httrackp *options, id value) {options->fragment = [value intValue];}, @NO,
             // @"UseMaximumTime", @NO, ^(httrackp *options, id value) {options->accept_cookie = [value intValue];}, @YES,
             @"MaximumTime", @"-1", ^(httrackp *options, id value) {options->maxtime = [value intValue];}, @YES,
-            @"MaximumTransferRate", @"25000", ^(httrackp *options, id value) {options->maxrate = [value intValue];}, @YES,
+            @"MaximumTransferRate", @"0", ^(httrackp *options, id value) {options->maxrate = [value intValue];}, @YES,
             @"MaximumConnectionsSecond", @"4", ^(httrackp *options, id value) {options->maxsoc = [value intValue];}, @YES,
             @"MaximumLinks", @"100000", ^(httrackp *options, id value) {options->maxlink = [value intValue];}, @NO,
             nil];

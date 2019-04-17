@@ -4,14 +4,13 @@
 
 A Cocoa app that mirrors websites (for offline use). The app makes use of [HTTrack](https://github.com/xroche/httrack) v.3.48-21, with some modifications that are annotated with `MIRROR_ADAPTATION`.
 
-It is available in the App Store, but you can compile it for free with XCode.
+You can compile it for free with XCode. It's still a work in progress, by the way.
 
 ## How to Use
 
 Launch the application, enter any website you want to mirror, and press enter. Before mirroring you can change options (command-O) and during the mirroring you can get an overview of warnings and errors (command-L). Bug reports are very welcome.
 
-## Useful Links
+## Links
 
 - [Wiki](https://github.com/BrunoVandekerkhove/Mirror/wiki)
-- [Support](https://github.com/BrunoVandekerkhove/Mirror/wiki/Support)
 - [HTTrack](https://github.com/xroche/httrack)
